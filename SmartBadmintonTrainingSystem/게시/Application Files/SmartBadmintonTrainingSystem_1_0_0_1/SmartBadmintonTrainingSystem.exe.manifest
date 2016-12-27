@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
+  <asmv1:assemblyIdentity name="SmartBadmintonTrainingSystem.exe" version="1.0.0.1" publicKeyToken="4c934d658dcbdb5c" language="neutral" processorArchitecture="msil" type="win32" />
+  <application />
+  <entryPoint>
+    <assemblyIdentity name="SmartBadmintonTrainingSystem" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+    <commandLine file="SmartBadmintonTrainingSystem.exe" parameters="" />
+  </entryPoint>
+  <trustInfo>
+    <security>
+      <applicationRequestMinimum>
+        <PermissionSet Unrestricted="true" ID="Custom" SameSite="site" />
+        <defaultAssemblyRequest permissionSetReference="Custom" />
+      </applicationRequestMinimum>
+      <requestedPrivileges xmlns="urn:schemas-microsoft-com:asm.v3">
+        <!--
+          UAC 매니페스트 옵션
+          Windows 사용자 계정 컨트롤 수준을 변경하려면 
+          requestedExecutionLevel 노드를 다음 중 하나로 바꾸십시오.
+
+        <requestedExecutionLevel  level="asInvoker" uiAccess="false" />
+        <requestedExecutionLevel  level="requireAdministrator" uiAccess="false" />
+        <requestedExecutionLevel  level="highestAvailable" uiAccess="false" />
+
+         이전 버전과의 호환성을 위해 파일 및 레지스트리 가상화를 사용하려면 
+         requestedExecutionLevel 노드를 삭제하십시오.
+    -->
+        <requestedExecutionLevel level="asInvoker" uiAccess="false" />
+      </requestedPrivileges>
+    </security>
+  </trustInfo>
+  <dependency>
+    <dependentOS>
+      <osVersionInfo>
+        <os majorVersion="5" minorVersion="1" buildNumber="2600" servicePackMajor="0" />
+      </osVersionInfo>
+    </dependentOS>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Microsoft.Windows.CommonLanguageRuntime" version="4.0.30319.0" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="MySql.Data" version="6.9.9.0" publicKeyToken="C5687FC88969C44D" language="neutral" processorArchitecture="msil" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="OxyPlot" version="1.0.0.0" publicKeyToken="638079A8F0BD61E9" language="neutral" processorArchitecture="msil" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="OxyPlot.WindowsForms" version="1.0.0.0" publicKeyToken="245EACD6B5D2D338" language="neutral" processorArchitecture="msil" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="OxyPlot.Wpf" version="1.0.0.0" publicKeyToken="75E952BA404CDBB0" language="neutral" processorArchitecture="msil" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SmartBadmintonTrainingSystem.exe" size="197120">
+      <assemblyIdentity name="SmartBadmintonTrainingSystem" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>t8GvVarz9OrCMG+XTGCVFJFp8j3xdkKS8wQwOvIvNJw=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <file name="SmartBadmintonTrainingSystem.exe.config" size="187">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>xm4bo26HQ0LNVwz1vdPYtzhkpMnp2AI5i+f0b+OahTI=</dsig:DigestValue>
+    </hash>
+  </file>
+<publisherIdentity name="CN=CGLAB-PC\CGLAB" issuerKeyHash="485395b7a72cbd325523b32177228ecc60887d8e" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>uRAALtnQ9HRcaK3FopzaERtmyGw0w6OVS52qIHbSFOk=</DigestValue></Reference></SignedInfo><SignatureValue>RRsrO5v6Lkd0oYzkICzFfrX5pH9uf1GLmR9gHpOpT9R792Hfx5x5FLlQz9ms09rciMSUxoTLsxRd5fr5D6LEIFikCuaxfHXhB4XiDGeDet1bHHZsLomIKWCtU0XLUuTSlKlPW1oHbkCkJUPuCThIwb3XffYfhuJJnbQQ7/uqmgI=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>rdQi7XPIrDMnhqdheiOXvtiVsFbZR69U/stWzHYZtnzG4MVEq9+tFQ335frFD4wA7H25eajlATkLUe870PI+eQ1338cs0q/kTIiiLhi27EXQc//gON+JB4Il4RwwKOkjnykzJVyEhLJALnbrvhDbw15TvYgKxbE6sbGvdgLXcVc=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="e914d27620aa9d4b95a3c3346cc8661b11da9ca2c5ad685c74f4d0d92e0010b9" Description="" Url=""><as:assemblyIdentity name="SmartBadmintonTrainingSystem.exe" version="1.0.0.1" publicKeyToken="4c934d658dcbdb5c" language="neutral" processorArchitecture="msil" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN=CGLAB-PC\CGLAB</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>MdGOFiNGdua1v0j6y44k5wVHmOSjagf/00au8OGCwik=</DigestValue></Reference></SignedInfo><SignatureValue>XJhjrgLqzfk3sviB0LHCKQwZbi+wRQ6DJxDaSuLN1rutQJKOgHb30bZcoFtA6SapkPLNJlMnvDDfdDXxyTcIOC7eTV2jauj9a3TmwVbtuJonlDWLt1G+ExLXX5V5wt1WvaGIcNvkJmu+0ws763gyWxDlHD9aMn9Ouz0ymRLMnpo=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>rdQi7XPIrDMnhqdheiOXvtiVsFbZR69U/stWzHYZtnzG4MVEq9+tFQ335frFD4wA7H25eajlATkLUe870PI+eQ1338cs0q/kTIiiLhi27EXQc//gON+JB4Il4RwwKOkjnykzJVyEhLJALnbrvhDbw15TvYgKxbE6sbGvdgLXcVc=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIIB0TCCATqgAwIBAgIQUUmkFgdxFblDpRxk04N6UzANBgkqhkiG9w0BAQsFADAnMSUwIwYDVQQDHhwAQwBHAEwAQQBCAC0AUABDAFwAQwBHAEwAQQBCMB4XDTE2MTEyOTEyMzMwMloXDTE3MTEyOTE4MzMwMlowJzElMCMGA1UEAx4cAEMARwBMAEEAQgAtAFAAQwBcAEMARwBMAEEAQjCBnzANBgkqhkiG9w0BAQEFAAOBjQAwgYkCgYEArdQi7XPIrDMnhqdheiOXvtiVsFbZR69U/stWzHYZtnzG4MVEq9+tFQ335frFD4wA7H25eajlATkLUe870PI+eQ1338cs0q/kTIiiLhi27EXQc//gON+JB4Il4RwwKOkjnykzJVyEhLJALnbrvhDbw15TvYgKxbE6sbGvdgLXcVcCAwEAATANBgkqhkiG9w0BAQsFAAOBgQBUp1S2vTkTYFFU+G7WGlauqq5jQIJsVdpYCDtlmJLGY44D5cJ8etgMuwwVxdbGPa45rWGhtYwLe+YMO7vBatV5oi5tk6py5TC9jmSvnH5tz6qmixRMx/GvBY6VC4aemKlQCy8nnd0XXMa3YCvLdy1GpxJ9Lduqs2mUQV7GrLYp0A==</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>

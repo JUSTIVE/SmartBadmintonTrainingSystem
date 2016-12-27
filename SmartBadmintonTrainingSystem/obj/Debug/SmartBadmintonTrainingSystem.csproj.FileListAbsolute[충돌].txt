@@ -1,0 +1,181 @@
+D:\2016년도 순천향대개인자료\연구과제\순천향대ITRC창의융합과제\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\bin\Debug\SmartBadmintonTrainingSystem.exe.config
+D:\2016년도 순천향대개인자료\연구과제\순천향대ITRC창의융합과제\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\bin\Debug\SmartBadmintonTrainingSystem.exe
+D:\2016년도 순천향대개인자료\연구과제\순천향대ITRC창의융합과제\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\bin\Debug\SmartBadmintonTrainingSystem.pdb
+D:\2016년도 순천향대개인자료\연구과제\순천향대ITRC창의융합과제\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\obj\Debug\SmartBadmintonTrainingSystem.Form1.resources
+D:\2016년도 순천향대개인자료\연구과제\순천향대ITRC창의융합과제\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\obj\Debug\SmartBadmintonTrainingSystem.Properties.Resources.resources
+D:\2016년도 순천향대개인자료\연구과제\순천향대ITRC창의융합과제\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\obj\Debug\SmartBadmintonTrainingSystem.csproj.GenerateResource.Cache
+D:\2016년도 순천향대개인자료\연구과제\순천향대ITRC창의융합과제\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\obj\Debug\SmartBadmintonTrainingSystem.exe
+D:\2016년도 순천향대개인자료\연구과제\순천향대ITRC창의융합과제\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\obj\Debug\SmartBadmintonTrainingSystem.pdb
+D:\2016년도 순천향대개인자료\연구과제\순천향대ITRC창의융합과제\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\obj\Debug\SmartBadmintonTrainingSystem.csprojResolveAssemblyReference.cache
+D:\2016년도 순천향대개인자료\연구과제\순천향대ITRC창의융합과제\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\obj\Debug\SmartBadmintonTrainingSystem.Join.resources
+D:\2016년도 순천향대개인자료\연구과제\순천향대ITRC창의융합과제\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\obj\Debug\SmartBadmintonTrainingSystem.SelectForm.resources
+D:\2016년도 순천향대개인자료\연구과제\순천향대ITRC창의융합과제\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\obj\Debug\SmartBadmintonTrainingSystem.TestMode.resources
+D:\2016년도 순천향대개인자료\연구과제\순천향대ITRC창의융합과제\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\bin\Debug\OxyPlot.dll
+D:\2016년도 순천향대개인자료\연구과제\순천향대ITRC창의융합과제\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\bin\Debug\OxyPlot.pdb
+D:\2016년도 순천향대개인자료\연구과제\순천향대ITRC창의융합과제\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\bin\Debug\OxyPlot.xml
+D:\2016년도 순천향대개인자료\연구과제\순천향대ITRC창의융합과제\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\bin\Debug\OxyPlot.WindowsForms.dll
+D:\2016년도 순천향대개인자료\연구과제\순천향대ITRC창의융합과제\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\bin\Debug\OxyPlot.Wpf.dll
+D:\2016년도 순천향대개인자료\연구과제\순천향대ITRC창의융합과제\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\bin\Debug\OxyPlot.WindowsForms.pdb
+D:\2016년도 순천향대개인자료\연구과제\순천향대ITRC창의융합과제\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\bin\Debug\OxyPlot.WindowsForms.xml
+D:\2016년도 순천향대개인자료\연구과제\순천향대ITRC창의융합과제\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\bin\Debug\OxyPlot.Wpf.pdb
+D:\2016년도 순천향대개인자료\연구과제\순천향대ITRC창의융합과제\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\bin\Debug\OxyPlot.Wpf.xml
+D:\2016년도 순천향대개인자료\연구과제\순천향대ITRC창의융합과제\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\obj\Debug\SmartBadmintonTrainingSystem.Test.resources
+D:\2016년도 순천향대개인자료\연구과제\순천향대ITRC창의융합과제\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\obj\Debug\SmartBadmintonTrainingSystem.InputForm.resources
+D:\2016년도 순천향대개인자료\연구과제\순천향대ITRC창의융합과제\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\obj\Debug\SmartBadmintonTrainingSystem.TestResult_number.resources
+D:\2016년도 순천향대개인자료\연구과제\순천향대ITRC창의융합과제\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\obj\Debug\SmartBadmintonTrainingSystem.Training.resources
+D:\2016년도 순천향대개인자료\연구과제\순천향대ITRC창의융합과제\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\obj\Debug\SmartBadmintonTrainingSystem.TrainingMode.resources
+D:\2016년도 순천향대개인자료\연구과제\순천향대ITRC창의융합과제\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\obj\Debug\SmartBadmintonTrainingSystem.Configuration.resources
+C:\Users\CGLAB\Desktop\새 폴더 (3)\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\bin\Debug\SmartBadmintonTrainingSystem.exe.config
+C:\Users\CGLAB\Desktop\새 폴더 (3)\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\obj\Debug\SmartBadmintonTrainingSystem.exe
+C:\Users\CGLAB\Desktop\새 폴더 (3)\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\obj\Debug\SmartBadmintonTrainingSystem.pdb
+C:\Users\CGLAB\Desktop\새 폴더 (3)\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\bin\Debug\SmartBadmintonTrainingSystem.exe
+C:\Users\CGLAB\Desktop\새 폴더 (3)\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\bin\Debug\SmartBadmintonTrainingSystem.pdb
+C:\Users\CGLAB\Desktop\새 폴더 (3)\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\bin\Debug\OxyPlot.dll
+C:\Users\CGLAB\Desktop\새 폴더 (3)\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\bin\Debug\OxyPlot.WindowsForms.dll
+C:\Users\CGLAB\Desktop\새 폴더 (3)\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\bin\Debug\OxyPlot.Wpf.dll
+C:\Users\CGLAB\Desktop\새 폴더 (3)\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\bin\Debug\OxyPlot.pdb
+C:\Users\CGLAB\Desktop\새 폴더 (3)\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\bin\Debug\OxyPlot.xml
+C:\Users\CGLAB\Desktop\새 폴더 (3)\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\bin\Debug\OxyPlot.WindowsForms.pdb
+C:\Users\CGLAB\Desktop\새 폴더 (3)\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\bin\Debug\OxyPlot.WindowsForms.xml
+C:\Users\CGLAB\Desktop\새 폴더 (3)\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\bin\Debug\OxyPlot.Wpf.pdb
+C:\Users\CGLAB\Desktop\새 폴더 (3)\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\bin\Debug\OxyPlot.Wpf.xml
+C:\Users\CGLAB\Desktop\새 폴더 (3)\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\obj\Debug\SmartBadmintonTrainingSystem.csprojResolveAssemblyReference.cache
+C:\Users\CGLAB\Desktop\새 폴더 (3)\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\obj\Debug\SmartBadmintonTrainingSystem.Configuration.resources
+C:\Users\CGLAB\Desktop\새 폴더 (3)\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\obj\Debug\SmartBadmintonTrainingSystem.Form1.resources
+C:\Users\CGLAB\Desktop\새 폴더 (3)\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\obj\Debug\SmartBadmintonTrainingSystem.TestResult_number.resources
+C:\Users\CGLAB\Desktop\새 폴더 (3)\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\obj\Debug\SmartBadmintonTrainingSystem.InputForm.resources
+C:\Users\CGLAB\Desktop\새 폴더 (3)\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\obj\Debug\SmartBadmintonTrainingSystem.Join.resources
+C:\Users\CGLAB\Desktop\새 폴더 (3)\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\obj\Debug\SmartBadmintonTrainingSystem.Properties.Resources.resources
+C:\Users\CGLAB\Desktop\새 폴더 (3)\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\obj\Debug\SmartBadmintonTrainingSystem.SelectForm.resources
+C:\Users\CGLAB\Desktop\새 폴더 (3)\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\obj\Debug\SmartBadmintonTrainingSystem.Test.resources
+C:\Users\CGLAB\Desktop\새 폴더 (3)\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\obj\Debug\SmartBadmintonTrainingSystem.TestMode.resources
+C:\Users\CGLAB\Desktop\새 폴더 (3)\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\obj\Debug\SmartBadmintonTrainingSystem.Training.resources
+C:\Users\CGLAB\Desktop\새 폴더 (3)\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\obj\Debug\SmartBadmintonTrainingSystem.TrainingMode.resources
+C:\Users\CGLAB\Desktop\새 폴더 (3)\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\obj\Debug\SmartBadmintonTrainingSystem.csproj.GenerateResource.Cache
+C:\Users\민상\Desktop\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\bin\Debug\SmartBadmintonTrainingSystem.exe.config
+C:\Users\민상\Desktop\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\bin\Debug\SmartBadmintonTrainingSystem.exe
+C:\Users\민상\Desktop\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\bin\Debug\SmartBadmintonTrainingSystem.pdb
+C:\Users\민상\Desktop\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\bin\Debug\MySql.Data.dll
+C:\Users\민상\Desktop\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\bin\Debug\OxyPlot.dll
+C:\Users\민상\Desktop\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\bin\Debug\OxyPlot.WindowsForms.dll
+C:\Users\민상\Desktop\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\bin\Debug\OxyPlot.Wpf.dll
+C:\Users\민상\Desktop\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\bin\Debug\MySql.Data.xml
+C:\Users\민상\Desktop\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\bin\Debug\OxyPlot.pdb
+C:\Users\민상\Desktop\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\bin\Debug\OxyPlot.xml
+C:\Users\민상\Desktop\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\bin\Debug\OxyPlot.WindowsForms.pdb
+C:\Users\민상\Desktop\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\bin\Debug\OxyPlot.WindowsForms.xml
+C:\Users\민상\Desktop\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\bin\Debug\OxyPlot.Wpf.pdb
+C:\Users\민상\Desktop\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\bin\Debug\OxyPlot.Wpf.xml
+C:\Users\민상\Desktop\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\obj\Debug\SmartBadmintonTrainingSystem.csprojResolveAssemblyReference.cache
+C:\Users\민상\Desktop\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\obj\Debug\SmartBadmintonTrainingSystem.Configuration.resources
+C:\Users\민상\Desktop\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\obj\Debug\SmartBadmintonTrainingSystem.Form1.resources
+C:\Users\민상\Desktop\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\obj\Debug\SmartBadmintonTrainingSystem.TestResult_number.resources
+C:\Users\민상\Desktop\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\obj\Debug\SmartBadmintonTrainingSystem.InputForm.resources
+C:\Users\민상\Desktop\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\obj\Debug\SmartBadmintonTrainingSystem.Join.resources
+C:\Users\민상\Desktop\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\obj\Debug\SmartBadmintonTrainingSystem.Properties.Resources.resources
+C:\Users\민상\Desktop\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\obj\Debug\SmartBadmintonTrainingSystem.SelectForm.resources
+C:\Users\민상\Desktop\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\obj\Debug\SmartBadmintonTrainingSystem.Test.resources
+C:\Users\민상\Desktop\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\obj\Debug\SmartBadmintonTrainingSystem.TestMode.resources
+C:\Users\민상\Desktop\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\obj\Debug\SmartBadmintonTrainingSystem.Training.resources
+C:\Users\민상\Desktop\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\obj\Debug\SmartBadmintonTrainingSystem.TrainingMode.resources
+C:\Users\민상\Desktop\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\obj\Debug\SmartBadmintonTrainingSystem.csproj.GenerateResource.Cache
+C:\Users\민상\Desktop\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\obj\Debug\SmartBadmintonTrainingSystem.exe
+C:\Users\민상\Desktop\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\obj\Debug\SmartBadmintonTrainingSystem.pdb
+C:\Users\CGLAB\Desktop\ㅅ2\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\bin\Debug\SmartBadmintonTrainingSystem.exe.config
+C:\Users\CGLAB\Desktop\ㅅ2\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\obj\Debug\SmartBadmintonTrainingSystem.exe
+C:\Users\CGLAB\Desktop\ㅅ2\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\obj\Debug\SmartBadmintonTrainingSystem.pdb
+C:\Users\CGLAB\Desktop\ㅅ2\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\bin\Debug\SmartBadmintonTrainingSystem.exe
+C:\Users\CGLAB\Desktop\ㅅ2\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\bin\Debug\SmartBadmintonTrainingSystem.pdb
+C:\Users\CGLAB\Desktop\ㅅ2\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\bin\Debug\OxyPlot.dll
+C:\Users\CGLAB\Desktop\ㅅ2\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\bin\Debug\OxyPlot.WindowsForms.dll
+C:\Users\CGLAB\Desktop\ㅅ2\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\bin\Debug\OxyPlot.Wpf.dll
+C:\Users\CGLAB\Desktop\ㅅ2\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\bin\Debug\OxyPlot.pdb
+C:\Users\CGLAB\Desktop\ㅅ2\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\bin\Debug\OxyPlot.xml
+C:\Users\CGLAB\Desktop\ㅅ2\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\bin\Debug\OxyPlot.WindowsForms.pdb
+C:\Users\CGLAB\Desktop\ㅅ2\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\bin\Debug\OxyPlot.WindowsForms.xml
+C:\Users\CGLAB\Desktop\ㅅ2\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\bin\Debug\OxyPlot.Wpf.pdb
+C:\Users\CGLAB\Desktop\ㅅ2\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\bin\Debug\OxyPlot.Wpf.xml
+C:\Users\CGLAB\Desktop\ㅅ2\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\obj\Debug\SmartBadmintonTrainingSystem.csprojResolveAssemblyReference.cache
+C:\Users\CGLAB\Desktop\ㅅ2\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\obj\Debug\SmartBadmintonTrainingSystem.Configuration.resources
+C:\Users\CGLAB\Desktop\ㅅ2\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\obj\Debug\SmartBadmintonTrainingSystem.Form1.resources
+C:\Users\CGLAB\Desktop\ㅅ2\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\obj\Debug\SmartBadmintonTrainingSystem.TestResult_number.resources
+C:\Users\CGLAB\Desktop\ㅅ2\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\obj\Debug\SmartBadmintonTrainingSystem.InputForm.resources
+C:\Users\CGLAB\Desktop\ㅅ2\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\obj\Debug\SmartBadmintonTrainingSystem.Join.resources
+C:\Users\CGLAB\Desktop\ㅅ2\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\obj\Debug\SmartBadmintonTrainingSystem.Properties.Resources.resources
+C:\Users\CGLAB\Desktop\ㅅ2\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\obj\Debug\SmartBadmintonTrainingSystem.SelectForm.resources
+C:\Users\CGLAB\Desktop\ㅅ2\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\obj\Debug\SmartBadmintonTrainingSystem.Test.resources
+C:\Users\CGLAB\Desktop\ㅅ2\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\obj\Debug\SmartBadmintonTrainingSystem.TestMode.resources
+C:\Users\CGLAB\Desktop\ㅅ2\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\obj\Debug\SmartBadmintonTrainingSystem.Training.resources
+C:\Users\CGLAB\Desktop\ㅅ2\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\obj\Debug\SmartBadmintonTrainingSystem.TrainingMode.resources
+C:\Users\CGLAB\Desktop\ㅅ2\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\obj\Debug\SmartBadmintonTrainingSystem.csproj.GenerateResource.Cache
+C:\Users\CGLAB\Desktop\ㅅ2\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\bin\Debug\SmartBadmintonTrainingSystem.exe.manifest
+C:\Users\CGLAB\Desktop\ㅅ2\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\bin\Debug\SmartBadmintonTrainingSystem.application
+C:\Users\CGLAB\Desktop\ㅅ2\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\obj\Debug\SmartBadmintonTrainingSystem.exe.manifest
+C:\Users\CGLAB\Desktop\ㅅ2\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\obj\Debug\SmartBadmintonTrainingSystem.application
+D:\2016년도 순천향대개인자료\연구과제\순천향대ITRC창의융합과제\코드v2\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\bin\Debug\SmartBadmintonTrainingSystem.exe.config
+D:\2016년도 순천향대개인자료\연구과제\순천향대ITRC창의융합과제\코드v2\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\obj\Debug\SmartBadmintonTrainingSystem.exe
+D:\2016년도 순천향대개인자료\연구과제\순천향대ITRC창의융합과제\코드v2\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\obj\Debug\SmartBadmintonTrainingSystem.pdb
+D:\2016년도 순천향대개인자료\연구과제\순천향대ITRC창의융합과제\코드v2\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\bin\Debug\SmartBadmintonTrainingSystem.exe.manifest
+D:\2016년도 순천향대개인자료\연구과제\순천향대ITRC창의융합과제\코드v2\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\bin\Debug\SmartBadmintonTrainingSystem.application
+D:\2016년도 순천향대개인자료\연구과제\순천향대ITRC창의융합과제\코드v2\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\bin\Debug\SmartBadmintonTrainingSystem.exe
+D:\2016년도 순천향대개인자료\연구과제\순천향대ITRC창의융합과제\코드v2\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\bin\Debug\SmartBadmintonTrainingSystem.pdb
+D:\2016년도 순천향대개인자료\연구과제\순천향대ITRC창의융합과제\코드v2\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\bin\Debug\OxyPlot.dll
+D:\2016년도 순천향대개인자료\연구과제\순천향대ITRC창의융합과제\코드v2\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\bin\Debug\OxyPlot.WindowsForms.dll
+D:\2016년도 순천향대개인자료\연구과제\순천향대ITRC창의융합과제\코드v2\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\bin\Debug\OxyPlot.Wpf.dll
+D:\2016년도 순천향대개인자료\연구과제\순천향대ITRC창의융합과제\코드v2\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\bin\Debug\OxyPlot.pdb
+D:\2016년도 순천향대개인자료\연구과제\순천향대ITRC창의융합과제\코드v2\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\bin\Debug\OxyPlot.xml
+D:\2016년도 순천향대개인자료\연구과제\순천향대ITRC창의융합과제\코드v2\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\bin\Debug\OxyPlot.WindowsForms.pdb
+D:\2016년도 순천향대개인자료\연구과제\순천향대ITRC창의융합과제\코드v2\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\bin\Debug\OxyPlot.WindowsForms.xml
+D:\2016년도 순천향대개인자료\연구과제\순천향대ITRC창의융합과제\코드v2\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\bin\Debug\OxyPlot.Wpf.pdb
+D:\2016년도 순천향대개인자료\연구과제\순천향대ITRC창의융합과제\코드v2\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\bin\Debug\OxyPlot.Wpf.xml
+D:\2016년도 순천향대개인자료\연구과제\순천향대ITRC창의융합과제\코드v2\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\obj\Debug\SmartBadmintonTrainingSystem.csprojResolveAssemblyReference.cache
+D:\2016년도 순천향대개인자료\연구과제\순천향대ITRC창의융합과제\코드v2\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\obj\Debug\SmartBadmintonTrainingSystem.Configuration.resources
+D:\2016년도 순천향대개인자료\연구과제\순천향대ITRC창의융합과제\코드v2\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\obj\Debug\SmartBadmintonTrainingSystem.Form1.resources
+D:\2016년도 순천향대개인자료\연구과제\순천향대ITRC창의융합과제\코드v2\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\obj\Debug\SmartBadmintonTrainingSystem.TestResult_number.resources
+D:\2016년도 순천향대개인자료\연구과제\순천향대ITRC창의융합과제\코드v2\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\obj\Debug\SmartBadmintonTrainingSystem.InputForm.resources
+D:\2016년도 순천향대개인자료\연구과제\순천향대ITRC창의융합과제\코드v2\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\obj\Debug\SmartBadmintonTrainingSystem.Join.resources
+D:\2016년도 순천향대개인자료\연구과제\순천향대ITRC창의융합과제\코드v2\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\obj\Debug\SmartBadmintonTrainingSystem.Properties.Resources.resources
+D:\2016년도 순천향대개인자료\연구과제\순천향대ITRC창의융합과제\코드v2\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\obj\Debug\SmartBadmintonTrainingSystem.SelectForm.resources
+D:\2016년도 순천향대개인자료\연구과제\순천향대ITRC창의융합과제\코드v2\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\obj\Debug\SmartBadmintonTrainingSystem.Test.resources
+D:\2016년도 순천향대개인자료\연구과제\순천향대ITRC창의융합과제\코드v2\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\obj\Debug\SmartBadmintonTrainingSystem.TestMode.resources
+D:\2016년도 순천향대개인자료\연구과제\순천향대ITRC창의융합과제\코드v2\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\obj\Debug\SmartBadmintonTrainingSystem.Training.resources
+D:\2016년도 순천향대개인자료\연구과제\순천향대ITRC창의융합과제\코드v2\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\obj\Debug\SmartBadmintonTrainingSystem.TrainingMode.resources
+D:\2016년도 순천향대개인자료\연구과제\순천향대ITRC창의융합과제\코드v2\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\obj\Debug\SmartBadmintonTrainingSystem.csproj.GenerateResource.Cache
+D:\2016년도 순천향대개인자료\연구과제\순천향대ITRC창의융합과제\코드v2\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\obj\Debug\SmartBadmintonTrainingSystem.exe.manifest
+D:\2016년도 순천향대개인자료\연구과제\순천향대ITRC창의융합과제\코드v2\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\obj\Debug\SmartBadmintonTrainingSystem.application
+D:\2016년도 순천향대개인자료\연구과제\순천향대ITRC창의융합과제\코드v2\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\obj\Debug\SmartBadmintonTrainingSystem.TestResult_Section.resources
+C:\Users\CGLAB\Desktop\SmartBadmintonTrainingSystem (2)\SmartBadmintonTrainingSystem\bin\Debug\SmartBadmintonTrainingSystem.exe.config
+C:\Users\CGLAB\Desktop\SmartBadmintonTrainingSystem (2)\SmartBadmintonTrainingSystem\obj\Debug\SmartBadmintonTrainingSystem.exe
+C:\Users\CGLAB\Desktop\SmartBadmintonTrainingSystem (2)\SmartBadmintonTrainingSystem\obj\Debug\SmartBadmintonTrainingSystem.pdb
+C:\Users\CGLAB\Desktop\SmartBadmintonTrainingSystem (2)\SmartBadmintonTrainingSystem\bin\Debug\SmartBadmintonTrainingSystem.exe.manifest
+C:\Users\CGLAB\Desktop\SmartBadmintonTrainingSystem (2)\SmartBadmintonTrainingSystem\bin\Debug\SmartBadmintonTrainingSystem.application
+C:\Users\CGLAB\Desktop\SmartBadmintonTrainingSystem (2)\SmartBadmintonTrainingSystem\bin\Debug\SmartBadmintonTrainingSystem.exe
+C:\Users\CGLAB\Desktop\SmartBadmintonTrainingSystem (2)\SmartBadmintonTrainingSystem\bin\Debug\SmartBadmintonTrainingSystem.pdb
+C:\Users\CGLAB\Desktop\SmartBadmintonTrainingSystem (2)\SmartBadmintonTrainingSystem\bin\Debug\OxyPlot.dll
+C:\Users\CGLAB\Desktop\SmartBadmintonTrainingSystem (2)\SmartBadmintonTrainingSystem\bin\Debug\OxyPlot.WindowsForms.dll
+C:\Users\CGLAB\Desktop\SmartBadmintonTrainingSystem (2)\SmartBadmintonTrainingSystem\bin\Debug\OxyPlot.Wpf.dll
+C:\Users\CGLAB\Desktop\SmartBadmintonTrainingSystem (2)\SmartBadmintonTrainingSystem\bin\Debug\OxyPlot.pdb
+C:\Users\CGLAB\Desktop\SmartBadmintonTrainingSystem (2)\SmartBadmintonTrainingSystem\bin\Debug\OxyPlot.xml
+C:\Users\CGLAB\Desktop\SmartBadmintonTrainingSystem (2)\SmartBadmintonTrainingSystem\bin\Debug\OxyPlot.WindowsForms.pdb
+C:\Users\CGLAB\Desktop\SmartBadmintonTrainingSystem (2)\SmartBadmintonTrainingSystem\bin\Debug\OxyPlot.WindowsForms.xml
+C:\Users\CGLAB\Desktop\SmartBadmintonTrainingSystem (2)\SmartBadmintonTrainingSystem\bin\Debug\OxyPlot.Wpf.pdb
+C:\Users\CGLAB\Desktop\SmartBadmintonTrainingSystem (2)\SmartBadmintonTrainingSystem\bin\Debug\OxyPlot.Wpf.xml
+C:\Users\CGLAB\Desktop\SmartBadmintonTrainingSystem (2)\SmartBadmintonTrainingSystem\obj\Debug\SmartBadmintonTrainingSystem.csprojResolveAssemblyReference.cache
+C:\Users\CGLAB\Desktop\SmartBadmintonTrainingSystem (2)\SmartBadmintonTrainingSystem\obj\Debug\SmartBadmintonTrainingSystem.Configuration.resources
+C:\Users\CGLAB\Desktop\SmartBadmintonTrainingSystem (2)\SmartBadmintonTrainingSystem\obj\Debug\SmartBadmintonTrainingSystem.Form1.resources
+C:\Users\CGLAB\Desktop\SmartBadmintonTrainingSystem (2)\SmartBadmintonTrainingSystem\obj\Debug\SmartBadmintonTrainingSystem.TestResult_number.resources
+C:\Users\CGLAB\Desktop\SmartBadmintonTrainingSystem (2)\SmartBadmintonTrainingSystem\obj\Debug\SmartBadmintonTrainingSystem.InputForm.resources
+C:\Users\CGLAB\Desktop\SmartBadmintonTrainingSystem (2)\SmartBadmintonTrainingSystem\obj\Debug\SmartBadmintonTrainingSystem.Join.resources
+C:\Users\CGLAB\Desktop\SmartBadmintonTrainingSystem (2)\SmartBadmintonTrainingSystem\obj\Debug\SmartBadmintonTrainingSystem.Properties.Resources.resources
+C:\Users\CGLAB\Desktop\SmartBadmintonTrainingSystem (2)\SmartBadmintonTrainingSystem\obj\Debug\SmartBadmintonTrainingSystem.SelectForm.resources
+C:\Users\CGLAB\Desktop\SmartBadmintonTrainingSystem (2)\SmartBadmintonTrainingSystem\obj\Debug\SmartBadmintonTrainingSystem.Test.resources
+C:\Users\CGLAB\Desktop\SmartBadmintonTrainingSystem (2)\SmartBadmintonTrainingSystem\obj\Debug\SmartBadmintonTrainingSystem.TestMode.resources
+C:\Users\CGLAB\Desktop\SmartBadmintonTrainingSystem (2)\SmartBadmintonTrainingSystem\obj\Debug\SmartBadmintonTrainingSystem.TestResult_Section.resources
+C:\Users\CGLAB\Desktop\SmartBadmintonTrainingSystem (2)\SmartBadmintonTrainingSystem\obj\Debug\SmartBadmintonTrainingSystem.Training.resources
+C:\Users\CGLAB\Desktop\SmartBadmintonTrainingSystem (2)\SmartBadmintonTrainingSystem\obj\Debug\SmartBadmintonTrainingSystem.TrainingMode.resources
+C:\Users\CGLAB\Desktop\SmartBadmintonTrainingSystem (2)\SmartBadmintonTrainingSystem\obj\Debug\SmartBadmintonTrainingSystem.csproj.GenerateResource.Cache
+C:\Users\CGLAB\Desktop\SmartBadmintonTrainingSystem (2)\SmartBadmintonTrainingSystem\obj\Debug\SmartBadmintonTrainingSystem.exe.manifest
+C:\Users\CGLAB\Desktop\SmartBadmintonTrainingSystem (2)\SmartBadmintonTrainingSystem\obj\Debug\SmartBadmintonTrainingSystem.application
+C:\Users\CGLAB\Google 드라이브\Badminton\SmartBadmintonTrainingSystem (2)\SmartBadmintonTrainingSystem\bin\Debug\SmartBadmintonTrainingSystem.exe.config
+C:\Users\CGLAB\Google 드라이브\Badminton\SmartBadmintonTrainingSystem (2)\SmartBadmintonTrainingSystem\obj\Debug\SmartBadmintonTrainingSystem.exe
+C:\Users\CGLAB\Google 드라이브\Badminton\SmartBadmintonTrainingSystem (2)\SmartBadmintonTrainingSystem\obj\Debug\SmartBadmintonTrainingSystem.pdb
