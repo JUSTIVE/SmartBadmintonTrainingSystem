@@ -417,7 +417,7 @@ namespace SmartBadmintonTrainingSystem
         {
             buffer.Clear();
         }
-        public void isSwing(int number)//1-basethrea
+        public void isSwing(int number)
         {
             switch (number)
             {
@@ -581,14 +581,13 @@ namespace SmartBadmintonTrainingSystem
                 for (; ; )
                 {
                     if (center_flag1)
-                    {
-                        center.Image = SmartBadmintonTrainingSystem.Properties.Resources.green_circle;
+                    {                        
                         break;
                     }
                     else isCenter();
                 }
                 sw2.Stop();
-                
+                center.Image = SmartBadmintonTrainingSystem.Properties.Resources.green_circle;
 
                 T1[number - 1] = float.Parse(sw.ElapsedMilliseconds.ToString()) * 0.001f;
                 T2[number - 1] = float.Parse(sw2.ElapsedMilliseconds.ToString()) * 0.001f;
@@ -600,7 +599,6 @@ namespace SmartBadmintonTrainingSystem
             AutoClosingMessageBox.Show("테스트 종료", "종료 알림", 250);
             AutoClosingMessageBox.Show("데이터 전송", "상태 알림", 250);
             threadFlag = false;
-
             for (int i = 0; i < 8; i++)
             {
                 insertDatabase(u_instance.uID, u_instance.uPW, T1[i], i + 1, u_instance.LoginDate, 0, TestCount);
