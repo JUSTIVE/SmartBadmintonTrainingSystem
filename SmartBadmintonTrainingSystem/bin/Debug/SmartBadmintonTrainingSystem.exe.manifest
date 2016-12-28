@@ -16,14 +16,14 @@
         <!--
           UAC 매니페스트 옵션
           Windows 사용자 계정 컨트롤 수준을 변경하려면 
-          requestedExecutionLevel 노드를 다음 중 하나로 바꾸세요.
+          requestedExecutionLevel 노드를 다음 중 하나로 바꾸십시오.
 
         <requestedExecutionLevel  level="asInvoker" uiAccess="false" />
         <requestedExecutionLevel  level="requireAdministrator" uiAccess="false" />
         <requestedExecutionLevel  level="highestAvailable" uiAccess="false" />
 
          이전 버전과의 호환성을 위해 파일 및 레지스트리 가상화를 사용하려면 
-         requestedExecutionLevel 노드를 삭제하세요.
+         requestedExecutionLevel 노드를 삭제하십시오.
     -->
         <requestedExecutionLevel level="asInvoker" uiAccess="false" />
       </requestedPrivileges>
@@ -90,14 +90,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SmartBadmintonTrainingSystem.exe" size="340408">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SmartBadmintonTrainingSystem.exe" size="342456">
       <assemblyIdentity name="SmartBadmintonTrainingSystem" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>8DHqOmOGCGZCzj6DUON3fCLZAq3J/MWxFAFWMfT+uwQ=</dsig:DigestValue>
+        <dsig:DigestValue>tc3a0U1VCTZaUXkwhz8pn4xijJHAuRT+g7Ww0vTJhxg=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

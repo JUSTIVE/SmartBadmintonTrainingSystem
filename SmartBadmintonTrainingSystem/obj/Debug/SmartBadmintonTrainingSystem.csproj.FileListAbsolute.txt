@@ -402,3 +402,37 @@ C:\Users\민상\Desktop\SmartBadmintonTrainingSystem (2) (3)\SmartBadmintonTrain
 C:\Users\민상\Desktop\SmartBadmintonTrainingSystem (2) (3)\SmartBadmintonTrainingSystem\obj\Debug\SmartBadmintonTrainingSystem.application
 C:\Users\민상\Desktop\SmartBadmintonTrainingSystem (2) (3)\SmartBadmintonTrainingSystem\obj\Debug\SmartBadmintonTrainingSystem.exe
 C:\Users\민상\Desktop\SmartBadmintonTrainingSystem (2) (3)\SmartBadmintonTrainingSystem\obj\Debug\SmartBadmintonTrainingSystem.pdb
+C:\Users\BenKim\Desktop\research\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\bin\Debug\SmartBadmintonTrainingSystem.exe.config
+C:\Users\BenKim\Desktop\research\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\obj\Debug\SmartBadmintonTrainingSystem.exe
+C:\Users\BenKim\Desktop\research\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\obj\Debug\SmartBadmintonTrainingSystem.pdb
+C:\Users\BenKim\Desktop\research\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\bin\Debug\SmartBadmintonTrainingSystem.exe.manifest
+C:\Users\BenKim\Desktop\research\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\bin\Debug\SmartBadmintonTrainingSystem.application
+C:\Users\BenKim\Desktop\research\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\bin\Debug\SmartBadmintonTrainingSystem.exe
+C:\Users\BenKim\Desktop\research\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\bin\Debug\SmartBadmintonTrainingSystem.pdb
+C:\Users\BenKim\Desktop\research\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\bin\Debug\MySql.Data.dll
+C:\Users\BenKim\Desktop\research\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\bin\Debug\OxyPlot.dll
+C:\Users\BenKim\Desktop\research\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\bin\Debug\OxyPlot.WindowsForms.dll
+C:\Users\BenKim\Desktop\research\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\bin\Debug\OxyPlot.Wpf.dll
+C:\Users\BenKim\Desktop\research\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\bin\Debug\MySql.Data.xml
+C:\Users\BenKim\Desktop\research\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\bin\Debug\OxyPlot.pdb
+C:\Users\BenKim\Desktop\research\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\bin\Debug\OxyPlot.xml
+C:\Users\BenKim\Desktop\research\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\bin\Debug\OxyPlot.WindowsForms.pdb
+C:\Users\BenKim\Desktop\research\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\bin\Debug\OxyPlot.WindowsForms.xml
+C:\Users\BenKim\Desktop\research\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\bin\Debug\OxyPlot.Wpf.pdb
+C:\Users\BenKim\Desktop\research\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\bin\Debug\OxyPlot.Wpf.xml
+C:\Users\BenKim\Desktop\research\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\obj\Debug\SmartBadmintonTrainingSystem.csprojResolveAssemblyReference.cache
+C:\Users\BenKim\Desktop\research\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\obj\Debug\SmartBadmintonTrainingSystem.Configuration.resources
+C:\Users\BenKim\Desktop\research\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\obj\Debug\SmartBadmintonTrainingSystem.Form1.resources
+C:\Users\BenKim\Desktop\research\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\obj\Debug\SmartBadmintonTrainingSystem.TestResult_number.resources
+C:\Users\BenKim\Desktop\research\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\obj\Debug\SmartBadmintonTrainingSystem.InputForm.resources
+C:\Users\BenKim\Desktop\research\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\obj\Debug\SmartBadmintonTrainingSystem.Join.resources
+C:\Users\BenKim\Desktop\research\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\obj\Debug\SmartBadmintonTrainingSystem.Properties.Resources.resources
+C:\Users\BenKim\Desktop\research\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\obj\Debug\SmartBadmintonTrainingSystem.SelectForm.resources
+C:\Users\BenKim\Desktop\research\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\obj\Debug\SmartBadmintonTrainingSystem.Test.resources
+C:\Users\BenKim\Desktop\research\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\obj\Debug\SmartBadmintonTrainingSystem.TestMode.resources
+C:\Users\BenKim\Desktop\research\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\obj\Debug\SmartBadmintonTrainingSystem.TestResult_Section.resources
+C:\Users\BenKim\Desktop\research\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\obj\Debug\SmartBadmintonTrainingSystem.Training.resources
+C:\Users\BenKim\Desktop\research\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\obj\Debug\SmartBadmintonTrainingSystem.TrainingMode.resources
+C:\Users\BenKim\Desktop\research\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\obj\Debug\SmartBadmintonTrainingSystem.csproj.GenerateResource.Cache
+C:\Users\BenKim\Desktop\research\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\obj\Debug\SmartBadmintonTrainingSystem.exe.manifest
+C:\Users\BenKim\Desktop\research\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\obj\Debug\SmartBadmintonTrainingSystem.application
