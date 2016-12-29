@@ -42,14 +42,6 @@
             this.txt_right = new System.Windows.Forms.TextBox();
             this.txt_left = new System.Windows.Forms.TextBox();
             this.txt_front = new System.Windows.Forms.TextBox();
-            this.p1 = new System.Windows.Forms.PictureBox();
-            this.p2 = new System.Windows.Forms.PictureBox();
-            this.p3 = new System.Windows.Forms.PictureBox();
-            this.p5 = new System.Windows.Forms.PictureBox();
-            this.p4 = new System.Windows.Forms.PictureBox();
-            this.p8 = new System.Windows.Forms.PictureBox();
-            this.p7 = new System.Windows.Forms.PictureBox();
-            this.p6 = new System.Windows.Forms.PictureBox();
             this.button2 = new System.Windows.Forms.Button();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
@@ -61,15 +53,23 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.combo_TimePick = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.p1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.p2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.p3)).BeginInit();
+            this.p6 = new System.Windows.Forms.PictureBox();
+            this.p7 = new System.Windows.Forms.PictureBox();
+            this.p8 = new System.Windows.Forms.PictureBox();
+            this.p5 = new System.Windows.Forms.PictureBox();
+            this.p4 = new System.Windows.Forms.PictureBox();
+            this.p3 = new System.Windows.Forms.PictureBox();
+            this.p2 = new System.Windows.Forms.PictureBox();
+            this.p1 = new System.Windows.Forms.PictureBox();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.p6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.p7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.p8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.p5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.p4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.p8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.p7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.p6)).BeginInit();
-            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.p3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.p2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.p1)).BeginInit();
             this.SuspendLayout();
             // 
             // textBox4
@@ -146,13 +146,14 @@
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label10.Location = new System.Drawing.Point(13, 17);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(53, 18);
+            this.label10.Size = new System.Drawing.Size(47, 18);
             this.label10.TabIndex = 75;
             this.label10.Text = "아이디";
             // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(87)))), ((int)(((byte)(34)))));
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(171)))), ((int)(((byte)(145)))));
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.ForeColor = System.Drawing.Color.White;
             this.button1.Location = new System.Drawing.Point(410, 12);
@@ -191,7 +192,7 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label1.Location = new System.Drawing.Point(222, 16);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(38, 18);
+            this.label1.Size = new System.Drawing.Size(34, 18);
             this.label1.TabIndex = 64;
             this.label1.Text = "날짜";
             // 
@@ -225,81 +226,10 @@
             this.txt_front.TabIndex = 87;
             this.txt_front.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // p1
-            // 
-            this.p1.Image = global::SmartBadmintonTrainingSystem.Properties.Resources.red_circle;
-            this.p1.Location = new System.Drawing.Point(577, 8);
-            this.p1.Name = "p1";
-            this.p1.Size = new System.Drawing.Size(35, 35);
-            this.p1.TabIndex = 88;
-            this.p1.TabStop = false;
-            // 
-            // p2
-            // 
-            this.p2.Image = global::SmartBadmintonTrainingSystem.Properties.Resources.red_circle;
-            this.p2.Location = new System.Drawing.Point(662, 8);
-            this.p2.Name = "p2";
-            this.p2.Size = new System.Drawing.Size(35, 35);
-            this.p2.TabIndex = 89;
-            this.p2.TabStop = false;
-            // 
-            // p3
-            // 
-            this.p3.Image = global::SmartBadmintonTrainingSystem.Properties.Resources.red_circle;
-            this.p3.Location = new System.Drawing.Point(747, 8);
-            this.p3.Name = "p3";
-            this.p3.Size = new System.Drawing.Size(35, 35);
-            this.p3.TabIndex = 90;
-            this.p3.TabStop = false;
-            // 
-            // p5
-            // 
-            this.p5.Image = global::SmartBadmintonTrainingSystem.Properties.Resources.red_circle;
-            this.p5.Location = new System.Drawing.Point(748, 66);
-            this.p5.Name = "p5";
-            this.p5.Size = new System.Drawing.Size(35, 35);
-            this.p5.TabIndex = 93;
-            this.p5.TabStop = false;
-            // 
-            // p4
-            // 
-            this.p4.Image = global::SmartBadmintonTrainingSystem.Properties.Resources.red_circle;
-            this.p4.Location = new System.Drawing.Point(578, 63);
-            this.p4.Name = "p4";
-            this.p4.Size = new System.Drawing.Size(35, 35);
-            this.p4.TabIndex = 91;
-            this.p4.TabStop = false;
-            // 
-            // p8
-            // 
-            this.p8.Image = global::SmartBadmintonTrainingSystem.Properties.Resources.red_circle;
-            this.p8.Location = new System.Drawing.Point(748, 120);
-            this.p8.Name = "p8";
-            this.p8.Size = new System.Drawing.Size(35, 35);
-            this.p8.TabIndex = 96;
-            this.p8.TabStop = false;
-            // 
-            // p7
-            // 
-            this.p7.Image = global::SmartBadmintonTrainingSystem.Properties.Resources.red_circle;
-            this.p7.Location = new System.Drawing.Point(663, 120);
-            this.p7.Name = "p7";
-            this.p7.Size = new System.Drawing.Size(35, 35);
-            this.p7.TabIndex = 95;
-            this.p7.TabStop = false;
-            // 
-            // p6
-            // 
-            this.p6.Image = global::SmartBadmintonTrainingSystem.Properties.Resources.red_circle;
-            this.p6.Location = new System.Drawing.Point(578, 120);
-            this.p6.Name = "p6";
-            this.p6.Size = new System.Drawing.Size(35, 35);
-            this.p6.TabIndex = 94;
-            this.p6.TabStop = false;
-            // 
             // button2
             // 
             this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(87)))), ((int)(((byte)(34)))));
+            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(171)))), ((int)(((byte)(145)))));
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.ForeColor = System.Drawing.Color.White;
             this.button2.Location = new System.Drawing.Point(477, 13);
@@ -399,9 +329,81 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label2.Location = new System.Drawing.Point(222, 39);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(38, 18);
+            this.label2.Size = new System.Drawing.Size(34, 18);
             this.label2.TabIndex = 103;
             this.label2.Text = "회차";
+            // 
+            // p6
+            // 
+            this.p6.Image = global::SmartBadmintonTrainingSystem.Properties.Resources.red_circle;
+            this.p6.Location = new System.Drawing.Point(578, 120);
+            this.p6.Name = "p6";
+            this.p6.Size = new System.Drawing.Size(35, 35);
+            this.p6.TabIndex = 94;
+            this.p6.TabStop = false;
+            // 
+            // p7
+            // 
+            this.p7.Image = global::SmartBadmintonTrainingSystem.Properties.Resources.red_circle;
+            this.p7.Location = new System.Drawing.Point(663, 120);
+            this.p7.Name = "p7";
+            this.p7.Size = new System.Drawing.Size(35, 35);
+            this.p7.TabIndex = 95;
+            this.p7.TabStop = false;
+            // 
+            // p8
+            // 
+            this.p8.Image = global::SmartBadmintonTrainingSystem.Properties.Resources.red_circle;
+            this.p8.Location = new System.Drawing.Point(748, 120);
+            this.p8.Name = "p8";
+            this.p8.Size = new System.Drawing.Size(35, 35);
+            this.p8.TabIndex = 96;
+            this.p8.TabStop = false;
+            // 
+            // p5
+            // 
+            this.p5.Image = global::SmartBadmintonTrainingSystem.Properties.Resources.red_circle;
+            this.p5.Location = new System.Drawing.Point(748, 66);
+            this.p5.Name = "p5";
+            this.p5.Size = new System.Drawing.Size(35, 35);
+            this.p5.TabIndex = 93;
+            this.p5.TabStop = false;
+            // 
+            // p4
+            // 
+            this.p4.Image = global::SmartBadmintonTrainingSystem.Properties.Resources.red_circle;
+            this.p4.Location = new System.Drawing.Point(578, 63);
+            this.p4.Name = "p4";
+            this.p4.Size = new System.Drawing.Size(35, 35);
+            this.p4.TabIndex = 91;
+            this.p4.TabStop = false;
+            // 
+            // p3
+            // 
+            this.p3.Image = global::SmartBadmintonTrainingSystem.Properties.Resources.red_circle;
+            this.p3.Location = new System.Drawing.Point(747, 8);
+            this.p3.Name = "p3";
+            this.p3.Size = new System.Drawing.Size(35, 35);
+            this.p3.TabIndex = 90;
+            this.p3.TabStop = false;
+            // 
+            // p2
+            // 
+            this.p2.Image = global::SmartBadmintonTrainingSystem.Properties.Resources.red_circle;
+            this.p2.Location = new System.Drawing.Point(662, 8);
+            this.p2.Name = "p2";
+            this.p2.Size = new System.Drawing.Size(35, 35);
+            this.p2.TabIndex = 89;
+            this.p2.TabStop = false;
+            // 
+            // p1
+            // 
+            this.p1.Image = global::SmartBadmintonTrainingSystem.Properties.Resources.red_circle;
+            this.p1.Location = new System.Drawing.Point(577, 8);
+            this.p1.Name = "p1";
+            this.p1.Size = new System.Drawing.Size(35, 35);
+            this.p1.TabIndex = 88;
+            this.p1.TabStop = false;
             // 
             // TestResult_Section
             // 
@@ -445,15 +447,15 @@
             this.Text = "테스트결과 - 구역별";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.TestResult_Section_FormClosed);
             this.Load += new System.EventHandler(this.TestResult_Section_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.p1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.p2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.p3)).EndInit();
+            this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.p6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.p7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.p8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.p5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.p4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.p8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.p7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.p6)).EndInit();
-            this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.p3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.p2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.p1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

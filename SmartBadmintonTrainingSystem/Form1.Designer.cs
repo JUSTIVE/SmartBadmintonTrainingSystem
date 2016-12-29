@@ -45,7 +45,7 @@
             // 
             this.txt_pw.BackColor = System.Drawing.Color.White;
             this.txt_pw.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txt_pw.Location = new System.Drawing.Point(313, 108);
+            this.txt_pw.Location = new System.Drawing.Point(313, 80);
             this.txt_pw.Name = "txt_pw";
             this.txt_pw.PasswordChar = '*';
             this.txt_pw.Size = new System.Drawing.Size(168, 14);
@@ -57,7 +57,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(252, 107);
+            this.label6.Location = new System.Drawing.Point(252, 79);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(55, 15);
             this.label6.TabIndex = 32;
@@ -67,7 +67,7 @@
             // 
             this.txt_id.BackColor = System.Drawing.Color.White;
             this.txt_id.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txt_id.Location = new System.Drawing.Point(313, 63);
+            this.txt_id.Location = new System.Drawing.Point(313, 35);
             this.txt_id.Name = "txt_id";
             this.txt_id.Size = new System.Drawing.Size(133, 14);
             this.txt_id.TabIndex = 1;
@@ -78,7 +78,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(252, 63);
+            this.label1.Location = new System.Drawing.Point(252, 35);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(43, 15);
             this.label1.TabIndex = 30;
@@ -86,13 +86,15 @@
             // 
             // btn_login
             // 
-            this.btn_login.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(87)))), ((int)(((byte)(34)))));
+            this.btn_login.BackColor = System.Drawing.Color.White;
+            this.btn_login.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(87)))), ((int)(((byte)(34)))));
+            this.btn_login.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(171)))), ((int)(((byte)(145)))));
             this.btn_login.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_login.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_login.ForeColor = System.Drawing.Color.White;
-            this.btn_login.Location = new System.Drawing.Point(255, 137);
+            this.btn_login.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(87)))), ((int)(((byte)(34)))));
+            this.btn_login.Location = new System.Drawing.Point(255, 156);
             this.btn_login.Name = "btn_login";
-            this.btn_login.Size = new System.Drawing.Size(110, 62);
+            this.btn_login.Size = new System.Drawing.Size(110, 43);
             this.btn_login.TabIndex = 3;
             this.btn_login.Text = "로그인";
             this.btn_login.UseVisualStyleBackColor = false;
@@ -100,13 +102,14 @@
             // 
             // btn_join
             // 
-            this.btn_join.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(87)))), ((int)(((byte)(34)))));
+            this.btn_join.BackColor = System.Drawing.Color.White;
+            this.btn_join.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(171)))), ((int)(((byte)(145)))));
             this.btn_join.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_join.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_join.ForeColor = System.Drawing.Color.White;
-            this.btn_join.Location = new System.Drawing.Point(371, 137);
+            this.btn_join.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(87)))), ((int)(((byte)(34)))));
+            this.btn_join.Location = new System.Drawing.Point(371, 156);
             this.btn_join.Name = "btn_join";
-            this.btn_join.Size = new System.Drawing.Size(110, 62);
+            this.btn_join.Size = new System.Drawing.Size(110, 43);
             this.btn_join.TabIndex = 4;
             this.btn_join.Text = "회원 가입";
             this.btn_join.UseVisualStyleBackColor = false;
@@ -115,7 +118,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(87)))), ((int)(((byte)(34)))));
-            this.panel1.Location = new System.Drawing.Point(313, 120);
+            this.panel1.Location = new System.Drawing.Point(313, 92);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(166, 2);
             this.panel1.TabIndex = 34;
@@ -123,7 +126,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(87)))), ((int)(((byte)(34)))));
-            this.panel2.Location = new System.Drawing.Point(313, 76);
+            this.panel2.Location = new System.Drawing.Point(313, 48);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(166, 2);
             this.panel2.TabIndex = 35;
@@ -132,7 +135,7 @@
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.White;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(48, 21);
+            this.pictureBox1.Location = new System.Drawing.Point(23, 21);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(192, 178);
             this.pictureBox1.TabIndex = 7;

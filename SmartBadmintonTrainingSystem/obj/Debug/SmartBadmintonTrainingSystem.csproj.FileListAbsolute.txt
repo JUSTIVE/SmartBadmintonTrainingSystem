@@ -402,3 +402,9 @@ C:\Users\민상\Desktop\SmartBadmintonTrainingSystem (2) (3)\SmartBadmintonTrain
 C:\Users\민상\Desktop\SmartBadmintonTrainingSystem (2) (3)\SmartBadmintonTrainingSystem\obj\Debug\SmartBadmintonTrainingSystem.application
 C:\Users\민상\Desktop\SmartBadmintonTrainingSystem (2) (3)\SmartBadmintonTrainingSystem\obj\Debug\SmartBadmintonTrainingSystem.exe
 C:\Users\민상\Desktop\SmartBadmintonTrainingSystem (2) (3)\SmartBadmintonTrainingSystem\obj\Debug\SmartBadmintonTrainingSystem.pdb
+C:\Users\민상\Desktop\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\bin\Debug\SmartBadmintonTrainingSystem.exe.manifest
+C:\Users\민상\Desktop\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\bin\Debug\SmartBadmintonTrainingSystem.application
+C:\Users\민상\Desktop\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\obj\Debug\SmartBadmintonTrainingSystem.TestResult_Section.resources
+C:\Users\민상\Desktop\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\obj\Debug\SmartBadmintonTrainingSystem.exe.manifest
+C:\Users\민상\Desktop\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\obj\Debug\SmartBadmintonTrainingSystem.application
+C:\Users\민상\Desktop\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\obj\Debug\SmartBadmintonTrainingSystem.Form2.resources

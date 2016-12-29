@@ -58,5 +58,9 @@ namespace SmartBadmintonTrainingSystem
             frm.checkLogout();
         }
 
+        private void txt_id_Enter(object sender, EventArgs e)
+        {
+            ActiveControl = btn_test;
+        }
     }
 }

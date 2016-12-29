@@ -17,14 +17,19 @@ namespace SmartBadmintonTrainingSystem
     {
 
         //Sensor HX Code
-        byte[] index = { 0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07, 0x08 };//M1,M2,B3,B2,B1,F3,F2,F1
+        byte[] index = { 0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07, 0x08 };//M2,M1,B3,B2,B1,F3,F2,F1
         byte[] color = { 0x01, 0x02, 0x03, 0x04, 0x00 };//Red,Green,Blue,Yellow
         byte start = 0x02;
         byte start_check = 0x01;
         byte end = 0x03;
         byte[] byteSendData = new byte[6];
         int[] mapper = {7,6,5,1,0,4,3,2};
+        int[] unmapper = { 4, 3, 7, 6, 5, 2, 1, 0 };
+        string strRecData = "";
+        bool thread_flag = false;
 
+        int iTemp;
+        int Size;
         bool is_light=false;
         //테스트 순서 관련 변수 선언 시작
         public string orderString = "";
@@ -57,9 +62,13 @@ namespace SmartBadmintonTrainingSystem
         bool swing_flag = true;
         bool is6byte = false;
 
+        public string order_list = "";
+
         int target_pole;
         ThreadStart thread;
-        Thread threader;
+        Thread threader=null;
+
+        Form2 f2;
 
         enum COLOR{RED, GREEN,BLUE,YELLOW};
         public List<PictureBox> pList = new List<PictureBox>();
@@ -125,6 +134,10 @@ namespace SmartBadmintonTrainingSystem
                     comboBox1.Items.Add(comport);
                 }
                 comboBox1.SelectedIndex = 0;
+                for (int i = 0; i < 8; i++)
+                {
+                    setImageOff(i + 1);
+                }
             }
             catch
             {
@@ -148,30 +161,34 @@ namespace SmartBadmintonTrainingSystem
 
         private void btn_configuration_Click(object sender, EventArgs e)
         {
-            if (hasSaving)
-            {
-                Configuration f = new Configuration();
-                f.setSaving(r_flag, g_flag, b_flag, y_flag, orderString);
-                f.setForm(this);
-                f.Show();
-            }
-            else
-            {
-                Configuration f = new Configuration();
-                f.setForm(this);
-                f.Show();
-            }
+            //if (hasSaving)
+            //{
+            //    Configuration f = new Configuration();
+            //    f.setSaving(r_flag, g_flag, b_flag, y_flag, orderString);
+            //    f.setForm(this);
+            //    f.Show();
+            //}
+            //else
+            //{
+            //    Configuration f = new Configuration();
+            //    f.setForm(this);
+            //    f.Show();
+            //}
+            f2 = new Form2(this);
+            f2.Show();
+
+            
             
         }
         void EventDataReceived(object sender, SerialDataReceivedEventArgs e)
         {
-            int Size = SP.BytesToRead;
-            string strRecData = "";
+            Size = SP.BytesToRead;
+            strRecData = "";
 
             byte[] buff = new byte[Size];
             SP.Read(buff, 0, Size);
 
-            for (int iTemp = 0; iTemp < Size; iTemp++)
+            for (iTemp = 0; iTemp < Size; iTemp++)
             {
                 strRecData += buff[iTemp].ToString("X2") + " ";
             }
@@ -182,7 +199,7 @@ namespace SmartBadmintonTrainingSystem
                     buffer.Add(strRecData);
                 }
             }
-            s_buffer.Add(strRecData);
+            if (!swing_flag) s_buffer.Add(strRecData);
         }
         public void send_packet(int number, int number2) //number:기둥번호 number2:색상
         {
@@ -372,6 +389,15 @@ namespace SmartBadmintonTrainingSystem
         {
             TM.Visible = true;
             SP.Close();
+            try
+            {
+                threader.Abort();
+                thread_flag = false;
+            }
+            catch (System.Exception ex)
+            {
+
+            }
         }
 
         private void label7_Click(object sender, EventArgs e)
@@ -386,6 +412,7 @@ namespace SmartBadmintonTrainingSystem
         public void clearBuff()
         {
             buffer.Clear();
+            s_buffer.Clear();
         }
 
         public void isCenter()
@@ -404,62 +431,98 @@ namespace SmartBadmintonTrainingSystem
 
         void normalthreadStart()
         {
+            clearBuff();
             swing_flag = false;
             for (;;)
             {
                 if (swing_flag)
                 {
+                    inputListbox("swing");
                     break;
                 }
-                else isSwing(target_pole);
+                else isSwing(unmapper[target_pole] + 1);//1-base pole number
             }
-            setImageOff(target_pole);
-            send_packet(target_pole, 4);
+            setImageOff(unmapper[target_pole] + 1);//unmapped pole number
+            send_packet(target_pole, 4);//mapped pole number
 
             clearBuff();
             lrFlag = false; FbFlag = false;
-            if (number == 2 || number == 7) FbFlag = true;
-            else if (number == 4 || number == 5) lrFlag = true;
+            if ((unmapper[target_pole] + 1) == 2 || (unmapper[target_pole] + 1) == 7) FbFlag = true;
+            else if ((unmapper[target_pole] + 1) == 4 || (unmapper[target_pole] + 1) == 5) lrFlag = true;
             center_flag1 = false;
             for (;;)
             {
                 if (center_flag1)
                 {
+                    inputListbox("center");
+                    is_light = false;
                     break;
                 }
                 else isCenter();
             }
+            thread_flag = false;
         }
 
         private void p1_Click(object sender, EventArgs e)
         {
-            if(port_set)
-            if (!is_light) {
-                send_packet(5,(int)COLOR.RED);
-                setImageRed(1);
-                is_light = true;
-                    target_pole = 7;
-                    thread = new ThreadStart(normalthreadStart);
-                    threader = new Thread(thread);
-                    threader.Start();
+            if (port_set) { 
+                if (!is_light) {
+                    send_packet(7, (int)COLOR.RED);
+                    setImageRed(1);
+                    is_light = true;
+                    if (!thread_flag)
+                    {
+                        target_pole = 7;
+                        if (threader != null)
+                        {
+                            if (threader.IsAlive)
+                            {
+
+                                threader.Abort();
+                                threader = null;
+                                inputListbox(threader.IsAlive + "");
+                            }
+
+                        }
+                        thread = new ThreadStart(normalthreadStart);
+                        threader = new Thread(thread);
+                        threader.Start();
+                        thread_flag = true;
+                    }
                 }
 
-
+            }
         }
 
         private void p2_Click(object sender, EventArgs e)
         {
-            if (port_set)
+            if (port_set) { 
                 if (!is_light)
-            {
-                send_packet(6, (int)COLOR.RED);
-                setImageRed(2);
-                is_light = true;
-                    target_pole = 7;
-                    thread = new ThreadStart(normalthreadStart);
-                    threader = new Thread(thread);
-                    threader.Start();
+                {
+                    send_packet(6, (int)COLOR.RED);
+                    setImageRed(2);
+                    is_light = true;
+                    if (!thread_flag)
+                    {
+                        target_pole = 6;
+                        if (threader != null)
+                        {
+                            if (threader.IsAlive)
+                            {
+
+                                threader.Abort();
+                                threader = null;
+                                inputListbox(threader.IsAlive + "");
+                            }
+
+                        }
+                        thread = new ThreadStart(normalthreadStart);
+                        threader = new Thread(thread);
+                        threader.Start();
+                        thread_flag = true;
+                    }
                 }
+            }
         }
         
 
@@ -470,15 +533,30 @@ namespace SmartBadmintonTrainingSystem
             if (port_set)
                 if (!is_light)
             {
-                send_packet(7, (int)COLOR.RED);
-                setImageRed(3);
-                is_light = true;
-                    target_pole = 7;
-                    thread = new ThreadStart(normalthreadStart);
-                    threader = new Thread(thread);
-                    threader.Start();
-                        
-            }
+                    send_packet(5, (int)COLOR.RED);
+                    setImageRed(3);
+                    is_light = true;
+                    if (!thread_flag)
+                    {
+                        target_pole = 5;
+                        if (threader != null)
+                        {
+                            if (threader.IsAlive)
+                            {
+
+                                threader.Abort();
+                                threader = null;
+                                inputListbox(threader.IsAlive + "");
+                            }
+
+                        }
+                        thread = new ThreadStart(normalthreadStart);
+                        threader = new Thread(thread);
+                        threader.Start();
+                        thread_flag = true;
+                    }
+
+                }
         }
 
         private void p4_Click(object sender, EventArgs e)
@@ -486,76 +564,154 @@ namespace SmartBadmintonTrainingSystem
             if (port_set)
                 if (!is_light)
             {
-                send_packet(0, (int)COLOR.RED);
-                setImageRed(4);
-                is_light = true;
-                    target_pole = 7;
-                    thread = new ThreadStart(normalthreadStart);
-                    threader = new Thread(thread);
-                    threader.Start();
+                    send_packet(1, (int)COLOR.RED);
+                    setImageRed(4);
+                    is_light = true;
+                    if (!thread_flag)
+                    {
+                        target_pole = 1;
+                        if (threader != null)
+                        {
+                            if (threader.IsAlive)
+                            {
+
+                                threader.Abort();
+                                threader = null;
+                                inputListbox(threader.IsAlive + "");
+                            }
+
+                        }
+                        thread = new ThreadStart(normalthreadStart);
+                        threader = new Thread(thread);
+                        threader.Start();
+                        thread_flag = true;
+                    }
                 }
         }
 
         private void p5_Click(object sender, EventArgs e)
         {
-            if (port_set)
-                if (!is_light)
-            {
-                send_packet(1, (int)COLOR.RED);
-                setImageRed(5);
-                is_light = true;
-                    target_pole = 7;
-                    thread = new ThreadStart(normalthreadStart);
-                    threader = new Thread(thread);
-                    threader.Start();
+            if (port_set){ 
+                if (!is_light){
+                    send_packet(0, (int)COLOR.RED);
+                    setImageRed(5);
+                    is_light = true;
+                    if (threader != null)
+                    {
+                        if (threader.IsAlive)
+                        {
+
+                            threader.Abort();
+                            threader = null;
+                            inputListbox(threader.IsAlive + "");
+                        }
+
+                    }
+                    if (!thread_flag)
+                    {
+                        target_pole = 0;
+                        thread = new ThreadStart(normalthreadStart);
+                        threader = new Thread(thread);
+                        threader.Start();
+                        thread_flag = true;
+                    }
                 }
+            }
         }
 
         private void p6_Click(object sender, EventArgs e)
         {
-            if (port_set)
+            if (port_set) { 
                 if (!is_light)
-            {
-                send_packet(2, (int)COLOR.RED);
-                setImageRed(6);
-                is_light = true;
-                    target_pole = 7;
-                    thread = new ThreadStart(normalthreadStart);
-                    threader = new Thread(thread);
-                    threader.Start();
+                {
+                    send_packet(4, (int)COLOR.RED);
+                    setImageRed(6);
+                    is_light = true;
+
+                    if (!thread_flag)
+                    {
+                        target_pole = 4;
+                        if (threader != null)
+                        {
+                            if (threader.IsAlive)
+                            {
+
+                                threader.Abort();
+                                threader = null;
+                                inputListbox(threader.IsAlive + "");
+                            }
+
+                        }
+                        thread = new ThreadStart(normalthreadStart);
+                        threader = new Thread(thread);
+                        threader.Start();
+                        thread_flag = true;
+                    }
                 }
+            }
         }
 
         private void p7_Click(object sender, EventArgs e)
         {
-            if (port_set)
+            if (port_set) { 
                 if (!is_light)
-            {
-                send_packet(3, (int)COLOR.RED);
-                setImageRed(7);
-                is_light = true;
-                    target_pole = 7;
-                    thread = new ThreadStart(normalthreadStart);
-                    threader = new Thread(thread);
-                    threader.Start();
+                {
+                    send_packet(3, (int)COLOR.RED);
+                    setImageRed(7);
+                    is_light = true;
+                    if (!thread_flag)
+                    {
+                        target_pole = 3;
+                        if (threader != null)
+                        {
+                            if (threader.IsAlive)
+                            {
+
+                                threader.Abort();
+                                threader = null;
+                                inputListbox(threader.IsAlive + "");
+                            }
+
+                        }
+                        thread = new ThreadStart(normalthreadStart);
+                        threader = new Thread(thread);
+                        threader.Start();
+                        thread_flag = true;
+                    }
                 }
+            }
         }
 
         private void p8_Click(object sender, EventArgs e)
         {
-            if (port_set)
+            if (port_set) { 
                 if (!is_light)
-            {
-                send_packet(4, (int)COLOR.RED);
-                setImageRed(8);
-                is_light = true;
-                    target_pole = 7;
-                    thread = new ThreadStart(normalthreadStart);
-                    threader = new Thread(thread);
-                    threader.Start();
-                }
-        }
+                {
+                    send_packet(2, (int)COLOR.RED);
+                    setImageRed(8);
+                    is_light = true;
+                    if (!thread_flag)
+                    {
+                        target_pole = 2;
+                        if (threader != null)
+                        {
+                            if (threader.IsAlive)
+                            {
 
+                                threader.Abort();
+                                threader = null;
+                                inputListbox(threader.IsAlive + "");
+                            }
+
+                        }
+                        thread = new ThreadStart(normalthreadStart);
+                        threader = new Thread(thread);
+                        threader.Start();
+                        thread_flag = true;
+                    }
+                }
+            }
+        }
         private void comboBox1_SelectedIndexChanged_1(object sender, EventArgs e)
         {
             SP_name = comboBox1.SelectedItem.ToString();
@@ -605,6 +761,38 @@ namespace SmartBadmintonTrainingSystem
             setRefreshPort();
             port_set = false;
             is_light = false;
+        }
+        public void actionBeam()
+        {
+            inputListbox(order_list);
+        }
+        void TrainingThreadStart()
+        {
+            swing_flag = false;
+            for (;;)
+            {
+                if (swing_flag)
+                {
+                    break;
+                }
+                else isSwing(target_pole);
+            }
+            setImageOff(target_pole);
+            send_packet(target_pole, 4);
+
+            clearBuff();
+            lrFlag = false; FbFlag = false;
+            if (number == 2 || number == 7) FbFlag = true;
+            else if (number == 4 || number == 5) lrFlag = true;
+            center_flag1 = false;
+            for (;;)
+            {
+                if (center_flag1)
+                {
+                    break;
+                }
+                else isCenter();
+            }
         }
 
     }

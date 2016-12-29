@@ -32,7 +32,6 @@ namespace SmartBadmintonTrainingSystem
             if (b) checkBox2.Checked = true;
             if (g) checkBox3.Checked = true;
             if (y) checkBox4.Checked = true;
-
             orderString = order;
         }
         private void Configuration_Load(object sender, EventArgs e)
