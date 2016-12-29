@@ -121,7 +121,24 @@ namespace SmartBadmintonTrainingSystem
         }
         private void button2_Click(object sender, EventArgs e)
         {
-
+            if (!thread_flag)
+            {
+                if (order_list.Equals(""))
+                {
+                    AutoClosingMessageBox.Show("기둥을 설정하십시요", "설정 오류", 500);
+                }
+                else
+                {
+                    thread = new ThreadStart(TrainingThreadStart);
+                    threader = new Thread(thread);
+                    threader.Start();
+                    thread_flag = true;
+                }
+            }
+            else
+            {
+                AutoClosingMessageBox.Show("켜져 있는 스윙을 해제하십시요","점등 해제",500);
+            }
         }
         void SetSerialPort()
         {
@@ -176,6 +193,7 @@ namespace SmartBadmintonTrainingSystem
             //}
             f2 = new Form2(this);
             f2.Show();
+            order_list = "";
 
             
             
@@ -766,33 +784,45 @@ namespace SmartBadmintonTrainingSystem
         {
             inputListbox(order_list);
         }
-        void TrainingThreadStart()
+        void TrainingThreadStart()//
         {
-            swing_flag = false;
-            for (;;)
-            {
-                if (swing_flag)
-                {
-                    break;
-                }
-                else isSwing(target_pole);
-            }
-            setImageOff(target_pole);
-            send_packet(target_pole, 4);
+            char[] delim = { ',' };
+            string[] splitter = order_list.Split(delim);
 
-            clearBuff();
-            lrFlag = false; FbFlag = false;
-            if (number == 2 || number == 7) FbFlag = true;
-            else if (number == 4 || number == 5) lrFlag = true;
-            center_flag1 = false;
-            for (;;)
+            for(int i = 0; i < splitter.Length; i++)//매 회차마다
             {
-                if (center_flag1)
+                target_pole = mapper[Int32.Parse(splitter.ElementAt(i))];
+                clearBuff();
+                swing_flag = false;
+                for (;;)
                 {
-                    break;
+                    if (swing_flag)
+                    {
+                        inputListbox("swing");
+                        break;
+                    }
+                    else isSwing(unmapper[target_pole] + 1);//1-base pole number
                 }
-                else isCenter();
+                setImageOff(unmapper[target_pole] + 1);//unmapped pole number
+                send_packet(target_pole, 4);//mapped pole number
+
+                clearBuff();
+                lrFlag = false; FbFlag = false;
+                if ((unmapper[target_pole] + 1) == 2 || (unmapper[target_pole] + 1) == 7) FbFlag = true;
+                else if ((unmapper[target_pole] + 1) == 4 || (unmapper[target_pole] + 1) == 5) lrFlag = true;
+                center_flag1 = false;
+                for (;;)
+                {
+                    if (center_flag1)
+                    {
+                        inputListbox("center");
+                        is_light = false;
+                        break;
+                    }
+                    else isCenter();
+                }
             }
+            thread_flag = false;
         }
 
     }

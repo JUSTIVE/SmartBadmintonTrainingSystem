@@ -34,7 +34,6 @@
             this.btn_test = new System.Windows.Forms.Button();
             this.btn_training = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.panel2 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -42,19 +41,22 @@
             // 
             this.txt_id.BackColor = System.Drawing.Color.White;
             this.txt_id.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txt_id.Location = new System.Drawing.Point(320, 25);
+            this.txt_id.Font = new System.Drawing.Font("굴림", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txt_id.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(87)))), ((int)(((byte)(34)))));
+            this.txt_id.Location = new System.Drawing.Point(325, 30);
             this.txt_id.Name = "txt_id";
             this.txt_id.ReadOnly = true;
-            this.txt_id.Size = new System.Drawing.Size(154, 14);
+            this.txt_id.Size = new System.Drawing.Size(154, 22);
             this.txt_id.TabIndex = 0;
             this.txt_id.TabStop = false;
+            this.txt_id.Enter += new System.EventHandler(this.txt_id_Enter);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(271, 25);
+            this.label1.Location = new System.Drawing.Point(276, 30);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(43, 15);
             this.label1.TabIndex = 37;
@@ -62,13 +64,14 @@
             // 
             // btn_test
             // 
-            this.btn_test.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(87)))), ((int)(((byte)(34)))));
+            this.btn_test.BackColor = System.Drawing.Color.White;
+            this.btn_test.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(171)))), ((int)(((byte)(145)))));
             this.btn_test.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_test.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_test.ForeColor = System.Drawing.Color.White;
-            this.btn_test.Location = new System.Drawing.Point(270, 69);
+            this.btn_test.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_test.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(87)))), ((int)(((byte)(34)))));
+            this.btn_test.Location = new System.Drawing.Point(279, 69);
             this.btn_test.Name = "btn_test";
-            this.btn_test.Size = new System.Drawing.Size(204, 62);
+            this.btn_test.Size = new System.Drawing.Size(200, 62);
             this.btn_test.TabIndex = 35;
             this.btn_test.Text = "민첩성 테스트";
             this.btn_test.UseVisualStyleBackColor = false;
@@ -76,13 +79,14 @@
             // 
             // btn_training
             // 
-            this.btn_training.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(87)))), ((int)(((byte)(34)))));
+            this.btn_training.BackColor = System.Drawing.Color.White;
+            this.btn_training.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(171)))), ((int)(((byte)(145)))));
             this.btn_training.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_training.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_training.ForeColor = System.Drawing.Color.White;
-            this.btn_training.Location = new System.Drawing.Point(270, 137);
+            this.btn_training.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_training.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(87)))), ((int)(((byte)(34)))));
+            this.btn_training.Location = new System.Drawing.Point(279, 137);
             this.btn_training.Name = "btn_training";
-            this.btn_training.Size = new System.Drawing.Size(204, 62);
+            this.btn_training.Size = new System.Drawing.Size(200, 62);
             this.btn_training.TabIndex = 34;
             this.btn_training.Text = "민첩성 트레이닝";
             this.btn_training.UseVisualStyleBackColor = false;
@@ -92,19 +96,11 @@
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.White;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(48, 21);
+            this.pictureBox1.Location = new System.Drawing.Point(23, 21);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(192, 178);
-            this.pictureBox1.TabIndex = 39;
+            this.pictureBox1.TabIndex = 38;
             this.pictureBox1.TabStop = false;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(87)))), ((int)(((byte)(34)))));
-            this.panel2.Location = new System.Drawing.Point(320, 41);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(154, 2);
-            this.panel2.TabIndex = 40;
             // 
             // SelectForm
             // 
@@ -112,7 +108,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(514, 231);
-            this.Controls.Add(this.panel2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.txt_id);
             this.Controls.Add(this.label1);
@@ -135,6 +130,5 @@
         private System.Windows.Forms.Button btn_test;
         private System.Windows.Forms.Button btn_training;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Panel panel2;
     }
 }
