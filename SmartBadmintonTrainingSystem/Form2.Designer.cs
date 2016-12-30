@@ -41,17 +41,20 @@
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.panel6 = new System.Windows.Forms.Panel();
+            this.First = new System.Windows.Forms.Panel();
+            this.Second = new System.Windows.Forms.Panel();
+            this.Banned = new System.Windows.Forms.Panel();
             this.textBox7 = new System.Windows.Forms.TextBox();
+            this.redCheck = new System.Windows.Forms.CheckBox();
+            this.greenCheck = new System.Windows.Forms.CheckBox();
+            this.blueCheck = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // textBox1
             // 
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox1.Location = new System.Drawing.Point(19, 20);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(152, 51);
@@ -67,7 +70,7 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(87)))), ((int)(((byte)(34)))));
             this.button1.Location = new System.Drawing.Point(477, 27);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(100, 74);
             this.button1.TabIndex = 1;
@@ -80,7 +83,7 @@
             this.textBox2.BackColor = System.Drawing.Color.White;
             this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox2.Location = new System.Drawing.Point(164, 27);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(4);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(280, 21);
             this.textBox2.TabIndex = 2;
@@ -89,7 +92,7 @@
             // 
             this.panel11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(87)))), ((int)(((byte)(34)))));
             this.panel11.Location = new System.Drawing.Point(164, 50);
-            this.panel11.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel11.Margin = new System.Windows.Forms.Padding(4);
             this.panel11.Name = "panel11";
             this.panel11.Size = new System.Drawing.Size(280, 3);
             this.panel11.TabIndex = 104;
@@ -98,7 +101,7 @@
             // 
             this.checkBox1.AutoSize = true;
             this.checkBox1.Location = new System.Drawing.Point(19, 140);
-            this.checkBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkBox1.Margin = new System.Windows.Forms.Padding(4);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(70, 22);
             this.checkBox1.TabIndex = 105;
@@ -110,7 +113,7 @@
             // 
             this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox3.Location = new System.Drawing.Point(17, 80);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox3.Margin = new System.Windows.Forms.Padding(4);
             this.textBox3.Multiline = true;
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(136, 51);
@@ -122,7 +125,7 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(87)))), ((int)(((byte)(34)))));
             this.panel1.Location = new System.Drawing.Point(164, 102);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(280, 3);
             this.panel1.TabIndex = 106;
@@ -132,7 +135,7 @@
             this.textBox4.BackColor = System.Drawing.Color.White;
             this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox4.Location = new System.Drawing.Point(164, 80);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox4.Margin = new System.Windows.Forms.Padding(4);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(280, 21);
             this.textBox4.TabIndex = 105;
@@ -141,7 +144,7 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(87)))), ((int)(((byte)(34)))));
             this.panel2.Location = new System.Drawing.Point(164, 279);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(280, 3);
             this.panel2.TabIndex = 109;
@@ -151,7 +154,7 @@
             // 
             this.textBox5.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox5.Location = new System.Drawing.Point(17, 256);
-            this.textBox5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox5.Margin = new System.Windows.Forms.Padding(4);
             this.textBox5.Multiline = true;
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(136, 51);
@@ -164,7 +167,7 @@
             this.textBox6.BackColor = System.Drawing.Color.White;
             this.textBox6.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox6.Location = new System.Drawing.Point(164, 256);
-            this.textBox6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox6.Margin = new System.Windows.Forms.Padding(4);
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(280, 21);
             this.textBox6.TabIndex = 107;
@@ -177,7 +180,7 @@
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(87)))), ((int)(((byte)(34)))));
             this.button2.Location = new System.Drawing.Point(477, 201);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(100, 81);
             this.button2.TabIndex = 110;
@@ -192,7 +195,7 @@
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(87)))), ((int)(((byte)(34)))));
             this.button3.Location = new System.Drawing.Point(477, 114);
-            this.button3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button3.Margin = new System.Windows.Forms.Padding(4);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(100, 74);
             this.button3.TabIndex = 111;
@@ -200,26 +203,26 @@
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // panel3
+            // First
             // 
-            this.panel3.Location = new System.Drawing.Point(618, 27);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(90, 90);
-            this.panel3.TabIndex = 112;
+            this.First.Location = new System.Drawing.Point(618, 27);
+            this.First.Name = "First";
+            this.First.Size = new System.Drawing.Size(90, 90);
+            this.First.TabIndex = 112;
             // 
-            // panel4
+            // Second
             // 
-            this.panel4.Location = new System.Drawing.Point(756, 27);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(90, 90);
-            this.panel4.TabIndex = 113;
+            this.Second.Location = new System.Drawing.Point(756, 27);
+            this.Second.Name = "Second";
+            this.Second.Size = new System.Drawing.Size(90, 90);
+            this.Second.TabIndex = 113;
             // 
-            // panel6
+            // Banned
             // 
-            this.panel6.Location = new System.Drawing.Point(1023, 27);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(90, 90);
-            this.panel6.TabIndex = 115;
+            this.Banned.Location = new System.Drawing.Point(894, 27);
+            this.Banned.Name = "Banned";
+            this.Banned.Size = new System.Drawing.Size(90, 90);
+            this.Banned.TabIndex = 115;
             // 
             // textBox7
             // 
@@ -234,16 +237,50 @@
             this.textBox7.Text = "→";
             this.textBox7.TextChanged += new System.EventHandler(this.textBox7_TextChanged);
             // 
+            // redCheck
+            // 
+            this.redCheck.AutoSize = true;
+            this.redCheck.Location = new System.Drawing.Point(618, 139);
+            this.redCheck.Name = "redCheck";
+            this.redCheck.Size = new System.Drawing.Size(67, 22);
+            this.redCheck.TabIndex = 117;
+            this.redCheck.Text = "RED";
+            this.redCheck.UseVisualStyleBackColor = true;
+            this.redCheck.CheckedChanged += new System.EventHandler(this.redCheck_CheckedChanged);
+            // 
+            // greenCheck
+            // 
+            this.greenCheck.AutoSize = true;
+            this.greenCheck.Location = new System.Drawing.Point(618, 178);
+            this.greenCheck.Name = "greenCheck";
+            this.greenCheck.Size = new System.Drawing.Size(91, 22);
+            this.greenCheck.TabIndex = 118;
+            this.greenCheck.Text = "GREEN";
+            this.greenCheck.UseVisualStyleBackColor = true;
+            // 
+            // blueCheck
+            // 
+            this.blueCheck.AutoSize = true;
+            this.blueCheck.Location = new System.Drawing.Point(618, 222);
+            this.blueCheck.Name = "blueCheck";
+            this.blueCheck.Size = new System.Drawing.Size(76, 22);
+            this.blueCheck.TabIndex = 119;
+            this.blueCheck.Text = "BLUE";
+            this.blueCheck.UseVisualStyleBackColor = true;
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1263, 346);
+            this.ClientSize = new System.Drawing.Size(1031, 346);
+            this.Controls.Add(this.blueCheck);
+            this.Controls.Add(this.greenCheck);
+            this.Controls.Add(this.redCheck);
             this.Controls.Add(this.textBox7);
-            this.Controls.Add(this.panel6);
-            this.Controls.Add(this.panel4);
-            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.Banned);
+            this.Controls.Add(this.Second);
+            this.Controls.Add(this.First);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.panel2);
@@ -257,7 +294,7 @@
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form2";
             this.Text = "환경 설정";
             this.ResumeLayout(false);
@@ -280,9 +317,12 @@
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Panel First;
+        private System.Windows.Forms.Panel Second;
+        private System.Windows.Forms.Panel Banned;
         private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.CheckBox redCheck;
+        private System.Windows.Forms.CheckBox greenCheck;
+        private System.Windows.Forms.CheckBox blueCheck;
     }
 }

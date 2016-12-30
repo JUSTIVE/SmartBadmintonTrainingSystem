@@ -14,11 +14,15 @@ namespace SmartBadmintonTrainingSystem
     {
         public string input;
         bool isRand = false;
+        int[] colorarray = new int[3];
 
-        
+        bool[] colorchecker;
+
         Training tFrm;
         List<int> targetPoles;
         Random randseed;
+
+        enum ColorEnum {RED,GREEN,BLUE,NONE };
 
         public Form2()
         {
@@ -29,6 +33,19 @@ namespace SmartBadmintonTrainingSystem
             InitializeComponent();
             randseed = new Random();
             tFrm = t;
+            First.BackColor = Color.FromArgb(150, 150, 150);
+            Second.BackColor = Color.FromArgb(150, 150, 150);
+            Banned.BackColor = Color.FromArgb(150, 150, 150);
+            redCheck.Checked = false;
+            greenCheck.Checked = false;
+            blueCheck.Checked = false;
+            colorarray = new int[3];
+            colorchecker = new bool[3];
+            for(int i = 0; i < 3; i++)
+            {
+                colorarray[i] = (int)ColorEnum.NONE;
+                colorchecker[i] = false;
+            }
         }
 
         private void textBox3_Enter(object sender, EventArgs e)
@@ -127,6 +144,33 @@ namespace SmartBadmintonTrainingSystem
         private void textBox7_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void redCheck_CheckedChanged(object sender, EventArgs e)
+        {
+            if (redCheck.Checked)
+            {
+                if (!colorchecker[0])
+                {
+                    for(int i=0;i<3;i++)
+                    {
+                        if (colorarray[i] == (int)ColorEnum.NONE) { 
+                            colorarray[i] = (int)ColorEnum.RED;
+                            break;
+                        }
+                    }
+                }
+                colorchecker[0] = true;
+            }
+            else
+            {
+                if (colorchecker[0])
+                {
+                    
+
+                }
+                colorchecker[0] = false;
+            }
         }
     }
 }

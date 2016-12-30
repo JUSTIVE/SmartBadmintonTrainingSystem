@@ -154,6 +154,7 @@
     <Compile Include="Training.Designer.cs">
       <DependentUpon>Training.cs</DependentUpon>
     </Compile>
+    <Compile Include="trainingcolorset.cs" />
     <Compile Include="TrainingMode.cs">
       <SubType>Form</SubType>
     </Compile>
