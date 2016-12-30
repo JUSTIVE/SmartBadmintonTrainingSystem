@@ -41,6 +41,10 @@
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.textBox7 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // textBox1
@@ -196,12 +200,50 @@
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
+            // panel3
+            // 
+            this.panel3.Location = new System.Drawing.Point(618, 27);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(90, 90);
+            this.panel3.TabIndex = 112;
+            // 
+            // panel4
+            // 
+            this.panel4.Location = new System.Drawing.Point(756, 27);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(90, 90);
+            this.panel4.TabIndex = 113;
+            // 
+            // panel6
+            // 
+            this.panel6.Location = new System.Drawing.Point(1023, 27);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(90, 90);
+            this.panel6.TabIndex = 115;
+            // 
+            // textBox7
+            // 
+            this.textBox7.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox7.Font = new System.Drawing.Font("굴림", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.textBox7.Location = new System.Drawing.Point(716, 54);
+            this.textBox7.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox7.Multiline = true;
+            this.textBox7.Name = "textBox7";
+            this.textBox7.Size = new System.Drawing.Size(35, 38);
+            this.textBox7.TabIndex = 116;
+            this.textBox7.Text = "→";
+            this.textBox7.TextChanged += new System.EventHandler(this.textBox7_TextChanged);
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(594, 346);
+            this.ClientSize = new System.Drawing.Size(1263, 346);
+            this.Controls.Add(this.textBox7);
+            this.Controls.Add(this.panel6);
+            this.Controls.Add(this.panel4);
+            this.Controls.Add(this.panel3);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.panel2);
@@ -217,7 +259,7 @@
             this.Controls.Add(this.textBox1);
             this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Form2";
-            this.Text = "TrainingModify";
+            this.Text = "환경 설정";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -238,5 +280,9 @@
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.TextBox textBox7;
     }
 }
