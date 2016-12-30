@@ -22,8 +22,10 @@ namespace SmartBadmintonTrainingSystem
         //TestMode frm;
         public Form1()
         {
+            
             InitializeComponent();
             init();
+            
         }
         public void init()
         {

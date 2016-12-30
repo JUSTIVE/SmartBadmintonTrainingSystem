@@ -70,7 +70,7 @@ namespace SmartBadmintonTrainingSystem
 
         Form2 f2;
 
-        enum COLOR{RED, GREEN,BLUE,YELLOW};
+        enum COLOR{RED, GREEN,BLUE,YELLOW,WHITE};
         public List<PictureBox> pList = new List<PictureBox>();
 
         SoundPlayer sound, sound2;
@@ -123,6 +123,7 @@ namespace SmartBadmintonTrainingSystem
         {
             if (!thread_flag)
             {
+                inputListbox(target_pole+"");
                 if (order_list.Equals(""))
                 {
                     AutoClosingMessageBox.Show("기둥을 설정하십시요", "설정 오류", 500);
@@ -514,7 +515,7 @@ namespace SmartBadmintonTrainingSystem
 
         private void p2_Click(object sender, EventArgs e)
         {
-            if (port_set) { 
+            if (port_set) {
                 if (!is_light)
                 {
                     send_packet(6, (int)COLOR.RED);
@@ -527,12 +528,10 @@ namespace SmartBadmintonTrainingSystem
                         {
                             if (threader.IsAlive)
                             {
-
                                 threader.Abort();
                                 threader = null;
                                 inputListbox(threader.IsAlive + "");
                             }
-
                         }
                         thread = new ThreadStart(normalthreadStart);
                         threader = new Thread(thread);
@@ -736,7 +735,6 @@ namespace SmartBadmintonTrainingSystem
         }
         public void setRefreshPort()
         {
-
             //port_set = false;
             //button1.Text = "연결시도";
             //label2.Text = openX;
@@ -779,19 +777,27 @@ namespace SmartBadmintonTrainingSystem
             setRefreshPort();
             port_set = false;
             is_light = false;
+            if (threader.IsAlive)
+            {
+                threader.Abort();
+                threader = null;
+            }
         }
         public void actionBeam()
         {
             inputListbox(order_list);
         }
-        void TrainingThreadStart()//
+        void TrainingThreadStart()//실질적인 트레이닝 처리 스레드
         {
             char[] delim = { ',' };
             string[] splitter = order_list.Split(delim);
-
+            
             for(int i = 0; i < splitter.Length; i++)//매 회차마다
             {
-                target_pole = mapper[Int32.Parse(splitter.ElementAt(i))];
+                inputListbox(i+"번째 기둥 시작 : "+splitter.ElementAt(i));
+                target_pole = mapper[Int32.Parse(splitter.ElementAt(i))-1];
+                send_packet(target_pole, (int)COLOR.RED);
+                setImageRed(unmapper[target_pole]+1);
                 clearBuff();
                 swing_flag = false;
                 for (;;)
@@ -801,15 +807,15 @@ namespace SmartBadmintonTrainingSystem
                         inputListbox("swing");
                         break;
                     }
-                    else isSwing(unmapper[target_pole] + 1);//1-base pole number
+                    else isSwing(unmapper[target_pole]+1);//1-base pole number
                 }
-                setImageOff(unmapper[target_pole] + 1);//unmapped pole number
-                send_packet(target_pole, 4);//mapped pole number
+                setImageOff(unmapper[target_pole]+1);//unmapped pole number
+                //send_packet(target_pole+1, 4);//mapped pole number
 
                 clearBuff();
                 lrFlag = false; FbFlag = false;
-                if ((unmapper[target_pole] + 1) == 2 || (unmapper[target_pole] + 1) == 7) FbFlag = true;
-                else if ((unmapper[target_pole] + 1) == 4 || (unmapper[target_pole] + 1) == 5) lrFlag = true;
+                if ((unmapper[target_pole]+1) == 2 || (unmapper[target_pole]+1) == 7) FbFlag = true;
+                else if ((unmapper[target_pole]+1) == 4 || (unmapper[target_pole]+1) == 5) lrFlag = true;
                 center_flag1 = false;
                 for (;;)
                 {
