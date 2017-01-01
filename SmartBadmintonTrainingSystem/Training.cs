@@ -16,6 +16,10 @@ namespace SmartBadmintonTrainingSystem
     public partial class Training : Form
     {
 
+        //customprogParam
+        int customProgAmount;
+        public List<CustomProgramType> customProgramTypeList;
+
         //Sensor HX Code
         byte[] index = { 0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07, 0x08 };//M2,M1,B3,B2,B1,F3,F2,F1
         byte[] color = { 0x01, 0x02, 0x03, 0x04, 0x00 };//Red,Green,Blue,Yellow
@@ -27,8 +31,6 @@ namespace SmartBadmintonTrainingSystem
         int[] unmapper = { 4, 3, 7, 6, 5, 2, 1, 0 };
         string strRecData = "";
         bool thread_flag = false;
-
-        int ProgramCounter = 0;
 
         int iTemp;
         int Sizer;
@@ -69,13 +71,16 @@ namespace SmartBadmintonTrainingSystem
         int target_pole;
         ThreadStart thread;
         Thread threader=null;
-        List<Button> CustomProgramListInstance;
         Form2 f2;
 
         enum COLOR{RED, GREEN,BLUE,YELLOW,WHITE};
         public List<PictureBox> pList = new List<PictureBox>();
 
         SoundPlayer sound, sound2;
+
+        //Curtain booya
+        Panel curtain;
+        bool isCurtain;
 
         public Training()
         {
@@ -87,6 +92,7 @@ namespace SmartBadmintonTrainingSystem
             this.StartPosition = FormStartPosition.Manual;
             this.Location = new Point(0, 0);
             this.Size = new Size(1920,1048);
+            customProgramTypeList = new List<CustomProgramType>();
         }
         public void initial()
         {
@@ -104,21 +110,63 @@ namespace SmartBadmintonTrainingSystem
             {
                 comboBox1.SelectedIndex = 0;
             }
-        }
-        void setUpProgramList()
-        {
+            customProgAmount=0;
+
+            curtain = new Panel();
+            curtain.Size = new Size(this.Width, this.Height);
+            curtain.Location = new Point(0, 0);
             
-            for(int i = 0; i < ProgramCounter; ++i)
+            curtain.Visible = false;
+            curtain.BackColor = Color.FromArgb(50, 0, 0, 0);
+            curtain.BringToFront();
+            this.Controls.Add(curtain);
+        }
+        public void flipCurtain()
+        {
+            isCurtain = !isCurtain;
+            curtain.Visible = isCurtain;
+        }
+        public void setUpProgramList()
+        {
+            CustomProgramPanel.Visible = false;
+
+            while (CustomProgramPanel.Controls.Count > 0)
             {
+                CustomProgramPanel.Controls[0].Dispose();
+            }
+            CustomProgramPanel.Visible = true;
+
+            for (int i = 0; i < customProgAmount; ++i)
+            {
+                Button temp = new Button();
+                temp.Location = new Point(8, 8);
+                temp.Size = new Size(CustomProgramPanel.Size.Width - 72, 80);
+                temp.Name = i+"CPT";
+                temp.Visible = true;
+                temp.FlatStyle = FlatStyle.Flat;
+                temp.FlatAppearance.BorderSize = 0;
+                temp.BackColor = Color.FromArgb(240, 240, 240);
+
+                Label templb = new Label();
+                templb.Location = new Point(8, 8);
+                templb.Name = i + "CPT_label";
+                templb.Visible = true;
+                templb.Text = customProgramTypeList[i].name;
+                templb.ForeColor = Color.FromArgb(255, 87, 34);
+                templb.BackColor = System.Drawing.Color.Transparent;
+
+                temp.Controls.Add(templb);
+                CustomProgramPanel.Controls.Add(temp);
                 //buttonSize
             }
             Button addButton=new Button();
-            addButton.Location=new Point(8,8);
+            addButton.Location=new Point(8,customProgAmount*88+8);
             addButton.Size = new Size(CustomProgramPanel.Size.Width-16,80);
             addButton.Visible = true;
             addButton.FlatStyle = FlatStyle.Flat;
             addButton.FlatAppearance.BorderSize = 1;
             addButton.Text = "프로그램 추가";
+            addButton.Font = new Font("맑은 고딕", 14, FontStyle.Bold);
             addButton.ForeColor = Color.FromArgb(255,87,34);
             addButton.Click += addProgramButtonHandler;
             CustomProgramPanel.Controls.Add(addButton);
@@ -146,9 +194,10 @@ namespace SmartBadmintonTrainingSystem
         }
         private void addProgramButtonHandler(object sender, EventArgs e)
         {
-            CustomProgramForm cpf = new CustomProgramForm();
+            CustomProgramForm cpf = new CustomProgramForm(this,customProgAmount++);
+            flipCurtain();
             cpf.Visible = true;
-
+            
         }
         private void button2_Click(object sender, EventArgs e)
         {

@@ -124,6 +124,7 @@ namespace SmartBadmintonTrainingSystem
                     }
                 }
             }
+            //맨 마지막을 지우는 코드
             string tmp = textBox6.Text;
             tmp = tmp.Substring(0, tmp.Length - 1);
             textBox6.Clear();

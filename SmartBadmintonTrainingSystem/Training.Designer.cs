@@ -38,6 +38,14 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.btn_configuration = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.button4 = new System.Windows.Forms.Button();
+            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.CustomProgramPanel = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
             this.p8 = new System.Windows.Forms.PictureBox();
             this.p7 = new System.Windows.Forms.PictureBox();
             this.p6 = new System.Windows.Forms.PictureBox();
@@ -46,15 +54,7 @@
             this.p3 = new System.Windows.Forms.PictureBox();
             this.p2 = new System.Windows.Forms.PictureBox();
             this.p1 = new System.Windows.Forms.PictureBox();
-            this.btn_configuration = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.button4 = new System.Windows.Forms.Button();
-            this.listBox1 = new System.Windows.Forms.ListBox();
             this.Picture_Status = new System.Windows.Forms.PictureBox();
-            this.CustomProgramPanel = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.p8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.p7)).BeginInit();
@@ -184,86 +184,6 @@
             this.label1.TabIndex = 79;
             this.label1.Text = "4번";
             // 
-            // p8
-            // 
-            this.p8.Image = global::SmartBadmintonTrainingSystem.Properties.Resources.red_circle;
-            this.p8.Location = new System.Drawing.Point(714, 714);
-            this.p8.Name = "p8";
-            this.p8.Size = new System.Drawing.Size(256, 256);
-            this.p8.TabIndex = 78;
-            this.p8.TabStop = false;
-            this.p8.Click += new System.EventHandler(this.p8_Click);
-            // 
-            // p7
-            // 
-            this.p7.Image = global::SmartBadmintonTrainingSystem.Properties.Resources.red_circle;
-            this.p7.Location = new System.Drawing.Point(372, 714);
-            this.p7.Name = "p7";
-            this.p7.Size = new System.Drawing.Size(256, 256);
-            this.p7.TabIndex = 77;
-            this.p7.TabStop = false;
-            this.p7.Click += new System.EventHandler(this.p7_Click);
-            // 
-            // p6
-            // 
-            this.p6.Image = global::SmartBadmintonTrainingSystem.Properties.Resources.red_circle;
-            this.p6.Location = new System.Drawing.Point(24, 714);
-            this.p6.Name = "p6";
-            this.p6.Size = new System.Drawing.Size(256, 256);
-            this.p6.TabIndex = 76;
-            this.p6.TabStop = false;
-            this.p6.Click += new System.EventHandler(this.p6_Click);
-            // 
-            // p5
-            // 
-            this.p5.Image = global::SmartBadmintonTrainingSystem.Properties.Resources.red_circle;
-            this.p5.Location = new System.Drawing.Point(714, 357);
-            this.p5.Name = "p5";
-            this.p5.Size = new System.Drawing.Size(256, 256);
-            this.p5.TabIndex = 75;
-            this.p5.TabStop = false;
-            this.p5.Click += new System.EventHandler(this.p5_Click);
-            // 
-            // p4
-            // 
-            this.p4.Image = global::SmartBadmintonTrainingSystem.Properties.Resources.red_circle;
-            this.p4.Location = new System.Drawing.Point(24, 357);
-            this.p4.Name = "p4";
-            this.p4.Size = new System.Drawing.Size(256, 256);
-            this.p4.TabIndex = 74;
-            this.p4.TabStop = false;
-            this.p4.Click += new System.EventHandler(this.p4_Click);
-            // 
-            // p3
-            // 
-            this.p3.Image = global::SmartBadmintonTrainingSystem.Properties.Resources.red_circle;
-            this.p3.Location = new System.Drawing.Point(714, 24);
-            this.p3.Name = "p3";
-            this.p3.Size = new System.Drawing.Size(256, 256);
-            this.p3.TabIndex = 73;
-            this.p3.TabStop = false;
-            this.p3.Click += new System.EventHandler(this.p3_Click);
-            // 
-            // p2
-            // 
-            this.p2.Image = global::SmartBadmintonTrainingSystem.Properties.Resources.red_circle;
-            this.p2.Location = new System.Drawing.Point(367, 24);
-            this.p2.Name = "p2";
-            this.p2.Size = new System.Drawing.Size(256, 256);
-            this.p2.TabIndex = 72;
-            this.p2.TabStop = false;
-            this.p2.Click += new System.EventHandler(this.p2_Click);
-            // 
-            // p1
-            // 
-            this.p1.Image = global::SmartBadmintonTrainingSystem.Properties.Resources.red_circle;
-            this.p1.Location = new System.Drawing.Point(24, 24);
-            this.p1.Name = "p1";
-            this.p1.Size = new System.Drawing.Size(256, 256);
-            this.p1.TabIndex = 71;
-            this.p1.TabStop = false;
-            this.p1.Click += new System.EventHandler(this.p1_Click);
-            // 
             // btn_configuration
             // 
             this.btn_configuration.BackColor = System.Drawing.Color.White;
@@ -345,23 +265,13 @@
             this.listBox1.Size = new System.Drawing.Size(234, 280);
             this.listBox1.TabIndex = 75;
             // 
-            // Picture_Status
-            // 
-            this.Picture_Status.Image = global::SmartBadmintonTrainingSystem.Properties.Resources.red_circle;
-            this.Picture_Status.Location = new System.Drawing.Point(8, 87);
-            this.Picture_Status.Name = "Picture_Status";
-            this.Picture_Status.Size = new System.Drawing.Size(80, 80);
-            this.Picture_Status.TabIndex = 61;
-            this.Picture_Status.TabStop = false;
-            // 
             // CustomProgramPanel
             // 
             this.CustomProgramPanel.AutoScroll = true;
-            this.CustomProgramPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.CustomProgramPanel.Location = new System.Drawing.Point(1333, 12);
             this.CustomProgramPanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.CustomProgramPanel.Name = "CustomProgramPanel";
-            this.CustomProgramPanel.Size = new System.Drawing.Size(473, 994);
+            this.CustomProgramPanel.Size = new System.Drawing.Size(280, 994);
             this.CustomProgramPanel.TabIndex = 76;
             // 
             // label2
@@ -374,6 +284,95 @@
             this.label2.Size = new System.Drawing.Size(93, 15);
             this.label2.TabIndex = 59;
             this.label2.Text = "컨트롤러 연결:X";
+            // 
+            // p8
+            // 
+            this.p8.Image = global::SmartBadmintonTrainingSystem.Properties.Resources.red_circle;
+            this.p8.Location = new System.Drawing.Point(714, 714);
+            this.p8.Name = "p8";
+            this.p8.Size = new System.Drawing.Size(256, 256);
+            this.p8.TabIndex = 78;
+            this.p8.TabStop = false;
+            this.p8.Click += new System.EventHandler(this.p8_Click);
+            // 
+            // p7
+            // 
+            this.p7.Image = global::SmartBadmintonTrainingSystem.Properties.Resources.red_circle;
+            this.p7.Location = new System.Drawing.Point(372, 714);
+            this.p7.Name = "p7";
+            this.p7.Size = new System.Drawing.Size(256, 256);
+            this.p7.TabIndex = 77;
+            this.p7.TabStop = false;
+            this.p7.Click += new System.EventHandler(this.p7_Click);
+            // 
+            // p6
+            // 
+            this.p6.Image = global::SmartBadmintonTrainingSystem.Properties.Resources.red_circle;
+            this.p6.Location = new System.Drawing.Point(24, 714);
+            this.p6.Name = "p6";
+            this.p6.Size = new System.Drawing.Size(256, 256);
+            this.p6.TabIndex = 76;
+            this.p6.TabStop = false;
+            this.p6.Click += new System.EventHandler(this.p6_Click);
+            // 
+            // p5
+            // 
+            this.p5.Image = global::SmartBadmintonTrainingSystem.Properties.Resources.red_circle;
+            this.p5.Location = new System.Drawing.Point(714, 357);
+            this.p5.Name = "p5";
+            this.p5.Size = new System.Drawing.Size(256, 256);
+            this.p5.TabIndex = 75;
+            this.p5.TabStop = false;
+            this.p5.Click += new System.EventHandler(this.p5_Click);
+            // 
+            // p4
+            // 
+            this.p4.Image = global::SmartBadmintonTrainingSystem.Properties.Resources.red_circle;
+            this.p4.Location = new System.Drawing.Point(24, 357);
+            this.p4.Name = "p4";
+            this.p4.Size = new System.Drawing.Size(256, 256);
+            this.p4.TabIndex = 74;
+            this.p4.TabStop = false;
+            this.p4.Click += new System.EventHandler(this.p4_Click);
+            // 
+            // p3
+            // 
+            this.p3.Image = global::SmartBadmintonTrainingSystem.Properties.Resources.red_circle;
+            this.p3.Location = new System.Drawing.Point(714, 24);
+            this.p3.Name = "p3";
+            this.p3.Size = new System.Drawing.Size(256, 256);
+            this.p3.TabIndex = 73;
+            this.p3.TabStop = false;
+            this.p3.Click += new System.EventHandler(this.p3_Click);
+            // 
+            // p2
+            // 
+            this.p2.Image = global::SmartBadmintonTrainingSystem.Properties.Resources.red_circle;
+            this.p2.Location = new System.Drawing.Point(367, 24);
+            this.p2.Name = "p2";
+            this.p2.Size = new System.Drawing.Size(256, 256);
+            this.p2.TabIndex = 72;
+            this.p2.TabStop = false;
+            this.p2.Click += new System.EventHandler(this.p2_Click);
+            // 
+            // p1
+            // 
+            this.p1.Image = global::SmartBadmintonTrainingSystem.Properties.Resources.red_circle;
+            this.p1.Location = new System.Drawing.Point(24, 24);
+            this.p1.Name = "p1";
+            this.p1.Size = new System.Drawing.Size(256, 256);
+            this.p1.TabIndex = 71;
+            this.p1.TabStop = false;
+            this.p1.Click += new System.EventHandler(this.p1_Click);
+            // 
+            // Picture_Status
+            // 
+            this.Picture_Status.Image = global::SmartBadmintonTrainingSystem.Properties.Resources.red_circle;
+            this.Picture_Status.Location = new System.Drawing.Point(8, 87);
+            this.Picture_Status.Name = "Picture_Status";
+            this.Picture_Status.Size = new System.Drawing.Size(80, 80);
+            this.Picture_Status.TabIndex = 61;
+            this.Picture_Status.TabStop = false;
             // 
             // Training
             // 
