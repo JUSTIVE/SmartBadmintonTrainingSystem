@@ -24,6 +24,8 @@ namespace SmartBadmintonTrainingSystem
         {
             
             InitializeComponent();
+            this.StartPosition = FormStartPosition.Manual;
+            this.Location = new Point(Screen.PrimaryScreen.Bounds.Width/2-this.Size.Width/2, Screen.PrimaryScreen.Bounds.Height/2-this.Size.Height/2);
             init();
             
         }
@@ -33,6 +35,7 @@ namespace SmartBadmintonTrainingSystem
             selectCommand.CommandText = "SELECT COUNT(id) from member where id=@id and pw=@pw";
             selectCommand.Parameters.Add("@id", MySqlDbType.VarChar, 20);
             selectCommand.Parameters.Add("@pw", MySqlDbType.VarChar, 20);
+            ActiveControl = txt_id;
         }
         public void checkLogin(){
 

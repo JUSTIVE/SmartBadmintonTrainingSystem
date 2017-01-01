@@ -95,7 +95,7 @@ namespace SmartBadmintonTrainingSystem
 
         public List<PictureBox> pList = new List<PictureBox>();
         string strRecData = "";
-        int Size;
+        int Sizer;
         
         //라벨String
         string openX = "컨트롤러 연결:X";
@@ -104,10 +104,12 @@ namespace SmartBadmintonTrainingSystem
         public Test()
         {
             InitializeComponent();
-            
+            this.StartPosition = FormStartPosition.Manual;
+            this.Location = new Point(Screen.PrimaryScreen.Bounds.Width / 2 - this.Size.Width / 2, Screen.PrimaryScreen.Bounds.Height / 2 - this.Size.Height / 2);
             initInsertQuery();
             pList.Clear();
             setpList();
+
         }
         public void setpList()
         {
@@ -365,12 +367,12 @@ namespace SmartBadmintonTrainingSystem
         }
         void EventDataReceived(object sender, SerialDataReceivedEventArgs e)
         {
-            Size = SP.BytesToRead;
+            Sizer = SP.BytesToRead;
             strRecData = "";
-            byte[] buff = new byte[Size];
-            SP.Read(buff, 0, Size);
+            byte[] buff = new byte[Sizer];
+            SP.Read(buff, 0, Sizer);
 
-            for (iTemp=0; iTemp < Size; iTemp++)
+            for (iTemp=0; iTemp < Sizer; iTemp++)
             {
                 strRecData += buff[iTemp].ToString("X2") + " ";
             }

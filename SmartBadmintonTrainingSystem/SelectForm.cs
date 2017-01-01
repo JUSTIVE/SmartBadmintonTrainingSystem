@@ -18,12 +18,14 @@ namespace SmartBadmintonTrainingSystem
         public SelectForm()
         {
             InitializeComponent();
+
         }
         private void SelectForm_Load(object sender, EventArgs e)
         {
             this.Activate();
             btn_test.Select();
             txt_id.Text = u_instance.uID;
+            this.Location = new Point((Screen.PrimaryScreen.Bounds.Width-this.Size.Width)/2,(Screen.PrimaryScreen.Bounds.Height-this.Size.Height)/2);
         }
         public void setForm(Form1 f)
         {

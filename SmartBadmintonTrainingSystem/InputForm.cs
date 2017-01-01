@@ -27,6 +27,8 @@ namespace SmartBadmintonTrainingSystem
             InitializeComponent();
             tFrm2 = t;
             status = "Configuration";
+            this.StartPosition = FormStartPosition.Manual;
+            this.Location = new Point(Screen.PrimaryScreen.Bounds.Width / 2 - this.Size.Width / 2, Screen.PrimaryScreen.Bounds.Height / 2 - this.Size.Height / 2);
         }
         public InputForm(Test t)
         {

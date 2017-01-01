@@ -20,7 +20,9 @@ namespace SmartBadmintonTrainingSystem
         
         public Join()
         {
-            InitializeComponent();            
+            InitializeComponent();
+            this.StartPosition = FormStartPosition.Manual;
+            this.Location = new Point(Screen.PrimaryScreen.Bounds.Width / 2 - this.Size.Width / 2, Screen.PrimaryScreen.Bounds.Height / 2 - this.Size.Height / 2);
         }
 
         private void Join_Load(object sender, EventArgs e)

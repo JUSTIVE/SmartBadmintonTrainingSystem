@@ -28,8 +28,10 @@ namespace SmartBadmintonTrainingSystem
         string strRecData = "";
         bool thread_flag = false;
 
+        int ProgramCounter = 0;
+
         int iTemp;
-        int Size;
+        int Sizer;
         bool is_light=false;
         //테스트 순서 관련 변수 선언 시작
         public string orderString = "";
@@ -55,7 +57,7 @@ namespace SmartBadmintonTrainingSystem
 
         //센서 데이터 관련 플래그
         bool center_flag1 = true;
-        bool center_flag2 = false;
+        
         bool lrFlag = false; //좌우
         bool FbFlag = false; //상하
         //스윙여부판단
@@ -67,7 +69,7 @@ namespace SmartBadmintonTrainingSystem
         int target_pole;
         ThreadStart thread;
         Thread threader=null;
-
+        List<Button> CustomProgramListInstance;
         Form2 f2;
 
         enum COLOR{RED, GREEN,BLUE,YELLOW,WHITE};
@@ -81,6 +83,10 @@ namespace SmartBadmintonTrainingSystem
             pList.Clear();
             setpList();
             initial();
+            setUpProgramList();
+            this.StartPosition = FormStartPosition.Manual;
+            this.Location = new Point(0, 0);
+            this.Size = new Size(1920,1048);
         }
         public void initial()
         {
@@ -98,6 +104,25 @@ namespace SmartBadmintonTrainingSystem
             {
                 comboBox1.SelectedIndex = 0;
             }
+        }
+        void setUpProgramList()
+        {
+            
+            for(int i = 0; i < ProgramCounter; ++i)
+            {
+                //buttonSize
+            }
+            Button addButton=new Button();
+            addButton.Location=new Point(8,8);
+            addButton.Size = new Size(CustomProgramPanel.Size.Width-16,80);
+            addButton.Visible = true;
+            addButton.FlatStyle = FlatStyle.Flat;
+            addButton.FlatAppearance.BorderSize = 1;
+            addButton.Text = "프로그램 추가";
+            addButton.ForeColor = Color.FromArgb(255,87,34);
+            addButton.Click += addProgramButtonHandler;
+            CustomProgramPanel.Controls.Add(addButton);
+            CustomProgramPanel.Visible = true;
         }
         public void setpList()
         {
@@ -118,6 +143,10 @@ namespace SmartBadmintonTrainingSystem
         public void setForm(TrainingMode t)
         {
             TM = t;
+        }
+        private void addProgramButtonHandler(object sender, EventArgs e)
+        {
+
         }
         private void button2_Click(object sender, EventArgs e)
         {
@@ -201,13 +230,13 @@ namespace SmartBadmintonTrainingSystem
         }
         void EventDataReceived(object sender, SerialDataReceivedEventArgs e)
         {
-            Size = SP.BytesToRead;
+            Sizer = SP.BytesToRead;
             strRecData = "";
 
-            byte[] buff = new byte[Size];
-            SP.Read(buff, 0, Size);
+            byte[] buff = new byte[Sizer];
+            SP.Read(buff, 0, Sizer);
 
-            for (iTemp = 0; iTemp < Size; iTemp++)
+            for (iTemp = 0; iTemp < Sizer; iTemp++)
             {
                 strRecData += buff[iTemp].ToString("X2") + " ";
             }
