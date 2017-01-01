@@ -31,7 +31,7 @@ namespace SmartBadmintonTrainingSystem
             programnumber = -1;
             isRand = false;
         }
-        public CustomProgramForm(Training t,int number):this(t)//추가할때 호출하는 생성자
+        public CustomProgramForm(Training t,int number):this(t)//추가할때 호출하는 생성자 number 는 zero-base
         {
             programnumber = number;
             poleCount = Enumerable.Repeat(-1, 8).ToArray();
@@ -53,13 +53,15 @@ namespace SmartBadmintonTrainingSystem
             string[] splitter = CPT.trainingSet.Split(delim);
             for(int i = 0; i <splitter.Length;i++)
             {
-                Label tmp = (Label)Controls.Find(unmapper[Int32.Parse(splitter[i]) - 1] + "_count", true).FirstOrDefault();
+                TextBox tmp = (TextBox)Controls.Find(unmapper[Int32.Parse(splitter[i]) - 1] + "_count", true).FirstOrDefault();
                 tmp.Text = (Int32.Parse(tmp.Text)+1)+"";
-            }            
+            }
+            updateTrainingSet();
         }
 
             private void pictureBox1_Click(object sender, EventArgs e)
         {
+            from.flipCurtain();
             this.Close();
         }
 
@@ -106,28 +108,31 @@ namespace SmartBadmintonTrainingSystem
             {
                 programName = progNameTextBox.Text;
             }
-            if (programnumber != -1) {
+            if (programnumber == -1) {
                 CustomProgramType CPT = new CustomProgramType(programName, TrainingSet.Text);
                 from.customProgramTypeList.Add(CPT);
             }
             else
             {
-
+                CustomProgramType CPT = new CustomProgramType(programName, TrainingSet.Text);
+                from.kill(programnumber);
+                from.customProgramTypeList.Insert(programnumber,CPT);
             }
-            from.setUpProgramList();
             from.flipCurtain();
+            from.setUpProgramList();
+            
             this.Close();
         }
 
         private void up_Click(object sender, EventArgs e)
         {
-            char[] delim = { '_' };
+            char[] delim = {'_'};
             PictureBox temp = (PictureBox)sender;
             string[] key = temp.Name.Split(delim);
             int index = mapper[key[0]];
             
             poleCount[index]++;
-            Label tmp = (Label)Controls.Find(key[0] + "_count", true).FirstOrDefault();
+            TextBox tmp = (TextBox)Controls.Find(key[0] + "_count", true).FirstOrDefault();
             if (tmp != null) { 
                 tmp.Text = poleCount[index] + "";
                 updateTrainingSet();
@@ -144,25 +149,28 @@ namespace SmartBadmintonTrainingSystem
             string[] key = temp.Name.Split(delim);
             int index = mapper[key[0]];
 
-            if(poleCount[index]>0)
+            if (poleCount[index] > 0) { 
                 poleCount[index]--;
-            Label tmp = (Label)Controls.Find(key[0] + "_count", true).FirstOrDefault();
-            if (tmp != null)
-            {
-                tmp.Text = poleCount[index] + "";
-                if (poleCount[index] == 0)
+            
+                TextBox tmp = (TextBox)Controls.Find(key[0] + "_count", true).FirstOrDefault();
+            
+                if (tmp != null)
                 {
-                    temp.BackColor = Color.FromArgb(66, 66, 66);
+                    tmp.Text = poleCount[index] + "";
+                    if (poleCount[index] == 0)
+                    {
+                        temp.BackColor = Color.FromArgb(66, 66, 66);
+                    }
+                    else
+                    {
+                        temp.BackColor = Color.Tomato;
+                    }
+                    updateTrainingSet();
                 }
                 else
                 {
-                    temp.BackColor = Color.FromArgb(240,240,240);
-                }
-                updateTrainingSet();
-            }
-            else
-            {
 
+                }
             }
         }
 
@@ -185,56 +193,22 @@ namespace SmartBadmintonTrainingSystem
                 int size = Int32.Parse(one_count.Text) + Int32.Parse(two_count.Text) + Int32.Parse(three_count.Text) + Int32.Parse(four_count.Text) + Int32.Parse(five_count.Text) + Int32.Parse(six_count.Text) + Int32.Parse(seven_count.Text) + Int32.Parse(eight_count.Text);
                 int[] array = new int[size];
                 int masterindex = 0;
-                indexer = Int32.Parse(one_count.Text);
-                for (int i = 0; i < indexer;i++)
-                {
-                    array[masterindex] = 1;
-                    masterindex++;
-                }
-                indexer = Int32.Parse(two_count.Text);
-                for (int i = 0; i < indexer; i++)
-                {
-                    array[masterindex] = 2;
-                    masterindex++;
-                }
-                indexer = Int32.Parse(three_count.Text);
-                for (int i = 0; i < indexer; i++)
-                {
-                    array[masterindex] = 3;
-                    masterindex++;
-                }
-                indexer = Int32.Parse(four_count.Text);
-                for (int i = 0; i < indexer; i++)
-                {
-                    array[masterindex] = 4;
-                    masterindex++;
-                }
-                indexer = Int32.Parse(five_count.Text);
-                for (int i = 0; i < indexer; i++)
-                {
-                    array[masterindex] = 5;
-                    masterindex++;
-                }
-                indexer = Int32.Parse(six_count.Text);
-                for (int i = 0; i < indexer; i++)
-                {
-                    array[masterindex] = 6;
-                    masterindex++;
-                }
-                indexer = Int32.Parse(seven_count.Text);
-                for (int i = 0; i < indexer; i++)
-                {
-                    array[masterindex] = 7;
-                    masterindex++;
-                }
-                indexer = Int32.Parse(eight_count.Text);
-                for (int i = 0; i < indexer; i++)
-                {
-                    array[masterindex] = 8;
-                    masterindex++;
-                }
 
-
+                for (int i = 0; i < 8; i++)
+                {
+                    TextBox target = (TextBox)Controls.Find(unmapper[i] + "_count", true).FirstOrDefault();
+                    if (!target.Text.Equals(""))
+                    {
+                        indexer = Int32.Parse(target.Text);
+                        if (indexer > 0)
+                        {
+                            for (int j = 0; j < indexer; j++)
+                            {
+                                array[masterindex++] = (i+1);
+                            }
+                        }
+                    }
+                }
                 shuffle_array(array);
                 for(int i=0;i<array.Length;i++)
                 {
@@ -252,75 +226,18 @@ namespace SmartBadmintonTrainingSystem
                 }
             }
             else {
-                indexer = Int32.Parse(one_count.Text);
-                if (indexer > 0)
+                for(int i = 0; i < 8; i++)
                 {
-                    for (int i = 0; i < indexer; i++)
-                    {
-                        TrainingSet.Text += "1,";
-                    }
-                }
-
-                indexer = Int32.Parse(two_count.Text);
-                if (indexer > 0)
-                {
-                    for (int i = 0; i < indexer; i++)
-                    {
-                        TrainingSet.Text += "2,";
-                    }
-                }
-
-                indexer = Int32.Parse(three_count.Text);
-                if (indexer > 0)
-                {
-                    for (int i = 0; i < indexer; i++)
-                    {
-                        TrainingSet.Text += "3,";
-                    }
-                }
-
-                indexer = Int32.Parse(four_count.Text);
-                if (indexer > 0)
-                {
-                    for (int i = 0; i < indexer; i++)
-                    {
-                        TrainingSet.Text += "4,";
-                    }
-                }
-
-                indexer = Int32.Parse(five_count.Text);
-                if (indexer > 0)
-                {
-                    for (int i = 0; i < indexer; i++)
-                    {
-                        TrainingSet.Text += "5,";
-                    }
-                }
-
-                indexer = Int32.Parse(six_count.Text);
-                if (indexer > 0)
-                {
-                    for (int i = 0; i < indexer; i++)
-                    {
-                        TrainingSet.Text += "6,";
-                    }
-                }
-
-                indexer = Int32.Parse(seven_count.Text);
-                if (indexer > 0)
-                {
-                    for (int i = 0; i < indexer; i++)
-                    {
-                        TrainingSet.Text += "7,";
-                    }
-                }
-
-                indexer = Int32.Parse(eight_count.Text);
-                if (indexer > 0)
-                {
-                    for (int i = 0; i < indexer; i++)
-                    {
-                        TrainingSet.Text += "8,";
+                    TextBox target = (TextBox)Controls.Find(unmapper[i]+"_count",true).FirstOrDefault();
+                    if (!target.Text.Equals("")) {
+                        indexer = Int32.Parse(target.Text);
+                        if (indexer > 0)
+                        {
+                            for (int j = 0; j < indexer; j++)
+                            {
+                                TrainingSet.Text += (i+1)+",";
+                            }
+                        }
                     }
                 }
                 string tmp = TrainingSet.Text;
@@ -361,6 +278,11 @@ namespace SmartBadmintonTrainingSystem
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
             this.programName = progNameTextBox.Text;
+        }
+
+        private void count_TextChanged(object sender, EventArgs e)
+        {
+            updateTrainingSet();
         }
     }
 }

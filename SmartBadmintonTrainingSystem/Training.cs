@@ -15,9 +15,9 @@ namespace SmartBadmintonTrainingSystem
 {
     public partial class Training : Form
     {
-
+        
         //customprogParam
-        int customProgAmount;
+        public int customProgAmount;
         public List<CustomProgramType> customProgramTypeList;
 
         //Sensor HX Code
@@ -79,7 +79,7 @@ namespace SmartBadmintonTrainingSystem
         SoundPlayer sound, sound2;
 
         //Curtain booya
-        Panel curtain;
+        
         bool isCurtain;
 
         public Training()
@@ -88,11 +88,13 @@ namespace SmartBadmintonTrainingSystem
             pList.Clear();
             setpList();
             initial();
+            customProgramTypeList = new List<CustomProgramType>();
             setUpProgramList();
             this.StartPosition = FormStartPosition.Manual;
             this.Location = new Point(0, 0);
             this.Size = new Size(1920,1048);
-            customProgramTypeList = new List<CustomProgramType>();
+            
+
         }
         public void initial()
         {
@@ -111,20 +113,14 @@ namespace SmartBadmintonTrainingSystem
                 comboBox1.SelectedIndex = 0;
             }
             customProgAmount=0;
-
-            curtain = new Panel();
-            curtain.Size = new Size(this.Width, this.Height);
-            curtain.Location = new Point(0, 0);
+            isCurtain = true;
             
-            curtain.Visible = false;
-            curtain.BackColor = Color.FromArgb(50, 0, 0, 0);
-            curtain.BringToFront();
-            this.Controls.Add(curtain);
         }
         public void flipCurtain()
         {
             isCurtain = !isCurtain;
-            curtain.Visible = isCurtain;
+            Visible = isCurtain;
+            //inputListbox(customProgramTypeList.Count+"");
         }
         public void setUpProgramList()
         {
@@ -135,32 +131,70 @@ namespace SmartBadmintonTrainingSystem
                 CustomProgramPanel.Controls[0].Dispose();
             }
             CustomProgramPanel.Visible = true;
-
-            for (int i = 0; i < customProgAmount; ++i)
+            
+            for (int i = 0; i < customProgramTypeList.Count; ++i)
             {
                 Button temp = new Button();
-                temp.Location = new Point(8, 8);
-                temp.Size = new Size(CustomProgramPanel.Size.Width - 72, 80);
+                temp.Location = new Point(8, 88*i+8);
+                temp.Size = new Size(CustomProgramPanel.Size.Width - 104, 80);
                 temp.Name = i+"CPT";
                 temp.Visible = true;
                 temp.FlatStyle = FlatStyle.Flat;
                 temp.FlatAppearance.BorderSize = 0;
                 temp.BackColor = Color.FromArgb(240, 240, 240);
+                temp.MouseEnter += customButton_enter;
+                temp.MouseHover += customButton_enter;
+                temp.MouseLeave += customButton_leave;
+                temp.MouseClick += customProgram_Clicked;
 
                 Label templb = new Label();
                 templb.Location = new Point(8, 8);
                 templb.Name = i + "CPT_label";
                 templb.Visible = true;
+                templb.Font = new Font("맑은 고딕", 14, FontStyle.Bold);
                 templb.Text = customProgramTypeList[i].name;
                 templb.ForeColor = Color.FromArgb(255, 87, 34);
+                templb.Size = new Size(temp.Size.Width-16, templb.Height);
                 templb.BackColor = System.Drawing.Color.Transparent;
+                templb.MouseClick += customProgram_Clicked;
+                templb.MouseEnter += customButton_enter;
+                templb.MouseLeave += customButton_leave;
 
+                Label info = new Label();
+                info.Location = new Point(10, 40);
+                info.Name = i + "CPT_label_info";
+                info.Visible = true;
+                info.Font = new Font("맑은 고딕", 10, FontStyle.Regular);
+                info.Text = customProgramTypeList[i].trainingSet;
+                info.ForeColor = Color.FromArgb(66,66,66);
+                info.Size = new Size(temp.Size.Width - 20, templb.Height);
+                info.BackColor = System.Drawing.Color.Transparent;
+                info.MouseClick += customProgram_Clicked;
+                info.MouseEnter += customButton_enter;
+                info.MouseLeave += customButton_leave;
+
+                PictureBox tmpsetting = new PictureBox();
+                tmpsetting.Location = new Point(CustomProgramPanel.Size.Width - 88, 88 * i + 8);
+                tmpsetting.Size = new Size(80, 80);
+                tmpsetting.Name = i + "CPT";
+                tmpsetting.Visible = true;
+                tmpsetting.BackColor = Color.FromArgb(240, 240, 240);
+                tmpsetting.Padding= new Padding(24);
+                tmpsetting.SizeMode =PictureBoxSizeMode.StretchImage;
+                tmpsetting.Image = Properties.Resources.setting;
+                tmpsetting.MouseEnter += customButton_enter;
+                tmpsetting.MouseLeave += customButton_leave;
+                tmpsetting.Click += settingCustomButton;
+
+
+                CustomProgramPanel.Controls.Add(tmpsetting);
+                temp.Controls.Add(info);
                 temp.Controls.Add(templb);
                 CustomProgramPanel.Controls.Add(temp);
                 //buttonSize
             }
             Button addButton=new Button();
-            addButton.Location=new Point(8,customProgAmount*88+8);
+            addButton.Location=new Point(8,customProgramTypeList.Count*88+8);
             addButton.Size = new Size(CustomProgramPanel.Size.Width-16,80);
             addButton.Visible = true;
             addButton.FlatStyle = FlatStyle.Flat;
@@ -184,6 +218,38 @@ namespace SmartBadmintonTrainingSystem
             pList.Add(p8);
         }
         
+        public void customButton_enter(object sender,EventArgs e)
+        {
+            Control t = sender as Control;
+            if (!(sender.GetType().Equals(typeof(Button))|| sender.GetType().Equals(typeof(PictureBox))))
+            {
+                t.Parent.BackColor = Color.FromArgb(220, 220, 220);
+            }
+            else { 
+                t.BackColor = Color.FromArgb(220, 220, 220);
+            }
+        }
+        public void customButton_leave(object sender, EventArgs e)
+        {
+            Control t = sender as Control;
+            if (!(sender.GetType().Equals(typeof(Button)) || sender.GetType().Equals(typeof(PictureBox))))
+            {
+                t.Parent.BackColor = Color.FromArgb(240, 240, 240);
+            }
+            else
+            {
+                t.BackColor = Color.FromArgb(240, 240, 240);
+            }
+            
+            
+        }
+        public void customProgram_Clicked(object sender, MouseEventArgs e)
+        {
+            Control t = sender as Control;
+            
+            order_list = customProgramTypeList[Int32.Parse(t.Name[0]+"")].trainingSet;
+            inputListbox(order_list);             
+        }
         public void setLocationandColor()
         {
 
@@ -192,33 +258,53 @@ namespace SmartBadmintonTrainingSystem
         {
             TM = t;
         }
+        public void settingCustomButton(object sender, EventArgs e)
+        {
+            Control t = sender as Control;
+            CustomProgramForm cpf = new CustomProgramForm(this, Int32.Parse(t.Name[0] + ""), customProgramTypeList[Int32.Parse(t.Name[0]+"")]);
+            flipCurtain();
+            
+            //inputListbox(t.Name[0] + "-");
+            cpf.Visible = true;
+        }
+        public void kill(int number)
+        {
+            customProgramTypeList.RemoveAt(number);
+        }
+        
         private void addProgramButtonHandler(object sender, EventArgs e)
         {
-            CustomProgramForm cpf = new CustomProgramForm(this,customProgAmount++);
+            CustomProgramForm cpf = new CustomProgramForm(this,-1);
             flipCurtain();
             cpf.Visible = true;
             
         }
         private void button2_Click(object sender, EventArgs e)
         {
-            if (!thread_flag)
-            {
-                inputListbox(target_pole+"");
-                if (order_list.Equals(""))
+            if (port_set) { 
+                if (!thread_flag)
                 {
-                    AutoClosingMessageBox.Show("기둥을 설정하십시요", "설정 오류", 500);
+                    inputListbox(target_pole+"");
+                    if (order_list.Equals(""))
+                    {
+                        AutoClosingMessageBox.Show("기둥을 설정하십시요", "설정 오류", 500);
+                    }
+                    else
+                    {
+                        thread = new ThreadStart(TrainingThreadStart);
+                        threader = new Thread(thread);
+                        threader.Start();
+                        thread_flag = true;
+                    }
                 }
                 else
                 {
-                    thread = new ThreadStart(TrainingThreadStart);
-                    threader = new Thread(thread);
-                    threader.Start();
-                    thread_flag = true;
+                    AutoClosingMessageBox.Show("켜져 있는 스윙을 해제하십시요","점등 해제",500);
                 }
             }
             else
             {
-                AutoClosingMessageBox.Show("켜져 있는 스윙을 해제하십시요","점등 해제",500);
+                AutoClosingMessageBox.Show("컨트롤러가 연결되어 있지 않습니다!", "연결 상태", 500);
             }
         }
         void SetSerialPort()

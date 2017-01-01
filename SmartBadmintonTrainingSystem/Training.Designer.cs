@@ -269,9 +269,9 @@
             // 
             this.CustomProgramPanel.AutoScroll = true;
             this.CustomProgramPanel.Location = new System.Drawing.Point(1333, 12);
-            this.CustomProgramPanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.CustomProgramPanel.Margin = new System.Windows.Forms.Padding(2);
             this.CustomProgramPanel.Name = "CustomProgramPanel";
-            this.CustomProgramPanel.Size = new System.Drawing.Size(280, 994);
+            this.CustomProgramPanel.Size = new System.Drawing.Size(452, 994);
             this.CustomProgramPanel.TabIndex = 76;
             // 
             // label2
@@ -378,7 +378,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.ClientSize = new System.Drawing.Size(1817, 661);
             this.Controls.Add(this.CustomProgramPanel);
             this.Controls.Add(this.listBox1);
