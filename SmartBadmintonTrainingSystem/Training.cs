@@ -146,6 +146,8 @@ namespace SmartBadmintonTrainingSystem
         }
         private void addProgramButtonHandler(object sender, EventArgs e)
         {
+            CustomProgramForm cpf = new CustomProgramForm();
+            cpf.Visible = true;
 
         }
         private void button2_Click(object sender, EventArgs e)
@@ -223,9 +225,7 @@ namespace SmartBadmintonTrainingSystem
             //}
             f2 = new Form2(this);
             f2.Show();
-            order_list = "";
-
-            
+            order_list = "";           
             
         }
         void EventDataReceived(object sender, SerialDataReceivedEventArgs e)

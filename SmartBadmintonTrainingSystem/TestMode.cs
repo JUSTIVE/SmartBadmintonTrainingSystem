@@ -42,6 +42,8 @@ namespace SmartBadmintonTrainingSystem
         public TestMode()
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.Manual;
+            this.Location = new Point(Screen.PrimaryScreen.Bounds.Width / 2 - this.Size.Width / 2, Screen.PrimaryScreen.Bounds.Height / 2 - this.Size.Height / 2);
 
             selectCommand.Connection = d_instance.conn;
             selectCommand.CommandText = "SELECT * from information where id=@id and pw=@pw order by date";

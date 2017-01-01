@@ -27,6 +27,7 @@ namespace SmartBadmintonTrainingSystem
         public Form2()
         {
             InitializeComponent();
+
         }
         public Form2(Training t)
         {
@@ -46,6 +47,8 @@ namespace SmartBadmintonTrainingSystem
                 colorarray[i] = (int)ColorEnum.NONE;
                 colorchecker[i] = false;
             }
+            this.StartPosition = FormStartPosition.Manual;
+            this.Location = new Point(Screen.PrimaryScreen.Bounds.Width / 2 - this.Size.Width / 2, Screen.PrimaryScreen.Bounds.Height / 2 - this.Size.Height / 2);
         }
 
         private void textBox3_Enter(object sender, EventArgs e)

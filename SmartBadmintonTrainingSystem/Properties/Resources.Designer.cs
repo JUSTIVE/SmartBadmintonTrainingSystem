@@ -101,6 +101,26 @@ namespace SmartBadmintonTrainingSystem.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
         /// </summary>
+        internal static System.Drawing.Bitmap close_button {
+            get {
+                object obj = ResourceManager.GetObject("close_button", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap down_chevron {
+            get {
+                object obj = ResourceManager.GetObject("down_chevron", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
         internal static System.Drawing.Bitmap green_circle {
             get {
                 object obj = ResourceManager.GetObject("green_circle", resourceCulture);
@@ -164,6 +184,16 @@ namespace SmartBadmintonTrainingSystem.Properties {
         internal static System.Drawing.Bitmap red_circle {
             get {
                 object obj = ResourceManager.GetObject("red_circle", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap up_chevron {
+            get {
+                object obj = ResourceManager.GetObject("up_chevron", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
