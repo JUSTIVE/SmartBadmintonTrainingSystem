@@ -90,14 +90,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SmartBadmintonTrainingSystem.exe" size="9156024">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SmartBadmintonTrainingSystem.exe" size="9225656">
       <assemblyIdentity name="SmartBadmintonTrainingSystem" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>k09O967JC8X08paPiH9R9Eq4ywuPF4m0Bx5Pxadxouw=</dsig:DigestValue>
+        <dsig:DigestValue>dmyCbzNvvfuKYn/Nyaw43qvtLqDNZVQ7Wk6GNmeJXC8=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

@@ -231,6 +231,26 @@ namespace SmartBadmintonTrainingSystem.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
         /// </summary>
+        internal static System.Drawing.Bitmap signal_green {
+            get {
+                object obj = ResourceManager.GetObject("signal_green", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap signal_red {
+            get {
+                object obj = ResourceManager.GetObject("signal_red", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
         internal static System.Drawing.Bitmap up_chevron {
             get {
                 object obj = ResourceManager.GetObject("up_chevron", resourceCulture);

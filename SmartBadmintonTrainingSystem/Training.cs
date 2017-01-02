@@ -1004,11 +1004,14 @@ namespace SmartBadmintonTrainingSystem
             setRefreshPort();
             port_set = false;
             is_light = false;
-            if (threader.IsAlive)
-            {
-                threader.Abort();
-                threader = null;
+            if (!(threader == null)) {
+                if (threader.IsAlive)
+                {
+                    threader.Abort();
+                    threader = null;
+                }
             }
+            
         }
         public void actionBeam()
         {

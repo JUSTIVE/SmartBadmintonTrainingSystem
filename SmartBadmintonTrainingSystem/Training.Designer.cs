@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Training));
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
@@ -55,6 +56,7 @@
             this.CustomProgramPanel = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.Picture_Status = new System.Windows.Forms.PictureBox();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.p8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.p7)).BeginInit();
@@ -186,7 +188,7 @@
             // 
             // p8
             // 
-            this.p8.Image = global::SmartBadmintonTrainingSystem.Properties.Resources.red_circle;
+            this.p8.Image = ((System.Drawing.Image)(resources.GetObject("p8.Image")));
             this.p8.Location = new System.Drawing.Point(714, 714);
             this.p8.Name = "p8";
             this.p8.Size = new System.Drawing.Size(256, 256);
@@ -196,7 +198,7 @@
             // 
             // p7
             // 
-            this.p7.Image = global::SmartBadmintonTrainingSystem.Properties.Resources.red_circle;
+            this.p7.Image = ((System.Drawing.Image)(resources.GetObject("p7.Image")));
             this.p7.Location = new System.Drawing.Point(372, 714);
             this.p7.Name = "p7";
             this.p7.Size = new System.Drawing.Size(256, 256);
@@ -206,7 +208,7 @@
             // 
             // p6
             // 
-            this.p6.Image = global::SmartBadmintonTrainingSystem.Properties.Resources.red_circle;
+            this.p6.Image = ((System.Drawing.Image)(resources.GetObject("p6.Image")));
             this.p6.Location = new System.Drawing.Point(24, 714);
             this.p6.Name = "p6";
             this.p6.Size = new System.Drawing.Size(256, 256);
@@ -216,7 +218,7 @@
             // 
             // p5
             // 
-            this.p5.Image = global::SmartBadmintonTrainingSystem.Properties.Resources.red_circle;
+            this.p5.Image = ((System.Drawing.Image)(resources.GetObject("p5.Image")));
             this.p5.Location = new System.Drawing.Point(714, 357);
             this.p5.Name = "p5";
             this.p5.Size = new System.Drawing.Size(256, 256);
@@ -226,7 +228,7 @@
             // 
             // p4
             // 
-            this.p4.Image = global::SmartBadmintonTrainingSystem.Properties.Resources.red_circle;
+            this.p4.Image = ((System.Drawing.Image)(resources.GetObject("p4.Image")));
             this.p4.Location = new System.Drawing.Point(24, 357);
             this.p4.Name = "p4";
             this.p4.Size = new System.Drawing.Size(256, 256);
@@ -236,7 +238,7 @@
             // 
             // p3
             // 
-            this.p3.Image = global::SmartBadmintonTrainingSystem.Properties.Resources.red_circle;
+            this.p3.Image = ((System.Drawing.Image)(resources.GetObject("p3.Image")));
             this.p3.Location = new System.Drawing.Point(714, 24);
             this.p3.Name = "p3";
             this.p3.Size = new System.Drawing.Size(256, 256);
@@ -246,7 +248,7 @@
             // 
             // p2
             // 
-            this.p2.Image = global::SmartBadmintonTrainingSystem.Properties.Resources.red_circle;
+            this.p2.Image = ((System.Drawing.Image)(resources.GetObject("p2.Image")));
             this.p2.Location = new System.Drawing.Point(367, 24);
             this.p2.Name = "p2";
             this.p2.Size = new System.Drawing.Size(256, 256);
@@ -256,7 +258,7 @@
             // 
             // p1
             // 
-            this.p1.Image = global::SmartBadmintonTrainingSystem.Properties.Resources.red_circle;
+            this.p1.Image = ((System.Drawing.Image)(resources.GetObject("p1.Image")));
             this.p1.Location = new System.Drawing.Point(24, 24);
             this.p1.Name = "p1";
             this.p1.Size = new System.Drawing.Size(256, 256);
@@ -367,12 +369,20 @@
             // 
             // Picture_Status
             // 
-            this.Picture_Status.Image = global::SmartBadmintonTrainingSystem.Properties.Resources.red_circle;
+            this.Picture_Status.Image = ((System.Drawing.Image)(resources.GetObject("Picture_Status.Image")));
             this.Picture_Status.Location = new System.Drawing.Point(8, 87);
             this.Picture_Status.Name = "Picture_Status";
             this.Picture_Status.Size = new System.Drawing.Size(80, 80);
             this.Picture_Status.TabIndex = 61;
             this.Picture_Status.TabStop = false;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(66)))));
+            this.panel3.Location = new System.Drawing.Point(-1, -3);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(347, 726);
+            this.panel3.TabIndex = 77;
             // 
             // Training
             // 
@@ -391,6 +401,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.Picture_Status);
             this.Controls.Add(this.label2);
+            this.Controls.Add(this.panel3);
             this.Name = "Training";
             this.Text = "트레이닝 모드";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Training_FormClosed);
@@ -440,5 +451,6 @@
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.Panel CustomProgramPanel;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Panel panel3;
     }
 }
