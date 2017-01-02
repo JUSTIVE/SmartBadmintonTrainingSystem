@@ -499,9 +499,9 @@ namespace SmartBadmintonTrainingSystem
             {
                 buffer.Clear();
                 port_set = true;
-                Picture_Status.Image = SmartBadmintonTrainingSystem.Properties.Resources.green_circle;
+                Picture_Status.Image = SmartBadmintonTrainingSystem.Properties.Resources.signal_green;
                 SP.DataReceived += new SerialDataReceivedEventHandler(EventDataReceived);
-                AutoClosingMessageBox.Show("컨트롤러 연결 성공", "포트", 500);
+                //AutoClosingMessageBox.Show("컨트롤러 연결 성공", "포트", 500);
                 inputListbox("컨트롤러 연결 성공");
                 label2.Text = openO;
 
@@ -986,19 +986,30 @@ namespace SmartBadmintonTrainingSystem
             }
             button1.Text = "연결시도";
             label2.Text = openX;
-            Picture_Status.Image = SmartBadmintonTrainingSystem.Properties.Resources.red_circle;
+            Picture_Status.Image = SmartBadmintonTrainingSystem.Properties.Resources.signal_red;
             for (int i = 0; i < 8; i++)
             {
                 setImageOff(i + 1);
             }
             SetSerialPort();
         }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void closeButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
         public void inputListbox(string data)
         {
             listBox1.Items.Add(data);
             listBox1.SelectedIndex = listBox1.Items.Count - 1;
         }
-        private void button4_Click(object sender, EventArgs e)
+        private void refreshButtonClick(object sender, EventArgs e)
         {
             inputListbox("컨트롤러 새로고침");
             setRefreshPort();
