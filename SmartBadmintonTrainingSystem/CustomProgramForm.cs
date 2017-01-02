@@ -120,7 +120,6 @@ namespace SmartBadmintonTrainingSystem
             }
             from.flipCurtain();
             from.setUpProgramList();
-            
             this.Close();
         }
 
