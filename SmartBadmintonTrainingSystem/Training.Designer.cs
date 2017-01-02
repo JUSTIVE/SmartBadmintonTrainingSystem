@@ -38,14 +38,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.btn_configuration = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.button4 = new System.Windows.Forms.Button();
-            this.listBox1 = new System.Windows.Forms.ListBox();
-            this.CustomProgramPanel = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
             this.p8 = new System.Windows.Forms.PictureBox();
             this.p7 = new System.Windows.Forms.PictureBox();
             this.p6 = new System.Windows.Forms.PictureBox();
@@ -54,6 +46,14 @@
             this.p3 = new System.Windows.Forms.PictureBox();
             this.p2 = new System.Windows.Forms.PictureBox();
             this.p1 = new System.Windows.Forms.PictureBox();
+            this.btn_configuration = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.button4 = new System.Windows.Forms.Button();
+            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.CustomProgramPanel = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
             this.Picture_Status = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.p8)).BeginInit();
@@ -70,11 +70,11 @@
             // comboBox1
             // 
             this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboBox1.Font = new System.Drawing.Font("굴림", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.comboBox1.Font = new System.Drawing.Font("맑은 고딕", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(8, 34);
+            this.comboBox1.Location = new System.Drawing.Point(8, 21);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(320, 40);
+            this.comboBox1.Size = new System.Drawing.Size(320, 53);
             this.comboBox1.TabIndex = 64;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged_1);
             // 
@@ -184,107 +184,6 @@
             this.label1.TabIndex = 79;
             this.label1.Text = "4번";
             // 
-            // btn_configuration
-            // 
-            this.btn_configuration.BackColor = System.Drawing.Color.White;
-            this.btn_configuration.FlatAppearance.BorderSize = 3;
-            this.btn_configuration.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(171)))), ((int)(((byte)(145)))));
-            this.btn_configuration.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_configuration.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btn_configuration.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(87)))), ((int)(((byte)(34)))));
-            this.btn_configuration.Location = new System.Drawing.Point(94, 545);
-            this.btn_configuration.Name = "btn_configuration";
-            this.btn_configuration.Size = new System.Drawing.Size(234, 80);
-            this.btn_configuration.TabIndex = 66;
-            this.btn_configuration.Text = "환경설정";
-            this.btn_configuration.UseVisualStyleBackColor = false;
-            this.btn_configuration.Click += new System.EventHandler(this.btn_configuration_Click);
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.White;
-            this.button2.FlatAppearance.BorderSize = 3;
-            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(171)))), ((int)(((byte)(145)))));
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(87)))), ((int)(((byte)(34)))));
-            this.button2.Location = new System.Drawing.Point(95, 631);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(234, 80);
-            this.button2.TabIndex = 65;
-            this.button2.Text = "트레이닝 시작";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.White;
-            this.button1.FlatAppearance.BorderSize = 3;
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(171)))), ((int)(((byte)(145)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(87)))), ((int)(((byte)(34)))));
-            this.button1.Location = new System.Drawing.Point(94, 87);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(234, 80);
-            this.button1.TabIndex = 60;
-            this.button1.Text = "연결시도";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(87)))), ((int)(((byte)(34)))));
-            this.panel2.Location = new System.Drawing.Point(12, 72);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(316, 2);
-            this.panel2.TabIndex = 67;
-            // 
-            // button4
-            // 
-            this.button4.BackColor = System.Drawing.Color.White;
-            this.button4.FlatAppearance.BorderSize = 3;
-            this.button4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(171)))), ((int)(((byte)(145)))));
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(87)))), ((int)(((byte)(34)))));
-            this.button4.Location = new System.Drawing.Point(94, 173);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(234, 80);
-            this.button4.TabIndex = 74;
-            this.button4.Text = "새로고침";
-            this.button4.UseVisualStyleBackColor = false;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
-            // 
-            // listBox1
-            // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 12;
-            this.listBox1.Location = new System.Drawing.Point(94, 261);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(234, 280);
-            this.listBox1.TabIndex = 75;
-            // 
-            // CustomProgramPanel
-            // 
-            this.CustomProgramPanel.AutoScroll = true;
-            this.CustomProgramPanel.Location = new System.Drawing.Point(1333, 12);
-            this.CustomProgramPanel.Margin = new System.Windows.Forms.Padding(2);
-            this.CustomProgramPanel.Name = "CustomProgramPanel";
-            this.CustomProgramPanel.Size = new System.Drawing.Size(452, 994);
-            this.CustomProgramPanel.TabIndex = 76;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(87)))), ((int)(((byte)(34)))));
-            this.label2.Location = new System.Drawing.Point(18, 11);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(93, 15);
-            this.label2.TabIndex = 59;
-            this.label2.Text = "컨트롤러 연결:X";
-            // 
             // p8
             // 
             this.p8.Image = global::SmartBadmintonTrainingSystem.Properties.Resources.red_circle;
@@ -365,6 +264,107 @@
             this.p1.TabStop = false;
             this.p1.Click += new System.EventHandler(this.p1_Click);
             // 
+            // btn_configuration
+            // 
+            this.btn_configuration.BackColor = System.Drawing.Color.White;
+            this.btn_configuration.FlatAppearance.BorderSize = 3;
+            this.btn_configuration.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(171)))), ((int)(((byte)(145)))));
+            this.btn_configuration.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_configuration.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btn_configuration.ForeColor = System.Drawing.Color.Tomato;
+            this.btn_configuration.Location = new System.Drawing.Point(94, 545);
+            this.btn_configuration.Name = "btn_configuration";
+            this.btn_configuration.Size = new System.Drawing.Size(234, 80);
+            this.btn_configuration.TabIndex = 66;
+            this.btn_configuration.Text = "환경설정";
+            this.btn_configuration.UseVisualStyleBackColor = false;
+            this.btn_configuration.Click += new System.EventHandler(this.btn_configuration_Click);
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.White;
+            this.button2.FlatAppearance.BorderSize = 3;
+            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(171)))), ((int)(((byte)(145)))));
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.button2.ForeColor = System.Drawing.Color.Tomato;
+            this.button2.Location = new System.Drawing.Point(95, 631);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(234, 80);
+            this.button2.TabIndex = 65;
+            this.button2.Text = "트레이닝 시작";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.White;
+            this.button1.FlatAppearance.BorderSize = 3;
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(171)))), ((int)(((byte)(145)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.button1.ForeColor = System.Drawing.Color.Tomato;
+            this.button1.Location = new System.Drawing.Point(94, 87);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(234, 80);
+            this.button1.TabIndex = 60;
+            this.button1.Text = "연결시도";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(87)))), ((int)(((byte)(34)))));
+            this.panel2.Location = new System.Drawing.Point(12, 72);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(316, 2);
+            this.panel2.TabIndex = 67;
+            // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.Color.White;
+            this.button4.FlatAppearance.BorderSize = 3;
+            this.button4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(171)))), ((int)(((byte)(145)))));
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.button4.ForeColor = System.Drawing.Color.Tomato;
+            this.button4.Location = new System.Drawing.Point(94, 173);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(234, 80);
+            this.button4.TabIndex = 74;
+            this.button4.Text = "새로고침";
+            this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // listBox1
+            // 
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.ItemHeight = 12;
+            this.listBox1.Location = new System.Drawing.Point(94, 261);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(234, 280);
+            this.listBox1.TabIndex = 75;
+            // 
+            // CustomProgramPanel
+            // 
+            this.CustomProgramPanel.AutoScroll = true;
+            this.CustomProgramPanel.Location = new System.Drawing.Point(1333, 12);
+            this.CustomProgramPanel.Margin = new System.Windows.Forms.Padding(2);
+            this.CustomProgramPanel.Name = "CustomProgramPanel";
+            this.CustomProgramPanel.Size = new System.Drawing.Size(452, 994);
+            this.CustomProgramPanel.TabIndex = 76;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(87)))), ((int)(((byte)(34)))));
+            this.label2.Location = new System.Drawing.Point(18, 11);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(93, 15);
+            this.label2.TabIndex = 59;
+            this.label2.Text = "컨트롤러 연결:X";
+            // 
             // Picture_Status
             // 
             this.Picture_Status.Image = global::SmartBadmintonTrainingSystem.Properties.Resources.red_circle;
@@ -379,7 +379,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.ClientSize = new System.Drawing.Size(1817, 661);
+            this.ClientSize = new System.Drawing.Size(1817, 726);
             this.Controls.Add(this.CustomProgramPanel);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.button4);

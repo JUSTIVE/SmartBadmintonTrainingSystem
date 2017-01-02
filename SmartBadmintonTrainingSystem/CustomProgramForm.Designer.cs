@@ -36,18 +36,18 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.TrainingSet = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.progNameTextBox = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.eight_up = new System.Windows.Forms.PictureBox();
             this.eight_down = new System.Windows.Forms.PictureBox();
             this.seven_up = new System.Windows.Forms.PictureBox();
@@ -168,6 +168,21 @@
             this.panel2.Size = new System.Drawing.Size(169, 424);
             this.panel2.TabIndex = 16;
             // 
+            // button1
+            // 
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(0, 0);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(169, 41);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "랜덤";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -213,21 +228,6 @@
             this.label16.TabIndex = 29;
             this.label16.Text = "6번 기둥";
             // 
-            // button1
-            // 
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(0, 0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(169, 41);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "랜덤";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // TrainingSet
             // 
             this.TrainingSet.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
@@ -259,16 +259,6 @@
             this.panel4.Size = new System.Drawing.Size(511, 49);
             this.panel4.TabIndex = 69;
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label3.Location = new System.Drawing.Point(19, 16);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(91, 17);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "프로그램 이름";
-            // 
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(87)))), ((int)(((byte)(34)))));
@@ -288,6 +278,16 @@
             this.progNameTextBox.Size = new System.Drawing.Size(355, 22);
             this.progNameTextBox.TabIndex = 70;
             this.progNameTextBox.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label3.Location = new System.Drawing.Point(19, 16);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(91, 17);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "프로그램 이름";
             // 
             // eight_up
             // 
@@ -541,6 +541,7 @@
             this.one_count.Text = "0";
             this.one_count.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.one_count.TextChanged += new System.EventHandler(this.count_TextChanged);
+            this.one_count.Leave += new System.EventHandler(this.count_Leave);
             // 
             // two_count
             // 
@@ -556,6 +557,7 @@
             this.two_count.Text = "0";
             this.two_count.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.two_count.TextChanged += new System.EventHandler(this.count_TextChanged);
+            this.two_count.Leave += new System.EventHandler(this.count_Leave);
             // 
             // three_count
             // 
@@ -571,6 +573,7 @@
             this.three_count.Text = "0";
             this.three_count.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.three_count.TextChanged += new System.EventHandler(this.count_TextChanged);
+            this.three_count.Leave += new System.EventHandler(this.count_Leave);
             // 
             // five_count
             // 
@@ -586,6 +589,7 @@
             this.five_count.Text = "0";
             this.five_count.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.five_count.TextChanged += new System.EventHandler(this.count_TextChanged);
+            this.five_count.Leave += new System.EventHandler(this.count_Leave);
             // 
             // four_count
             // 
@@ -601,6 +605,7 @@
             this.four_count.Text = "0";
             this.four_count.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.four_count.TextChanged += new System.EventHandler(this.count_TextChanged);
+            this.four_count.Leave += new System.EventHandler(this.count_Leave);
             // 
             // six_count
             // 
@@ -616,6 +621,7 @@
             this.six_count.Text = "0";
             this.six_count.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.six_count.TextChanged += new System.EventHandler(this.count_TextChanged);
+            this.six_count.Leave += new System.EventHandler(this.count_Leave);
             // 
             // seven_count
             // 
@@ -631,6 +637,7 @@
             this.seven_count.Text = "0";
             this.seven_count.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.seven_count.TextChanged += new System.EventHandler(this.count_TextChanged);
+            this.seven_count.Leave += new System.EventHandler(this.count_Leave);
             // 
             // eight_count
             // 
@@ -646,6 +653,7 @@
             this.eight_count.Text = "0";
             this.eight_count.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.eight_count.TextChanged += new System.EventHandler(this.count_TextChanged);
+            this.eight_count.Leave += new System.EventHandler(this.count_Leave);
             // 
             // CustomProgramForm
             // 

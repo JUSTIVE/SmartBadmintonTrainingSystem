@@ -138,7 +138,7 @@ namespace SmartBadmintonTrainingSystem
             {
                 Button temp = new Button();
                 temp.Location = new Point(8, 88*i+8);
-                temp.Size = new Size(CustomProgramPanel.Size.Width - 104, 80);
+                temp.Size = new Size(CustomProgramPanel.Size.Width - 184, 80);
                 temp.Name = i+"CPT";
                 temp.Visible = true;
                 temp.FlatStyle = FlatStyle.Flat;
@@ -176,9 +176,9 @@ namespace SmartBadmintonTrainingSystem
                 info.MouseLeave += customButton_leave;
 
                 PictureBox tmpsetting = new PictureBox();
-                tmpsetting.Location = new Point(CustomProgramPanel.Size.Width - 88, 88 * i + 8);
+                tmpsetting.Location = new Point(CustomProgramPanel.Size.Width - 172, 88 * i + 8);
                 tmpsetting.Size = new Size(80, 80);
-                tmpsetting.Name = i + "CPT";
+                tmpsetting.Name = i + "CPT_setting";
                 tmpsetting.Visible = true;
                 tmpsetting.BackColor = Color.FromArgb(240, 240, 240);
                 tmpsetting.Padding= new Padding(24);
@@ -189,6 +189,20 @@ namespace SmartBadmintonTrainingSystem
                 tmpsetting.Click += settingCustomButton;
 
 
+                PictureBox tmpdelete = new PictureBox();
+                tmpdelete.Location = new Point(CustomProgramPanel.Size.Width - 88, 88 * i + 8);
+                tmpdelete.Size = new Size(80, 80);
+                tmpdelete.Name = i + "CPT_delete";
+                tmpdelete.Visible = true;
+                tmpdelete.BackColor = Color.Tomato;
+                tmpdelete.Padding = new Padding(24);
+                tmpdelete.SizeMode = PictureBoxSizeMode.StretchImage;
+                tmpdelete.Image = Properties.Resources.close_button;
+                tmpdelete.MouseEnter += deleteButton_enter;
+                tmpdelete.MouseLeave += deleteButton_leave;
+                tmpdelete.Click += deleteButton_Clicked;
+
+                CustomProgramPanel.Controls.Add(tmpdelete);
                 CustomProgramPanel.Controls.Add(tmpsetting);
                 temp.Controls.Add(info);
                 temp.Controls.Add(templb);
@@ -205,6 +219,17 @@ namespace SmartBadmintonTrainingSystem
             addButton.Font = new Font("맑은 고딕", 14, FontStyle.Bold);
             addButton.ForeColor = Color.FromArgb(255,87,34);
             addButton.Click += addProgramButtonHandler;
+            addButton.Padding= new Padding(80,0,0,0);
+            PictureBox icon = new PictureBox();
+            icon.Location = new Point(0, 0);
+            icon.Size = new Size(80,addButton.Size.Height);
+            icon.Image = Properties.Resources.ic_plus_white_48dp;
+            icon.SizeMode = PictureBoxSizeMode.StretchImage;
+            icon.Padding = new Padding(24);
+            icon.BackColor = Color.Tomato;
+            icon.Click += addProgramButtonHandler;
+
+            addButton.Controls.Add(icon);
             CustomProgramPanel.Controls.Add(addButton);
             CustomProgramPanel.Visible = true;
         }
@@ -219,7 +244,9 @@ namespace SmartBadmintonTrainingSystem
             pList.Add(p7);
             pList.Add(p8);
         }
-        
+        /// <summary>
+        /// 버튼 디자인 코드
+        /// </summary>
         public void customButton_enter(object sender,EventArgs e)
         {
             Control t = sender as Control;
@@ -231,6 +258,9 @@ namespace SmartBadmintonTrainingSystem
                 t.BackColor = Color.FromArgb(220, 220, 220);
             }
         }
+        /// <summary>
+        /// 버튼 디자인 코드
+        /// </summary>
         public void customButton_leave(object sender, EventArgs e)
         {
             Control t = sender as Control;
@@ -242,8 +272,28 @@ namespace SmartBadmintonTrainingSystem
             {
                 t.BackColor = Color.FromArgb(240, 240, 240);
             }
-            
-            
+        }
+        public void deleteButton_leave(object sender, EventArgs e)
+        {
+            PictureBox p = sender as PictureBox;
+            p.BackColor = Color.Tomato;
+        }
+        public void deleteButton_enter(object sender, EventArgs e)
+        {
+            PictureBox p = sender as PictureBox;
+            p.BackColor = Color.Coral;
+        }
+        /// <summary>
+        /// 버튼 이벤트 코드
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        public void deleteButton_Clicked(object sender, EventArgs e)
+        {
+
+            Control t = sender as Control;
+            kill(Int32.Parse(t.Name[0]+""));
+            setUpProgramList();
         }
         public void customProgram_Clicked(object sender, MouseEventArgs e)
         {
@@ -252,10 +302,8 @@ namespace SmartBadmintonTrainingSystem
             order_list = customProgramTypeList[Int32.Parse(t.Name[0]+"")].trainingSet;
             inputListbox(order_list);             
         }
-        public void setLocationandColor()
-        {
+        
 
-        }
         public void setForm(TrainingMode t)
         {
             TM = t;
@@ -266,7 +314,6 @@ namespace SmartBadmintonTrainingSystem
             CustomProgramForm cpf = new CustomProgramForm(this, Int32.Parse(t.Name[0] + ""), customProgramTypeList[Int32.Parse(t.Name[0]+"")]);
             flipCurtain();
             
-            //inputListbox(t.Name[0] + "-");
             cpf.Visible = true;
         }
         public void kill(int number)

@@ -45,23 +45,22 @@
             // 
             this.txt_pw.BackColor = System.Drawing.Color.White;
             this.txt_pw.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txt_pw.Location = new System.Drawing.Point(447, 120);
-            this.txt_pw.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_pw.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txt_pw.Location = new System.Drawing.Point(313, 80);
             this.txt_pw.Name = "txt_pw";
             this.txt_pw.PasswordChar = '*';
-            this.txt_pw.Size = new System.Drawing.Size(240, 21);
+            this.txt_pw.Size = new System.Drawing.Size(168, 16);
             this.txt_pw.TabIndex = 2;
             this.txt_pw.TextChanged += new System.EventHandler(this.txt_pw_TextChanged);
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label6.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(360, 118);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Location = new System.Drawing.Point(252, 79);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(62, 22);
+            this.label6.Size = new System.Drawing.Size(55, 15);
             this.label6.TabIndex = 32;
             this.label6.Text = "패스워드";
             // 
@@ -69,22 +68,21 @@
             // 
             this.txt_id.BackColor = System.Drawing.Color.White;
             this.txt_id.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txt_id.Location = new System.Drawing.Point(447, 52);
-            this.txt_id.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_id.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txt_id.Location = new System.Drawing.Point(313, 35);
             this.txt_id.Name = "txt_id";
-            this.txt_id.Size = new System.Drawing.Size(190, 21);
+            this.txt_id.Size = new System.Drawing.Size(133, 16);
             this.txt_id.TabIndex = 1;
             this.txt_id.TextChanged += new System.EventHandler(this.txt_id_TextChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label1.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(360, 52);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(252, 35);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(49, 22);
+            this.label1.Size = new System.Drawing.Size(43, 15);
             this.label1.TabIndex = 30;
             this.label1.Text = "아이디";
             // 
@@ -94,12 +92,11 @@
             this.btn_login.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(87)))), ((int)(((byte)(34)))));
             this.btn_login.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(171)))), ((int)(((byte)(145)))));
             this.btn_login.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_login.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_login.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_login.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(87)))), ((int)(((byte)(34)))));
-            this.btn_login.Location = new System.Drawing.Point(364, 234);
-            this.btn_login.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_login.Location = new System.Drawing.Point(255, 156);
             this.btn_login.Name = "btn_login";
-            this.btn_login.Size = new System.Drawing.Size(157, 64);
+            this.btn_login.Size = new System.Drawing.Size(110, 43);
             this.btn_login.TabIndex = 3;
             this.btn_login.Text = "로그인";
             this.btn_login.UseVisualStyleBackColor = false;
@@ -110,12 +107,11 @@
             this.btn_join.BackColor = System.Drawing.Color.White;
             this.btn_join.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(171)))), ((int)(((byte)(145)))));
             this.btn_join.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_join.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_join.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_join.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(87)))), ((int)(((byte)(34)))));
-            this.btn_join.Location = new System.Drawing.Point(530, 234);
-            this.btn_join.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_join.Location = new System.Drawing.Point(371, 156);
             this.btn_join.Name = "btn_join";
-            this.btn_join.Size = new System.Drawing.Size(157, 64);
+            this.btn_join.Size = new System.Drawing.Size(110, 43);
             this.btn_join.TabIndex = 4;
             this.btn_join.Text = "회원 가입";
             this.btn_join.UseVisualStyleBackColor = false;
@@ -124,38 +120,35 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(87)))), ((int)(((byte)(34)))));
-            this.panel1.Location = new System.Drawing.Point(447, 138);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Location = new System.Drawing.Point(313, 95);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(237, 3);
+            this.panel1.Size = new System.Drawing.Size(166, 2);
             this.panel1.TabIndex = 34;
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(87)))), ((int)(((byte)(34)))));
-            this.panel2.Location = new System.Drawing.Point(447, 72);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel2.Location = new System.Drawing.Point(313, 51);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(237, 3);
+            this.panel2.Size = new System.Drawing.Size(166, 2);
             this.panel2.TabIndex = 35;
             // 
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.White;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(33, 32);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Location = new System.Drawing.Point(23, 21);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(274, 267);
+            this.pictureBox1.Size = new System.Drawing.Size(192, 178);
             this.pictureBox1.TabIndex = 7;
             this.pictureBox1.TabStop = false;
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(734, 346);
+            this.ClientSize = new System.Drawing.Size(514, 231);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.txt_pw);
@@ -165,7 +158,6 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btn_login);
             this.Controls.Add(this.btn_join);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "스마트 헬스케어 트레이닝 시스템";

@@ -47,7 +47,7 @@ namespace SmartBadmintonTrainingSystem
             int myCount = Convert.ToInt32(selectCommand.ExecuteScalar());
             if (myCount == 1)
             {
-                AutoClosingMessageBox.Show("로그인 성공!", "알림", 300);
+                //AutoClosingMessageBox.Show("로그인 성공!", "알림", 300);
                 //MessageBox.Show("로그인 성공!");
                 U_instance.setInstance(u_id,u_pw);
                 

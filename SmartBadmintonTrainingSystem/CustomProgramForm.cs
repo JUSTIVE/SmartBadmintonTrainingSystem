@@ -14,6 +14,7 @@ namespace SmartBadmintonTrainingSystem
     {
 
         Training from=null;
+        ///문자를 숫자로
         Dictionary<string, int> mapper = new Dictionary<string, int> { { "one", 0 }, { "two", 1 }, { "three", 2 }, { "four", 3 }, { "five", 4 }, { "six", 5 }, { "seven", 6 }, { "eight", 7 } };
         Dictionary<int, string> unmapper = new Dictionary<int, string> { { 0, "one" }, { 1, "two" }, { 2, "three" }, { 3,"four"}, { 4,"five"}, {5,"six"}, { 6,"seven"}, {7, "eight"} };
         bool isRand;
@@ -34,7 +35,7 @@ namespace SmartBadmintonTrainingSystem
         public CustomProgramForm(Training t,int number):this(t)//추가할때 호출하는 생성자 number 는 zero-base
         {
             programnumber = number;
-            poleCount = Enumerable.Repeat(-1, 8).ToArray();
+            poleCount = Enumerable.Repeat(0, 8).ToArray();
             {
                 one_count.Text = 0+"";
                 two_count.Text = 0 + "";
@@ -55,6 +56,8 @@ namespace SmartBadmintonTrainingSystem
             {
                 TextBox tmp = (TextBox)Controls.Find(unmapper[Int32.Parse(splitter[i]) - 1] + "_count", true).FirstOrDefault();
                 tmp.Text = (Int32.Parse(tmp.Text)+1)+"";
+                poleCount[Int32.Parse(splitter[i]) - 1]++;
+
             }
             updateTrainingSet();
         }
@@ -125,8 +128,8 @@ namespace SmartBadmintonTrainingSystem
 
         private void up_Click(object sender, EventArgs e)
         {
+            PictureBox temp = sender as PictureBox;
             char[] delim = {'_'};
-            PictureBox temp = (PictureBox)sender;
             string[] key = temp.Name.Split(delim);
             int index = mapper[key[0]];
             
@@ -136,15 +139,11 @@ namespace SmartBadmintonTrainingSystem
                 tmp.Text = poleCount[index] + "";
                 updateTrainingSet();
             }
-            else
-            {
-                
-            }
         }
         private void down_click(object sender, EventArgs e)
         {
-            char[] delim = { '_' };
             PictureBox temp = (PictureBox)sender;
+            char[] delim = { '_' };
             string[] key = temp.Name.Split(delim);
             int index = mapper[key[0]];
 
@@ -281,7 +280,29 @@ namespace SmartBadmintonTrainingSystem
 
         private void count_TextChanged(object sender, EventArgs e)
         {
+            
+            Control t = sender as Control;
+            char[] delim = { '_' };
+            string[] tempName = t.Name.Split(delim);
+            if (!t.Text.Equals("")) { 
+                poleCount[mapper[tempName[0]]]=Int32.Parse(t.Text);
+            }
+            else
+            {
+                poleCount[mapper[tempName[0]]] = 0;
+            }
             updateTrainingSet();
         }
+        private void count_Leave(object sender, EventArgs e)
+        {
+            Control t = sender as Control;
+            char[] delim = { '_' };
+            string[] tempName = t.Name.Split(delim);
+            if (t.Text.Equals(""))
+            {
+                t.Text = 0+"";
+            }
+        }
+        
     }
 }
