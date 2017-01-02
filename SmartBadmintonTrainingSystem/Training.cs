@@ -20,6 +20,8 @@ namespace SmartBadmintonTrainingSystem
         public int customProgAmount;
         public List<CustomProgramType> customProgramTypeList;
 
+        private int currentPole=1;
+
         //Sensor HX Code
         byte[] index = { 0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07, 0x08 };//M2,M1,B3,B2,B1,F3,F2,F1
         byte[] color = { 0x01, 0x02, 0x03, 0x04, 0x00 };//Red,Green,Blue,Yellow
@@ -382,7 +384,17 @@ namespace SmartBadmintonTrainingSystem
                     buffer.Add(strRecData);
                 }
             }
-            if (!swing_flag) s_buffer.Add(strRecData);
+            if (!swing_flag)
+            {
+                /*if (Sizer == 6)*/ { s_buffer.Add(strRecData); }
+                //else { send_packet(mapper[currentPole - 1], 0); }
+                ///TODO: Substring 비교 체크
+                
+            }
+            
+            
+            
+            
         }
         public void send_packet(int number, int number2) //number:기둥번호 number2:색상
         {
@@ -623,9 +635,13 @@ namespace SmartBadmintonTrainingSystem
                     inputListbox("swing");
                     break;
                 }
-                else isSwing(unmapper[target_pole] + 1);//1-base pole number
+                else
+                {
+                    currentPole = unmapper[target_pole] + 1;
+                    isSwing(currentPole);
+                }//1-base pole number
             }
-            setImageOff(unmapper[target_pole] + 1);//unmapped pole number
+            setImageOff(currentPole);//unmapped pole number
             send_packet(target_pole, 4);//mapped pole number
 
             clearBuff();
@@ -971,7 +987,10 @@ namespace SmartBadmintonTrainingSystem
                         inputListbox("swing");
                         break;
                     }
-                    else isSwing(unmapper[target_pole]+1);//1-base pole number
+                    else {
+                        currentPole = unmapper[target_pole] + 1;
+                        isSwing(currentPole);
+                    } //1-base pole number
                 }
                 setImageOff(unmapper[target_pole]+1);//unmapped pole number
                 //send_packet(target_pole+1, 4);//mapped pole number
