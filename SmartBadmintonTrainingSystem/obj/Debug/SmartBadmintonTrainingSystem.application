@@ -7,14 +7,14 @@
     <framework targetVersion="4.5" profile="Full" supportedRuntime="4.0.30319" />
   </compatibleFrameworks>
   <dependency>
-    <dependentAssembly dependencyType="install" codebase="SmartBadmintonTrainingSystem.exe.manifest" size="6311">
+    <dependentAssembly dependencyType="install" codebase="SmartBadmintonTrainingSystem.exe.manifest" size="6312">
       <assemblyIdentity name="SmartBadmintonTrainingSystem.exe" version="6.1.0.0" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>SnDeLB03VlHtZwkwBolwVbGQ9/ZRVwCo4Dv34VvNkt0=</dsig:DigestValue>
+        <dsig:DigestValue>rBgBIGoTQ67ka/Bos9jGHP3gARPzhGRMQTc6yfQIzJY=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

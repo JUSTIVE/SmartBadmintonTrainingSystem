@@ -153,7 +153,7 @@ namespace SmartBadmintonTrainingSystem
                 templb.Location = new Point(8, 8);
                 templb.Name = i + "CPT_label";
                 templb.Visible = true;
-                templb.Font = new Font("맑은 고딕", 14, FontStyle.Bold);
+                templb.Font = new Font("Segoe UI", 14, FontStyle.Bold);
                 templb.Text = customProgramTypeList[i].name;
                 templb.ForeColor = Color.FromArgb(255, 87, 34);
                 templb.Size = new Size(temp.Size.Width-16, templb.Height);
@@ -166,7 +166,7 @@ namespace SmartBadmintonTrainingSystem
                 info.Location = new Point(10, 40);
                 info.Name = i + "CPT_label_info";
                 info.Visible = true;
-                info.Font = new Font("맑은 고딕", 10, FontStyle.Regular);
+                info.Font = new Font("Segoe UI", 10, FontStyle.Regular);
                 info.Text = customProgramTypeList[i].trainingSet;
                 info.ForeColor = Color.FromArgb(66,66,66);
                 info.Size = new Size(temp.Size.Width - 20, templb.Height);
@@ -216,7 +216,7 @@ namespace SmartBadmintonTrainingSystem
             addButton.FlatStyle = FlatStyle.Flat;
             addButton.FlatAppearance.BorderSize = 1;
             addButton.Text = "프로그램 추가";
-            addButton.Font = new Font("맑은 고딕", 14, FontStyle.Bold);
+            addButton.Font = new Font("Segoe UI", 14, FontStyle.Bold);
             addButton.ForeColor = Color.FromArgb(255,87,34);
             addButton.Click += addProgramButtonHandler;
             addButton.Padding= new Padding(80,0,0,0);

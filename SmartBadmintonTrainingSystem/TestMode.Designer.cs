@@ -52,10 +52,11 @@
             // 
             this.txt_name.BackColor = System.Drawing.Color.White;
             this.txt_name.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_name.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txt_name.Location = new System.Drawing.Point(115, 49);
             this.txt_name.Name = "txt_name";
             this.txt_name.ReadOnly = true;
-            this.txt_name.Size = new System.Drawing.Size(133, 14);
+            this.txt_name.Size = new System.Drawing.Size(133, 16);
             this.txt_name.TabIndex = 40;
             this.txt_name.TabStop = false;
             this.txt_name.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -63,11 +64,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 12.75F);
             this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.Location = new System.Drawing.Point(42, 49);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(60, 25);
+            this.label1.Size = new System.Drawing.Size(61, 23);
             this.label1.TabIndex = 39;
             this.label1.Text = "아이디";
             // 
@@ -75,21 +76,22 @@
             // 
             this.combo_datePick.BackColor = System.Drawing.Color.White;
             this.combo_datePick.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.combo_datePick.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.combo_datePick.FormattingEnabled = true;
             this.combo_datePick.Location = new System.Drawing.Point(115, 88);
             this.combo_datePick.Name = "combo_datePick";
-            this.combo_datePick.Size = new System.Drawing.Size(133, 20);
+            this.combo_datePick.Size = new System.Drawing.Size(133, 23);
             this.combo_datePick.TabIndex = 42;
             this.combo_datePick.SelectedIndexChanged += new System.EventHandler(this.combo_datePick_SelectedIndexChanged);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 12.75F);
             this.label3.ForeColor = System.Drawing.Color.Black;
             this.label3.Location = new System.Drawing.Point(23, 88);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(76, 25);
+            this.label3.Size = new System.Drawing.Size(78, 23);
             this.label3.TabIndex = 41;
             this.label3.Text = "측정일자";
             this.label3.Click += new System.EventHandler(this.label3_Click);
@@ -112,7 +114,7 @@
             this.btn_start.FlatAppearance.BorderSize = 3;
             this.btn_start.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(171)))), ((int)(((byte)(145)))));
             this.btn_start.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_start.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_start.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.btn_start.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(87)))), ((int)(((byte)(34)))));
             this.btn_start.Location = new System.Drawing.Point(572, 457);
             this.btn_start.Name = "btn_start";
@@ -128,7 +130,7 @@
             this.btn_exit.FlatAppearance.BorderSize = 3;
             this.btn_exit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(171)))), ((int)(((byte)(145)))));
             this.btn_exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_exit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_exit.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.btn_exit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(87)))), ((int)(((byte)(34)))));
             this.btn_exit.Location = new System.Drawing.Point(572, 371);
             this.btn_exit.Name = "btn_exit";
@@ -144,7 +146,7 @@
             this.btn_sectionresult.FlatAppearance.BorderSize = 3;
             this.btn_sectionresult.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(171)))), ((int)(((byte)(145)))));
             this.btn_sectionresult.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_sectionresult.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_sectionresult.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.btn_sectionresult.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(87)))), ((int)(((byte)(34)))));
             this.btn_sectionresult.Location = new System.Drawing.Point(572, 285);
             this.btn_sectionresult.Name = "btn_sectionresult";
@@ -160,7 +162,7 @@
             this.btn_sensorresult.FlatAppearance.BorderSize = 3;
             this.btn_sensorresult.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(171)))), ((int)(((byte)(145)))));
             this.btn_sensorresult.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_sensorresult.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_sensorresult.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.btn_sensorresult.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(87)))), ((int)(((byte)(34)))));
             this.btn_sensorresult.Location = new System.Drawing.Point(572, 199);
             this.btn_sensorresult.Name = "btn_sensorresult";
@@ -176,7 +178,7 @@
             this.btn_testresult.FlatAppearance.BorderSize = 3;
             this.btn_testresult.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(171)))), ((int)(((byte)(145)))));
             this.btn_testresult.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_testresult.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_testresult.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.btn_testresult.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(87)))), ((int)(((byte)(34)))));
             this.btn_testresult.Location = new System.Drawing.Point(572, 27);
             this.btn_testresult.Name = "btn_testresult";
@@ -240,7 +242,7 @@
             this.button3.FlatAppearance.BorderSize = 3;
             this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(171)))), ((int)(((byte)(145)))));
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.button3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(87)))), ((int)(((byte)(34)))));
             this.button3.Location = new System.Drawing.Point(572, 113);
             this.button3.Name = "button3";
@@ -262,20 +264,21 @@
             // 
             this.combo_TimePick.BackColor = System.Drawing.Color.White;
             this.combo_TimePick.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.combo_TimePick.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.combo_TimePick.FormattingEnabled = true;
             this.combo_TimePick.Location = new System.Drawing.Point(350, 88);
             this.combo_TimePick.Name = "combo_TimePick";
-            this.combo_TimePick.Size = new System.Drawing.Size(133, 20);
+            this.combo_TimePick.Size = new System.Drawing.Size(133, 23);
             this.combo_TimePick.TabIndex = 66;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 12.75F);
             this.label2.ForeColor = System.Drawing.Color.Black;
             this.label2.Location = new System.Drawing.Point(258, 88);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(76, 25);
+            this.label2.Size = new System.Drawing.Size(78, 23);
             this.label2.TabIndex = 65;
             this.label2.Text = "측정회차";
             // 

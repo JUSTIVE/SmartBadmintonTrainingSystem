@@ -228,6 +228,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <EmbeddedResource Include="Resources\NanumGothic.ttf" />
     <None Include="SmartBadmintonTrainingSystem_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
@@ -314,7 +315,13 @@
     <None Include="Resources\setting.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\close_tomato.png" />
+  </ItemGroup>
+  <ItemGroup>
     <None Include="Resources\ic_plus_white_48dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\yellow_circle.PNG" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

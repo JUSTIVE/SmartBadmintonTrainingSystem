@@ -59,6 +59,7 @@
             // comboBox1
             // 
             this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboBox1.Font = new System.Drawing.Font("Segoe UI", 8.999999F);
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
             "오른손",
@@ -72,15 +73,16 @@
             // 
             this.txt_weight.BackColor = System.Drawing.Color.White;
             this.txt_weight.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_weight.Font = new System.Drawing.Font("Segoe UI", 8.999999F);
             this.txt_weight.Location = new System.Drawing.Point(320, 195);
             this.txt_weight.Name = "txt_weight";
-            this.txt_weight.Size = new System.Drawing.Size(168, 14);
+            this.txt_weight.Size = new System.Drawing.Size(168, 16);
             this.txt_weight.TabIndex = 8;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 8.999999F);
             this.label5.ForeColor = System.Drawing.Color.Black;
             this.label5.Location = new System.Drawing.Point(276, 194);
             this.label5.Name = "label5";
@@ -91,7 +93,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 8.999999F);
             this.label4.ForeColor = System.Drawing.Color.Black;
             this.label4.Location = new System.Drawing.Point(257, 146);
             this.label4.Name = "label4";
@@ -102,7 +104,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 8.999999F);
             this.label3.ForeColor = System.Drawing.Color.Black;
             this.label3.Location = new System.Drawing.Point(40, 194);
             this.label3.Name = "label3";
@@ -114,15 +116,16 @@
             // 
             this.txt_height.BackColor = System.Drawing.Color.White;
             this.txt_height.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_height.Font = new System.Drawing.Font("Segoe UI", 8.999999F);
             this.txt_height.Location = new System.Drawing.Point(89, 144);
             this.txt_height.Name = "txt_height";
-            this.txt_height.Size = new System.Drawing.Size(133, 14);
+            this.txt_height.Size = new System.Drawing.Size(133, 16);
             this.txt_height.TabIndex = 5;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 8.999999F);
             this.label2.ForeColor = System.Drawing.Color.Black;
             this.label2.Location = new System.Drawing.Point(38, 143);
             this.label2.Name = "label2";
@@ -134,15 +137,16 @@
             // 
             this.txt_id.BackColor = System.Drawing.Color.White;
             this.txt_id.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_id.Font = new System.Drawing.Font("Segoe UI", 8.999999F);
             this.txt_id.Location = new System.Drawing.Point(89, 47);
             this.txt_id.Name = "txt_id";
-            this.txt_id.Size = new System.Drawing.Size(133, 14);
+            this.txt_id.Size = new System.Drawing.Size(133, 16);
             this.txt_id.TabIndex = 1;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 8.999999F);
             this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.Location = new System.Drawing.Point(34, 49);
             this.label1.Name = "label1";
@@ -155,7 +159,7 @@
             this.btn_login.BackColor = System.Drawing.Color.White;
             this.btn_login.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(171)))), ((int)(((byte)(145)))));
             this.btn_login.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_login.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btn_login.Font = new System.Drawing.Font("Segoe UI", 8.999999F, System.Drawing.FontStyle.Bold);
             this.btn_login.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(87)))), ((int)(((byte)(34)))));
             this.btn_login.Location = new System.Drawing.Point(120, 237);
             this.btn_login.Name = "btn_login";
@@ -170,7 +174,7 @@
             this.button1.BackColor = System.Drawing.Color.White;
             this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(171)))), ((int)(((byte)(145)))));
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.button1.Font = new System.Drawing.Font("Segoe UI", 8.999999F, System.Drawing.FontStyle.Bold);
             this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(87)))), ((int)(((byte)(34)))));
             this.button1.Location = new System.Drawing.Point(35, 237);
             this.button1.Name = "button1";
@@ -182,27 +186,30 @@
             // 
             // dateTimePicker1
             // 
+            this.dateTimePicker1.CalendarFont = new System.Drawing.Font("Segoe UI", 8.999999F);
             this.dateTimePicker1.CalendarForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(87)))), ((int)(((byte)(34)))));
             this.dateTimePicker1.CalendarMonthBackground = System.Drawing.Color.White;
             this.dateTimePicker1.CalendarTitleBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(87)))), ((int)(((byte)(34)))));
+            this.dateTimePicker1.Font = new System.Drawing.Font("Segoe UI", 8.999999F);
             this.dateTimePicker1.Location = new System.Drawing.Point(318, 139);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(168, 21);
+            this.dateTimePicker1.Size = new System.Drawing.Size(168, 23);
             this.dateTimePicker1.TabIndex = 6;
             // 
             // txt_name
             // 
             this.txt_name.BackColor = System.Drawing.Color.White;
             this.txt_name.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_name.Font = new System.Drawing.Font("Segoe UI", 8.999999F);
             this.txt_name.Location = new System.Drawing.Point(320, 51);
             this.txt_name.Name = "txt_name";
-            this.txt_name.Size = new System.Drawing.Size(168, 14);
+            this.txt_name.Size = new System.Drawing.Size(168, 16);
             this.txt_name.TabIndex = 2;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 8.999999F);
             this.label6.ForeColor = System.Drawing.Color.Black;
             this.label6.Location = new System.Drawing.Point(276, 51);
             this.label6.Name = "label6";
@@ -214,16 +221,17 @@
             // 
             this.txt_pw.BackColor = System.Drawing.Color.White;
             this.txt_pw.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_pw.Font = new System.Drawing.Font("Segoe UI", 8.999999F);
             this.txt_pw.Location = new System.Drawing.Point(89, 94);
             this.txt_pw.Name = "txt_pw";
             this.txt_pw.PasswordChar = '*';
-            this.txt_pw.Size = new System.Drawing.Size(133, 14);
+            this.txt_pw.Size = new System.Drawing.Size(133, 16);
             this.txt_pw.TabIndex = 3;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 8.999999F);
             this.label7.ForeColor = System.Drawing.Color.Black;
             this.label7.Location = new System.Drawing.Point(32, 94);
             this.label7.Name = "label7";
@@ -235,16 +243,17 @@
             // 
             this.txt_pw2.BackColor = System.Drawing.Color.White;
             this.txt_pw2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_pw2.Font = new System.Drawing.Font("Segoe UI", 8.999999F);
             this.txt_pw2.Location = new System.Drawing.Point(320, 94);
             this.txt_pw2.Name = "txt_pw2";
             this.txt_pw2.PasswordChar = '*';
-            this.txt_pw2.Size = new System.Drawing.Size(166, 14);
+            this.txt_pw2.Size = new System.Drawing.Size(166, 16);
             this.txt_pw2.TabIndex = 4;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label8.Font = new System.Drawing.Font("Segoe UI", 8.999999F);
             this.label8.ForeColor = System.Drawing.Color.Black;
             this.label8.Location = new System.Drawing.Point(228, 93);
             this.label8.Name = "label8";
@@ -255,6 +264,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(87)))), ((int)(((byte)(34)))));
+            this.panel2.Font = new System.Drawing.Font("Segoe UI", 8.999999F);
             this.panel2.Location = new System.Drawing.Point(89, 110);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(133, 2);
@@ -263,6 +273,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(87)))), ((int)(((byte)(34)))));
+            this.panel1.Font = new System.Drawing.Font("Segoe UI", 8.999999F);
             this.panel1.Location = new System.Drawing.Point(89, 62);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(133, 2);
@@ -271,6 +282,7 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(87)))), ((int)(((byte)(34)))));
+            this.panel3.Font = new System.Drawing.Font("Segoe UI", 8.999999F);
             this.panel3.Location = new System.Drawing.Point(89, 159);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(133, 2);
@@ -279,6 +291,7 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(87)))), ((int)(((byte)(34)))));
+            this.panel4.Font = new System.Drawing.Font("Segoe UI", 8.999999F);
             this.panel4.Location = new System.Drawing.Point(89, 211);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(133, 2);
@@ -287,6 +300,7 @@
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(87)))), ((int)(((byte)(34)))));
+            this.panel5.Font = new System.Drawing.Font("Segoe UI", 8.999999F);
             this.panel5.Location = new System.Drawing.Point(320, 66);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(168, 2);
@@ -295,6 +309,7 @@
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(87)))), ((int)(((byte)(34)))));
+            this.panel6.Font = new System.Drawing.Font("Segoe UI", 8.999999F);
             this.panel6.Location = new System.Drawing.Point(318, 109);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(168, 2);
@@ -303,6 +318,7 @@
             // panel7
             // 
             this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(87)))), ((int)(((byte)(34)))));
+            this.panel7.Font = new System.Drawing.Font("Segoe UI", 8.999999F);
             this.panel7.Location = new System.Drawing.Point(318, 159);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(168, 2);
@@ -311,6 +327,7 @@
             // panel8
             // 
             this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(87)))), ((int)(((byte)(34)))));
+            this.panel8.Font = new System.Drawing.Font("Segoe UI", 8.999999F);
             this.panel8.Location = new System.Drawing.Point(320, 209);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(168, 2);
