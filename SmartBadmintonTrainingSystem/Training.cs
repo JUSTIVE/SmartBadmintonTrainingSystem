@@ -698,6 +698,7 @@ namespace SmartBadmintonTrainingSystem
             clearBuff();
             centerPic.Image = Properties.Resources.red_circle;
             swing_flag = false;
+            
             for (;;)
             {
                 if (swing_flag)
@@ -965,7 +966,6 @@ namespace SmartBadmintonTrainingSystem
                         {
                             if (threader.IsAlive)
                             {
-
                                 threader.Abort();
                                 threader = null;
                                 inputListbox(threader.IsAlive + "");
@@ -1060,52 +1060,58 @@ namespace SmartBadmintonTrainingSystem
             char[] delim = { ',' };
             string[] splitter = order_list.Split(delim);
             AutoClosingMessageBox.Show("2초후 트레이닝을 시작합니다","알림",2000);
-            for(int i = 0; i < splitter.Length; i++)//매 회차마다
-            {
-                
-                inputListbox(i+"번째 기둥 시작 : "+splitter.ElementAt(i));
-                target_pole = mapper[Int32.Parse(splitter.ElementAt(i))-1];
-                send_packet(target_pole, (int)COLOR.RED);
-                setImageRed(unmapper[target_pole]+1);
-                clearBuff();
-                swing_flag = false;
-                for (;;)
+            if (!isColor)//사용자 지정 프로그램
+            { 
+                for(int i = 0; i < splitter.Length; i++)//매 회차마다
                 {
-                    if (swing_flag)
+                    inputListbox(i+"번째 기둥 시작 : "+splitter.ElementAt(i));
+                    target_pole = mapper[Int32.Parse(splitter.ElementAt(i))-1];
+                    send_packet(target_pole, (int)COLOR.RED);
+                    setImageRed(unmapper[target_pole]+1);
+                    clearBuff();
+                    swing_flag = false;
+                    for (;;)
                     {
-                        inputListbox("swing");
-                        break;
+                        if (swing_flag)
+                        {
+                            inputListbox("swing");
+                            break;
+                        }
+                        else {
+                            currentPole = unmapper[target_pole] + 1;
+                            isSwing(currentPole);
+                        } //1-base pole number
                     }
-                    else {
-                        currentPole = unmapper[target_pole] + 1;
-                        isSwing(currentPole);
-                    } //1-base pole number
-                }
-                centerPic.Image = Properties.Resources.red_circle;
-                setImageOff(unmapper[target_pole]+1);//unmapped pole number
-                //send_packet(target_pole+1, 4);//mapped pole number
+                    centerPic.Image = Properties.Resources.red_circle;
+                    setImageOff(unmapper[target_pole]+1);//unmapped pole number
+                    //send_packet(target_pole+1, 4);//mapped pole number
 
-                clearBuff();
-                lrFlag = false; FbFlag = false;
-                if ((unmapper[target_pole]+1) == 2 || (unmapper[target_pole]+1) == 7) FbFlag = true;
-                else if ((unmapper[target_pole]+1) == 4 || (unmapper[target_pole]+1) == 5) lrFlag = true;
-                center_flag1 = false;
-                for (;;)
-                {
-                    if (center_flag1)
+                    clearBuff();
+                    lrFlag = false; FbFlag = false;
+                    if ((unmapper[target_pole]+1) == 2 || (unmapper[target_pole]+1) == 7) FbFlag = true;
+                    else if ((unmapper[target_pole]+1) == 4 || (unmapper[target_pole]+1) == 5) lrFlag = true;
+                    center_flag1 = false;
+                    for (;;)
                     {
-                        inputListbox("center");
-                        is_light = false;
+                        if (center_flag1)
+                        {
+                            inputListbox("center");
+                            is_light = false;
                         
-                        break;
+                            break;
+                        }
+                        else isCenter();
                     }
-                    else isCenter();
-                }
-                centerPic.Image = null;
-                centerPic.Image = Properties.Resources.green_circle;
+                    centerPic.Image = null;
+                    centerPic.Image = Properties.Resources.green_circle;
                
+                }
+                thread_flag = false;
             }
-            thread_flag = false;
+            else
+            {
+
+            }
         }
 
     }

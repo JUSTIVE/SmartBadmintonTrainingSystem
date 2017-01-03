@@ -102,28 +102,33 @@ namespace SmartBadmintonTrainingSystem
 
         private void confirmButton_Click(object sender, EventArgs e)
         {
-
-            if (progNameTextBox.Text.Equals(""))
-            {
-                programName = "사용자 지정 프로그램";
+            if (!TrainingSet.Text.Equals("")) { 
+                if (progNameTextBox.Text.Equals(""))
+                {
+                    programName = "사용자 지정 프로그램";
+                }
+                else
+                {
+                    programName = progNameTextBox.Text;
+                }
+                if (programnumber == -1) {
+                    CustomProgramType CPT = new CustomProgramType(programName, TrainingSet.Text);
+                    from.customProgramTypeList.Add(CPT);
+                }
+                else
+                {
+                    CustomProgramType CPT = new CustomProgramType(programName, TrainingSet.Text);
+                    from.kill(programnumber);
+                    from.customProgramTypeList.Insert(programnumber,CPT);
+                }
+                from.flipCurtain();
+                from.setUpProgramList();
+                this.Close();
             }
             else
             {
-                programName = progNameTextBox.Text;
+                AutoClosingMessageBox.Show("프로그램을 구성해주세요","구성 알림",500);
             }
-            if (programnumber == -1) {
-                CustomProgramType CPT = new CustomProgramType(programName, TrainingSet.Text);
-                from.customProgramTypeList.Add(CPT);
-            }
-            else
-            {
-                CustomProgramType CPT = new CustomProgramType(programName, TrainingSet.Text);
-                from.kill(programnumber);
-                from.customProgramTypeList.Insert(programnumber,CPT);
-            }
-            from.flipCurtain();
-            from.setUpProgramList();
-            this.Close();
         }
 
         private void up_Click(object sender, EventArgs e)

@@ -33,9 +33,11 @@ namespace SmartBadmintonTrainingSystem
                     }
                     else
                     {
-                        checker[generatedData[i][j] - 1] = 1;
+                        checker[generatedData[i][j] - 1] = 1;   
                     }
                 }
+                //세팅되어있습니다
+
             }
 
         }
