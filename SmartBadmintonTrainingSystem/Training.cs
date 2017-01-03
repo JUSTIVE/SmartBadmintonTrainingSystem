@@ -346,7 +346,9 @@ namespace SmartBadmintonTrainingSystem
                     {
                         thread = new ThreadStart(TrainingThreadStart);
                         threader = new Thread(thread);
+                        
                         threader.Start();
+                        
                         thread_flag = true;
                     }
                 }
@@ -1057,9 +1059,10 @@ namespace SmartBadmintonTrainingSystem
         {
             char[] delim = { ',' };
             string[] splitter = order_list.Split(delim);
-            
+            AutoClosingMessageBox.Show("2초후 트레이닝을 시작합니다","알림",2000);
             for(int i = 0; i < splitter.Length; i++)//매 회차마다
             {
+                
                 inputListbox(i+"번째 기둥 시작 : "+splitter.ElementAt(i));
                 target_pole = mapper[Int32.Parse(splitter.ElementAt(i))-1];
                 send_packet(target_pole, (int)COLOR.RED);
@@ -1078,6 +1081,7 @@ namespace SmartBadmintonTrainingSystem
                         isSwing(currentPole);
                     } //1-base pole number
                 }
+                centerPic.Image = Properties.Resources.red_circle;
                 setImageOff(unmapper[target_pole]+1);//unmapped pole number
                 //send_packet(target_pole+1, 4);//mapped pole number
 
@@ -1092,11 +1096,14 @@ namespace SmartBadmintonTrainingSystem
                     {
                         inputListbox("center");
                         is_light = false;
-                        centerPic.Image = Properties.Resources.green_circle;
+                        
                         break;
                     }
                     else isCenter();
                 }
+                centerPic.Image = null;
+                centerPic.Image = Properties.Resources.green_circle;
+               
             }
             thread_flag = false;
         }
