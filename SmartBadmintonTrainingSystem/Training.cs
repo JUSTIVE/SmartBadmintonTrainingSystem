@@ -16,7 +16,7 @@ namespace SmartBadmintonTrainingSystem
 {
     public partial class Training : Form
     {
-        
+        System.Diagnostics.Stopwatch stopwatch = new System.Diagnostics.Stopwatch();
         //customprogParam
         public int customProgAmount;
         public List<CustomProgramType> customProgramTypeList;
@@ -1060,6 +1060,7 @@ namespace SmartBadmintonTrainingSystem
             char[] delim = { ',' };
             string[] splitter = order_list.Split(delim);
             AutoClosingMessageBox.Show("2초후 트레이닝을 시작합니다","알림",2000);
+            stopwatch.Start();
             if (!isColor)//사용자 지정 프로그램
             { 
                 for(int i = 0; i < splitter.Length; i++)//매 회차마다
@@ -1106,6 +1107,9 @@ namespace SmartBadmintonTrainingSystem
                     centerPic.Image = Properties.Resources.green_circle;
                
                 }
+                stopwatch.Stop();
+                float elapsed = float.Parse(stopwatch.ElapsedMilliseconds.ToString())*0.001f;
+                AutoClosingMessageBox.Show("경과한 시간 : "+elapsed ,"ALERT",1000);
                 thread_flag = false;
             }
             else

@@ -537,7 +537,6 @@ namespace SmartBadmintonTrainingSystem
 
         public void thread_test()
         {
-
             singletonDB.IsOpen();
             selectDatabase();
             insertDatabase2();
@@ -612,7 +611,7 @@ namespace SmartBadmintonTrainingSystem
         {            
             if (orderString.Equals(""))
             {
-
+                AutoClosingMessageBox.Show("순서를 설정해주세요", "Error", 300);
             }
             else if (!port_set)
             {

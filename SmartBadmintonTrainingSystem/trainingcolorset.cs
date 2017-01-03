@@ -37,7 +37,6 @@ namespace SmartBadmintonTrainingSystem
                     }
                 }
                 //세팅되어있습니다
-
             }
 
         }
