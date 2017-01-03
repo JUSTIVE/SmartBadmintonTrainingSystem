@@ -11,6 +11,7 @@ using System.IO.Ports;
 using System.Media;
 using System.Threading;
 
+
 namespace SmartBadmintonTrainingSystem
 {
     public partial class Training : Form
@@ -79,10 +80,12 @@ namespace SmartBadmintonTrainingSystem
         public List<PictureBox> pList = new List<PictureBox>();
 
         SoundPlayer sound, sound2;
-
-        //Curtain booya
         
+        //Curtain booya
         bool isCurtain;
+        //colorsetTest
+        public TrainingColorSet TCS = null;
+        public bool isColor = false;
 
         public Training()
         {
@@ -124,6 +127,7 @@ namespace SmartBadmintonTrainingSystem
             Visible = isCurtain;
             //inputListbox(customProgramTypeList.Count+"");
         }
+        
         public void setUpProgramList()
         {
             CustomProgramPanel.Visible = false;
@@ -370,6 +374,7 @@ namespace SmartBadmintonTrainingSystem
                 for (int i = 0; i < 8; i++)
                 {
                     setImageOff(i + 1);
+                    centerPic.Image = Properties.Resources.off_circle;
                 }
             }
             catch
@@ -386,6 +391,7 @@ namespace SmartBadmintonTrainingSystem
             for (int i = 0; i < 8; i++)
             {
                 setImageOff(i + 1);
+                centerPic.Image = Properties.Resources.off_circle;
             }
             sound = new SoundPlayer(SmartBadmintonTrainingSystem.Properties.Resources.beep_01a);
             sound2 = new SoundPlayer(SmartBadmintonTrainingSystem.Properties.Resources.beep_05);
@@ -407,6 +413,7 @@ namespace SmartBadmintonTrainingSystem
             //    f.setForm(this);
             //    f.Show();
             //}
+            flipCurtain();
             f2 = new Form2(this);
             f2.Show();
             order_list = "";           
@@ -485,6 +492,17 @@ namespace SmartBadmintonTrainingSystem
                 else
                 {
                     setOffPort();
+                    port_set = false;
+                    thread_flag = false;
+                    is_light = false;
+                    if (!(threader == null))
+                    {
+                        if (threader.IsAlive)
+                        {
+                            threader.Abort();
+                            threader = null;
+                        }
+                    }
                 }
             }
             catch (System.Exception ex)
@@ -543,10 +561,12 @@ namespace SmartBadmintonTrainingSystem
                 port_set = false;
                 button1.Text = "연결시도";
                 label2.Text = openX;
-                Picture_Status.Image = SmartBadmintonTrainingSystem.Properties.Resources.red_circle;
+                Picture_Status.Image = SmartBadmintonTrainingSystem.Properties.Resources.signal_red;
+                
                 for (int i = 0; i < 8; i++)
                 {
                     setImageOff(i + 1);
+                    centerPic.Image = Properties.Resources.off_circle;
                 }
             }
             catch (System.Exception ex)
@@ -674,6 +694,7 @@ namespace SmartBadmintonTrainingSystem
         void normalthreadStart()
         {
             clearBuff();
+            centerPic.Image = Properties.Resources.red_circle;
             swing_flag = false;
             for (;;)
             {
@@ -702,6 +723,7 @@ namespace SmartBadmintonTrainingSystem
                 {
                     inputListbox("center");
                     is_light = false;
+                    centerPic.Image = Properties.Resources.off_circle;
                     break;
                 }
                 else isCenter();
@@ -990,6 +1012,8 @@ namespace SmartBadmintonTrainingSystem
             for (int i = 0; i < 8; i++)
             {
                 setImageOff(i + 1);
+                centerPic.Image = Properties.Resources.off_circle;
+
             }
             SetSerialPort();
         }
@@ -1014,6 +1038,7 @@ namespace SmartBadmintonTrainingSystem
             inputListbox("컨트롤러 새로고침");
             setRefreshPort();
             port_set = false;
+            thread_flag = false;
             is_light = false;
             if (!(threader == null)) {
                 if (threader.IsAlive)
@@ -1067,6 +1092,7 @@ namespace SmartBadmintonTrainingSystem
                     {
                         inputListbox("center");
                         is_light = false;
+                        centerPic.Image = Properties.Resources.green_circle;
                         break;
                     }
                     else isCenter();

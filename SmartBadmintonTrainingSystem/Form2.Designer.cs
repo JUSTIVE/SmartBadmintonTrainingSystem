@@ -28,54 +28,57 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.First = new System.Windows.Forms.Panel();
-            this.Second = new System.Windows.Forms.Panel();
-            this.Banned = new System.Windows.Forms.Panel();
+            this.one = new System.Windows.Forms.Panel();
+            this.two = new System.Windows.Forms.Panel();
+            this.four = new System.Windows.Forms.Panel();
             this.redCheck = new System.Windows.Forms.CheckBox();
             this.greenCheck = new System.Windows.Forms.CheckBox();
             this.blueCheck = new System.Windows.Forms.CheckBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.closeButton = new System.Windows.Forms.PictureBox();
+            this.three = new System.Windows.Forms.Panel();
             this.confirmButton = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.closeButton = new System.Windows.Forms.PictureBox();
             this.yellowCheck = new System.Windows.Forms.CheckBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.amount = new System.Windows.Forms.TextBox();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.closeButton)).BeginInit();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.closeButton)).BeginInit();
             this.SuspendLayout();
             // 
-            // First
+            // one
             // 
-            this.First.Location = new System.Drawing.Point(188, 86);
-            this.First.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.First.Name = "First";
-            this.First.Size = new System.Drawing.Size(80, 80);
-            this.First.TabIndex = 112;
+            this.one.Location = new System.Drawing.Point(188, 86);
+            this.one.Margin = new System.Windows.Forms.Padding(2);
+            this.one.Name = "one";
+            this.one.Size = new System.Drawing.Size(80, 80);
+            this.one.TabIndex = 112;
             // 
-            // Second
+            // two
             // 
-            this.Second.Location = new System.Drawing.Point(319, 86);
-            this.Second.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.Second.Name = "Second";
-            this.Second.Size = new System.Drawing.Size(80, 80);
-            this.Second.TabIndex = 113;
+            this.two.Location = new System.Drawing.Point(319, 86);
+            this.two.Margin = new System.Windows.Forms.Padding(2);
+            this.two.Name = "two";
+            this.two.Size = new System.Drawing.Size(80, 80);
+            this.two.TabIndex = 113;
             // 
-            // Banned
+            // four
             // 
-            this.Banned.Location = new System.Drawing.Point(585, 86);
-            this.Banned.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.Banned.Name = "Banned";
-            this.Banned.Size = new System.Drawing.Size(80, 80);
-            this.Banned.TabIndex = 115;
+            this.four.Location = new System.Drawing.Point(585, 86);
+            this.four.Margin = new System.Windows.Forms.Padding(2);
+            this.four.Name = "four";
+            this.four.Size = new System.Drawing.Size(80, 80);
+            this.four.TabIndex = 115;
             // 
             // redCheck
             // 
@@ -84,7 +87,7 @@
             this.redCheck.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.redCheck.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.redCheck.Location = new System.Drawing.Point(188, 199);
-            this.redCheck.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.redCheck.Margin = new System.Windows.Forms.Padding(2);
             this.redCheck.Name = "redCheck";
             this.redCheck.Size = new System.Drawing.Size(53, 24);
             this.redCheck.TabIndex = 117;
@@ -98,12 +101,13 @@
             this.greenCheck.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.greenCheck.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.greenCheck.Location = new System.Drawing.Point(188, 227);
-            this.greenCheck.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.greenCheck.Margin = new System.Windows.Forms.Padding(2);
             this.greenCheck.Name = "greenCheck";
             this.greenCheck.Size = new System.Drawing.Size(71, 24);
             this.greenCheck.TabIndex = 118;
             this.greenCheck.Text = "GREEN";
             this.greenCheck.UseVisualStyleBackColor = true;
+            this.greenCheck.CheckedChanged += new System.EventHandler(this.greenCheck_CheckedChanged);
             // 
             // blueCheck
             // 
@@ -111,12 +115,13 @@
             this.blueCheck.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.blueCheck.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.blueCheck.Location = new System.Drawing.Point(188, 255);
-            this.blueCheck.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.blueCheck.Margin = new System.Windows.Forms.Padding(2);
             this.blueCheck.Name = "blueCheck";
             this.blueCheck.Size = new System.Drawing.Size(59, 24);
             this.blueCheck.TabIndex = 119;
             this.blueCheck.Text = "BLUE";
             this.blueCheck.UseVisualStyleBackColor = true;
+            this.blueCheck.CheckedChanged += new System.EventHandler(this.blueCheck_CheckedChanged);
             // 
             // label1
             // 
@@ -139,13 +144,25 @@
             this.panel1.Size = new System.Drawing.Size(680, 48);
             this.panel1.TabIndex = 120;
             // 
-            // panel2
+            // closeButton
             // 
-            this.panel2.Location = new System.Drawing.Point(453, 86);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(80, 80);
-            this.panel2.TabIndex = 114;
+            this.closeButton.BackColor = System.Drawing.Color.Tomato;
+            this.closeButton.Image = global::SmartBadmintonTrainingSystem.Properties.Resources.close_button;
+            this.closeButton.Location = new System.Drawing.Point(633, 8);
+            this.closeButton.Name = "closeButton";
+            this.closeButton.Size = new System.Drawing.Size(32, 32);
+            this.closeButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.closeButton.TabIndex = 121;
+            this.closeButton.TabStop = false;
+            this.closeButton.Click += new System.EventHandler(this.closeButton_Click);
+            // 
+            // three
+            // 
+            this.three.Location = new System.Drawing.Point(453, 86);
+            this.three.Margin = new System.Windows.Forms.Padding(2);
+            this.three.Name = "three";
+            this.three.Size = new System.Drawing.Size(80, 80);
+            this.three.TabIndex = 114;
             // 
             // confirmButton
             // 
@@ -160,15 +177,30 @@
             this.confirmButton.TabIndex = 121;
             this.confirmButton.Text = "확인";
             this.confirmButton.UseVisualStyleBackColor = false;
+            this.confirmButton.Click += new System.EventHandler(this.confirmButton_Click);
             // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(66)))));
+            this.panel3.Controls.Add(this.panel2);
+            this.panel3.Controls.Add(this.amount);
+            this.panel3.Controls.Add(this.label6);
             this.panel3.Controls.Add(this.button1);
             this.panel3.Location = new System.Drawing.Point(0, 48);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(169, 318);
+            this.panel3.Size = new System.Drawing.Size(169, 320);
             this.panel3.TabIndex = 122;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(16, 60);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(31, 15);
+            this.label6.TabIndex = 1;
+            this.label6.Text = "횟수";
             // 
             // button1
             // 
@@ -179,9 +211,11 @@
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button1.Location = new System.Drawing.Point(0, 0);
             this.button1.Name = "button1";
+            this.button1.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
             this.button1.Size = new System.Drawing.Size(169, 41);
             this.button1.TabIndex = 0;
             this.button1.Text = "랜덤";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button1.UseVisualStyleBackColor = false;
             // 
             // label2
@@ -227,27 +261,6 @@
             this.label5.Size = new System.Drawing.Size(0, 16);
             this.label5.TabIndex = 126;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::SmartBadmintonTrainingSystem.Properties.Resources.close_tomato;
-            this.pictureBox1.Location = new System.Drawing.Point(583, 65);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(20, 20);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 127;
-            this.pictureBox1.TabStop = false;
-            // 
-            // closeButton
-            // 
-            this.closeButton.BackColor = System.Drawing.Color.Tomato;
-            this.closeButton.Image = global::SmartBadmintonTrainingSystem.Properties.Resources.close_button;
-            this.closeButton.Location = new System.Drawing.Point(633, 8);
-            this.closeButton.Name = "closeButton";
-            this.closeButton.Size = new System.Drawing.Size(32, 32);
-            this.closeButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.closeButton.TabIndex = 121;
-            this.closeButton.TabStop = false;
-            // 
             // yellowCheck
             // 
             this.yellowCheck.AutoSize = true;
@@ -260,6 +273,36 @@
             this.yellowCheck.TabIndex = 128;
             this.yellowCheck.Text = "Yellow";
             this.yellowCheck.UseVisualStyleBackColor = true;
+            this.yellowCheck.CheckedChanged += new System.EventHandler(this.yellowCheck_CheckedChanged);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::SmartBadmintonTrainingSystem.Properties.Resources.close_tomato;
+            this.pictureBox1.Location = new System.Drawing.Point(583, 65);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(20, 20);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 127;
+            this.pictureBox1.TabStop = false;
+            // 
+            // amount
+            // 
+            this.amount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(66)))));
+            this.amount.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.amount.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.amount.ForeColor = System.Drawing.Color.Tomato;
+            this.amount.Location = new System.Drawing.Point(19, 92);
+            this.amount.Name = "amount";
+            this.amount.Size = new System.Drawing.Size(131, 22);
+            this.amount.TabIndex = 2;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.Tomato;
+            this.panel2.Location = new System.Drawing.Point(19, 114);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(131, 2);
+            this.panel2.TabIndex = 3;
             // 
             // Form2
             // 
@@ -275,39 +318,40 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.confirmButton);
-            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.three);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.blueCheck);
             this.Controls.Add(this.greenCheck);
             this.Controls.Add(this.redCheck);
-            this.Controls.Add(this.Banned);
-            this.Controls.Add(this.Second);
-            this.Controls.Add(this.First);
+            this.Controls.Add(this.four);
+            this.Controls.Add(this.two);
+            this.Controls.Add(this.one);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form2";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "환경 설정";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.panel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.closeButton)).EndInit();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.Panel First;
-        private System.Windows.Forms.Panel Second;
-        private System.Windows.Forms.Panel Banned;
+        private System.Windows.Forms.Panel one;
+        private System.Windows.Forms.Panel two;
+        private System.Windows.Forms.Panel four;
         private System.Windows.Forms.CheckBox redCheck;
         private System.Windows.Forms.CheckBox greenCheck;
         private System.Windows.Forms.CheckBox blueCheck;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox closeButton;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel three;
         private System.Windows.Forms.Button confirmButton;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button button1;
@@ -317,5 +361,8 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.CheckBox yellowCheck;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.TextBox amount;
     }
 }

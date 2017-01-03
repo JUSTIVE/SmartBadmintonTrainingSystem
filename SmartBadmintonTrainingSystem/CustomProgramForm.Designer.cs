@@ -48,6 +48,14 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.progNameTextBox = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.one_count = new System.Windows.Forms.TextBox();
+            this.two_count = new System.Windows.Forms.TextBox();
+            this.three_count = new System.Windows.Forms.TextBox();
+            this.five_count = new System.Windows.Forms.TextBox();
+            this.four_count = new System.Windows.Forms.TextBox();
+            this.six_count = new System.Windows.Forms.TextBox();
+            this.seven_count = new System.Windows.Forms.TextBox();
+            this.eight_count = new System.Windows.Forms.TextBox();
             this.eight_up = new System.Windows.Forms.PictureBox();
             this.eight_down = new System.Windows.Forms.PictureBox();
             this.seven_up = new System.Windows.Forms.PictureBox();
@@ -65,14 +73,6 @@
             this.one_up = new System.Windows.Forms.PictureBox();
             this.one_down = new System.Windows.Forms.PictureBox();
             this.closeButton = new System.Windows.Forms.PictureBox();
-            this.one_count = new System.Windows.Forms.TextBox();
-            this.two_count = new System.Windows.Forms.TextBox();
-            this.three_count = new System.Windows.Forms.TextBox();
-            this.five_count = new System.Windows.Forms.TextBox();
-            this.four_count = new System.Windows.Forms.TextBox();
-            this.six_count = new System.Windows.Forms.TextBox();
-            this.seven_count = new System.Windows.Forms.TextBox();
-            this.eight_count = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -289,6 +289,134 @@
             this.label3.TabIndex = 0;
             this.label3.Text = "프로그램 이름";
             // 
+            // one_count
+            // 
+            this.one_count.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.one_count.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.one_count.Font = new System.Drawing.Font("맑은 고딕", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.one_count.ForeColor = System.Drawing.Color.Tomato;
+            this.one_count.Location = new System.Drawing.Point(240, 135);
+            this.one_count.MaxLength = 2;
+            this.one_count.Name = "one_count";
+            this.one_count.Size = new System.Drawing.Size(42, 36);
+            this.one_count.TabIndex = 70;
+            this.one_count.Text = "0";
+            this.one_count.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.one_count.TextChanged += new System.EventHandler(this.count_TextChanged);
+            this.one_count.Leave += new System.EventHandler(this.count_Leave);
+            // 
+            // two_count
+            // 
+            this.two_count.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.two_count.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.two_count.Font = new System.Drawing.Font("맑은 고딕", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.two_count.ForeColor = System.Drawing.Color.Tomato;
+            this.two_count.Location = new System.Drawing.Point(424, 135);
+            this.two_count.MaxLength = 2;
+            this.two_count.Name = "two_count";
+            this.two_count.Size = new System.Drawing.Size(42, 36);
+            this.two_count.TabIndex = 71;
+            this.two_count.Text = "0";
+            this.two_count.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.two_count.TextChanged += new System.EventHandler(this.count_TextChanged);
+            this.two_count.Leave += new System.EventHandler(this.count_Leave);
+            // 
+            // three_count
+            // 
+            this.three_count.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.three_count.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.three_count.Font = new System.Drawing.Font("맑은 고딕", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.three_count.ForeColor = System.Drawing.Color.Tomato;
+            this.three_count.Location = new System.Drawing.Point(608, 135);
+            this.three_count.MaxLength = 2;
+            this.three_count.Name = "three_count";
+            this.three_count.Size = new System.Drawing.Size(42, 36);
+            this.three_count.TabIndex = 72;
+            this.three_count.Text = "0";
+            this.three_count.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.three_count.TextChanged += new System.EventHandler(this.count_TextChanged);
+            this.three_count.Leave += new System.EventHandler(this.count_Leave);
+            // 
+            // five_count
+            // 
+            this.five_count.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.five_count.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.five_count.Font = new System.Drawing.Font("맑은 고딕", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.five_count.ForeColor = System.Drawing.Color.Tomato;
+            this.five_count.Location = new System.Drawing.Point(608, 232);
+            this.five_count.MaxLength = 2;
+            this.five_count.Name = "five_count";
+            this.five_count.Size = new System.Drawing.Size(42, 36);
+            this.five_count.TabIndex = 73;
+            this.five_count.Text = "0";
+            this.five_count.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.five_count.TextChanged += new System.EventHandler(this.count_TextChanged);
+            this.five_count.Leave += new System.EventHandler(this.count_Leave);
+            // 
+            // four_count
+            // 
+            this.four_count.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.four_count.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.four_count.Font = new System.Drawing.Font("맑은 고딕", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.four_count.ForeColor = System.Drawing.Color.Tomato;
+            this.four_count.Location = new System.Drawing.Point(240, 232);
+            this.four_count.MaxLength = 2;
+            this.four_count.Name = "four_count";
+            this.four_count.Size = new System.Drawing.Size(42, 36);
+            this.four_count.TabIndex = 74;
+            this.four_count.Text = "0";
+            this.four_count.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.four_count.TextChanged += new System.EventHandler(this.count_TextChanged);
+            this.four_count.Leave += new System.EventHandler(this.count_Leave);
+            // 
+            // six_count
+            // 
+            this.six_count.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.six_count.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.six_count.Font = new System.Drawing.Font("맑은 고딕", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.six_count.ForeColor = System.Drawing.Color.Tomato;
+            this.six_count.Location = new System.Drawing.Point(240, 329);
+            this.six_count.MaxLength = 2;
+            this.six_count.Name = "six_count";
+            this.six_count.Size = new System.Drawing.Size(42, 36);
+            this.six_count.TabIndex = 75;
+            this.six_count.Text = "0";
+            this.six_count.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.six_count.TextChanged += new System.EventHandler(this.count_TextChanged);
+            this.six_count.Leave += new System.EventHandler(this.count_Leave);
+            // 
+            // seven_count
+            // 
+            this.seven_count.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.seven_count.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.seven_count.Font = new System.Drawing.Font("맑은 고딕", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.seven_count.ForeColor = System.Drawing.Color.Tomato;
+            this.seven_count.Location = new System.Drawing.Point(424, 329);
+            this.seven_count.MaxLength = 2;
+            this.seven_count.Name = "seven_count";
+            this.seven_count.Size = new System.Drawing.Size(42, 36);
+            this.seven_count.TabIndex = 76;
+            this.seven_count.Text = "0";
+            this.seven_count.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.seven_count.TextChanged += new System.EventHandler(this.count_TextChanged);
+            this.seven_count.Leave += new System.EventHandler(this.count_Leave);
+            // 
+            // eight_count
+            // 
+            this.eight_count.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.eight_count.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.eight_count.Font = new System.Drawing.Font("맑은 고딕", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.eight_count.ForeColor = System.Drawing.Color.Tomato;
+            this.eight_count.Location = new System.Drawing.Point(608, 329);
+            this.eight_count.MaxLength = 2;
+            this.eight_count.Name = "eight_count";
+            this.eight_count.Size = new System.Drawing.Size(42, 36);
+            this.eight_count.TabIndex = 77;
+            this.eight_count.Text = "0";
+            this.eight_count.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.eight_count.TextChanged += new System.EventHandler(this.count_TextChanged);
+            this.eight_count.Leave += new System.EventHandler(this.count_Leave);
+            // 
             // eight_up
             // 
             this.eight_up.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
@@ -496,8 +624,6 @@
             this.one_up.TabIndex = 7;
             this.one_up.TabStop = false;
             this.one_up.Click += new System.EventHandler(this.up_Click);
-            this.one_up.MouseEnter += new System.EventHandler(this.chevron_enter);
-            this.one_up.MouseLeave += new System.EventHandler(this.chevron_leave);
             // 
             // one_down
             // 
@@ -526,134 +652,6 @@
             this.closeButton.Click += new System.EventHandler(this.pictureBox1_Click);
             this.closeButton.MouseLeave += new System.EventHandler(this.closeButton_MouseLeave);
             this.closeButton.MouseHover += new System.EventHandler(this.pictureBox1_MouseEnter);
-            // 
-            // one_count
-            // 
-            this.one_count.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.one_count.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.one_count.Font = new System.Drawing.Font("맑은 고딕", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.one_count.ForeColor = System.Drawing.Color.Tomato;
-            this.one_count.Location = new System.Drawing.Point(240, 135);
-            this.one_count.MaxLength = 2;
-            this.one_count.Name = "one_count";
-            this.one_count.Size = new System.Drawing.Size(42, 36);
-            this.one_count.TabIndex = 70;
-            this.one_count.Text = "0";
-            this.one_count.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.one_count.TextChanged += new System.EventHandler(this.count_TextChanged);
-            this.one_count.Leave += new System.EventHandler(this.count_Leave);
-            // 
-            // two_count
-            // 
-            this.two_count.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.two_count.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.two_count.Font = new System.Drawing.Font("맑은 고딕", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.two_count.ForeColor = System.Drawing.Color.Tomato;
-            this.two_count.Location = new System.Drawing.Point(424, 135);
-            this.two_count.MaxLength = 2;
-            this.two_count.Name = "two_count";
-            this.two_count.Size = new System.Drawing.Size(42, 36);
-            this.two_count.TabIndex = 71;
-            this.two_count.Text = "0";
-            this.two_count.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.two_count.TextChanged += new System.EventHandler(this.count_TextChanged);
-            this.two_count.Leave += new System.EventHandler(this.count_Leave);
-            // 
-            // three_count
-            // 
-            this.three_count.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.three_count.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.three_count.Font = new System.Drawing.Font("맑은 고딕", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.three_count.ForeColor = System.Drawing.Color.Tomato;
-            this.three_count.Location = new System.Drawing.Point(608, 135);
-            this.three_count.MaxLength = 2;
-            this.three_count.Name = "three_count";
-            this.three_count.Size = new System.Drawing.Size(42, 36);
-            this.three_count.TabIndex = 72;
-            this.three_count.Text = "0";
-            this.three_count.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.three_count.TextChanged += new System.EventHandler(this.count_TextChanged);
-            this.three_count.Leave += new System.EventHandler(this.count_Leave);
-            // 
-            // five_count
-            // 
-            this.five_count.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.five_count.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.five_count.Font = new System.Drawing.Font("맑은 고딕", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.five_count.ForeColor = System.Drawing.Color.Tomato;
-            this.five_count.Location = new System.Drawing.Point(608, 232);
-            this.five_count.MaxLength = 2;
-            this.five_count.Name = "five_count";
-            this.five_count.Size = new System.Drawing.Size(42, 36);
-            this.five_count.TabIndex = 73;
-            this.five_count.Text = "0";
-            this.five_count.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.five_count.TextChanged += new System.EventHandler(this.count_TextChanged);
-            this.five_count.Leave += new System.EventHandler(this.count_Leave);
-            // 
-            // four_count
-            // 
-            this.four_count.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.four_count.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.four_count.Font = new System.Drawing.Font("맑은 고딕", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.four_count.ForeColor = System.Drawing.Color.Tomato;
-            this.four_count.Location = new System.Drawing.Point(240, 232);
-            this.four_count.MaxLength = 2;
-            this.four_count.Name = "four_count";
-            this.four_count.Size = new System.Drawing.Size(42, 36);
-            this.four_count.TabIndex = 74;
-            this.four_count.Text = "0";
-            this.four_count.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.four_count.TextChanged += new System.EventHandler(this.count_TextChanged);
-            this.four_count.Leave += new System.EventHandler(this.count_Leave);
-            // 
-            // six_count
-            // 
-            this.six_count.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.six_count.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.six_count.Font = new System.Drawing.Font("맑은 고딕", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.six_count.ForeColor = System.Drawing.Color.Tomato;
-            this.six_count.Location = new System.Drawing.Point(240, 329);
-            this.six_count.MaxLength = 2;
-            this.six_count.Name = "six_count";
-            this.six_count.Size = new System.Drawing.Size(42, 36);
-            this.six_count.TabIndex = 75;
-            this.six_count.Text = "0";
-            this.six_count.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.six_count.TextChanged += new System.EventHandler(this.count_TextChanged);
-            this.six_count.Leave += new System.EventHandler(this.count_Leave);
-            // 
-            // seven_count
-            // 
-            this.seven_count.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.seven_count.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.seven_count.Font = new System.Drawing.Font("맑은 고딕", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.seven_count.ForeColor = System.Drawing.Color.Tomato;
-            this.seven_count.Location = new System.Drawing.Point(424, 329);
-            this.seven_count.MaxLength = 2;
-            this.seven_count.Name = "seven_count";
-            this.seven_count.Size = new System.Drawing.Size(42, 36);
-            this.seven_count.TabIndex = 76;
-            this.seven_count.Text = "0";
-            this.seven_count.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.seven_count.TextChanged += new System.EventHandler(this.count_TextChanged);
-            this.seven_count.Leave += new System.EventHandler(this.count_Leave);
-            // 
-            // eight_count
-            // 
-            this.eight_count.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.eight_count.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.eight_count.Font = new System.Drawing.Font("맑은 고딕", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.eight_count.ForeColor = System.Drawing.Color.Tomato;
-            this.eight_count.Location = new System.Drawing.Point(608, 329);
-            this.eight_count.MaxLength = 2;
-            this.eight_count.Name = "eight_count";
-            this.eight_count.Size = new System.Drawing.Size(42, 36);
-            this.eight_count.TabIndex = 77;
-            this.eight_count.Text = "0";
-            this.eight_count.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.eight_count.TextChanged += new System.EventHandler(this.count_TextChanged);
-            this.eight_count.Leave += new System.EventHandler(this.count_Leave);
             // 
             // CustomProgramForm
             // 

@@ -58,6 +58,7 @@
             this.p1 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.Picture_Status = new System.Windows.Forms.PictureBox();
+            this.centerPic = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -72,6 +73,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.p1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Picture_Status)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.centerPic)).BeginInit();
             this.SuspendLayout();
             // 
             // comboBox1
@@ -90,6 +92,7 @@
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.centerPic);
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.label9);
@@ -177,7 +180,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label3.Location = new System.Drawing.Point(706, 357);
+            this.label3.Location = new System.Drawing.Point(706, 369);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(75, 46);
             this.label3.TabIndex = 80;
@@ -187,7 +190,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label1.Location = new System.Drawing.Point(16, 357);
+            this.label1.Location = new System.Drawing.Point(16, 369);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(75, 46);
             this.label1.TabIndex = 79;
@@ -232,9 +235,9 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(86, 76);
+            this.button1.Location = new System.Drawing.Point(57, 85);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(172, 64);
+            this.button1.Size = new System.Drawing.Size(172, 51);
             this.button1.TabIndex = 60;
             this.button1.Text = "연결시도";
             this.button1.UseVisualStyleBackColor = false;
@@ -247,9 +250,9 @@
             this.listBox1.ForeColor = System.Drawing.Color.White;
             this.listBox1.FormattingEnabled = true;
             this.listBox1.ItemHeight = 12;
-            this.listBox1.Location = new System.Drawing.Point(16, 163);
+            this.listBox1.Location = new System.Drawing.Point(12, 175);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(318, 372);
+            this.listBox1.Size = new System.Drawing.Size(318, 600);
             this.listBox1.TabIndex = 75;
             // 
             // CustomProgramPanel
@@ -343,7 +346,7 @@
             // p5
             // 
             this.p5.Image = ((System.Drawing.Image)(resources.GetObject("p5.Image")));
-            this.p5.Location = new System.Drawing.Point(714, 357);
+            this.p5.Location = new System.Drawing.Point(714, 369);
             this.p5.Name = "p5";
             this.p5.Size = new System.Drawing.Size(256, 256);
             this.p5.TabIndex = 75;
@@ -353,7 +356,7 @@
             // p4
             // 
             this.p4.Image = ((System.Drawing.Image)(resources.GetObject("p4.Image")));
-            this.p4.Location = new System.Drawing.Point(24, 357);
+            this.p4.Location = new System.Drawing.Point(24, 369);
             this.p4.Name = "p4";
             this.p4.Size = new System.Drawing.Size(256, 256);
             this.p4.TabIndex = 74;
@@ -373,7 +376,7 @@
             // p2
             // 
             this.p2.Image = ((System.Drawing.Image)(resources.GetObject("p2.Image")));
-            this.p2.Location = new System.Drawing.Point(367, 24);
+            this.p2.Location = new System.Drawing.Point(372, 24);
             this.p2.Name = "p2";
             this.p2.Size = new System.Drawing.Size(256, 256);
             this.p2.TabIndex = 72;
@@ -395,6 +398,7 @@
             this.pictureBox1.Image = global::SmartBadmintonTrainingSystem.Properties.Resources.refresh;
             this.pictureBox1.Location = new System.Drawing.Point(264, 76);
             this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Padding = new System.Windows.Forms.Padding(16);
             this.pictureBox1.Size = new System.Drawing.Size(64, 64);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 75;
@@ -405,12 +409,23 @@
             // 
             this.Picture_Status.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(66)))));
             this.Picture_Status.Image = global::SmartBadmintonTrainingSystem.Properties.Resources.signal_red;
-            this.Picture_Status.Location = new System.Drawing.Point(16, 76);
+            this.Picture_Status.Location = new System.Drawing.Point(12, 79);
             this.Picture_Status.Name = "Picture_Status";
+            this.Picture_Status.Padding = new System.Windows.Forms.Padding(16);
             this.Picture_Status.Size = new System.Drawing.Size(64, 64);
             this.Picture_Status.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.Picture_Status.TabIndex = 61;
             this.Picture_Status.TabStop = false;
+            // 
+            // centerPic
+            // 
+            this.centerPic.Image = ((System.Drawing.Image)(resources.GetObject("centerPic.Image")));
+            this.centerPic.Location = new System.Drawing.Point(433, 433);
+            this.centerPic.Name = "centerPic";
+            this.centerPic.Size = new System.Drawing.Size(128, 128);
+            this.centerPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.centerPic.TabIndex = 87;
+            this.centerPic.TabStop = false;
             // 
             // Training
             // 
@@ -444,6 +459,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.p1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Picture_Status)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.centerPic)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -479,5 +495,6 @@
         private System.Windows.Forms.PictureBox closeButton;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.PictureBox centerPic;
     }
 }
