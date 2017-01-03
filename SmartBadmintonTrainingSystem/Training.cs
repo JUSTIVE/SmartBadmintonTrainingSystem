@@ -304,7 +304,8 @@ namespace SmartBadmintonTrainingSystem
             Control t = sender as Control;
             
             order_list = customProgramTypeList[Int32.Parse(t.Name[0]+"")].trainingSet;
-            inputListbox(order_list);             
+            inputListbox(order_list);
+            isColor = false;
         }
         
 
@@ -585,6 +586,7 @@ namespace SmartBadmintonTrainingSystem
                     if (s_buffer.Contains("02 01 80 00 81 03 "))
                     {
                         swing_flag = true;
+                        
                     }
                     break;
                 case 2:
@@ -1112,9 +1114,62 @@ namespace SmartBadmintonTrainingSystem
                 AutoClosingMessageBox.Show("경과한 시간 : "+elapsed ,"ALERT",1000);
                 thread_flag = false;
             }
-            else
+            else//색상 트레이닝
             {
+                for (int i = 0; i < TCS.times; i++)//매 회차마다
+                {
+                    bool breaker = false;
+                    int progress = 0;
 
+                    inputListbox(i + "번째 케이스 시작 : " + TCS.generatedData[i]);
+                    
+                    send_packet(target_pole, (int)COLOR.RED);
+                    setImageRed(unmapper[target_pole] + 1);
+                    clearBuff();
+                    swing_flag = false;
+                    for (;;)
+                    {
+                        if (swing_flag)
+                        {
+                            inputListbox("swing");
+                            break;
+                        }
+                        else
+                        {
+                            currentPole = unmapper[target_pole] + 1;
+                            isSwing(currentPole);
+                        } //1-base pole number
+                    }
+                    centerPic.Image = Properties.Resources.red_circle;
+                    setImageOff(unmapper[target_pole] + 1);//unmapped pole number
+                    //send_packet(target_pole+1, 4);//mapped pole number
+                    if (breaker)
+                    {
+                        break;
+                    }
+                    clearBuff();
+                    lrFlag = false; FbFlag = false;
+                    if ((unmapper[target_pole] + 1) == 2 || (unmapper[target_pole] + 1) == 7) FbFlag = true;
+                    else if ((unmapper[target_pole] + 1) == 4 || (unmapper[target_pole] + 1) == 5) lrFlag = true;
+                    center_flag1 = false;
+                    for (;;)
+                    {
+                        if (center_flag1)
+                        {
+                            inputListbox("center");
+                            is_light = false;
+
+                            break;
+                        }
+                        else isCenter();
+                    }
+                    centerPic.Image = null;
+                    centerPic.Image = Properties.Resources.green_circle;
+                }
+                stopwatch.Stop();
+                float elapsed = float.Parse(stopwatch.ElapsedMilliseconds.ToString()) * 0.001f;
+                AutoClosingMessageBox.Show("경과한 시간 : " + elapsed, "ALERT", 1000);
+                thread_flag = false;
             }
         }
 
