@@ -14,13 +14,12 @@ namespace SmartBadmintonTrainingSystem
     {
         public string input;
         bool isRand = false;
-        int[] colorarray = new int[3];
+        int[] colorarray = new int[4];
 
         bool[] colorchecker;
 
         Dictionary<int, string> mapper = new Dictionary<int, string>{ {0,"one" },{ 1,"two"},{2,"three" },{ 3,"four"} };
         Training from;
-        List<int> targetPoles;
         Random randseed;
 
         enum ColorEnum {RED,GREEN,BLUE,YELLOW,NONE };
@@ -28,11 +27,9 @@ namespace SmartBadmintonTrainingSystem
         public Form2()
         {
             InitializeComponent();
-
         }
-        public Form2(Training t)
+        public Form2(Training t):this()
         {
-            InitializeComponent();
             randseed = new Random();
             from = t;
             

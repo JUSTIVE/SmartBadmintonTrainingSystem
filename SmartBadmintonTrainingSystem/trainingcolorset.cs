@@ -9,11 +9,17 @@ namespace SmartBadmintonTrainingSystem
     public class TrainingColorSet
     {
         enum ColorEnum { RED, GREEN, BLUE, YELLOW };
-        int[] dataset;
+        public int[] dataset;
         int[] checker;
         public int[][] generatedData;//times, one-based pole
         public int times;
+        public int[] colorOrder;
         Random randSeed = new Random();
+        /// <summary>
+        /// 기본 생성자
+        /// </summary>
+        /// <param name="dataset"> 색상 순서가 저장된 배열</param>
+        /// <param name="times"> 트레이닝 회차 </param>
         public TrainingColorSet(int[] dataset,int times) 
         {
             this.dataset = dataset;
@@ -36,7 +42,7 @@ namespace SmartBadmintonTrainingSystem
                         checker[generatedData[i][j] - 1] = 1;   
                     }
                 }
-                //세팅되어있습니다
+                //임의의 숫자들로 채워진 것.
             }
 
         }

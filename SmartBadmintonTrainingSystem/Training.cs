@@ -578,59 +578,21 @@ namespace SmartBadmintonTrainingSystem
             }
 
         }
-        public void isSwing(int number)
+        public bool isSwing(int number)
         {
-            switch (number)
+            string[] correct_signals = { "02 01 80 00 81 03 ", "02 01 40 00 41 03 " ,
+                "02 01 20 00 21 03 " ,"02 01 02 00 03 03 ",
+                "02 01 01 00 02 03 ","02 01 10 00 11 03 ",
+                "02 01 08 00 09 03 ","02 01 04 00 05 03 "
+            };
+            if (s_buffer.Contains(correct_signals[number - 1]))
             {
-                case 1:
-                    if (s_buffer.Contains("02 01 80 00 81 03 "))
-                    {
-                        swing_flag = true;
-                        
-                    }
-                    break;
-                case 2:
-                    if (s_buffer.Contains("02 01 40 00 41 03 "))
-                    {
-                        swing_flag = true;
-                    }
-                    break;
-                case 3:
-                    if (s_buffer.Contains("02 01 20 00 21 03 "))
-                    {
-                        swing_flag = true;
-                    }
-                    break;
-                case 4:
-                    if (s_buffer.Contains("02 01 02 00 03 03 "))
-                    {
-                        swing_flag = true;
-                    }
-                    break;
-                case 5:
-                    if (s_buffer.Contains("02 01 01 00 02 03 "))
-                    {
-                        swing_flag = true;
-                    }
-                    break;
-                case 6:
-                    if (s_buffer.Contains("02 01 10 00 11 03 "))
-                    {
-                        swing_flag = true;
-                    }
-                    break;
-                case 7:
-                    if (s_buffer.Contains("02 01 08 00 09 03 "))
-                    {
-                        swing_flag = true;
-                    }
-                    break;
-                case 8:
-                    if (s_buffer.Contains("02 01 04 00 05 03 "))
-                    {
-                        swing_flag = true;
-                    }
-                    break;
+                swing_flag = true;
+                return true;
+            }
+            else
+            {
+                return false;
             }
         }
 
@@ -1122,8 +1084,24 @@ namespace SmartBadmintonTrainingSystem
                     int progress = 0;
 
                     inputListbox(i + "번째 케이스 시작 : " + TCS.generatedData[i]);
+                    for(int j = 0; j < 5; j++)
+                    {
+                        target_pole = TCS.generatedData[i][j];
+                        //send_packet(target_pole, (int)COLOR.RED); ref
+
+                        if (j < 3)
+                        {
+                            send_packet(target_pole,TCS.dataset[j]);
+                        }
+                        else
+                        {
+                            send_packet(target_pole, TCS.dataset[3]);
+                        }
+                        
+
+                        
+                    }
                     
-                    send_packet(target_pole, (int)COLOR.RED);
                     setImageRed(unmapper[target_pole] + 1);
                     clearBuff();
                     swing_flag = false;
@@ -1137,13 +1115,13 @@ namespace SmartBadmintonTrainingSystem
                         else
                         {
                             currentPole = unmapper[target_pole] + 1;
-                            isSwing(currentPole);
+                            breaker=isSwing(currentPole);
                         } //1-base pole number
                     }
                     centerPic.Image = Properties.Resources.red_circle;
                     setImageOff(unmapper[target_pole] + 1);//unmapped pole number
-                    //send_packet(target_pole+1, 4);//mapped pole number
-                    if (breaker)
+                    
+                    if (breaker)//잘못된 기둥을 건드렸을 경우
                     {
                         break;
                     }
