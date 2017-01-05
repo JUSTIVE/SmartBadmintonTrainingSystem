@@ -76,7 +76,7 @@ namespace SmartBadmintonTrainingSystem
         Thread threader=null;
         Form2 f2;
 
-        enum COLOR{RED, GREEN,BLUE,YELLOW,WHITE};
+        enum COLORENUM{RED, GREEN,BLUE,YELLOW,WHITE};
         public List<PictureBox> pList = new List<PictureBox>();
 
         SoundPlayer sound, sound2;
@@ -706,7 +706,7 @@ namespace SmartBadmintonTrainingSystem
         {
             if (port_set) { 
                 if (!is_light) {
-                    send_packet(7, (int)COLOR.RED);
+                    send_packet(7, (int)COLORENUM.RED);
                     setImageRed(1);
                     is_light = true;
                     if (!thread_flag)
@@ -738,7 +738,7 @@ namespace SmartBadmintonTrainingSystem
             if (port_set) {
                 if (!is_light)
                 {
-                    send_packet(6, (int)COLOR.RED);
+                    send_packet(6, (int)COLORENUM.RED);
                     setImageRed(2);
                     is_light = true;
                     if (!thread_flag)
@@ -770,7 +770,7 @@ namespace SmartBadmintonTrainingSystem
             if (port_set)
                 if (!is_light)
             {
-                    send_packet(5, (int)COLOR.RED);
+                    send_packet(5, (int)COLORENUM.RED);
                     setImageRed(3);
                     is_light = true;
                     if (!thread_flag)
@@ -801,7 +801,7 @@ namespace SmartBadmintonTrainingSystem
             if (port_set)
                 if (!is_light)
             {
-                    send_packet(1, (int)COLOR.RED);
+                    send_packet(1, (int)COLORENUM.RED);
                     setImageRed(4);
                     is_light = true;
                     if (!thread_flag)
@@ -830,7 +830,7 @@ namespace SmartBadmintonTrainingSystem
         {
             if (port_set){ 
                 if (!is_light){
-                    send_packet(0, (int)COLOR.RED);
+                    send_packet(0, (int)COLORENUM.RED);
                     setImageRed(5);
                     is_light = true;
                     if (threader != null)
@@ -861,7 +861,7 @@ namespace SmartBadmintonTrainingSystem
             if (port_set) { 
                 if (!is_light)
                 {
-                    send_packet(4, (int)COLOR.RED);
+                    send_packet(4, (int)COLORENUM.RED);
                     setImageRed(6);
                     is_light = true;
 
@@ -893,7 +893,7 @@ namespace SmartBadmintonTrainingSystem
             if (port_set) { 
                 if (!is_light)
                 {
-                    send_packet(3, (int)COLOR.RED);
+                    send_packet(3, (int)COLORENUM.RED);
                     setImageRed(7);
                     is_light = true;
                     if (!thread_flag)
@@ -924,7 +924,7 @@ namespace SmartBadmintonTrainingSystem
             if (port_set) { 
                 if (!is_light)
                 {
-                    send_packet(2, (int)COLOR.RED);
+                    send_packet(2, (int)COLORENUM.RED);
                     setImageRed(8);
                     is_light = true;
                     if (!thread_flag)
@@ -1035,7 +1035,7 @@ namespace SmartBadmintonTrainingSystem
                 {
                     inputListbox(i+"번째 기둥 시작 : "+splitter.ElementAt(i));
                     target_pole = mapper[Int32.Parse(splitter.ElementAt(i))-1];
-                    send_packet(target_pole, (int)COLOR.RED);
+                    send_packet(target_pole, (int)COLORENUM.RED);
                     setImageRed(unmapper[target_pole]+1);
                     clearBuff();
                     swing_flag = false;
@@ -1092,19 +1092,48 @@ namespace SmartBadmintonTrainingSystem
                     {
                         target_pole = TCS.generatedData[i][j];
                         //send_packet(target_pole, (int)COLOR.RED); ref
-                        send_packet(target_pole, (int)COLOR.RED);
-                        switch (j)
+                        send_packet(target_pole, (int)COLORENUM.RED);
+                    }
+                    for(int j = 0; j < 4; j++)
+                    {
+                        if (j<3) { 
+                            switch (TCS.dataset[j])
+                            {
+                                case (int)COLORENUM.RED:
+                                    setImageRed(TCS.generatedData[i][j]);
+                                    break;
+                                case (int)COLORENUM.GREEN:
+                                    setImageGreen(TCS.generatedData[i][j]);
+                                    break;
+                                case (int)COLORENUM.BLUE:
+                                    setImageBlue(TCS.generatedData[i][j]);
+                                    break;
+                                case (int)COLORENUM.YELLOW:
+                                    setImageYellow(TCS.generatedData[i][j]);
+                                    break;
+                            }
+                        }
+                        else
                         {
-                            case 0:
-                                
-                                break;
-                            case 1:
-                                break;
-                            case 2:
-                                break;
-                            case 3:
-                            case 4:
-                                break;
+                            switch (TCS.dataset[j])
+                            {
+                                case (int)COLORENUM.RED:
+                                    setImageRed(TCS.generatedData[i][3]);
+                                    setImageRed(TCS.generatedData[i][4]);
+                                    break;
+                                case (int)COLORENUM.GREEN:
+                                    setImageGreen(TCS.generatedData[i][3]);
+                                    setImageGreen(TCS.generatedData[i][4]);
+                                    break;
+                                case (int)COLORENUM.BLUE:
+                                    setImageBlue(TCS.generatedData[i][3]);
+                                    setImageBlue(TCS.generatedData[i][4]);
+                                    break;
+                                case (int)COLORENUM.YELLOW:
+                                    setImageYellow(TCS.generatedData[i][3]);
+                                    setImageYellow(TCS.generatedData[i][4]);
+                                    break;
+                            }
                         }
                     }
                     

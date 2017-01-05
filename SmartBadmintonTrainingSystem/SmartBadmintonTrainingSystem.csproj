@@ -96,6 +96,12 @@
     <Compile Include="CustomProgramForm.Designer.cs">
       <DependentUpon>CustomProgramForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="CustomProgramRecord.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomProgramRecord.Designer.cs">
+      <DependentUpon>CustomProgramRecord.cs</DependentUpon>
+    </Compile>
     <Compile Include="CustomProgramType.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>

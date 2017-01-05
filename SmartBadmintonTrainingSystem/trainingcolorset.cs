@@ -9,7 +9,7 @@ namespace SmartBadmintonTrainingSystem
     public class TrainingColorSet
     {
         enum ColorEnum { RED, GREEN, BLUE, YELLOW };
-        public int[] dataset;
+        public int[] dataset;//int[4]
         int[] checker;
         public int[][] generatedData;//times, one-based pole
         public int times;
