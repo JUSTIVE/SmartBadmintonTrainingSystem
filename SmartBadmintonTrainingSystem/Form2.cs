@@ -241,12 +241,20 @@ namespace SmartBadmintonTrainingSystem
                 }
                 if (amount.Text.Equals(""))
                 {
-                    AutoClosingMessageBox.Show("기둥을 설정해주세요", "기둥 설정", 500);
+                    AutoClosingMessageBox.Show("반복 횟수를 설정해주세요", "기둥 설정", 500);
                     return;
                 }
             }
             from.TCS = new TrainingColorSet(colorarray,Int32.Parse(amount.Text));
             from.isColor = true;
+            //for debugging
+            string temp="";
+            for(int i = 0; i < 4; i++)
+            {
+                temp += colorarray[i] + "-";
+            }
+            from.inputListbox(temp);
+            //
             this.Close();
             from.flipCurtain();
         }
