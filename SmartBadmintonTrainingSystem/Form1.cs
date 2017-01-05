@@ -32,9 +32,9 @@ namespace SmartBadmintonTrainingSystem
         public void init()
         {
             selectCommand.Connection = D_instance.conn;
-            selectCommand.CommandText = "SELECT COUNT(id) from member where id=@id and pw=@pw";
-            selectCommand.Parameters.Add("@id", MySqlDbType.VarChar, 20);
-            selectCommand.Parameters.Add("@pw", MySqlDbType.VarChar, 20);
+            selectCommand.CommandText = "SELECT COUNT(id) from member where id=?id and pw=?pw";
+            selectCommand.Parameters.Add("?id", MySqlDbType.VarChar, 20);
+            selectCommand.Parameters.Add("?pw", MySqlDbType.VarChar, 20);
             ActiveControl = txt_id;
         }
         public void checkLogin(){

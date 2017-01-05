@@ -26,10 +26,28 @@ namespace SmartBadmintonTrainingSystem
                 {
                     singletonDB.instance.conn.Open();
                 }
-                catch(System.Exception ex){
-
+                catch (System.Exception ex)
+                {
+                    AutoClosingMessageBox.Show("서버 연결이 해제되었습니다", "ERROR", 2000);
                 }
             }
+            //if (singletonDB.instance.conn.State != System.Data.ConnectionState.Open)
+            //{
+            //try
+            //{
+            //    instance = new singletonDB();
+            //}
+            //catch (MySqlException ex)
+            //{
+            //    switch (ex.Number)
+            //    {
+            //        case 4060:
+            //            //AutoClosingMessageBox.Show("invaliddatabase", "ERROR", 2000);
+            //            break;
+            //    }
+            //}
+            //AutoClosingMessageBox.Show(instance.conn.State.ToString(), "ERROR", 2000);
+            //}      
         }
 
         public static singletonDB getInstance()
