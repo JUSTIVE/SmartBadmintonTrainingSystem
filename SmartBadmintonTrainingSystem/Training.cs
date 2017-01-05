@@ -608,6 +608,10 @@ namespace SmartBadmintonTrainingSystem
         {
             pList.ElementAt(number - 1).Image = SmartBadmintonTrainingSystem.Properties.Resources.blue_circle;
         }
+        public void setImageYellow(int number)
+        {
+            pList.ElementAt(number - 1).Image = SmartBadmintonTrainingSystem.Properties.Resources.yellow_circle;
+        }
         public void setImageOff(int number)
         {
             pList.ElementAt(number - 1).Image = SmartBadmintonTrainingSystem.Properties.Resources.off_circle;
@@ -1088,18 +1092,20 @@ namespace SmartBadmintonTrainingSystem
                     {
                         target_pole = TCS.generatedData[i][j];
                         //send_packet(target_pole, (int)COLOR.RED); ref
-
-                        if (j < 3)
+                        send_packet(target_pole, (int)COLOR.RED);
+                        switch (j)
                         {
-                            send_packet(target_pole,TCS.dataset[j]);
+                            case 0:
+                                
+                                break;
+                            case 1:
+                                break;
+                            case 2:
+                                break;
+                            case 3:
+                            case 4:
+                                break;
                         }
-                        else
-                        {
-                            send_packet(target_pole, TCS.dataset[3]);
-                        }
-                        
-
-                        
                     }
                     
                     setImageRed(unmapper[target_pole] + 1);
@@ -1123,6 +1129,7 @@ namespace SmartBadmintonTrainingSystem
                     
                     if (breaker)//잘못된 기둥을 건드렸을 경우
                     {
+                        AutoClosingMessageBox.Show("잘못된 기둥을 스윙하였습니다","Error",1500);
                         break;
                     }
                     clearBuff();
