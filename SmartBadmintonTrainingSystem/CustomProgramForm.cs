@@ -102,6 +102,7 @@ namespace SmartBadmintonTrainingSystem
 
         private void confirmButton_Click(object sender, EventArgs e)
         {
+            bool checker = false;
             if (!TrainingSet.Text.Equals("")) { 
                 if (progNameTextBox.Text.Equals(""))
                 {
@@ -114,11 +115,11 @@ namespace SmartBadmintonTrainingSystem
                     programName = progNameTextBox.Text;
                 }
                 if (programnumber == -1) {
-                    bool checker = false;
+                    
 
                     for (int i = 0; i < from.customProgramTypeList.Count; i++)
                     {
-                        if (progNameTextBox.Text.Equals(from.customProgramTypeList[i].name))
+                        if (programName.Equals(from.customProgramTypeList[i].name))
                         {
                             checker = true;
                         }
@@ -134,14 +135,13 @@ namespace SmartBadmintonTrainingSystem
                 }
                 else
                 {
-                    bool checker = false;
-
                     for (int i = 0; i < from.customProgramTypeList.Count; i++)
                     {
-                        if (progNameTextBox.Text.Equals(from.customProgramTypeList[i].name))
-                        {
-                            checker = true;
-                        }
+                        if(programnumber!=i)
+                            if (programName.Equals(from.customProgramTypeList[i].name))
+                            {
+                                checker = true;
+                            }
                     }
                     if (!checker) { 
                         CustomProgramType CPT = new CustomProgramType(programName, TrainingSet.Text);
@@ -153,10 +153,11 @@ namespace SmartBadmintonTrainingSystem
                         AutoClosingMessageBox.Show("중복된 이름의 프로그램이 있습니다.", "Error", 1000);
                     }
                 }
-                //todo: 이름 중복 체크
-                from.flipCurtain();
-                from.setUpProgramList();
-                this.Close();
+                if (!checker) { 
+                    from.flipCurtain();
+                    from.setUpProgramList();
+                    this.Close();
+                }
             }
             else
             {
