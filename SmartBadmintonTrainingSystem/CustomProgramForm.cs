@@ -59,6 +59,7 @@ namespace SmartBadmintonTrainingSystem
                 poleCount[Int32.Parse(splitter[i]) - 1]++;
 
             }
+            progNameTextBox.Text = CPT.name;
             updateTrainingSet();
         }
 
