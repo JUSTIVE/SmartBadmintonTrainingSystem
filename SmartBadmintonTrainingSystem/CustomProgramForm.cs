@@ -105,22 +105,55 @@ namespace SmartBadmintonTrainingSystem
             if (!TrainingSet.Text.Equals("")) { 
                 if (progNameTextBox.Text.Equals(""))
                 {
-                    programName = "사용자 지정 프로그램";
+                    programName = "사용자 프로그램";
                 }
+                
+                
                 else
                 {
                     programName = progNameTextBox.Text;
                 }
                 if (programnumber == -1) {
-                    CustomProgramType CPT = new CustomProgramType(programName, TrainingSet.Text);
-                    from.customProgramTypeList.Add(CPT);
+                    bool checker = false;
+
+                    for (int i = 0; i < from.customProgramTypeList.Count; i++)
+                    {
+                        if (progNameTextBox.Text.Equals(from.customProgramTypeList[i].name))
+                        {
+                            checker = true;
+                        }
+                    }
+                    if (!checker) { 
+                        CustomProgramType CPT = new CustomProgramType(programName, TrainingSet.Text);
+                        from.customProgramTypeList.Add(CPT);
+                    }
+                    else
+                    {
+                        AutoClosingMessageBox.Show("중복된 이름의 프로그램이 있습니다.","Error",1000);
+                    }
                 }
                 else
                 {
-                    CustomProgramType CPT = new CustomProgramType(programName, TrainingSet.Text);
-                    from.kill(programnumber);
-                    from.customProgramTypeList.Insert(programnumber,CPT);
+                    bool checker = false;
+
+                    for (int i = 0; i < from.customProgramTypeList.Count; i++)
+                    {
+                        if (progNameTextBox.Text.Equals(from.customProgramTypeList[i].name))
+                        {
+                            checker = true;
+                        }
+                    }
+                    if (!checker) { 
+                        CustomProgramType CPT = new CustomProgramType(programName, TrainingSet.Text);
+                        from.kill(programnumber);
+                        from.customProgramTypeList.Insert(programnumber,CPT);
+                    }
+                    else
+                    {
+                        AutoClosingMessageBox.Show("중복된 이름의 프로그램이 있습니다.", "Error", 1000);
+                    }
                 }
+                //todo: 이름 중복 체크
                 from.flipCurtain();
                 from.setUpProgramList();
                 this.Close();
