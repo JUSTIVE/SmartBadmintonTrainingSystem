@@ -339,18 +339,19 @@ namespace SmartBadmintonTrainingSystem
                 if (!thread_flag)
                 {
                     inputListbox(target_pole+"");
-                    if (order_list.Equals(""))
-                    {
-                        AutoClosingMessageBox.Show("기둥을 설정하십시요", "설정 오류", 500);
-                    }
-                    else
+                    if (!order_list.Equals("")||isColor)
                     {
                         thread = new ThreadStart(TrainingThreadStart);
                         threader = new Thread(thread);
-                        
+
                         threader.Start();
-                        
+
                         thread_flag = true;
+                    }
+                    else
+                    {
+                        AutoClosingMessageBox.Show("기둥을 설정하십시요", "설정 오류", 500);
+                        
                     }
                 }
                 else
@@ -419,7 +420,8 @@ namespace SmartBadmintonTrainingSystem
             flipCurtain();
             f2 = new Form2(this);
             f2.Show();
-            order_list = "";           
+            order_list = "";
+            isColor = true;
             
         }
         void EventDataReceived(object sender, SerialDataReceivedEventArgs e)
@@ -1113,7 +1115,7 @@ namespace SmartBadmintonTrainingSystem
                                     break;
                             }
                         }
-                        else
+                        else if(j==3)
                         {
                             switch (TCS.dataset[j])
                             {

@@ -543,8 +543,15 @@ namespace SmartBadmintonTrainingSystem
             listBox1.Items.Add("테스트 시작");
             listBox1.SelectedIndex = listBox1.Items.Count - 1;
             setOrderList();
-                        
-            AutoClosingMessageBox.Show("2초뒤 테스트를 시작합니다!", "안내", 2000);
+
+            center.Image = Properties.Resources._3_image;
+            Thread.Sleep(1000);
+            center.Image = Properties.Resources._2_image;
+            Thread.Sleep(1000);
+            center.Image = Properties.Resources._1_image;
+            Thread.Sleep(1000);
+            //AutoClosingMessageBox.Show("2초뒤 테스트를 시작합니다!", "안내", 1000);
+            //AutoClosingMessageBox.Show("1초뒤 테스트를 시작합니다!", "안내", 1000);
             sound.Play();
             for (int i = 0; i < 8; i++)
             {
@@ -712,6 +719,12 @@ namespace SmartBadmintonTrainingSystem
             listBox1.Items.Add(data);
             listBox1.SelectedIndex = listBox1.Items.Count - 1;
         }
+
+        private void center_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void radioButton1_CheckedChanged_1(object sender, EventArgs e)
         {
             status = "random";

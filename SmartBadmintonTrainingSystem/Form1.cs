@@ -20,12 +20,11 @@ namespace SmartBadmintonTrainingSystem
         bool flag = false;
         SelectForm frm;
         //TestMode frm;
-        public Form1()
+        public Form1():base()
         {
-            
-            InitializeComponent();
             this.StartPosition = FormStartPosition.Manual;
-            this.Location = new Point(Screen.PrimaryScreen.Bounds.Width/2-this.Size.Width/2, Screen.PrimaryScreen.Bounds.Height/2-this.Size.Height/2);
+            this.Location = new Point(Screen.PrimaryScreen.Bounds.Width / 2 - this.Size.Width / 2, Screen.PrimaryScreen.Bounds.Height / 2 - this.Size.Height / 2);
+            InitializeComponent();
             init();
             
         }
