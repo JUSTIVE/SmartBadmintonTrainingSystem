@@ -93,7 +93,14 @@ namespace SmartBadmintonTrainingSystem
                 string u_handtype = comboBox1.SelectedItem.ToString();
                 float u_height = float.Parse(txt_height.Text); float u_weight = float.Parse(txt_weight.Text); string u_name = txt_name.Text;
                 string password = txt_pw.Text;
-
+                if (txt_name.Text.Equals(""))
+                {
+                    u_name = u_id;
+                }
+                if (txt_weight.Text.Equals(""))
+                {
+                    u_weight = 1;
+                }
                 insertCommand.Parameters[0].Value = u_id;
                 insertCommand.Parameters[1].Value = password;
                 insertCommand.Parameters[2].Value = u_name;
