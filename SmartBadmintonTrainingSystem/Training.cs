@@ -910,7 +910,6 @@ namespace SmartBadmintonTrainingSystem
                                 threader = null;
                                 inputListbox(threader.IsAlive + "");
                             }
-
                         }
                         thread = new ThreadStart(normalthreadStart);
                         threader = new Thread(thread);
@@ -940,7 +939,6 @@ namespace SmartBadmintonTrainingSystem
                                 threader = null;
                                 inputListbox(threader.IsAlive + "");
                             }
-
                         }
                         thread = new ThreadStart(normalthreadStart);
                         threader = new Thread(thread);
@@ -956,15 +954,6 @@ namespace SmartBadmintonTrainingSystem
         }
         public void setRefreshPort()
         {
-            //port_set = false;
-            //button1.Text = "연결시도";
-            //label2.Text = openX;
-            //Picture_Status.Image = SmartBadmintonTrainingSystem.Properties.Resources.red_circle;
-            //for (int i = 0; i < 8; i++)
-            //{
-            //    setImageOff(i + 1);
-            //}
-            //SetSerialPort();
             port_set = false;
             try
             {
@@ -976,7 +965,7 @@ namespace SmartBadmintonTrainingSystem
             }
             catch
             {
-
+                AutoClosingMessageBox.Show("컨트롤러 오류","Error",500);
             }
             button1.Text = "연결시도";
             label2.Text = openX;
@@ -1093,7 +1082,6 @@ namespace SmartBadmintonTrainingSystem
                     for(int j = 0; j < 5; j++)
                     {
                         target_pole = TCS.generatedData[i][j];
-                        //send_packet(target_pole, (int)COLOR.RED); ref
                         send_packet(target_pole, (int)COLORENUM.RED);
                     }
                     for(int j = 0; j < 4; j++)

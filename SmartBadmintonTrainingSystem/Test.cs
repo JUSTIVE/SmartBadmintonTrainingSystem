@@ -545,10 +545,13 @@ namespace SmartBadmintonTrainingSystem
             setOrderList();
 
             center.Image = Properties.Resources._3_image;
+            sound.Play();
             Thread.Sleep(1000);
             center.Image = Properties.Resources._2_image;
+            sound.Play();
             Thread.Sleep(1000);
             center.Image = Properties.Resources._1_image;
+            sound.Play();
             Thread.Sleep(1000);
             //AutoClosingMessageBox.Show("2초뒤 테스트를 시작합니다!", "안내", 1000);
             //AutoClosingMessageBox.Show("1초뒤 테스트를 시작합니다!", "안내", 1000);

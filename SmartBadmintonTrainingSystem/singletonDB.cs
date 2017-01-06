@@ -52,6 +52,7 @@ namespace SmartBadmintonTrainingSystem
 
         public static singletonDB getInstance()
         {
+            singletonDB.IsOpen();
             return instance;
         }
     }
