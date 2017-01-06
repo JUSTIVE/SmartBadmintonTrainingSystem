@@ -20,6 +20,12 @@ namespace SmartBadmintonTrainingSystem
     
     public partial class Test : Form
     {
+        //fileio
+        FileStream inLog = File.Create("in.txt");
+        FileStream outLog = File.Create("in.txt");
+        StreamWriter streamWriterIn=new StreamWriter("in.txt");
+        StreamWriter streamWriterOut = new StreamWriter("out.txt");
+
         SoundPlayer sound;//시작,종료
         SoundPlayer sound2;//중앙감지
 
@@ -103,6 +109,8 @@ namespace SmartBadmintonTrainingSystem
         int TestCount = 1;
         public Test()
         {
+            
+            
             InitializeComponent();
             this.StartPosition = FormStartPosition.Manual;
             this.Location = new Point(Screen.PrimaryScreen.Bounds.Width / 2 - this.Size.Width / 2, Screen.PrimaryScreen.Bounds.Height / 2 - this.Size.Height / 2);
@@ -110,6 +118,11 @@ namespace SmartBadmintonTrainingSystem
             pList.Clear();
             setpList();
 
+        }
+        ~Test(){
+            inLog.Close();
+            outLog.Close();
+            streamWriterIn.Close();
         }
         public void setpList()
         {
@@ -383,7 +396,11 @@ namespace SmartBadmintonTrainingSystem
                     buffer.Add(strRecData);
                 }
             }
-            if (!swing_flag) s_buffer.Add(strRecData);
+            if (!swing_flag)
+            {
+                streamWriterIn.Write(strRecData+""+ DateTime.Now.ToString("yyyyMMddHHmmssFFF"));
+                s_buffer.Add(strRecData);
+            }
         }
 
         public void setOrderList()
@@ -568,6 +585,7 @@ namespace SmartBadmintonTrainingSystem
                 sw.Start();                sw2.Start();
                 clearBuff();
                 center.Image = SmartBadmintonTrainingSystem.Properties.Resources.red_circle;
+
                 send_packet(new_number[number - 1], 0);
                 setImageRed(number);
 
