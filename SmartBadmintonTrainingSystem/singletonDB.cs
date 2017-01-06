@@ -28,7 +28,7 @@ namespace SmartBadmintonTrainingSystem
                 }
                 catch (System.Exception ex)
                 {
-                    AutoClosingMessageBox.Show("서버 연결이 해제되었습니다", "ERROR", 2000);
+                    //AutoClosingMessageBox.Show("서버 연결이 해제되었습니다", "ERROR", 2000);
                 }
             }
             //if (singletonDB.instance.conn.State != System.Data.ConnectionState.Open)
