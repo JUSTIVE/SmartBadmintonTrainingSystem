@@ -17,14 +17,13 @@ using System.Media;
 
 namespace SmartBadmintonTrainingSystem
 {
-    
     public partial class Test : Form
     {
         //fileio
-        FileStream inLog = File.Create("in.txt");
-        FileStream outLog = File.Create("in.txt");
-        StreamWriter streamWriterIn=new StreamWriter("in.txt");
-        StreamWriter streamWriterOut = new StreamWriter("out.txt");
+        StreamWriter streamWriterIn;
+        StreamWriter streamWriterOut;
+        Stopwatch loggerTime;
+
 
         SoundPlayer sound;//시작,종료
         SoundPlayer sound2;//중앙감지
@@ -117,12 +116,33 @@ namespace SmartBadmintonTrainingSystem
             initInsertQuery();
             pList.Clear();
             setpList();
+            setupStream();
+        }
+        void setupStream()
+        {
+            streamWriterIn = new StreamWriter("in.txt");
+            streamWriterOut = new StreamWriter("out.txt");
+            loggerTime = new Stopwatch();
+        }
+        private void Test_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            TM.Visible = true;
+            TM.refreshData();
+            if (SP.IsOpen) SP.Close();
+            try
+            {
+                th1.Abort();
+                threadFlag = false;
+            }
+            catch (System.Exception ex)
+            {
 
+            }
+            streamWriterIn.Close();
+            streamWriterOut.Close();
         }
         ~Test(){
-            inLog.Close();
-            outLog.Close();
-            streamWriterIn.Close();
+            
         }
         public void setpList()
         {
@@ -228,21 +248,7 @@ namespace SmartBadmintonTrainingSystem
             sound2 = new SoundPlayer(SmartBadmintonTrainingSystem.Properties.Resources.beep_05);
         }
 
-        private void Test_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            TM.Visible = true;
-            TM.refreshData();
-            if (SP.IsOpen) SP.Close();
-            try
-            {
-                th1.Abort();
-                threadFlag = false;
-            }
-            catch (System.Exception ex)
-            {
-
-            }
-        }
+        
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -389,6 +395,7 @@ namespace SmartBadmintonTrainingSystem
             {
                 strRecData += buff[iTemp].ToString("X2") + " ";
             }
+            streamWriterIn.WriteLine(strRecData+loggerTime.Elapsed.ToString(@"mm\:ss\:FFFFFF"));
             if (!center_flag1)
             {
                 if (!buffer.Contains(strRecData))
@@ -398,7 +405,6 @@ namespace SmartBadmintonTrainingSystem
             }
             if (!swing_flag)
             {
-                streamWriterIn.Write(strRecData+""+ DateTime.Now.ToString("yyyyMMddHHmmssFFF"));
                 s_buffer.Add(strRecData);
             }
         }
@@ -518,6 +524,9 @@ namespace SmartBadmintonTrainingSystem
                 tmp2 = (byte)(byteSendData[1] + byteSendData[2] + byteSendData[3]);
                 byteSendData[4] = tmp2;
                 SP.Write(byteSendData, 0, 6);
+                string hex = BitConverter.ToString(byteSendData);
+                hex.Replace("-", "");
+                streamWriterOut.WriteLine(hex+ loggerTime.Elapsed.ToString(@"mm\:ss\:FFFFFF"));
             }
             catch (System.Exception e)
             {
@@ -659,6 +668,7 @@ namespace SmartBadmintonTrainingSystem
                         ths = new ThreadStart(thread_test);
                         th1 = new Thread(ths);
                         th1.Start();
+                        loggerTime.Start();
                         threadFlag = true;
                     }                    
                 }
