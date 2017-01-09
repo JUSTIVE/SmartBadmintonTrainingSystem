@@ -30,6 +30,7 @@ namespace SmartBadmintonTrainingSystem
         }
         public Form2(Training t):this()
         {
+            
             randseed = new Random();
             from = t;
             
