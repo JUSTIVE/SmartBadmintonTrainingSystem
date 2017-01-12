@@ -19,6 +19,12 @@ namespace SmartBadmintonTrainingSystem
 {
     public partial class Test : Form
     {
+        //Serial
+        int bufflen=0;
+        byte[] buff_temp;
+        bool validate=true;
+        int lastpos=0;
+        List<byte> d_buffer = new List<byte>();
         //fileio
         StreamWriter streamWriterIn;
         StreamWriter streamWriterOut;
@@ -32,7 +38,7 @@ namespace SmartBadmintonTrainingSystem
 
         //Sensor HX Code
         byte[] index = { 0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07, 0x08 };//M1,M2,B3,B2,B1,F3,F2,F1
-        byte[] color = { 0x01, 0x02, 0x03, 0x04, 0x00 };//Red,Green,Blue,Yellow
+        byte[] color = { 0x00, 0x01, 0x02, 0x04, 0x03, 0x05,0x06,0x07};//Red,Green,Blue,Yellow,magenta,cyan;
         byte start = 0x02;
         byte start_check = 0x01;
         byte end = 0x03;
@@ -255,6 +261,7 @@ namespace SmartBadmintonTrainingSystem
             SP_name = comboBox1.SelectedItem.ToString();
         }
 
+
         private void button1_Click(object sender, EventArgs e)
         {
             try
@@ -309,10 +316,19 @@ namespace SmartBadmintonTrainingSystem
                 label2.Text = openO;
                 setByteSendData();
                 //초기 이미지 확인
-                send_packet(0, 0); send_packet(1, 0); send_packet(2, 2);
-                send_packet(3, 2); send_packet(4, 2); send_packet(5, 1);
-                send_packet(6, 1); send_packet(7, 1);
-
+                //send_packet(0, color[1]); send_packet(1, color[1]);
+                //send_packet(2, color[3]); send_packet(3, color[3]); send_packet(4, color[3]);
+                //send_packet(5, color[2]); send_packet(6, color[2]); send_packet(7, color[2]);
+                while (true) { 
+                    for (int i = 0; i < 8; i++) { 
+                        for (int j = 0; j < 8; j++)
+                        {
+                            AutoClosingMessageBox.Show("aa", "aa", 100);
+                            send_packet(j, color[i]);
+                        }
+                        AutoClosingMessageBox.Show("aa", "aa", 500);
+                    }
+                }
                 setImageGreen(1); setImageGreen(2); setImageGreen(3);
                 setImageRed(4); setImageRed(5);
                 setImageBlue(6); setImageBlue(7); setImageBlue(8);
@@ -357,9 +373,9 @@ namespace SmartBadmintonTrainingSystem
             {
                 try
                 {
-                    send_packet(0, 4); send_packet(1, 4); send_packet(2, 4);
-                    send_packet(3, 4); send_packet(4, 4); send_packet(5, 4);
-                    send_packet(6, 4); send_packet(7, 4);
+                    send_packet(0, color[0]); send_packet(1, color[0]); send_packet(2, color[0]);
+                    send_packet(3, color[0]); send_packet(4, color[0]); send_packet(5, color[0]);
+                    send_packet(6, color[0]); send_packet(7, color[0]);
                 }
                 catch (System.Exception ex)
                 {
@@ -386,9 +402,15 @@ namespace SmartBadmintonTrainingSystem
         }
         void EventDataReceived(object sender, SerialDataReceivedEventArgs e)
         {
+            
             Sizer = SP.BytesToRead;
             strRecData = "";
             byte[] buff = new byte[Sizer];
+            //if (Sizer != 6)
+            //{
+            //    validate = false;
+            //}
+            
             SP.Read(buff, 0, Sizer);
 
             for (iTemp=0; iTemp < Sizer; iTemp++)
@@ -396,6 +418,7 @@ namespace SmartBadmintonTrainingSystem
                 strRecData += buff[iTemp].ToString("X2") + " ";
             }
             streamWriterIn.WriteLine(strRecData+loggerTime.Elapsed.ToString(@"mm\:ss\:FFFFFF"));
+            inputListbox(strRecData);
             if (!center_flag1)
             {
                 if (!buffer.Contains(strRecData))
@@ -406,6 +429,53 @@ namespace SmartBadmintonTrainingSystem
             if (!swing_flag)
             {
                 s_buffer.Add(strRecData);
+            }
+        }
+        void EventDataReceivedV2(object sender, SerialDataReceivedEventArgs e)
+        {
+            Sizer = SP.BytesToRead;
+            bufflen += Sizer;
+            if(validate)
+                
+            strRecData = "";
+            if (Sizer !=0) { 
+                if (Sizer != 6)
+                {
+                    validate = false;
+                    lastpos = Sizer - 1;
+                    if (bufflen == 6)
+                    {
+                        validate = true;
+                        bufflen = 0;
+                    }
+                }
+                else
+                {
+                    buff_temp = new byte[6];
+                    validate = true;
+                    lastpos = 0;
+                    bufflen = 0;
+                }
+                SP.Read(buff_temp, lastpos, Sizer);
+                if (validate) { 
+                    for (iTemp = 0; iTemp < 6; iTemp++)
+                    {
+                        strRecData += buff_temp[iTemp].ToString("X2") + " ";
+                    }
+                    streamWriterIn.WriteLine(strRecData + loggerTime.Elapsed.ToString(@"mm\:ss\:FFFFFF"));
+                    inputListbox(strRecData);
+                    if (!center_flag1)
+                    {
+                        if (!buffer.Contains(strRecData))
+                        {
+                            buffer.Add(strRecData);
+                        }
+                    }
+                    if (!swing_flag)
+                    {
+                        s_buffer.Add(strRecData);
+                    }
+                }
             }
         }
 
@@ -447,49 +517,49 @@ namespace SmartBadmintonTrainingSystem
             switch (number)
             {
                 case 1:
-                    if (s_buffer.Contains("02 01 80 00 81 03 "))
+                    if (s_buffer.Contains("02 01 08 01 0A 03 ")|| s_buffer.Contains("02 01 08 03 0C 03 "))
                     {
                         swing_flag = true;
                     }
                     break;
                 case 2:
-                    if (s_buffer.Contains("02 01 40 00 41 03 "))
+                    if (s_buffer.Contains("02 01 07 01 09 03 ")|| s_buffer.Contains("02 01 07 03 0B 03 "))
                     {
                         swing_flag = true;
                     }
                     break;
                 case 3:
-                    if (s_buffer.Contains("02 01 20 00 21 03 "))
+                    if (s_buffer.Contains("02 01 06 01 08 03 ")||s_buffer.Contains("02 01 06 03 0A 03 "))
                     {
                         swing_flag = true;
                     }                    
                     break;
                 case 4:
-                    if (s_buffer.Contains("02 01 02 00 03 03 "))
+                    if (s_buffer.Contains("02 01 02 01 04 03 ")|| s_buffer.Contains("02 01 02 03 06 03 "))
                     {
                         swing_flag = true;
                     }
                     break;
                 case 5:
-                    if (s_buffer.Contains("02 01 01 00 02 03 "))
+                    if (s_buffer.Contains("02 01 01 01 03 03 ")|| s_buffer.Contains("02 01 01 03 05 03 "))
                     {
                         swing_flag = true;
                     }
                     break;
                 case 6:
-                    if (s_buffer.Contains("02 01 10 00 11 03 "))
+                    if (s_buffer.Contains("02 01 05 01 07 03 ")|| s_buffer.Contains("02 01 05 03 09 03 "))
                     {
                         swing_flag = true;
                     }
                     break;
                 case 7:
-                    if (s_buffer.Contains("02 01 08 00 09 03 "))
+                    if (s_buffer.Contains("02 01 04 01 06 03 ")|| s_buffer.Contains("02 01 04 03 08 03 "))
                     {
                         swing_flag = true;
                     }
                     break;
                 case 8:
-                    if (s_buffer.Contains("02 01 04 00 05 03 "))
+                    if (s_buffer.Contains("02 01 03 01 05 03 ")|| s_buffer.Contains("02 01 03 03 07 03 "))
                     {
                         swing_flag = true;
                     }
@@ -498,13 +568,22 @@ namespace SmartBadmintonTrainingSystem
         }
         public void isCenter()
         {               
-            if (buffer.Contains("02 01 00 40 41 03 ") && !lrFlag)
+            if (buffer.Contains("02 01 02 02 05 03 ") && !lrFlag)// 01 02 02 05
             {
                 lrFlag = true;
             }
-            if (buffer.Contains("02 01 00 80 81 03 ") && !FbFlag)
+            else if(buffer.Contains("02 01 02 00 03 03")&&lrFlag)// 01 02 00 03
+            {
+                lrFlag = false;
+            }
+            
+            if (buffer.Contains("02 01 07 02 0A 03 ") && !FbFlag)
             {
                 FbFlag = true;
+            }
+            else if(buffer.Contains("02 01 07 00 08 03 ") && FbFlag)
+            {
+                FbFlag = false;
             }
             
             if (lrFlag && FbFlag) center_flag1 = true;
@@ -595,7 +674,7 @@ namespace SmartBadmintonTrainingSystem
                 clearBuff();
                 center.Image = SmartBadmintonTrainingSystem.Properties.Resources.red_circle;
 
-                send_packet(new_number[number - 1], 0);
+                send_packet(new_number[number - 1], color[1]);
                 setImageRed(number);
 
                 swing_flag = false;
@@ -609,7 +688,7 @@ namespace SmartBadmintonTrainingSystem
                 }
                 sw.Stop();
                 setImageOff(number);
-                send_packet(new_number[number - 1], 4);
+                //send_packet(new_number[number - 1], 4);
                 
                 clearBuff();
                 lrFlag = false; FbFlag = false;
@@ -657,9 +736,9 @@ namespace SmartBadmintonTrainingSystem
             else
             {
                 setNewNumber();
-                send_packet(0, 4); send_packet(1, 4); send_packet(2, 4);
-                send_packet(3, 4); send_packet(4, 4); send_packet(5, 4);
-                send_packet(6, 4); send_packet(7, 4);
+                send_packet(0, color[0]); send_packet(1, color[0]); send_packet(2, color[0]);
+                send_packet(3, color[0]); send_packet(4, color[0]); send_packet(5, color[0]);
+                send_packet(6, color[0]); send_packet(7, color[0]);
                 setByteSendData();
                 try
                 {
