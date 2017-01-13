@@ -319,16 +319,16 @@ namespace SmartBadmintonTrainingSystem
                 //send_packet(0, color[1]); send_packet(1, color[1]);
                 //send_packet(2, color[3]); send_packet(3, color[3]); send_packet(4, color[3]);
                 //send_packet(5, color[2]); send_packet(6, color[2]); send_packet(7, color[2]);
-                while (true) { 
-                    for (int i = 0; i < 8; i++) { 
-                        for (int j = 0; j < 8; j++)
-                        {
-                            AutoClosingMessageBox.Show("aa", "aa", 100);
-                            send_packet(j, color[i]);
-                        }
-                        AutoClosingMessageBox.Show("aa", "aa", 500);
-                    }
-                }
+                //while (true) { 
+                //    for (int i = 0; i < 8; i++) { 
+                //        for (int j = 0; j < 8; j++)
+                //        {
+                //            AutoClosingMessageBox.Show("aa", "aa", 100);
+                //            send_packet(j, color[i]);
+                //        }
+                //        AutoClosingMessageBox.Show("aa", "aa", 500);
+                //    }
+                //}
                 setImageGreen(1); setImageGreen(2); setImageGreen(3);
                 setImageRed(4); setImageRed(5);
                 setImageBlue(6); setImageBlue(7); setImageBlue(8);
@@ -418,7 +418,7 @@ namespace SmartBadmintonTrainingSystem
                 strRecData += buff[iTemp].ToString("X2") + " ";
             }
             streamWriterIn.WriteLine(strRecData+loggerTime.Elapsed.ToString(@"mm\:ss\:FFFFFF"));
-            inputListbox(strRecData);
+            //inputListbox(strRecData);
             if (!center_flag1)
             {
                 if (!buffer.Contains(strRecData))
@@ -435,6 +435,10 @@ namespace SmartBadmintonTrainingSystem
         {
             Sizer = SP.BytesToRead;
             bufflen += Sizer;
+            if (lastpos == 0)
+            {
+                buff_temp = new byte[6];
+            }
             if(validate)
                 
             strRecData = "";
@@ -462,7 +466,7 @@ namespace SmartBadmintonTrainingSystem
                     {
                         strRecData += buff_temp[iTemp].ToString("X2") + " ";
                     }
-                    streamWriterIn.WriteLine(strRecData + loggerTime.Elapsed.ToString(@"mm\:ss\:FFFFFF"));
+                    //streamWriterIn.WriteLine(strRecData + loggerTime.Elapsed.ToString(@"mm\:ss\:FFFFFF"));
                     inputListbox(strRecData);
                     if (!center_flag1)
                     {
@@ -605,7 +609,7 @@ namespace SmartBadmintonTrainingSystem
                 SP.Write(byteSendData, 0, 6);
                 string hex = BitConverter.ToString(byteSendData);
                 hex.Replace("-", "");
-                streamWriterOut.WriteLine(hex+ loggerTime.Elapsed.ToString(@"mm\:ss\:FFFFFF"));
+                //streamWriterOut.WriteLine(hex+ loggerTime.Elapsed.ToString(@"mm\:ss\:FFFFFF"));
             }
             catch (System.Exception e)
             {
@@ -672,7 +676,7 @@ namespace SmartBadmintonTrainingSystem
                 number = OrderList.ElementAt(i);
                 sw.Start();                sw2.Start();
                 clearBuff();
-                center.Image = SmartBadmintonTrainingSystem.Properties.Resources.red_circle;
+                
 
                 send_packet(new_number[number - 1], color[1]);
                 setImageRed(number);
@@ -688,8 +692,9 @@ namespace SmartBadmintonTrainingSystem
                 }
                 sw.Stop();
                 setImageOff(number);
-                //send_packet(new_number[number - 1], 4);
-                
+                center.Image = SmartBadmintonTrainingSystem.Properties.Resources.red_circle;
+                send_packet(new_number[number - 1], 0);
+
                 clearBuff();
                 lrFlag = false; FbFlag = false;
                 if (number == 2 || number == 7) FbFlag = true;
