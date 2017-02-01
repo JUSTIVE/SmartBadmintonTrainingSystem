@@ -24,6 +24,7 @@ namespace SmartBadmintonTrainingSystem
         byte[] buff_temp;
         bool validate=true;
         int lastpos=0;
+        bool buff_full = false;
         List<byte> d_buffer = new List<byte>();
         //fileio
         StreamWriter streamWriterIn;
@@ -91,6 +92,7 @@ namespace SmartBadmintonTrainingSystem
         bool FbFlag = false; //상하
         //스윙여부판단
         bool swing_flag = true;
+        int swing_pole;
         bool is6byte = false;
         //현재 테스트 결과 저장 변수
         float[] Result = new float[16];
@@ -435,12 +437,21 @@ namespace SmartBadmintonTrainingSystem
         {
             Sizer = SP.BytesToRead;
             bufflen += Sizer;
-            if (lastpos == 0)
+            if (Sizer > 6)
             {
-                buff_temp = new byte[6];
+                buff_full = true;
             }
-            if(validate)
-                
+            if (lastpos == 0)//현재버퍼의 마지막 위치가0 인 경우 
+            {              
+                buff_temp = new byte[6];//새로 할당한다.
+            }
+            else//이전의 버퍼가 남아있는 경우
+            {
+                if (lastpos + Sizer > 6)
+                {
+                    buff_full = true;
+                }
+            }
             strRecData = "";
             if (Sizer !=0) { 
                 if (Sizer != 6)
@@ -466,7 +477,6 @@ namespace SmartBadmintonTrainingSystem
                     {
                         strRecData += buff_temp[iTemp].ToString("X2") + " ";
                     }
-                    //streamWriterIn.WriteLine(strRecData + loggerTime.Elapsed.ToString(@"mm\:ss\:FFFFFF"));
                     inputListbox(strRecData);
                     if (!center_flag1)
                     {
@@ -474,6 +484,7 @@ namespace SmartBadmintonTrainingSystem
                         {
                             buffer.Add(strRecData);
                         }
+                        isSwing(0);
                     }
                     if (!swing_flag)
                     {
@@ -524,48 +535,56 @@ namespace SmartBadmintonTrainingSystem
                     if (s_buffer.Contains("02 01 08 01 0A 03 ")|| s_buffer.Contains("02 01 08 03 0C 03 "))
                     {
                         swing_flag = true;
+                        swing_pole = 1;
                     }
                     break;
                 case 2:
                     if (s_buffer.Contains("02 01 07 01 09 03 ")|| s_buffer.Contains("02 01 07 03 0B 03 "))
                     {
                         swing_flag = true;
+                        swing_pole = 2;
                     }
                     break;
                 case 3:
                     if (s_buffer.Contains("02 01 06 01 08 03 ")||s_buffer.Contains("02 01 06 03 0A 03 "))
                     {
                         swing_flag = true;
+                        swing_pole = 3;
                     }                    
                     break;
                 case 4:
                     if (s_buffer.Contains("02 01 02 01 04 03 ")|| s_buffer.Contains("02 01 02 03 06 03 "))
                     {
                         swing_flag = true;
+                        swing_pole = 4;
                     }
                     break;
                 case 5:
                     if (s_buffer.Contains("02 01 01 01 03 03 ")|| s_buffer.Contains("02 01 01 03 05 03 "))
                     {
                         swing_flag = true;
+                        swing_pole = 5;
                     }
                     break;
                 case 6:
                     if (s_buffer.Contains("02 01 05 01 07 03 ")|| s_buffer.Contains("02 01 05 03 09 03 "))
                     {
                         swing_flag = true;
+                        swing_pole = 6;
                     }
                     break;
                 case 7:
                     if (s_buffer.Contains("02 01 04 01 06 03 ")|| s_buffer.Contains("02 01 04 03 08 03 "))
                     {
                         swing_flag = true;
+                        swing_pole = 7;
                     }
                     break;
                 case 8:
                     if (s_buffer.Contains("02 01 03 01 05 03 ")|| s_buffer.Contains("02 01 03 03 07 03 "))
                     {
                         swing_flag = true;
+                        swing_pole = 8;
                     }
                     break;
             }
