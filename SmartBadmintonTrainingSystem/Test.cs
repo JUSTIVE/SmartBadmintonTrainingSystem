@@ -19,6 +19,7 @@ namespace SmartBadmintonTrainingSystem
 {
     public partial class Test : Form
     {
+        int current_test_index;
         //Serial
         int bufflen=0;
         byte[] buff_temp;
@@ -63,6 +64,7 @@ namespace SmartBadmintonTrainingSystem
         List<string> s_buffer = new List<string>();
         int buff_index = 0;
         bool port_set = false;
+        bool overflowed=false;
         //시리얼 포트 관련 변수 선언 종료
 
         //반복문
@@ -437,42 +439,21 @@ namespace SmartBadmintonTrainingSystem
         {
             Sizer = SP.BytesToRead;
             bufflen += Sizer;
-            if (Sizer > 6)
-            {
-                buff_full = true;
-            }
-            if (lastpos == 0)//현재버퍼의 마지막 위치가0 인 경우 
-            {              
-                buff_temp = new byte[6];//새로 할당한다.
-            }
-            else//이전의 버퍼가 남아있는 경우
-            {
-                if (lastpos + Sizer > 6)
-                {
-                    buff_full = true;
+
+            while (true) {
+                strRecData = "";
+                if (lastpos == 0)//현재버퍼의 마지막 위치가0 인 경우 
+                {              
+                    buff_temp = new byte[6];//새로 할당한다.
                 }
-            }
-            strRecData = "";
-            if (Sizer !=0) { 
-                if (Sizer != 6)
+                else//이전의 버퍼가 남아있는 경우
                 {
-                    validate = false;
-                    lastpos = Sizer - 1;
-                    if (bufflen == 6)
-                    {
-                        validate = true;
-                        bufflen = 0;
-                    }
+                    if (bufflen > 6)
+                        buff_full = true;
                 }
-                else
-                {
-                    buff_temp = new byte[6];
-                    validate = true;
-                    lastpos = 0;
-                    bufflen = 0;
-                }
-                SP.Read(buff_temp, lastpos, Sizer);
-                if (validate) { 
+                
+                if (bufflen>=6) { 
+                    SP.Read(buff_temp, lastpos, Sizer);
                     for (iTemp = 0; iTemp < 6; iTemp++)
                     {
                         strRecData += buff_temp[iTemp].ToString("X2") + " ";
@@ -484,13 +465,20 @@ namespace SmartBadmintonTrainingSystem
                         {
                             buffer.Add(strRecData);
                         }
-                        isSwing(0);
                     }
                     if (!swing_flag)
                     {
                         s_buffer.Add(strRecData);
                     }
                 }
+                else
+                {
+                    buff_full = false;
+                    bufflen -= 6;
+                    lastpos = bufflen - 1;
+                    
+                    break;
+                }                
             }
         }
 
@@ -527,67 +515,62 @@ namespace SmartBadmintonTrainingSystem
         {
             buffer.Clear();
         }
-        public void isSwing(int number)
+        public int isSwing(int number)
         {
-            switch (number)
+            swing_pole = -1;
+            
+            if (s_buffer.Contains("02 01 08 01 0A 03 ")|| s_buffer.Contains("02 01 08 03 0C 03 "))
             {
-                case 1:
-                    if (s_buffer.Contains("02 01 08 01 0A 03 ")|| s_buffer.Contains("02 01 08 03 0C 03 "))
-                    {
-                        swing_flag = true;
-                        swing_pole = 1;
-                    }
-                    break;
-                case 2:
-                    if (s_buffer.Contains("02 01 07 01 09 03 ")|| s_buffer.Contains("02 01 07 03 0B 03 "))
-                    {
-                        swing_flag = true;
-                        swing_pole = 2;
-                    }
-                    break;
-                case 3:
-                    if (s_buffer.Contains("02 01 06 01 08 03 ")||s_buffer.Contains("02 01 06 03 0A 03 "))
-                    {
-                        swing_flag = true;
-                        swing_pole = 3;
-                    }                    
-                    break;
-                case 4:
-                    if (s_buffer.Contains("02 01 02 01 04 03 ")|| s_buffer.Contains("02 01 02 03 06 03 "))
-                    {
-                        swing_flag = true;
-                        swing_pole = 4;
-                    }
-                    break;
-                case 5:
-                    if (s_buffer.Contains("02 01 01 01 03 03 ")|| s_buffer.Contains("02 01 01 03 05 03 "))
-                    {
-                        swing_flag = true;
-                        swing_pole = 5;
-                    }
-                    break;
-                case 6:
-                    if (s_buffer.Contains("02 01 05 01 07 03 ")|| s_buffer.Contains("02 01 05 03 09 03 "))
-                    {
-                        swing_flag = true;
-                        swing_pole = 6;
-                    }
-                    break;
-                case 7:
-                    if (s_buffer.Contains("02 01 04 01 06 03 ")|| s_buffer.Contains("02 01 04 03 08 03 "))
-                    {
-                        swing_flag = true;
-                        swing_pole = 7;
-                    }
-                    break;
-                case 8:
-                    if (s_buffer.Contains("02 01 03 01 05 03 ")|| s_buffer.Contains("02 01 03 03 07 03 "))
-                    {
-                        swing_flag = true;
-                        swing_pole = 8;
-                    }
-                    break;
+                swing_flag = true;
+                swing_pole = 1;
+                return swing_pole;
             }
+            if (s_buffer.Contains("02 01 07 01 09 03 ")|| s_buffer.Contains("02 01 07 03 0B 03 "))
+            {
+                swing_flag = true;
+                swing_pole = 2;
+                return swing_pole;
+            }
+            
+            if (s_buffer.Contains("02 01 06 01 08 03 ")||s_buffer.Contains("02 01 06 03 0A 03 "))
+            {
+                swing_flag = true;
+                swing_pole = 3;
+                return swing_pole;
+            }
+            
+            if (s_buffer.Contains("02 01 02 01 04 03 ")|| s_buffer.Contains("02 01 02 03 06 03 "))
+            {
+                swing_flag = true;
+                swing_pole = 4;
+                return swing_pole;
+            }
+            if (s_buffer.Contains("02 01 01 01 03 03 ")|| s_buffer.Contains("02 01 01 03 05 03 "))
+            {
+                swing_flag = true;
+                swing_pole = 5;
+                return swing_pole;
+            }
+            if (s_buffer.Contains("02 01 05 01 07 03 ")|| s_buffer.Contains("02 01 05 03 09 03 "))
+            {
+                swing_flag = true;
+                swing_pole = 6;
+                return swing_pole;
+            }
+            if (s_buffer.Contains("02 01 04 01 06 03 ")|| s_buffer.Contains("02 01 04 03 08 03 "))
+            {
+                swing_flag = true;
+                swing_pole = 7;
+                return swing_pole;
+            }
+            if (s_buffer.Contains("02 01 03 01 05 03 ")|| s_buffer.Contains("02 01 03 03 07 03 "))
+            {
+                swing_flag = true;
+                swing_pole = 8;
+                return swing_pole;
+            }
+            return swing_pole;
+            
         }
         public void isCenter()
         {               
@@ -690,9 +673,9 @@ namespace SmartBadmintonTrainingSystem
             }
             Time = 0.0f;
             Time2 = 0.0f;
-            for (int i = 0; i < cnt_of_test; i++)
+            for (current_test_index = 0; current_test_index < cnt_of_test;)
             {
-                number = OrderList.ElementAt(i);
+                number = OrderList.ElementAt(current_test_index);
                 sw.Start();                sw2.Start();
                 clearBuff();
                 
@@ -703,11 +686,11 @@ namespace SmartBadmintonTrainingSystem
                 swing_flag = false;
                 for (; ; )
                 {
-                    if (swing_flag)
+                    if (swing_pole==number)
                     {
+                        swing_pole = -1;
                         break;
-                    }
-                    else isSwing(number);
+                    }                    
                 }
                 sw.Stop();
                 setImageOff(number);
@@ -722,7 +705,7 @@ namespace SmartBadmintonTrainingSystem
                 for (; ; )
                 {
                     if (center_flag1)
-                    {                        
+                    {                 
                         break;
                     }
                     else isCenter();
@@ -766,7 +749,7 @@ namespace SmartBadmintonTrainingSystem
                 setByteSendData();
                 try
                 {
-                    if (!threadFlag)
+                    if (!threadFlag)// 스레드 시작
                     {
                         ths = new ThreadStart(thread_test);
                         th1 = new Thread(ths);
