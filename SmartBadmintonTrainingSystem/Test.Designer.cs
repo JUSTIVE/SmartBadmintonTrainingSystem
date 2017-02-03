@@ -59,6 +59,8 @@
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.Picture_Status = new System.Windows.Forms.PictureBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.nowswing = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.center)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.p8)).BeginInit();
@@ -91,6 +93,7 @@
             this.panel1.AutoSize = true;
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(253)))), ((int)(((byte)(253)))));
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.nowswing);
             this.panel1.Controls.Add(this.label10);
             this.panel1.Controls.Add(this.center);
             this.panel1.Controls.Add(this.label7);
@@ -110,7 +113,7 @@
             this.panel1.Controls.Add(this.p2);
             this.panel1.Controls.Add(this.p1);
             this.panel1.Location = new System.Drawing.Point(479, 18);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1419, 1490);
             this.panel1.TabIndex = 54;
@@ -132,7 +135,7 @@
             // 
             this.center.Image = global::SmartBadmintonTrainingSystem.Properties.Resources.red_circle;
             this.center.Location = new System.Drawing.Point(601, 633);
-            this.center.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.center.Margin = new System.Windows.Forms.Padding(4);
             this.center.Name = "center";
             this.center.Size = new System.Drawing.Size(210, 196);
             this.center.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -242,7 +245,7 @@
             // 
             this.p8.Image = global::SmartBadmintonTrainingSystem.Properties.Resources.red_circle;
             this.p8.Location = new System.Drawing.Point(1020, 1071);
-            this.p8.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.p8.Margin = new System.Windows.Forms.Padding(4);
             this.p8.Name = "p8";
             this.p8.Size = new System.Drawing.Size(366, 384);
             this.p8.TabIndex = 62;
@@ -252,7 +255,7 @@
             // 
             this.p7.Image = global::SmartBadmintonTrainingSystem.Properties.Resources.red_circle;
             this.p7.Location = new System.Drawing.Point(524, 1071);
-            this.p7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.p7.Margin = new System.Windows.Forms.Padding(4);
             this.p7.Name = "p7";
             this.p7.Size = new System.Drawing.Size(366, 384);
             this.p7.TabIndex = 61;
@@ -262,7 +265,7 @@
             // 
             this.p6.Image = global::SmartBadmintonTrainingSystem.Properties.Resources.red_circle;
             this.p6.Location = new System.Drawing.Point(34, 1071);
-            this.p6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.p6.Margin = new System.Windows.Forms.Padding(4);
             this.p6.Name = "p6";
             this.p6.Size = new System.Drawing.Size(366, 384);
             this.p6.TabIndex = 60;
@@ -272,7 +275,7 @@
             // 
             this.p5.Image = global::SmartBadmintonTrainingSystem.Properties.Resources.red_circle;
             this.p5.Location = new System.Drawing.Point(1020, 536);
-            this.p5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.p5.Margin = new System.Windows.Forms.Padding(4);
             this.p5.Name = "p5";
             this.p5.Size = new System.Drawing.Size(366, 384);
             this.p5.TabIndex = 59;
@@ -282,7 +285,7 @@
             // 
             this.p4.Image = global::SmartBadmintonTrainingSystem.Properties.Resources.red_circle;
             this.p4.Location = new System.Drawing.Point(34, 536);
-            this.p4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.p4.Margin = new System.Windows.Forms.Padding(4);
             this.p4.Name = "p4";
             this.p4.Size = new System.Drawing.Size(366, 384);
             this.p4.TabIndex = 57;
@@ -292,7 +295,7 @@
             // 
             this.p3.Image = global::SmartBadmintonTrainingSystem.Properties.Resources.red_circle;
             this.p3.Location = new System.Drawing.Point(1020, 36);
-            this.p3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.p3.Margin = new System.Windows.Forms.Padding(4);
             this.p3.Name = "p3";
             this.p3.Size = new System.Drawing.Size(366, 384);
             this.p3.TabIndex = 56;
@@ -302,7 +305,7 @@
             // 
             this.p2.Image = global::SmartBadmintonTrainingSystem.Properties.Resources.red_circle;
             this.p2.Location = new System.Drawing.Point(524, 36);
-            this.p2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.p2.Margin = new System.Windows.Forms.Padding(4);
             this.p2.Name = "p2";
             this.p2.Size = new System.Drawing.Size(366, 384);
             this.p2.TabIndex = 55;
@@ -312,7 +315,7 @@
             // 
             this.p1.Image = global::SmartBadmintonTrainingSystem.Properties.Resources.red_circle;
             this.p1.Location = new System.Drawing.Point(34, 36);
-            this.p1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.p1.Margin = new System.Windows.Forms.Padding(4);
             this.p1.Name = "p1";
             this.p1.Size = new System.Drawing.Size(366, 384);
             this.p1.TabIndex = 54;
@@ -326,7 +329,7 @@
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.ItemHeight = 48;
             this.comboBox1.Location = new System.Drawing.Point(11, 51);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(455, 56);
             this.comboBox1.TabIndex = 56;
@@ -340,7 +343,7 @@
             this.button2.Font = new System.Drawing.Font("Segoe UI", 20F);
             this.button2.ForeColor = System.Drawing.Color.White;
             this.button2.Location = new System.Drawing.Point(134, 1144);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(336, 180);
             this.button2.TabIndex = 58;
@@ -356,7 +359,7 @@
             this.button1.Font = new System.Drawing.Font("Segoe UI", 24F);
             this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(87)))), ((int)(((byte)(34)))));
             this.button1.Location = new System.Drawing.Point(134, 130);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(334, 120);
             this.button1.TabIndex = 52;
@@ -372,7 +375,7 @@
             this.button3.Font = new System.Drawing.Font("Segoe UI", 20F);
             this.button3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(87)))), ((int)(((byte)(34)))));
             this.button3.Location = new System.Drawing.Point(134, 938);
-            this.button3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button3.Margin = new System.Windows.Forms.Padding(4);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(334, 180);
             this.button3.TabIndex = 59;
@@ -388,7 +391,7 @@
             this.btn_test.Font = new System.Drawing.Font("Segoe UI", 20F);
             this.btn_test.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(87)))), ((int)(((byte)(34)))));
             this.btn_test.Location = new System.Drawing.Point(134, 748);
-            this.btn_test.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_test.Margin = new System.Windows.Forms.Padding(4);
             this.btn_test.Name = "btn_test";
             this.btn_test.Size = new System.Drawing.Size(334, 180);
             this.btn_test.TabIndex = 70;
@@ -402,7 +405,7 @@
             this.radioButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.radioButton2.Font = new System.Drawing.Font("Segoe UI", 14F);
             this.radioButton2.Location = new System.Drawing.Point(134, 634);
-            this.radioButton2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.radioButton2.Margin = new System.Windows.Forms.Padding(4);
             this.radioButton2.Name = "radioButton2";
             this.radioButton2.Size = new System.Drawing.Size(224, 42);
             this.radioButton2.TabIndex = 72;
@@ -417,7 +420,7 @@
             this.radioButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.radioButton1.Font = new System.Drawing.Font("Segoe UI", 14F);
             this.radioButton1.Location = new System.Drawing.Point(134, 564);
-            this.radioButton1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.radioButton1.Margin = new System.Windows.Forms.Padding(4);
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(224, 42);
             this.radioButton1.TabIndex = 71;
@@ -434,7 +437,7 @@
             this.button4.Font = new System.Drawing.Font("Segoe UI", 24F);
             this.button4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(87)))), ((int)(((byte)(34)))));
             this.button4.Location = new System.Drawing.Point(134, 260);
-            this.button4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button4.Margin = new System.Windows.Forms.Padding(4);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(334, 180);
             this.button4.TabIndex = 73;
@@ -448,7 +451,7 @@
             this.listBox1.FormattingEnabled = true;
             this.listBox1.ItemHeight = 25;
             this.listBox1.Location = new System.Drawing.Point(1907, 18);
-            this.listBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.listBox1.Margin = new System.Windows.Forms.Padding(4);
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(794, 1454);
             this.listBox1.TabIndex = 74;
@@ -457,7 +460,7 @@
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(87)))), ((int)(((byte)(34)))));
             this.panel3.Location = new System.Drawing.Point(11, 108);
-            this.panel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel3.Margin = new System.Windows.Forms.Padding(4);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(457, 3);
             this.panel3.TabIndex = 63;
@@ -466,11 +469,30 @@
             // 
             this.Picture_Status.Image = global::SmartBadmintonTrainingSystem.Properties.Resources.red_circle;
             this.Picture_Status.Location = new System.Drawing.Point(11, 130);
-            this.Picture_Status.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Picture_Status.Margin = new System.Windows.Forms.Padding(4);
             this.Picture_Status.Name = "Picture_Status";
             this.Picture_Status.Size = new System.Drawing.Size(114, 120);
             this.Picture_Status.TabIndex = 53;
             this.Picture_Status.TabStop = false;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(1915, 26);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(64, 18);
+            this.label11.TabIndex = 75;
+            this.label11.Text = "label11";
+            // 
+            // nowswing
+            // 
+            this.nowswing.AutoSize = true;
+            this.nowswing.Font = new System.Drawing.Font("굴림", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.nowswing.Location = new System.Drawing.Point(576, 505);
+            this.nowswing.Name = "nowswing";
+            this.nowswing.Size = new System.Drawing.Size(135, 36);
+            this.nowswing.TabIndex = 73;
+            this.nowswing.Text = "label12";
             // 
             // Test
             // 
@@ -478,7 +500,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(2720, 1514);
+            this.ClientSize = new System.Drawing.Size(2552, 1514);
+            this.Controls.Add(this.label11);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.button4);
@@ -492,7 +515,7 @@
             this.Controls.Add(this.Picture_Status);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label2);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Test";
             this.Text = "테스트 모드";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Test_FormClosed);
@@ -547,5 +570,7 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.PictureBox center;
+        private System.Windows.Forms.Label nowswing;
+        private System.Windows.Forms.Label label11;
     }
 }
