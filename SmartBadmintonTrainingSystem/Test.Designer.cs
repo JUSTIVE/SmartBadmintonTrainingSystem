@@ -30,6 +30,7 @@
         {
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.nowswing = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.center = new System.Windows.Forms.PictureBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -59,8 +60,6 @@
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.Picture_Status = new System.Windows.Forms.PictureBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.nowswing = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.center)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.p8)).BeginInit();
@@ -117,6 +116,16 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1419, 1490);
             this.panel1.TabIndex = 54;
+            // 
+            // nowswing
+            // 
+            this.nowswing.AutoSize = true;
+            this.nowswing.Font = new System.Drawing.Font("굴림", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.nowswing.Location = new System.Drawing.Point(576, 505);
+            this.nowswing.Name = "nowswing";
+            this.nowswing.Size = new System.Drawing.Size(135, 36);
+            this.nowswing.TabIndex = 73;
+            this.nowswing.Text = "label12";
             // 
             // label10
             // 
@@ -475,25 +484,6 @@
             this.Picture_Status.TabIndex = 53;
             this.Picture_Status.TabStop = false;
             // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(1915, 26);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(64, 18);
-            this.label11.TabIndex = 75;
-            this.label11.Text = "label11";
-            // 
-            // nowswing
-            // 
-            this.nowswing.AutoSize = true;
-            this.nowswing.Font = new System.Drawing.Font("굴림", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.nowswing.Location = new System.Drawing.Point(576, 505);
-            this.nowswing.Name = "nowswing";
-            this.nowswing.Size = new System.Drawing.Size(135, 36);
-            this.nowswing.TabIndex = 73;
-            this.nowswing.Text = "label12";
-            // 
             // Test
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
@@ -501,7 +491,6 @@
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(2552, 1514);
-            this.Controls.Add(this.label11);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.button4);
@@ -571,6 +560,5 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.PictureBox center;
         private System.Windows.Forms.Label nowswing;
-        private System.Windows.Forms.Label label11;
     }
 }

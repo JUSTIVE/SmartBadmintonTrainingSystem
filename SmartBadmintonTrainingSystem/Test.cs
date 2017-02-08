@@ -510,37 +510,48 @@ namespace SmartBadmintonTrainingSystem
             byte[] buff = new byte[Sizer];
 
             SP.Read(buff, 0, Sizer);
+
+            string buffing = "";
+            for (int i = 0; i < Sizer; i++)
+            {
+                buffing += buff[i].ToString("X2") + " ";
+            }
+            streamWriterIn.WriteLine("rawinput - " + buffing);
             while (true) {
                 bool breaker = false;
                 strRecData = "";
-                if (Sizer < 6)
+                if (oldByte != null)//붙이기만 할것
                 {
-                    if (oldByte != null)//맞는 경우
-                    {
-                        //붙입니다
-                        byte[] temp = buff;
-                    
-                        Sizer = oldByte.Length + buff.Length;
-                        buff = new byte[Sizer];
-                        buff.Concat(oldByte);
-                        buff.Concat(temp);
-                        inputListbox("fixed") ;
-                        oldByte = null;
-                    }
-                    else { 
-                        oldByte = new byte[Sizer];
-                        buff.CopyTo(oldByte, 0);
-                    }
-                    breaker = true;
-                    
-                }
-            
-                if (Sizer == 6) { 
+                    byte[] temp = buff;
+                    Sizer = oldByte.Length + buff.Length;
+                    buff = new byte[Sizer];
+                    oldByte.CopyTo(buff, 0);
+                    temp.CopyTo(buff, oldByte.Length);
+                    streamWriterIn.WriteLine(" Fixed");
+                    inputListbox("fixed");
                     for (iTemp = 0; iTemp < Sizer; iTemp++)
                     {
                         strRecData += buff[iTemp].ToString("X2") + " ";
                     }
-                    streamWriterIn.WriteLine(strRecData + loggerTime.Elapsed.ToString(@"mm\:ss\:FFFFFF"));
+                    streamWriterIn.WriteLine(strRecData + " = pasted");
+                    inputListbox(strRecData);
+
+                    oldByte = null;
+                }
+                if (Sizer < 6)
+                {
+                    oldByte = new byte[Sizer];
+                    buff.CopyTo(oldByte, 0);
+                    break;
+                }
+            
+                if (Sizer == 6) {
+                    strRecData = "";
+                    for (iTemp = 0; iTemp < Sizer; iTemp++)
+                    {
+                        strRecData += buff[iTemp].ToString("X2") + " ";
+                    }
+                    streamWriterIn.WriteLine(strRecData + loggerTime.Elapsed.ToString(@"mm\:ss\:FFFFFF")+" = right");
                     inputListbox(strRecData);
                     if (!center_flag1)
                     {
@@ -565,11 +576,12 @@ namespace SmartBadmintonTrainingSystem
                 }
                 else if(Sizer>6)//6보다 큰 경우 -center
                 {
+                    strRecData = "";
                     for (iTemp = 0; iTemp < 6; iTemp++)
                     {
                         strRecData += buff[iTemp].ToString("X2") + " ";
                     }
-                    streamWriterIn.WriteLine(strRecData + loggerTime.Elapsed.ToString(@"mm\:ss\:FFFFFF"));
+                    streamWriterIn.WriteLine(strRecData + loggerTime.Elapsed.ToString(@"mm\:ss\:FFFFFF")+" Overed");
                     inputListbox(strRecData+ "overed");
                     if (!center_flag1)
                     {
@@ -791,6 +803,11 @@ namespace SmartBadmintonTrainingSystem
 
         public void thread_test()
         {
+            if (streamWriterIn != null) {
+                streamWriterIn.Close();
+                streamWriterIn = null;   
+            }
+            streamWriterIn = new StreamWriter("in.txt");
             singletonDB.IsOpen();
             selectDatabase();
             insertDatabase2();
@@ -825,6 +842,7 @@ namespace SmartBadmintonTrainingSystem
 
                 send_packet(new_number[number - 1], color[1]);
                 setImageRed(number);
+                streamWriterIn.WriteLine(number + " = number");
                 inputListbox(number + " = number");
                 swing_flag = false;
                 swing_pole = -1;
@@ -841,9 +859,6 @@ namespace SmartBadmintonTrainingSystem
                     {
                         current_test_index++; break;
                     }
-
-                        
-                    
                 }
                 sw.Stop();
                 setImageOff(number);
