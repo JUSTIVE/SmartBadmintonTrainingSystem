@@ -41,8 +41,6 @@ namespace SmartBadmintonTrainingSystem
         //테스트 순서 관련 변수 선언 시작
         public string orderString = "";
         List<int> OrderList = new List<int>();
-        int cnt_of_test = 0;
-        int number;
         public bool r_flag, g_flag, b_flag, y_flag;
         public bool hasSaving = false;
         //순서 설정 모드
@@ -67,8 +65,6 @@ namespace SmartBadmintonTrainingSystem
         bool FbFlag = false; //상하
         //스윙여부판단
         bool swing_flag = true;
-        bool is6byte = false;
-
         public string order_list = "";
 
         int target_pole;
@@ -87,6 +83,7 @@ namespace SmartBadmintonTrainingSystem
         public TrainingColorSet TCS = null;
         public bool isColor = false;
 
+        //생성자/constructor
         public Training()
         {
             InitializeComponent();
@@ -100,6 +97,16 @@ namespace SmartBadmintonTrainingSystem
             this.Size = new Size(1920,1048);
             
 
+        }
+        //for double buffering
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams cp = base.CreateParams;
+                cp.ExStyle |= 0x02000000;  // Turn on WS_EX_COMPOSITED
+                return cp;
+            }
         }
         public void initial()
         {
@@ -1175,7 +1182,6 @@ namespace SmartBadmintonTrainingSystem
                 AutoClosingMessageBox.Show("경과한 시간 : " + elapsed, "ALERT", 1000);
                 thread_flag = false;
             }
-        }
-
+        } 
     }
 }
