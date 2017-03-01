@@ -189,14 +189,11 @@ namespace SmartBadmintonTrainingSystem
         public void selectDatabase()
         {
             try { 
-            selectCommand.Parameters[0].Value = u_instance.uID;
-            selectCommand.Parameters[1].Value = u_instance.uPW;
-            selectCommand.Parameters[2].Value = u_instance.LoginDate;
-
-
-            TestCount = Convert.ToInt32(selectCommand.ExecuteScalar());
-            TestCount++;
-
+                selectCommand.Parameters[0].Value = u_instance.uID;
+                selectCommand.Parameters[1].Value = u_instance.uPW;
+                selectCommand.Parameters[2].Value = u_instance.LoginDate;
+                TestCount = Convert.ToInt32(selectCommand.ExecuteScalar());
+                TestCount++;
             }
             catch(MySqlException e )
             {
@@ -206,13 +203,13 @@ namespace SmartBadmintonTrainingSystem
         public void insertDatabase2()
         {
             try { 
-            singletonDB.IsOpen();
-            insertCommand2.Connection = instatnce.conn;
-            insertCommand2.Parameters[0].Value = u_instance.uID;
-            insertCommand2.Parameters[1].Value = u_instance.uPW;
-            insertCommand2.Parameters[2].Value = u_instance.LoginDate;
-            insertCommand2.Parameters[3].Value = int.Parse(TestCount.ToString());
-            insertCommand2.ExecuteNonQuery();
+                singletonDB.IsOpen();
+                insertCommand2.Connection = instatnce.conn;
+                insertCommand2.Parameters[0].Value = u_instance.uID;
+                insertCommand2.Parameters[1].Value = u_instance.uPW;
+                insertCommand2.Parameters[2].Value = u_instance.LoginDate;
+                insertCommand2.Parameters[3].Value = int.Parse(TestCount.ToString());
+                insertCommand2.ExecuteNonQuery();
             }
             catch(MySqlException e)
             {
@@ -266,13 +263,9 @@ namespace SmartBadmintonTrainingSystem
         }
         private void Test_Load(object sender, EventArgs e)
         {
-            //this.TopMost = true;
-            ////this.FormBorderStyle = FormBorderStyle.None;
-            //this.WindowState = FormWindowState.Maximized;
             SetSerialPort();
             radioButton1.Checked = true;
             orderString = "1-2-3-4-5-6-7-8";
-            //orderString = "4-5";
             for (int i = 0; i < 8; i++)
             {
                 setImageOff(i + 1);
@@ -281,13 +274,10 @@ namespace SmartBadmintonTrainingSystem
             sound2 = new SoundPlayer(SmartBadmintonTrainingSystem.Properties.Resources.beep_05);
         }
 
-        
-
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             SP_name = comboBox1.SelectedItem.ToString();
         }
-
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -300,8 +290,6 @@ namespace SmartBadmintonTrainingSystem
                     SP.DataBits = (int)8;
                     SP.Parity = Parity.None;
                     SP.StopBits = StopBits.One;//스탑비트 비트수(1 or 2)
-
-                    
                     SP.Open();
                     if (SP.IsOpen)
                     {
@@ -317,7 +305,6 @@ namespace SmartBadmintonTrainingSystem
             {
                 AutoClosingMessageBox.Show("컨트롤러가 연결되어있지 않습니다!","Error",300);
             }
-            
         }
         public void setNewNumber()
         {   
@@ -393,7 +380,6 @@ namespace SmartBadmintonTrainingSystem
             SetSerialPort();
         }
 
-
         public void setOffPort()
         {
             try
@@ -425,98 +411,19 @@ namespace SmartBadmintonTrainingSystem
             {
 
             }
-            
         }
-        //void EventDataReceived(object sender, SerialDataReceivedEventArgs e)
-        //{
-            
-        //    Sizer = SP.BytesToRead;
-        //    strRecData = "";
-        //    byte[] buff = new byte[Sizer];
-            
-        //    SP.Read(buff, 0, Sizer);
-
-        //    for (iTemp=0; iTemp < Sizer; iTemp++)
-        //    {
-        //        strRecData += buff[iTemp].ToString("X2") + " ";
-        //    }
-        //    streamWriterIn.WriteLine(strRecData+loggerTime.Elapsed.ToString(@"mm\:ss\:FFFFFF"));
-        //    //inputListbox(strRecData);
-        //    if (!center_flag1)
-        //    {
-        //        if (!buffer.Contains(strRecData))
-        //        {
-        //            buffer.Add(strRecData);
-        //        }
-        //    }
-        //    if (!swing_flag)
-        //    {
-        //        s_buffer.Add(strRecData);
-        //    }
-        //}
-        //void EventDataReceivedV2(object sender, SerialDataReceivedEventArgs e)
-        //{
-        //    Sizer = SP.BytesToRead;
-            
-        //    bufflen += Sizer;
-        //    inputListbox("bufflen" + bufflen);
-        //    while (true) {
-        //        strRecData = "";
-        //        buff_temp = new byte[bufflen];
-        //        if (lastpos == 0)//현재버퍼의 마지막 위치가0 인 경우 
-        //        {              
-        //            //buff_temp = new byte[(bufflen>6?6:bufflen)];//새로 할당한다.
-        //        }
-        //        else//이전의 버퍼가 남아있는 경우
-        //        {
-        //            if (bufflen > 6)
-        //                buff_full = true;
-        //        }
-                
-        //        if (bufflen==6) { 
-        //            SP.Read(buff_temp, lastpos, Sizer);
-        //            for (iTemp = 0; iTemp < 6; iTemp++)
-        //            {
-        //                strRecData += buff_temp[iTemp].ToString("X2") + " ";
-        //            }
-        //            inputListbox(strRecData+" lastpos = " + lastpos+" bufflen = " +bufflen +" Sizer = " +Sizer);
-        //            streamWriterOut.WriteLine(strRecData);
-        //            if (!center_flag1)
-        //            {
-        //                if (!buffer.Contains(strRecData))
-        //                {
-        //                    buffer.Add(strRecData);
-        //                }
-        //            }
-        //            if (!swing_flag)
-        //            {
-        //                s_buffer.Add(strRecData);
-        //            }
-        //        }
-        //        else
-        //        {
-        //            buff_full = false;
-        //            bufflen -= 6;
-        //            lastpos = bufflen=0;
-                    
-        //            break;
-        //        }                
-        //    }
-        //}
         void EventDataReceivedV3(object sender, SerialDataReceivedEventArgs e)
         {
             Sizer = SP.BytesToRead;
-            
             byte[] buff = new byte[Sizer];
-
             SP.Read(buff, 0, Sizer);
-
             string buffing = "";
             for (int i = 0; i < Sizer; i++)
             {
                 buffing += buff[i].ToString("X2") + " ";
             }
             streamWriterIn.WriteLine("rawinput - " + buffing);
+            
             while (true) {
                 bool breaker = false;
                 strRecData = "";
@@ -544,7 +451,6 @@ namespace SmartBadmintonTrainingSystem
                     buff.CopyTo(oldByte, 0);
                     break;
                 }
-            
                 if (Sizer == 6) {
                     strRecData = "";
                     for (iTemp = 0; iTemp < Sizer; iTemp++)
@@ -563,7 +469,6 @@ namespace SmartBadmintonTrainingSystem
                     }
                     if (!swing_flag)
                     {
-                        //s_buffer.Clear();
                         if (!s_buffer.Contains(strRecData))
                         {
                             s_buffer.Clear();
@@ -614,8 +519,6 @@ namespace SmartBadmintonTrainingSystem
                 }
                 if (breaker)
                     break;
-
-
             }
         }
 
@@ -812,7 +715,6 @@ namespace SmartBadmintonTrainingSystem
             selectDatabase();
             insertDatabase2();
             listBox1.Items.Add("테스트 시작");
-            //listBox1.SelectedIndex = listBox1.Items.Count - 1;
             setOrderList();
 
             center.Image = Properties.Resources._3_image;
@@ -824,8 +726,6 @@ namespace SmartBadmintonTrainingSystem
             center.Image = Properties.Resources._1_image;
             sound.Play();
             Thread.Sleep(1000);
-            //AutoClosingMessageBox.Show("2초뒤 테스트를 시작합니다!", "안내", 1000);
-            //AutoClosingMessageBox.Show("1초뒤 테스트를 시작합니다!", "안내", 1000);
             sound.Play();
             for (int i = 0; i < 8; i++)
             {
@@ -930,7 +830,6 @@ namespace SmartBadmintonTrainingSystem
                 {
                     AutoClosingMessageBox.Show("테스트 에러 발생", "errer", 200);
                 }
-                      
             }
 
         }
@@ -950,11 +849,6 @@ namespace SmartBadmintonTrainingSystem
             }
         }
 
-        private void label8_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void radioButton2_CheckedChanged_1(object sender, EventArgs e)
         {
             orderString = "8-7-6-5-4-3-2-1";
@@ -964,12 +858,7 @@ namespace SmartBadmintonTrainingSystem
         {
             orderString = "1-2-3-4-5-6-7-8";
         }
-
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
+        
         private void btn_test_Click_1(object sender, EventArgs e)
         {
             if (status.Equals("random"))
@@ -1002,26 +891,15 @@ namespace SmartBadmintonTrainingSystem
         public void inputListbox(string data)
         {
             listBox1.Items.Insert(0,data);
-            
-                //listBox1.SelectedIndex = listBox1.Items.Count - 1;
         }
-
-
-        private void center_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void radioButton1_CheckedChanged_1(object sender, EventArgs e)
         {
             status = "random";
         }
-
         private void radioButton2_CheckedChanged_2(object sender, EventArgs e)
         {
             status = "select";
         }
-
         private void button4_Click(object sender, EventArgs e)
         {
             inputListbox("컨트롤러 새로고침");
