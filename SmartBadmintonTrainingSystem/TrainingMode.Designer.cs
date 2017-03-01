@@ -46,6 +46,7 @@
             // 
             // plotView1
             // 
+            this.plotView1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.plotView1.Location = new System.Drawing.Point(30, 93);
             this.plotView1.Name = "plotView1";
             this.plotView1.PanCursor = System.Windows.Forms.Cursors.Hand;
@@ -61,16 +62,17 @@
             // 
             this.combo_datePick.BackColor = System.Drawing.Color.White;
             this.combo_datePick.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.combo_datePick.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.combo_datePick.FormattingEnabled = true;
             this.combo_datePick.Location = new System.Drawing.Point(68, 64);
             this.combo_datePick.Name = "combo_datePick";
-            this.combo_datePick.Size = new System.Drawing.Size(133, 20);
+            this.combo_datePick.Size = new System.Drawing.Size(133, 23);
             this.combo_datePick.TabIndex = 1;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Black;
             this.label3.Location = new System.Drawing.Point(15, 68);
             this.label3.Name = "label3";
@@ -82,17 +84,18 @@
             // 
             this.txt_name.BackColor = System.Drawing.Color.White;
             this.txt_name.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_name.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_name.Location = new System.Drawing.Point(68, 24);
             this.txt_name.Name = "txt_name";
             this.txt_name.ReadOnly = true;
-            this.txt_name.Size = new System.Drawing.Size(133, 14);
+            this.txt_name.Size = new System.Drawing.Size(133, 16);
             this.txt_name.TabIndex = 50;
             this.txt_name.TabStop = false;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.Location = new System.Drawing.Point(16, 28);
             this.label1.Name = "label1";
@@ -105,7 +108,7 @@
             this.btn_start.BackColor = System.Drawing.Color.White;
             this.btn_start.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(171)))), ((int)(((byte)(145)))));
             this.btn_start.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_start.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_start.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_start.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(87)))), ((int)(((byte)(34)))));
             this.btn_start.Location = new System.Drawing.Point(347, 234);
             this.btn_start.Name = "btn_start";
@@ -120,7 +123,7 @@
             this.btn_exit.BackColor = System.Drawing.Color.White;
             this.btn_exit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(171)))), ((int)(((byte)(145)))));
             this.btn_exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_exit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_exit.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_exit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(87)))), ((int)(((byte)(34)))));
             this.btn_exit.Location = new System.Drawing.Point(347, 180);
             this.btn_exit.Name = "btn_exit";
@@ -135,7 +138,7 @@
             this.btn_sectionresult.BackColor = System.Drawing.Color.White;
             this.btn_sectionresult.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(171)))), ((int)(((byte)(145)))));
             this.btn_sectionresult.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_sectionresult.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_sectionresult.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_sectionresult.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(87)))), ((int)(((byte)(34)))));
             this.btn_sectionresult.Location = new System.Drawing.Point(347, 126);
             this.btn_sectionresult.Name = "btn_sectionresult";
@@ -150,7 +153,7 @@
             this.btn_sensorresult.BackColor = System.Drawing.Color.White;
             this.btn_sensorresult.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(171)))), ((int)(((byte)(145)))));
             this.btn_sensorresult.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_sensorresult.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_sensorresult.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_sensorresult.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(87)))), ((int)(((byte)(34)))));
             this.btn_sensorresult.Location = new System.Drawing.Point(347, 72);
             this.btn_sensorresult.Name = "btn_sensorresult";
@@ -165,7 +168,7 @@
             this.btn_testresult.BackColor = System.Drawing.Color.White;
             this.btn_testresult.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(171)))), ((int)(((byte)(145)))));
             this.btn_testresult.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_testresult.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_testresult.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_testresult.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(87)))), ((int)(((byte)(34)))));
             this.btn_testresult.Location = new System.Drawing.Point(347, 18);
             this.btn_testresult.Name = "btn_testresult";
@@ -178,6 +181,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(87)))), ((int)(((byte)(34)))));
+            this.panel2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel2.Location = new System.Drawing.Point(68, 41);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(133, 2);
@@ -186,6 +190,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(87)))), ((int)(((byte)(34)))));
+            this.panel1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel1.Location = new System.Drawing.Point(68, 82);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(133, 2);
@@ -197,7 +202,7 @@
             this.button2.FlatAppearance.BorderSize = 0;
             this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(171)))), ((int)(((byte)(145)))));
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(87)))), ((int)(((byte)(34)))));
             this.button2.Location = new System.Drawing.Point(285, 262);
             this.button2.Name = "button2";
@@ -213,7 +218,7 @@
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(171)))), ((int)(((byte)(145)))));
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(87)))), ((int)(((byte)(34)))));
             this.button1.Location = new System.Drawing.Point(74, 262);
             this.button1.Name = "button1";
