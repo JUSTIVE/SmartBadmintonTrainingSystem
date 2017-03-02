@@ -150,7 +150,6 @@
             this.center.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.center.TabIndex = 71;
             this.center.TabStop = false;
-            this.center.Click += new System.EventHandler(this.center_Click);
             // 
             // label7
             // 
@@ -176,7 +175,6 @@
             this.label8.Size = new System.Drawing.Size(104, 65);
             this.label8.TabIndex = 69;
             this.label8.Text = "2번";
-            this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
             // label9
             // 

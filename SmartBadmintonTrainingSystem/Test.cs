@@ -559,7 +559,7 @@ namespace SmartBadmintonTrainingSystem
         public int isSwing(int number)
         {
             
-            if(s_buffer.Count>0)
+            //if(s_buffer.Count>0)
                 //inputListbox("current Buff " + s_buffer[0]);
             if (s_buffer.Contains("02 01 08 01 0A 03 ")|| s_buffer.Contains("02 01 08 03 0C 03 "))
             {
