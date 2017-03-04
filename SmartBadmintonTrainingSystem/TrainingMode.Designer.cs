@@ -66,6 +66,7 @@
             // combo_datePick
             // 
             this.combo_datePick.BackColor = System.Drawing.Color.Gainsboro;
+            this.combo_datePick.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.combo_datePick.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.combo_datePick.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.combo_datePick.FormattingEnabled = true;
@@ -180,9 +181,9 @@
             this.btn_testresult.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_testresult.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_testresult.ForeColor = System.Drawing.Color.White;
-            this.btn_testresult.Location = new System.Drawing.Point(0, 13);
+            this.btn_testresult.Location = new System.Drawing.Point(0, 0);
             this.btn_testresult.Name = "btn_testresult";
-            this.btn_testresult.Size = new System.Drawing.Size(213, 48);
+            this.btn_testresult.Size = new System.Drawing.Size(213, 61);
             this.btn_testresult.TabIndex = 2;
             this.btn_testresult.Text = "월별 결과확인";
             this.btn_testresult.UseVisualStyleBackColor = false;

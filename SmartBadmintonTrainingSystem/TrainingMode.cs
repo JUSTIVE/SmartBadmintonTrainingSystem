@@ -161,7 +161,6 @@ namespace SmartBadmintonTrainingSystem
                 pm.Series.Add(ser);
                 pm.Series.Add(ser2);
                 //ser.MarkerType = MarkerType.Circle;
-
                 pm.InvalidatePlot(true);
             }
         }
