@@ -1262,7 +1262,6 @@ namespace SmartBadmintonTrainingSystem
                         {
                             inputListbox("center");
                             is_light = false;
-
                             break;
                         }
                         else isCenter();
