@@ -115,7 +115,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(994, 1004);
             this.panel1.TabIndex = 62;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // centerPic
             // 
@@ -137,7 +136,6 @@
             this.label7.Size = new System.Drawing.Size(86, 54);
             this.label7.TabIndex = 86;
             this.label7.Text = "1번";
-            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // label8
             // 

@@ -16,6 +16,10 @@ namespace SmartBadmintonTrainingSystem
 {
     public partial class Training : Form
     {
+        int swing_pole = -1;
+        int number;
+        byte[] oldByte;
+        //
         System.Diagnostics.Stopwatch stopwatch = new System.Diagnostics.Stopwatch();
         //customprogParam
         public int customProgAmount;
@@ -95,8 +99,6 @@ namespace SmartBadmintonTrainingSystem
             this.StartPosition = FormStartPosition.Manual;
             this.Location = new Point(0, 0);
             this.Size = new Size(1920,1048);
-            
-
         }
         //for double buffering
         protected override CreateParams CreateParams
@@ -126,13 +128,11 @@ namespace SmartBadmintonTrainingSystem
             }
             customProgAmount=0;
             isCurtain = true;
-            
         }
         public void flipCurtain()
         {
             isCurtain = !isCurtain;
             Visible = isCurtain;
-            //inputListbox(customProgramTypeList.Count+"");
         }
         
         public void setUpProgramList()
@@ -429,39 +429,137 @@ namespace SmartBadmintonTrainingSystem
             f2.Show();
             order_list = "";
             isColor = true;
-            
         }
-        void EventDataReceived(object sender, SerialDataReceivedEventArgs e)
+
+        void EventDataReceivedV3(object sender, SerialDataReceivedEventArgs e)
         {
             Sizer = SP.BytesToRead;
-            strRecData = "";
-
             byte[] buff = new byte[Sizer];
             SP.Read(buff, 0, Sizer);
-
-            for (iTemp = 0; iTemp < Sizer; iTemp++)
+            string buffing = "";
+            for (int i = 0; i < Sizer; i++)
             {
-                strRecData += buff[iTemp].ToString("X2") + " ";
+                buffing += buff[i].ToString("X2") + " ";
             }
-            if (!center_flag1)
+            while (true)
             {
-                if (!buffer.Contains(strRecData))
+                bool breaker = false;
+                strRecData = "";
+                if (oldByte != null)//붙이기만 할것
                 {
-                    buffer.Add(strRecData);
+                    byte[] temp = buff;
+                    Sizer = oldByte.Length + buff.Length;
+                    buff = new byte[Sizer];
+                    oldByte.CopyTo(buff, 0);
+                    temp.CopyTo(buff, oldByte.Length);
+                    inputListbox("fixed");
+                    for (iTemp = 0; iTemp < Sizer; iTemp++)
+                    {
+                        strRecData += buff[iTemp].ToString("X2") + " ";
+                    }
+                    inputListbox(strRecData);
+
+                    oldByte = null;
                 }
+                if (Sizer < 6)
+                {
+                    oldByte = new byte[Sizer];
+                    buff.CopyTo(oldByte, 0);
+                    break;
+                }
+                if (Sizer == 6)
+                {
+                    strRecData = "";
+                    for (iTemp = 0; iTemp < Sizer; iTemp++)
+                    {
+                        strRecData += buff[iTemp].ToString("X2") + " ";
+                    }
+                    inputListbox(strRecData);
+                    if (!center_flag1)
+                    {
+                        if (!buffer.Contains(strRecData))
+                        {
+                            buffer.Add(strRecData);
+
+                        }
+                    }
+                    if (!swing_flag)
+                    {
+                        if (!s_buffer.Contains(strRecData))
+                        {
+                            s_buffer.Clear();
+                            s_buffer.Add(strRecData);
+                            isSwing(number);
+                        }
+                    }
+                    breaker = true;
+                    break;
+                }
+                else if (Sizer > 6)//6보다 큰 경우 -center
+                {
+                    strRecData = "";
+                    for (iTemp = 0; iTemp < 6; iTemp++)
+                    {
+                        strRecData += buff[iTemp].ToString("X2") + " ";
+                    }
+                    inputListbox(strRecData + "overed");
+                    if (!center_flag1)
+                    {
+                        if (!buffer.Contains(strRecData))
+                        {
+                            buffer.Add(strRecData);
+                            isCenter();
+                        }
+                    }
+                    if (!swing_flag)
+                    {
+                        if (!s_buffer.Contains(strRecData))
+                        {
+                            s_buffer.Clear();
+                            s_buffer.Add(strRecData);
+                            isSwing(number);
+                        }
+                    }
+                    Sizer -= 6;
+                    //버퍼를 줄임
+                    byte[] temp = buff;
+                    buff = new byte[Sizer];
+                    for (int i = 6; i < Sizer + 6; i++)
+                    {
+                        buff[i - 6] = temp[i];
+                    }
+
+                }
+                if (breaker)
+                    break;
             }
-            if (!swing_flag)
-            {
-                /*if (Sizer == 6)*/ { s_buffer.Add(strRecData); }
-                //else { send_packet(mapper[currentPole - 1], 0); }
-                ///TODO: Substring 비교 체크
-                
-            }
-            
-            
-            
-            
         }
+        //void EventDataReceived(object sender, SerialDataReceivedEventArgs e)
+        //{
+        //    Sizer = SP.BytesToRead;
+        //    strRecData = "";
+
+        //    byte[] buff = new byte[Sizer];
+        //    SP.Read(buff, 0, Sizer);
+
+        //    for (iTemp = 0; iTemp < Sizer; iTemp++)
+        //    {
+        //        strRecData += buff[iTemp].ToString("X2") + " ";
+        //    }
+        //    if (!center_flag1)
+        //    {
+        //        if (!buffer.Contains(strRecData))
+        //        {
+        //            buffer.Add(strRecData);
+        //        }
+        //    }
+        //    if (!swing_flag)
+        //    {
+        //        /*if (Sizer == 6)*/ { s_buffer.Add(strRecData); }
+        //        //else { send_packet(mapper[currentPole - 1], 0); }
+        //        ///TODO: Substring 비교 체크
+        //    }
+        //}
         public void send_packet(int number, int number2) //number:기둥번호 number2:색상
         {
             try
@@ -530,27 +628,14 @@ namespace SmartBadmintonTrainingSystem
                 buffer.Clear();
                 port_set = true;
                 Picture_Status.Image = SmartBadmintonTrainingSystem.Properties.Resources.signal_green;
-                SP.DataReceived += new SerialDataReceivedEventHandler(EventDataReceived);
+                SP.DataReceived += new SerialDataReceivedEventHandler(EventDataReceivedV3);
                 //AutoClosingMessageBox.Show("컨트롤러 연결 성공", "포트", 500);
                 inputListbox("컨트롤러 연결 성공");
                 label2.Text = openO;
-
-                //초기 이미지 확인
-                //send_packet(0, 0); send_packet(1, 0);
-                //send_packet(2, 2); send_packet(3, 2); send_packet(4, 2);
-                //send_packet(5, 1); send_packet(6, 1); send_packet(7, 1);
-
-                //setImageGreen(1); setImageGreen(2); setImageGreen(3);
-                //setImageRed(4); setImageRed(5);
-                //setImageBlue(6); setImageBlue(7); setImageBlue(8);
-
                 //초기 그림 설정
                 button1.Text = "연결종료";
             }
-            catch (System.Exception ex)
-            {
-
-            }
+            catch (System.Exception ex){}
         }
         public void setOffPort()
         {
@@ -581,50 +666,76 @@ namespace SmartBadmintonTrainingSystem
                     centerPic.Image = Properties.Resources.off_circle;
                 }
             }
-            catch (System.Exception ex)
+            catch (System.Exception ex){}
+        }
+        public int isSwing(int number)
+        {
+            //if(s_buffer.Count>0)
+            //inputListbox("current Buff " + s_buffer[0]);
+            //case 1
+            if (s_buffer.Contains("02 01 08 01 0A 03 ") || s_buffer.Contains("02 01 08 03 0C 03 "))
             {
-
+                swing_pole = 1;
+                if (number == swing_pole)
+                    swing_flag = true;
             }
-
-        }
-        public bool isSwing(int number)
-        {
-            string[] correct_signals = { "02 01 80 00 81 03 ", "02 01 40 00 41 03 " ,
-                "02 01 20 00 21 03 " ,"02 01 02 00 03 03 ",
-                "02 01 01 00 02 03 ","02 01 10 00 11 03 ",
-                "02 01 08 00 09 03 ","02 01 04 00 05 03 "
-            };
-            if (s_buffer.Contains(correct_signals[number - 1]))
+            //case 2
+            if (s_buffer.Contains("02 01 07 01 09 03 ") || s_buffer.Contains("02 01 07 03 0B 03 "))
             {
-                swing_flag = true;
-                return true;
+                swing_pole = 2;
+                if (number == swing_pole)
+                    swing_flag = true;
             }
-            else
+            //case 3
+            if (s_buffer.Contains("02 01 06 01 08 03 ") || s_buffer.Contains("02 01 06 03 0A 03 "))
             {
-                return false;
+                swing_pole = 3;
+                if (number == swing_pole)
+                    swing_flag = true;
             }
+            //case 4
+            if (s_buffer.Contains("02 01 02 01 04 03 ") || s_buffer.Contains("02 01 02 03 06 03 "))
+            {
+                swing_pole = 4;
+                if (number == swing_pole)
+                    swing_flag = true;
+            }
+            //case 5
+            if (s_buffer.Contains("02 01 01 01 03 03 ") || s_buffer.Contains("02 01 01 03 05 03 "))
+            {
+                swing_pole = 5;
+                if (number == swing_pole)
+                    swing_flag = true;
+            }
+            //case 6
+            if (s_buffer.Contains("02 01 05 01 07 03 ") || s_buffer.Contains("02 01 05 03 09 03 "))
+            {
+                swing_pole = 6;
+                if (number == swing_pole)
+                    swing_flag = true;
+            }
+            //case 7
+            if (s_buffer.Contains("02 01 04 01 06 03 ") || s_buffer.Contains("02 01 04 03 08 03 "))
+            {
+                swing_pole = 7;
+                if (number == swing_pole)
+                    swing_flag = true;
+            }
+            //case 8
+            if (s_buffer.Contains("02 01 03 01 05 03 ") || s_buffer.Contains("02 01 03 03 07 03 "))
+            {
+                swing_pole = 8;
+                if (number == swing_pole)
+                    swing_flag = true;
+            }
+            return swing_pole;
         }
 
-        public void setImageRed(int number)
-        {
-            pList.ElementAt(number - 1).Image = SmartBadmintonTrainingSystem.Properties.Resources.red_circle;
-        }
-        public void setImageGreen(int number)
-        {
-            pList.ElementAt(number - 1).Image = SmartBadmintonTrainingSystem.Properties.Resources.green_circle;
-        }
-        public void setImageBlue(int number)
-        {
-            pList.ElementAt(number - 1).Image = SmartBadmintonTrainingSystem.Properties.Resources.blue_circle;
-        }
-        public void setImageYellow(int number)
-        {
-            pList.ElementAt(number - 1).Image = SmartBadmintonTrainingSystem.Properties.Resources.yellow_circle;
-        }
-        public void setImageOff(int number)
-        {
-            pList.ElementAt(number - 1).Image = SmartBadmintonTrainingSystem.Properties.Resources.off_circle;
-        }
+        public void setImageRed(int number){pList.ElementAt(number - 1).Image = SmartBadmintonTrainingSystem.Properties.Resources.red_circle;}
+        public void setImageGreen(int number){pList.ElementAt(number - 1).Image = SmartBadmintonTrainingSystem.Properties.Resources.green_circle;}
+        public void setImageBlue(int number){pList.ElementAt(number - 1).Image = SmartBadmintonTrainingSystem.Properties.Resources.blue_circle;}
+        public void setImageYellow(int number){pList.ElementAt(number - 1).Image = SmartBadmintonTrainingSystem.Properties.Resources.yellow_circle;}
+        public void setImageOff(int number){pList.ElementAt(number - 1).Image = SmartBadmintonTrainingSystem.Properties.Resources.off_circle;}
 
         private void Training_FormClosed(object sender, FormClosedEventArgs e)
         {
@@ -635,20 +746,9 @@ namespace SmartBadmintonTrainingSystem
                 threader.Abort();
                 thread_flag = false;
             }
-            catch (System.Exception ex)
+            catch (Exception ex)
             {
-
             }
-        }
-
-        private void label7_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
         }
         public void clearBuff()
         {
@@ -725,12 +825,10 @@ namespace SmartBadmintonTrainingSystem
                         {
                             if (threader.IsAlive)
                             {
-
                                 threader.Abort();
                                 threader = null;
                                 inputListbox(threader.IsAlive + "");
                             }
-
                         }
                         thread = new ThreadStart(normalthreadStart);
                         threader = new Thread(thread);
@@ -738,7 +836,6 @@ namespace SmartBadmintonTrainingSystem
                         thread_flag = true;
                     }
                 }
-
             }
         }
 
@@ -771,9 +868,6 @@ namespace SmartBadmintonTrainingSystem
             }
         }
         
-
-        
-
         private void p3_Click(object sender, EventArgs e)
         {
             if (port_set)
@@ -1133,7 +1227,6 @@ namespace SmartBadmintonTrainingSystem
                             }
                         }
                     }
-                    
                     setImageRed(unmapper[target_pole] + 1);
                     clearBuff();
                     swing_flag = false;
@@ -1147,7 +1240,7 @@ namespace SmartBadmintonTrainingSystem
                         else
                         {
                             currentPole = unmapper[target_pole] + 1;
-                            breaker=isSwing(currentPole);
+                            breaker=(isSwing(currentPole)>0);
                         } //1-base pole number
                     }
                     centerPic.Image = Properties.Resources.red_circle;
