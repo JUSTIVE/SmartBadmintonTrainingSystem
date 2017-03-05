@@ -29,7 +29,7 @@ namespace SmartBadmintonTrainingSystem
 
         //Sensor HX Code
         byte[] index = { 0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07, 0x08 };//M2,M1,B3,B2,B1,F3,F2,F1
-        byte[] color = { 0x01, 0x02, 0x03, 0x04, 0x00 };//Red,Green,Blue,Yellow
+        byte[] color = { 0x00, 0x01, 0x02, 0x04, 0x03, 0x05, 0x06, 0x07 };//Red,Green,Blue,Yellow,magenta,cyan;
         byte start = 0x02;
         byte start_check = 0x01;
         byte end = 0x03;
@@ -452,12 +452,12 @@ namespace SmartBadmintonTrainingSystem
                     buff = new byte[Sizer];
                     oldByte.CopyTo(buff, 0);
                     temp.CopyTo(buff, oldByte.Length);
-                    inputListbox("fixed");
+                    //inputListbox("fixed");
                     for (iTemp = 0; iTemp < Sizer; iTemp++)
                     {
                         strRecData += buff[iTemp].ToString("X2") + " ";
                     }
-                    inputListbox(strRecData);
+                    //inputListbox(strRecData);
 
                     oldByte = null;
                 }
@@ -474,7 +474,7 @@ namespace SmartBadmintonTrainingSystem
                     {
                         strRecData += buff[iTemp].ToString("X2") + " ";
                     }
-                    inputListbox(strRecData);
+                    //inputListbox(strRecData);
                     if (!center_flag1)
                     {
                         if (!buffer.Contains(strRecData))
@@ -502,7 +502,7 @@ namespace SmartBadmintonTrainingSystem
                     {
                         strRecData += buff[iTemp].ToString("X2") + " ";
                     }
-                    inputListbox(strRecData + "overed");
+                    //inputListbox(strRecData + "overed");
                     if (!center_flag1)
                     {
                         if (!buffer.Contains(strRecData))
@@ -668,6 +668,9 @@ namespace SmartBadmintonTrainingSystem
             }
             catch (System.Exception ex){}
         }
+
+        
+        ///returns 1-based pole number
         public int isSwing(int number)
         {
             //if(s_buffer.Count>0)
@@ -796,7 +799,7 @@ namespace SmartBadmintonTrainingSystem
                 {
                     currentPole = unmapper[target_pole] + 1;
                     isSwing(currentPole);
-                }//1-base pole number
+                }
             }
             setImageOff(currentPole);//unmapped pole number
             send_packet(target_pole, 4);//mapped pole number
@@ -1128,28 +1131,41 @@ namespace SmartBadmintonTrainingSystem
         {
             char[] delim = { ',' };
             string[] splitter = order_list.Split(delim);
-            AutoClosingMessageBox.Show("2초후 트레이닝을 시작합니다","알림",2000);
+            centerPic.Image = Properties.Resources._3_image;
+            sound.Play();
+            Thread.Sleep(1000);
+            centerPic.Image = Properties.Resources._2_image;
+            sound.Play();
+            Thread.Sleep(1000);
+            centerPic.Image = Properties.Resources._1_image;
+            sound.Play();
+            Thread.Sleep(1000);
             stopwatch.Start();
             if (!isColor)//사용자 지정 프로그램
             { 
-                for(int i = 0; i < splitter.Length; i++)//매 회차마다
+                for(int current_test_index = 0; current_test_index < splitter.Length;)//매 회차마다
                 {
-                    inputListbox(i+"번째 기둥 시작 : "+splitter.ElementAt(i));
-                    target_pole = mapper[Int32.Parse(splitter.ElementAt(i))-1];
+                    
+                    inputListbox(current_test_index+"번째 기둥 시작 : "+splitter.ElementAt(current_test_index));
+                    target_pole = mapper[Int32.Parse(splitter.ElementAt(current_test_index))-1];
                     send_packet(target_pole, (int)COLORENUM.RED);
                     setImageRed(unmapper[target_pole]+1);
                     clearBuff();
                     swing_flag = false;
+                    swing_pole = -1;
+                    inputListbox(target_pole + " , " + unmapper[target_pole]+" , "+swing_pole);
                     for (;;)
                     {
                         if (swing_flag)
                         {
+                            current_test_index++;
                             inputListbox("swing");
                             break;
                         }
                         else {
-                            currentPole = unmapper[target_pole] + 1;
-                            isSwing(currentPole);
+                            isSwing(unmapper[target_pole]+1);
+                            //currentPole = unmapper[target_pole] + 1;
+                            //isSwing(currentPole);
                         } //1-base pole number
                     }
                     centerPic.Image = Properties.Resources.red_circle;
@@ -1167,7 +1183,6 @@ namespace SmartBadmintonTrainingSystem
                         {
                             inputListbox("center");
                             is_light = false;
-                        
                             break;
                         }
                         else isCenter();
@@ -1179,6 +1194,7 @@ namespace SmartBadmintonTrainingSystem
                 stopwatch.Stop();
                 float elapsed = float.Parse(stopwatch.ElapsedMilliseconds.ToString())*0.001f;
                 AutoClosingMessageBox.Show("경과한 시간 : "+elapsed ,"ALERT",1000);
+                inputListbox("elapsed" + elapsed);
                 thread_flag = false;
             }
             else//색상 트레이닝
@@ -1187,29 +1203,40 @@ namespace SmartBadmintonTrainingSystem
                 {
                     bool breaker = false;
                     int progress = 0;
-
-                    inputListbox(i + "번째 케이스 시작 : " + TCS.generatedData[i]);
-                    for(int j = 0; j < 5; j++)
+                    ///ready to delete
+                    string temp = "";
+                    for(int a = 0; a < TCS.generatedData[i].Length; a++)
                     {
-                        target_pole = TCS.generatedData[i][j];
-                        send_packet(target_pole, (int)COLORENUM.RED);
+                        temp += TCS.generatedData[i][a];
                     }
+                    inputListbox(i + "번째 케이스 시작 : " + temp);
+                    //for(int j = 0; j < 5; j++)
+                    //{
+                    //    target_pole = TCS.generatedData[i][j];
+                    //    send_packet(target_pole, (int)TCS.dataset[j]);
+                    //}
                     for(int j = 0; j < 4; j++)
                     {
+                        target_pole = TCS.generatedData[i][j];
+                        //1,2,3 순서 칠하기
                         if (j<3) { 
                             switch (TCS.dataset[j])
                             {
                                 case (int)COLORENUM.RED:
                                     setImageRed(TCS.generatedData[i][j]);
+                                    send_packet(target_pole, 0);
                                     break;
                                 case (int)COLORENUM.GREEN:
                                     setImageGreen(TCS.generatedData[i][j]);
+                                    send_packet(target_pole, 1);
                                     break;
                                 case (int)COLORENUM.BLUE:
                                     setImageBlue(TCS.generatedData[i][j]);
+                                    send_packet(target_pole, 2);
                                     break;
                                 case (int)COLORENUM.YELLOW:
                                     setImageYellow(TCS.generatedData[i][j]);
+                                    send_packet(target_pole, 4);
                                     break;
                             }
                         }
@@ -1220,18 +1247,26 @@ namespace SmartBadmintonTrainingSystem
                                 case (int)COLORENUM.RED:
                                     setImageRed(TCS.generatedData[i][3]);
                                     setImageRed(TCS.generatedData[i][4]);
+                                    send_packet(TCS.generatedData[i][3], 0);
+                                    send_packet(TCS.generatedData[i][4], 0);
                                     break;
                                 case (int)COLORENUM.GREEN:
                                     setImageGreen(TCS.generatedData[i][3]);
                                     setImageGreen(TCS.generatedData[i][4]);
+                                    send_packet(TCS.generatedData[i][3], 1);
+                                    send_packet(TCS.generatedData[i][4], 1);
                                     break;
                                 case (int)COLORENUM.BLUE:
                                     setImageBlue(TCS.generatedData[i][3]);
                                     setImageBlue(TCS.generatedData[i][4]);
+                                    send_packet(TCS.generatedData[i][3], 2);
+                                    send_packet(TCS.generatedData[i][4], 2);
                                     break;
                                 case (int)COLORENUM.YELLOW:
                                     setImageYellow(TCS.generatedData[i][3]);
                                     setImageYellow(TCS.generatedData[i][4]);
+                                    send_packet(TCS.generatedData[i][3], 4);
+                                    send_packet(TCS.generatedData[i][4], 4);
                                     break;
                             }
                         }
