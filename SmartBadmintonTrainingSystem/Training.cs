@@ -758,13 +758,22 @@ namespace SmartBadmintonTrainingSystem
 
         public void isCenter()
         {
-            if (buffer.Contains("02 01 00 40 41 03 ") && !lrFlag)
+            if (buffer.Contains("02 01 02 02 05 03 ") && !lrFlag)// 01 02 02 05
             {
                 lrFlag = true;
             }
-            if (buffer.Contains("02 01 00 80 81 03 ") && !FbFlag)
+            else if (buffer.Contains("02 01 02 00 03 03") && lrFlag)// 01 02 00 03
+            {
+                lrFlag = false;
+            }
+
+            if (buffer.Contains("02 01 07 02 0A 03 ") && !FbFlag)
             {
                 FbFlag = true;
+            }
+            else if (buffer.Contains("02 01 07 00 08 03 ") && FbFlag)
+            {
+                FbFlag = false;
             }
 
             if (lrFlag && FbFlag) center_flag1 = true;
