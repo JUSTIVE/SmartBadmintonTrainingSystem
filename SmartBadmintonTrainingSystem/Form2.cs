@@ -22,7 +22,7 @@ namespace SmartBadmintonTrainingSystem
         Training from;
         Random randseed;
 
-        enum ColorEnum {RED,GREEN,BLUE,YELLOW,NONE };
+        enum ColorEnum {NONE,RED,GREEN, YELLOW,BLUE};
 
         public Form2()
         {
@@ -75,7 +75,7 @@ namespace SmartBadmintonTrainingSystem
                         p.BackColor = Color.FromArgb(254, 213, 93);
                         break;
                 }
-            }
+            }   
         }
 
         private void redCheck_CheckedChanged(object sender, EventArgs e)

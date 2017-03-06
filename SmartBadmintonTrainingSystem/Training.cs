@@ -29,7 +29,8 @@ namespace SmartBadmintonTrainingSystem
 
         //Sensor HX Code
         byte[] index = { 0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07, 0x08 };//M2,M1,B3,B2,B1,F3,F2,F1
-        byte[] color = { 0x00, 0x01, 0x02, 0x04, 0x03, 0x05, 0x06, 0x07 };//Red,Green,Blue,Yellow,magenta,cyan;
+        byte[] color = { 0x00, 0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07 };//off,Red,Green,Yellow,Blue,magenta,cyan,White;
+        enum COLORENUM { OFF,RED, GREEN, YELLOW, BLUE,MAGENTA,CYAN,WHITE };
         byte start = 0x02;
         byte start_check = 0x01;
         byte end = 0x03;
@@ -76,7 +77,7 @@ namespace SmartBadmintonTrainingSystem
         Thread threader=null;
         Form2 f2;
 
-        enum COLORENUM{RED, GREEN,BLUE,YELLOW,WHITE};
+        
         public List<PictureBox> pList = new List<PictureBox>();
 
         SoundPlayer sound, sound2;
@@ -1129,6 +1130,9 @@ namespace SmartBadmintonTrainingSystem
         }
         void TrainingThreadStart()//실질적인 트레이닝 처리 스레드
         {
+            //send_packet(0, (int)COLORENUM.OFF); send_packet(1, (int)COLORENUM.OFF); send_packet(2, (int)COLORENUM.OFF);
+            //send_packet(3, (int)COLORENUM.OFF); send_packet(4, (int)COLORENUM.OFF); send_packet(5, (int)COLORENUM.OFF);
+            //send_packet(6, (int)COLORENUM.OFF); send_packet(7, (int)COLORENUM.OFF);
             char[] delim = { ',' };
             string[] splitter = order_list.Split(delim);
             centerPic.Image = Properties.Resources._3_image;
@@ -1140,7 +1144,24 @@ namespace SmartBadmintonTrainingSystem
             centerPic.Image = Properties.Resources._1_image;
             sound.Play();
             Thread.Sleep(1000);
+            centerPic.Image = Properties.Resources.red_circle;
             stopwatch.Start();
+            //fordebug
+            //if (true)
+            //{
+            //    while (true)
+            //        for (int i = 0; ; i++)
+            //        {
+            //            for (int j = 0; j < 8; j++)
+            //            {
+            //                send_packet(j, color[i % 8]);
+            //                inputListbox(j + "");
+            //            }
+            //            Thread.Sleep(500);
+
+            //        }
+            //}
+
             if (!isColor)//사용자 지정 프로그램
             { 
                 for(int current_test_index = 0; current_test_index < splitter.Length;)//매 회차마다
@@ -1210,34 +1231,38 @@ namespace SmartBadmintonTrainingSystem
                         temp += TCS.generatedData[i][a];
                     }
                     inputListbox(i + "번째 케이스 시작 : " + temp);
-                    //for(int j = 0; j < 5; j++)
-                    //{
-                    //    target_pole = TCS.generatedData[i][j];
-                    //    send_packet(target_pole, (int)TCS.dataset[j]);
-                    //}
-                    for(int j = 0; j < 4; j++)
+                    temp = "";
+                    for (int a = 0; a < 4; a ++) {
+                        temp += TCS.dataset[a];
+                    }
+                    inputListbox(i + "색순서 : " + temp);
+                    
+                    for (int j = 0; j < 4; j++)
                     {
-                        target_pole = TCS.generatedData[i][j];
+                        Thread.Sleep(150);
+                        target_pole = mapper[TCS.generatedData[i][j]-1];
                         //1,2,3 순서 칠하기
                         if (j<3) { 
                             switch (TCS.dataset[j])
                             {
                                 case (int)COLORENUM.RED:
                                     setImageRed(TCS.generatedData[i][j]);
-                                    send_packet(target_pole, 0);
+                                    send_packet(target_pole, (int)COLORENUM.RED);
                                     break;
                                 case (int)COLORENUM.GREEN:
                                     setImageGreen(TCS.generatedData[i][j]);
-                                    send_packet(target_pole, 1);
+                                    send_packet(target_pole, (int)COLORENUM.GREEN);
+                                    break;
+
+                                case (int)COLORENUM.YELLOW:
+                                    setImageYellow(TCS.generatedData[i][j]);
+                                    send_packet(target_pole, (int)COLORENUM.YELLOW);
                                     break;
                                 case (int)COLORENUM.BLUE:
                                     setImageBlue(TCS.generatedData[i][j]);
-                                    send_packet(target_pole, 2);
+                                    send_packet(target_pole, (int)COLORENUM.BLUE);
                                     break;
-                                case (int)COLORENUM.YELLOW:
-                                    setImageYellow(TCS.generatedData[i][j]);
-                                    send_packet(target_pole, 4);
-                                    break;
+                                    
                             }
                         }
                         else if(j==3)
@@ -1247,31 +1272,31 @@ namespace SmartBadmintonTrainingSystem
                                 case (int)COLORENUM.RED:
                                     setImageRed(TCS.generatedData[i][3]);
                                     setImageRed(TCS.generatedData[i][4]);
-                                    send_packet(TCS.generatedData[i][3], 0);
-                                    send_packet(TCS.generatedData[i][4], 0);
+                                    send_packet(mapper[TCS.generatedData[i][3]-1], (int)COLORENUM.RED);
+                                    send_packet(mapper[TCS.generatedData[i][4] - 1], (int)COLORENUM.RED);
                                     break;
                                 case (int)COLORENUM.GREEN:
                                     setImageGreen(TCS.generatedData[i][3]);
                                     setImageGreen(TCS.generatedData[i][4]);
-                                    send_packet(TCS.generatedData[i][3], 1);
-                                    send_packet(TCS.generatedData[i][4], 1);
+                                    send_packet(mapper[TCS.generatedData[i][3] - 1], (int)COLORENUM.GREEN);
+                                    send_packet(mapper[TCS.generatedData[i][4] - 1], (int)COLORENUM.GREEN);
                                     break;
                                 case (int)COLORENUM.BLUE:
                                     setImageBlue(TCS.generatedData[i][3]);
                                     setImageBlue(TCS.generatedData[i][4]);
-                                    send_packet(TCS.generatedData[i][3], 2);
-                                    send_packet(TCS.generatedData[i][4], 2);
+                                    send_packet(mapper[TCS.generatedData[i][3] - 1], (int)COLORENUM.BLUE);
+                                    send_packet(mapper[TCS.generatedData[i][4] - 1], (int)COLORENUM.BLUE);
                                     break;
                                 case (int)COLORENUM.YELLOW:
                                     setImageYellow(TCS.generatedData[i][3]);
                                     setImageYellow(TCS.generatedData[i][4]);
-                                    send_packet(TCS.generatedData[i][3], 4);
-                                    send_packet(TCS.generatedData[i][4], 4);
+                                    send_packet(mapper[TCS.generatedData[i][3] - 1], (int)COLORENUM.YELLOW);
+                                    send_packet(mapper[TCS.generatedData[i][4] - 1], (int)COLORENUM.YELLOW);
                                     break;
                             }
                         }
                     }
-                    setImageRed(unmapper[target_pole] + 1);
+                    //setImageRed(unmapper[target_pole] + 1);
                     clearBuff();
                     swing_flag = false;
                     for (;;)
