@@ -13,7 +13,7 @@ using System.Threading;
 
 
 namespace SmartBadmintonTrainingSystem
-{
+{  
     public partial class Training : Form
     {
         int swing_pole = -1;
@@ -1146,7 +1146,7 @@ namespace SmartBadmintonTrainingSystem
             Thread.Sleep(1000);
             centerPic.Image = Properties.Resources.red_circle;
             stopwatch.Start();
-            //fordebug
+            //fordebug -command multiple lights at once
             //if (true)
             //{
             //    while (true)
