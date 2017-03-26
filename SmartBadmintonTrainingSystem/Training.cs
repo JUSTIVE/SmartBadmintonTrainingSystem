@@ -636,11 +636,7 @@ namespace SmartBadmintonTrainingSystem
                 label2.Text = openO;
                 //초기 그림 설정
                 button1.Text = "연결종료";
-                for(int i = 0; i < 8; i++) { 
-                    send_packet(i, color[0]);
-                    setImageOff(i + 1);
-                    Thread.Sleep(SAFE_SLEEP_TIME);
-                }
+                TurnLightOff();
             }
             catch (System.Exception ex){}
         }
@@ -650,14 +646,7 @@ namespace SmartBadmintonTrainingSystem
             {
                 try
                 {
-                    
-                    
-                    for(int i = 0; i < 8; i++)
-                    {
-                        send_packet(i, color[0]);
-                        Thread.Sleep(50);
-                        //AutoClosingMessageBox.Show("dummy", "", 50);
-                    }
+                    TurnLightOff();
                 }
                 catch (System.Exception ex)
                 {
@@ -1192,6 +1181,16 @@ namespace SmartBadmintonTrainingSystem
         {
             inputListbox(order_list);
         }
+        public void TurnLightOff()
+        {
+            for(int i = 0; i < 8; i++)
+            {
+                send_packet(0, color[(int)COLORENUM.OFF]);
+                setImageOff(i + 1);
+                Thread.Sleep(SAFE_SLEEP_TIME);
+                
+            }
+        }
         void TrainingThreadStart()//실질적인 트레이닝 처리 스레드
         {
             //send_packet(0, (int)COLORENUM.OFF); send_packet(1, (int)COLORENUM.OFF); send_packet(2, (int)COLORENUM.OFF);
@@ -1365,7 +1364,6 @@ namespace SmartBadmintonTrainingSystem
                             }
                         }
                     }
-                    //setImageRed(unmapper[target_pole] + 1);
                     clearBuff();
                     swing_flag = false;
                    
@@ -1380,22 +1378,27 @@ namespace SmartBadmintonTrainingSystem
                                 inputListbox("swing");
                                 AutoClosingMessageBox.Show(currentPole + "", "swinged", 2000);
                                 progress++;
-                                //setImageOff(unmapper[target_pole]);
+                                setImageOff(unmapper[target_pole]);
                                 break;
                             }
                             else
                             {
-                                breaker= (currentPole==isSwing(currentPole));
+                                //get swinged pole number;
+                                int swinged_pole = ColorSwing(currentPole);
+                                //case of swinging wrong poles;
+                                breaker= (currentPole!=swinged_pole);
+                                breaker |= (swinged_pole == TCS.generatedData[i][3]);
+                                breaker |= (swinged_pole == TCS.generatedData[i][4]);
 
-                            
                             } //1-base pole number
                         }
                     
                         centerPic.Image = Properties.Resources.red_circle;
-                        setImageOff(currentPole);//unmapped pole number
+                        //setImageOff(currentPole);//unmapped pole number
                     
                         if (breaker)//잘못된 기둥을 건드렸을 경우
                         {
+                            TurnLightOff();
                             AutoClosingMessageBox.Show("잘못된 기둥을 스윙하였습니다","Error",1500);
                             break;
                         }
@@ -1417,6 +1420,8 @@ namespace SmartBadmintonTrainingSystem
                         centerPic.Image = null;
                         centerPic.Image = Properties.Resources.green_circle;
                     }
+                    //end of a sequence
+                    TurnLightOff();
                 }
                 stopwatch.Stop();
                 float elapsed = float.Parse(stopwatch.ElapsedMilliseconds.ToString()) * 0.001f;
