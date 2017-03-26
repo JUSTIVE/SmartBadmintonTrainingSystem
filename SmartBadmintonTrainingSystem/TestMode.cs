@@ -41,37 +41,44 @@ namespace SmartBadmintonTrainingSystem
 
         public TestMode()
         {
-            InitializeComponent();
+            try
+            {
+                InitializeComponent();
             this.StartPosition = FormStartPosition.Manual;
             this.Location = new Point(Screen.PrimaryScreen.Bounds.Width / 2 - this.Size.Width / 2, Screen.PrimaryScreen.Bounds.Height / 2 - this.Size.Height / 2);
+            
+                selectCommand.Connection = d_instance.conn;
+                selectCommand.CommandText = "SELECT * from information where id=@id and pw=@pw order by date";
+                selectCommand.Parameters.Add("@id", MySqlDbType.VarChar, 20);
+                selectCommand.Parameters.Add("@pw", MySqlDbType.VarChar, 20);
 
-            selectCommand.Connection = d_instance.conn;
-            selectCommand.CommandText = "SELECT * from information where id=@id and pw=@pw order by date";
-            selectCommand.Parameters.Add("@id", MySqlDbType.VarChar, 20);
-            selectCommand.Parameters.Add("@pw", MySqlDbType.VarChar, 20);
+                selectCommand2.Connection = d_instance.conn;
+                selectCommand2.CommandText = "SELECT * from information where id=@id and pw=@pw and date=@date";
+                selectCommand2.Parameters.Add("@id", MySqlDbType.VarChar, 20);
+                selectCommand2.Parameters.Add("@pw", MySqlDbType.VarChar, 20);
+                selectCommand2.Parameters.Add("@date", MySqlDbType.VarChar, 20);
 
-            selectCommand2.Connection = d_instance.conn;
-            selectCommand2.CommandText = "SELECT * from information where id=@id and pw=@pw and date=@date";
-            selectCommand2.Parameters.Add("@id", MySqlDbType.VarChar, 20);
-            selectCommand2.Parameters.Add("@pw", MySqlDbType.VarChar, 20);
-            selectCommand2.Parameters.Add("@date", MySqlDbType.VarChar, 20);
+                selectCommand3.Connection = d_instance.conn;
+                selectCommand3.CommandText = "SELECT COUNT(count) from testcount where id=@id and pw=@pw and date=@date";
+                selectCommand3.Parameters.Add("@id", MySqlDbType.VarChar, 20);
+                selectCommand3.Parameters.Add("@pw", MySqlDbType.VarChar, 20);
+                selectCommand3.Parameters.Add("@date", MySqlDbType.VarChar, 20);
 
-            selectCommand3.Connection = d_instance.conn;
-            selectCommand3.CommandText = "SELECT COUNT(count) from testcount where id=@id and pw=@pw and date=@date";
-            selectCommand3.Parameters.Add("@id", MySqlDbType.VarChar, 20);
-            selectCommand3.Parameters.Add("@pw", MySqlDbType.VarChar, 20);
-            selectCommand3.Parameters.Add("@date", MySqlDbType.VarChar, 20);
-
-            selectCommand4.Connection = d_instance.conn;
-            selectCommand4.CommandText = "SELECT * from information where id=@id and pw=@pw and date=@date and count=@count";
-            selectCommand4.Parameters.Add("@id", MySqlDbType.VarChar, 20);
-            selectCommand4.Parameters.Add("@pw", MySqlDbType.VarChar, 20);
-            selectCommand4.Parameters.Add("@date", MySqlDbType.VarChar, 20);
-            selectCommand4.Parameters.Add("@count", MySqlDbType.Int16);
+                selectCommand4.Connection = d_instance.conn;
+                selectCommand4.CommandText = "SELECT * from information where id=@id and pw=@pw and date=@date and count=@count";
+                selectCommand4.Parameters.Add("@id", MySqlDbType.VarChar, 20);
+                selectCommand4.Parameters.Add("@pw", MySqlDbType.VarChar, 20);
+                selectCommand4.Parameters.Add("@date", MySqlDbType.VarChar, 20);
+                selectCommand4.Parameters.Add("@count", MySqlDbType.Int16);
 
 
-            init_monthday();
-            u_DateList.Clear();
+                init_monthday();
+                u_DateList.Clear();
+            }
+            catch(System.Exception ex)
+            {
+                
+            }
         }
 
        

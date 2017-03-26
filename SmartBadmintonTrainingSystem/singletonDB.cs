@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
+using System.Data;
 
 namespace SmartBadmintonTrainingSystem
 {
@@ -20,39 +21,29 @@ namespace SmartBadmintonTrainingSystem
 
         public static void IsOpen()
         {
-            if (!singletonDB.instance.conn.State.ToString().Equals("Open"))
+
+            if (!(instance.conn.State==ConnectionState.Open))
             {
                 try
-                {
+                { 
                     singletonDB.instance.conn.Open();
                 }
                 catch (System.Exception ex)
                 {
-                    //AutoClosingMessageBox.Show("서버 연결이 해제되었습니다", "ERROR", 2000);
+                    AutoClosingMessageBox.Show("서버 연결이 해제되었습니다", "ERROR", 2000);
                 }
             }
-            //if (singletonDB.instance.conn.State != System.Data.ConnectionState.Open)
-            //{
-            //try
-            //{
-            //    instance = new singletonDB();
-            //}
-            //catch (MySqlException ex)
-            //{
-            //    switch (ex.Number)
-            //    {
-            //        case 4060:
-            //            //AutoClosingMessageBox.Show("invaliddatabase", "ERROR", 2000);
-            //            break;
-            //    }
-            //}
-            //AutoClosingMessageBox.Show(instance.conn.State.ToString(), "ERROR", 2000);
-            //}      
+            else
+            {
+                //AutoClosingMessageBox.Show("","connection is open",2000);
+            }
+            
         }
-
         public static singletonDB getInstance()
         {
             singletonDB.IsOpen();
+            instance.conn.Close();
+            instance.conn.Open();
             return instance;
         }
     }
