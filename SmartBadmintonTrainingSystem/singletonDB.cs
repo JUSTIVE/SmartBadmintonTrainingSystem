@@ -21,7 +21,6 @@ namespace SmartBadmintonTrainingSystem
 
         public static void IsOpen()
         {
-
             if (!(instance.conn.State==ConnectionState.Open))
             {
                 try

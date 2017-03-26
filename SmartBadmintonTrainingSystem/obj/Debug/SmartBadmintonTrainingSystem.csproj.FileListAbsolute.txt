@@ -479,3 +479,4 @@ C:\Users\BenKim\Desktop\research\SmartBadmintonTrainingSystem\SmartBadmintonTrai
 C:\Users\BenKim\Desktop\research\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\obj\Debug\SmartBadmintonTrainingSystem.application
 C:\Users\BenKim\Desktop\research\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\obj\Debug\SmartBadmintonTrainingSystem.exe
 C:\Users\BenKim\Desktop\research\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\obj\Debug\SmartBadmintonTrainingSystem.pdb
+C:\Users\BenKim\Desktop\research\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\obj\Debug\SmartBadmintonTrainingSystem.csprojResolveAssemblyReference.cache

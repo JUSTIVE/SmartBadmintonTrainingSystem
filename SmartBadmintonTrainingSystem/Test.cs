@@ -19,6 +19,8 @@ namespace SmartBadmintonTrainingSystem
 {
     public partial class Test : Form
     {
+
+        const int SAFE_SLEEP_TIME =75;
         //Received V3
         byte[] oldByte;
         //
@@ -268,8 +270,8 @@ namespace SmartBadmintonTrainingSystem
             {
                 setImageOff(i + 1);
             }
-            sound = new SoundPlayer(SmartBadmintonTrainingSystem.Properties.Resources.beep_01a);
-            sound2 = new SoundPlayer(SmartBadmintonTrainingSystem.Properties.Resources.beep_05);
+            sound = new SoundPlayer(SmartBadmintonTrainingSystem.Properties.Resources.Beep1);
+            sound2 = new SoundPlayer(SmartBadmintonTrainingSystem.Properties.Resources.Beep2);
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -331,11 +333,13 @@ namespace SmartBadmintonTrainingSystem
                 //send_packet(0, color[1]); send_packet(1, color[1]);
                 //send_packet(2, color[3]); send_packet(3, color[3]); send_packet(4, color[3]);
                 //send_packet(5, color[2]); send_packet(6, color[2]); send_packet(7, color[2]);
-                //while (true) { 
-                //    for (int i = 0; i < 8; i++) { 
+                //while (true)
+                //{
+                //    for (int i = 0; i < 8; i++)
+                //    {
                 //        for (int j = 0; j < 8; j++)
                 //        {
-                //            AutoClosingMessageBox.Show("aa", "aa", 100);
+                //            //AutoClosingMessageBox.Show("aa", "aa", 100);
                 //            send_packet(j, color[i]);
                 //        }
                 //        AutoClosingMessageBox.Show("aa", "aa", 500);
@@ -384,9 +388,10 @@ namespace SmartBadmintonTrainingSystem
             {
                 try
                 {
-                    send_packet(0, color[0]); send_packet(1, color[0]); send_packet(2, color[0]);
-                    send_packet(3, color[0]); send_packet(4, color[0]); send_packet(5, color[0]);
-                    send_packet(6, color[0]); send_packet(7, color[0]);
+                    for (int i = 0; i < 8; i++) { 
+                        send_packet(i, color[0]);
+                        Thread.Sleep(SAFE_SLEEP_TIME);
+                    }
                 }
                 catch (System.Exception ex)
                 {
@@ -789,9 +794,11 @@ namespace SmartBadmintonTrainingSystem
             else
             {
                 setNewNumber();
-                send_packet(0, color[0]); send_packet(1, color[0]); send_packet(2, color[0]);
-                send_packet(3, color[0]); send_packet(4, color[0]); send_packet(5, color[0]);
-                send_packet(6, color[0]); send_packet(7, color[0]);
+                for(int i = 0; i < 8; i++)
+                {
+                    send_packet(i, color[0]);
+                    Thread.Sleep(SAFE_SLEEP_TIME);
+                }
                 setByteSendData();
                 try
                 {

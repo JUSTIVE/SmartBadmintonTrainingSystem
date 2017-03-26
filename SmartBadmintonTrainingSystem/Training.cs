@@ -16,6 +16,7 @@ namespace SmartBadmintonTrainingSystem
 {  
     public partial class Training : Form
     {
+        const int SAFE_SLEEP_TIME =25;
         int swing_pole = -1;
         int number;
         byte[] oldByte;
@@ -405,8 +406,8 @@ namespace SmartBadmintonTrainingSystem
                 setImageOff(i + 1);
                 centerPic.Image = Properties.Resources.off_circle;
             }
-            sound = new SoundPlayer(SmartBadmintonTrainingSystem.Properties.Resources.beep_01a);
-            sound2 = new SoundPlayer(SmartBadmintonTrainingSystem.Properties.Resources.beep_05);
+            sound = new SoundPlayer(SmartBadmintonTrainingSystem.Properties.Resources.Beep1);
+            sound2 = new SoundPlayer(SmartBadmintonTrainingSystem.Properties.Resources.Beep2);
 
         }
 
@@ -635,6 +636,11 @@ namespace SmartBadmintonTrainingSystem
                 label2.Text = openO;
                 //초기 그림 설정
                 button1.Text = "연결종료";
+                for(int i = 0; i < 8; i++) { 
+                    send_packet(i, color[0]);
+                    setImageOff(i + 1);
+                    Thread.Sleep(SAFE_SLEEP_TIME);
+                }
             }
             catch (System.Exception ex){}
         }
@@ -644,9 +650,14 @@ namespace SmartBadmintonTrainingSystem
             {
                 try
                 {
-                    send_packet(0, 4); send_packet(1, 4); send_packet(2, 4);
-                    send_packet(3, 4); send_packet(4, 4); send_packet(5, 4);
-                    send_packet(6, 4); send_packet(7, 4);
+                    
+                    
+                    for(int i = 0; i < 8; i++)
+                    {
+                        send_packet(i, color[0]);
+                        Thread.Sleep(50);
+                        //AutoClosingMessageBox.Show("dummy", "", 50);
+                    }
                 }
                 catch (System.Exception ex)
                 {
@@ -1146,6 +1157,7 @@ namespace SmartBadmintonTrainingSystem
             Thread.Sleep(1000);
             centerPic.Image = Properties.Resources.red_circle;
             stopwatch.Start();
+            sound2.Play();
             //fordebug -command multiple lights at once
             //if (true)
             //{
@@ -1218,7 +1230,7 @@ namespace SmartBadmintonTrainingSystem
                 inputListbox("elapsed" + elapsed);
                 thread_flag = false;
             }
-            else//색상 트레이닝
+            else//색상 트레이닝/colorTraining
             {
                 for (int i = 0; i < TCS.times; i++)//매 회차마다
                 {
@@ -1236,10 +1248,10 @@ namespace SmartBadmintonTrainingSystem
                         temp += TCS.dataset[a];
                     }
                     inputListbox(i + "색순서 : " + temp);
-                    
+                    //light on sequence;
                     for (int j = 0; j < 4; j++)
                     {
-                        Thread.Sleep(150);
+                        Thread.Sleep(SAFE_SLEEP_TIME);
                         target_pole = mapper[TCS.generatedData[i][j]-1];
                         //1,2,3 순서 칠하기
                         if (j<3) { 
@@ -1273,24 +1285,28 @@ namespace SmartBadmintonTrainingSystem
                                     setImageRed(TCS.generatedData[i][3]);
                                     setImageRed(TCS.generatedData[i][4]);
                                     send_packet(mapper[TCS.generatedData[i][3]-1], (int)COLORENUM.RED);
+                                    Thread.Sleep(SAFE_SLEEP_TIME);
                                     send_packet(mapper[TCS.generatedData[i][4] - 1], (int)COLORENUM.RED);
                                     break;
                                 case (int)COLORENUM.GREEN:
                                     setImageGreen(TCS.generatedData[i][3]);
                                     setImageGreen(TCS.generatedData[i][4]);
                                     send_packet(mapper[TCS.generatedData[i][3] - 1], (int)COLORENUM.GREEN);
+                                    Thread.Sleep(SAFE_SLEEP_TIME);
                                     send_packet(mapper[TCS.generatedData[i][4] - 1], (int)COLORENUM.GREEN);
                                     break;
                                 case (int)COLORENUM.BLUE:
                                     setImageBlue(TCS.generatedData[i][3]);
                                     setImageBlue(TCS.generatedData[i][4]);
                                     send_packet(mapper[TCS.generatedData[i][3] - 1], (int)COLORENUM.BLUE);
+                                    Thread.Sleep(SAFE_SLEEP_TIME);
                                     send_packet(mapper[TCS.generatedData[i][4] - 1], (int)COLORENUM.BLUE);
                                     break;
                                 case (int)COLORENUM.YELLOW:
                                     setImageYellow(TCS.generatedData[i][3]);
                                     setImageYellow(TCS.generatedData[i][4]);
                                     send_packet(mapper[TCS.generatedData[i][3] - 1], (int)COLORENUM.YELLOW);
+                                    Thread.Sleep(SAFE_SLEEP_TIME);
                                     send_packet(mapper[TCS.generatedData[i][4] - 1], (int)COLORENUM.YELLOW);
                                     break;
                             }
