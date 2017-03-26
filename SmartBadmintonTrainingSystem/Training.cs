@@ -680,8 +680,61 @@ namespace SmartBadmintonTrainingSystem
             }
             catch (System.Exception ex){}
         }
+        public int ColorSwing(int number)
+        {
+            //if(s_buffer.Count>0)
+            //inputListbox("current Buff " + s_buffer[0]);
+            //case 1
+            if (s_buffer.Contains("02 01 08 01 0A 03 ") || s_buffer.Contains("02 01 08 03 0C 03 "))
+            {
+                swing_pole = 1;
+                swing_flag = true;
+            }
+            //case 2
+            if (s_buffer.Contains("02 01 07 01 09 03 ") || s_buffer.Contains("02 01 07 03 0B 03 "))
+            {
+                swing_pole = 2;
+                swing_flag = true;
+            }
+            //case 3
+            if (s_buffer.Contains("02 01 06 01 08 03 ") || s_buffer.Contains("02 01 06 03 0A 03 "))
+            {
+                swing_pole = 3;
+                swing_flag = true;
+            }
+            //case 4
+            if (s_buffer.Contains("02 01 02 01 04 03 ") || s_buffer.Contains("02 01 02 03 06 03 "))
+            {
+                swing_pole = 4;
+                swing_flag = true;
+            }
+            //case 5
+            if (s_buffer.Contains("02 01 01 01 03 03 ") || s_buffer.Contains("02 01 01 03 05 03 "))
+            {
+                swing_pole = 5;
+                swing_flag = true;
+            }
+            //case 6
+            if (s_buffer.Contains("02 01 05 01 07 03 ") || s_buffer.Contains("02 01 05 03 09 03 "))
+            {
+                swing_pole = 6;
+                swing_flag = true;
+            }
+            //case 7
+            if (s_buffer.Contains("02 01 04 01 06 03 ") || s_buffer.Contains("02 01 04 03 08 03 "))
+            {
+                swing_pole = 7;
+                swing_flag = true;
+            }
+            //case 8
+            if (s_buffer.Contains("02 01 03 01 05 03 ") || s_buffer.Contains("02 01 03 03 07 03 "))
+            {
+                swing_pole = 8;
+                swing_flag = true;
+            }
+            return swing_pole;
+        }
 
-        
         ///returns 1-based pole number
         public int isSwing(int number)
         {
@@ -1315,7 +1368,10 @@ namespace SmartBadmintonTrainingSystem
                     //setImageRed(unmapper[target_pole] + 1);
                     clearBuff();
                     swing_flag = false;
+                   
                     while (progress<3) {
+                        currentPole = TCS.generatedData[i][progress];
+                        inputListbox("current Target = " + currentPole);
                         swing_flag = false;
                         for (;;)
                         {
@@ -1324,42 +1380,43 @@ namespace SmartBadmintonTrainingSystem
                                 inputListbox("swing");
                                 AutoClosingMessageBox.Show(currentPole + "", "swinged", 2000);
                                 progress++;
-                                setImageOff(unmapper[target_pole]+1);
+                                //setImageOff(unmapper[target_pole]);
                                 break;
                             }
                             else
                             {
-                                currentPole = unmapper[target_pole] + 1;
-                                breaker=(isSwing(currentPole)>0);
+                                breaker= (currentPole==isSwing(currentPole));
+
                             
                             } //1-base pole number
                         }
-                    }
-                    centerPic.Image = Properties.Resources.red_circle;
-                    setImageOff(unmapper[target_pole] + 1);//unmapped pole number
                     
-                    if (breaker)//잘못된 기둥을 건드렸을 경우
-                    {
-                        AutoClosingMessageBox.Show("잘못된 기둥을 스윙하였습니다","Error",1500);
-                        break;
-                    }
-                    clearBuff();
-                    lrFlag = false; FbFlag = false;
-                    if ((unmapper[target_pole] + 1) == 2 || (unmapper[target_pole] + 1) == 7) FbFlag = true;
-                    else if ((unmapper[target_pole] + 1) == 4 || (unmapper[target_pole] + 1) == 5) lrFlag = true;
-                    center_flag1 = false;
-                    for (;;)
-                    {
-                        if (center_flag1)
+                        centerPic.Image = Properties.Resources.red_circle;
+                        setImageOff(currentPole);//unmapped pole number
+                    
+                        if (breaker)//잘못된 기둥을 건드렸을 경우
                         {
-                            inputListbox("center");
-                            is_light = false;
+                            AutoClosingMessageBox.Show("잘못된 기둥을 스윙하였습니다","Error",1500);
                             break;
                         }
-                        else isCenter();
+                        clearBuff();
+                        lrFlag = false; FbFlag = false;
+                        if ((unmapper[target_pole] + 1) == 2 || (unmapper[target_pole] + 1) == 7) FbFlag = true;
+                        else if ((unmapper[target_pole] + 1) == 4 || (unmapper[target_pole] + 1) == 5) lrFlag = true;
+                        center_flag1 = false;
+                        for (;;)
+                        {
+                            if (center_flag1)
+                            {
+                                inputListbox("center");
+                                is_light = false;
+                                break;
+                            }
+                            else isCenter();
+                        }
+                        centerPic.Image = null;
+                        centerPic.Image = Properties.Resources.green_circle;
                     }
-                    centerPic.Image = null;
-                    centerPic.Image = Properties.Resources.green_circle;
                 }
                 stopwatch.Stop();
                 float elapsed = float.Parse(stopwatch.ElapsedMilliseconds.ToString()) * 0.001f;
