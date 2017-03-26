@@ -16,7 +16,7 @@ namespace SmartBadmintonTrainingSystem
 {  
     public partial class Training : Form
     {
-        const int SAFE_SLEEP_TIME =25;
+        const int SAFE_SLEEP_TIME =50;
         int swing_pole = -1;
         int number;
         byte[] oldByte;
@@ -1315,18 +1315,25 @@ namespace SmartBadmintonTrainingSystem
                     //setImageRed(unmapper[target_pole] + 1);
                     clearBuff();
                     swing_flag = false;
-                    for (;;)
-                    {
-                        if (swing_flag)
+                    while (progress<3) {
+                        swing_flag = false;
+                        for (;;)
                         {
-                            inputListbox("swing");
-                            break;
+                            if (swing_flag)
+                            {
+                                inputListbox("swing");
+                                AutoClosingMessageBox.Show(currentPole + "", "swinged", 2000);
+                                progress++;
+                                setImageOff(unmapper[target_pole]+1);
+                                break;
+                            }
+                            else
+                            {
+                                currentPole = unmapper[target_pole] + 1;
+                                breaker=(isSwing(currentPole)>0);
+                            
+                            } //1-base pole number
                         }
-                        else
-                        {
-                            currentPole = unmapper[target_pole] + 1;
-                            breaker=(isSwing(currentPole)>0);
-                        } //1-base pole number
                     }
                     centerPic.Image = Properties.Resources.red_circle;
                     setImageOff(unmapper[target_pole] + 1);//unmapped pole number
