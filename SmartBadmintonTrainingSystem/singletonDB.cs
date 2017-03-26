@@ -33,11 +33,6 @@ namespace SmartBadmintonTrainingSystem
                     AutoClosingMessageBox.Show("서버 연결이 해제되었습니다", "ERROR", 2000);
                 }
             }
-            else
-            {
-                //AutoClosingMessageBox.Show("","connection is open",2000);
-            }
-            
         }
         public static singletonDB getInstance()
         {

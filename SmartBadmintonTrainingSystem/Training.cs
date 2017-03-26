@@ -782,7 +782,7 @@ namespace SmartBadmintonTrainingSystem
 
             if (lrFlag && FbFlag) center_flag1 = true;
         }
-
+        //thread for touching each poles
         void normalthreadStart()
         {
             clearBuff();
