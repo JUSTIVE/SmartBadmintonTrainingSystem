@@ -31,7 +31,7 @@ namespace SmartBadmintonTrainingSystem
         //Sensor HX Code
         byte[] index = { 0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07, 0x08 };//M2,M1,B3,B2,B1,F3,F2,F1
         byte[] color = { 0x00, 0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07 };//off,Red,Green,Yellow,Blue,magenta,cyan,White;
-        enum COLORENUM { OFF,RED, GREEN, YELLOW, BLUE,MAGENTA,CYAN,WHITE };
+        enum COLORENUM { OFF=0,RED, GREEN, YELLOW, BLUE,MAGENTA,CYAN,WHITE };
         byte start = 0x02;
         byte start_check = 0x01;
         byte end = 0x03;
@@ -1185,10 +1185,10 @@ namespace SmartBadmintonTrainingSystem
         {
             for(int i = 0; i < 8; i++)
             {
-                send_packet(0, color[(int)COLORENUM.OFF]);
+                send_packet(i, color[0]);
                 setImageOff(i + 1);
                 Thread.Sleep(SAFE_SLEEP_TIME);
-                
+        
             }
         }
         void TrainingThreadStart()//실질적인 트레이닝 처리 스레드
@@ -1284,9 +1284,10 @@ namespace SmartBadmintonTrainingSystem
             }
             else//색상 트레이닝/colorTraining
             {
+                bool breaker = false;
                 for (int i = 0; i < TCS.times; i++)//매 회차마다
                 {
-                    bool breaker = false;
+                    breaker= false;   
                     int progress = 0;
                     ///ready to delete
                     string temp = "";
@@ -1371,14 +1372,19 @@ namespace SmartBadmintonTrainingSystem
                         currentPole = TCS.generatedData[i][progress];
                         inputListbox("current Target = " + currentPole);
                         swing_flag = false;
+
+                        //holds the swing seqence till one of pole is swinged
                         for (;;)
                         {
+                            //if one of pole is swinged
                             if (swing_flag)
                             {
+                                //mark as swinged
                                 inputListbox("swing");
-                                AutoClosingMessageBox.Show(currentPole + "", "swinged", 2000);
+                                //move to next pole;
                                 progress++;
-                                setImageOff(unmapper[target_pole]);
+                                //turn off swinged pole whatever it is
+                                setImageOff(currentPole);
                                 break;
                             }
                             else
@@ -1422,7 +1428,12 @@ namespace SmartBadmintonTrainingSystem
                     }
                     //end of a sequence
                     TurnLightOff();
+                    if (breaker)
+                    {
+                        break;
+                    }
                 }
+                
                 stopwatch.Stop();
                 float elapsed = float.Parse(stopwatch.ElapsedMilliseconds.ToString()) * 0.001f;
                 AutoClosingMessageBox.Show("경과한 시간 : " + elapsed, "ALERT", 1000);
