@@ -1198,6 +1198,12 @@ namespace SmartBadmintonTrainingSystem
             //send_packet(6, (int)COLORENUM.OFF); send_packet(7, (int)COLORENUM.OFF);
             char[] delim = { ',' };
             string[] splitter = order_list.Split(delim);
+            centerPic.Image = Properties.Resources._5_image;
+            sound.Play();
+            Thread.Sleep(1000);
+            centerPic.Image = Properties.Resources._4_image;
+            sound.Play();
+            Thread.Sleep(1000);
             centerPic.Image = Properties.Resources._3_image;
             sound.Play();
             Thread.Sleep(1000);

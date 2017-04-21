@@ -261,11 +261,44 @@ namespace SmartBadmintonTrainingSystem
         {
             this.TM = t;
         }
+        void reshuffle(int[] texts)
+        {
+            // Knuth shuffle algorithm :: courtesy of Wikipedia :)
+            for (int t = 0; t < texts.Length; t++)
+            {
+                Random rd = new Random();
+                int tmp = texts[t];
+                int r = rd.Next(0,11);
+                texts[t] = texts[r];
+                texts[r] = tmp;
+            }
+        }
         private void Test_Load(object sender, EventArgs e)
         {
             SetSerialPort();
             radioButton1.Checked = true;
             orderString = "1-2-3-4-5-6-7-8";
+            int[] array = new int[12];
+
+            for (int i = 0; i < 8; i++)
+            {
+                array[i] = i+1;
+            }
+            for(int i = 0; i < 4; i++)
+            {
+                array[i + 8] = (2 * i + 1) + (i > 1 ?1:0);
+            }
+            reshuffle(array);
+            orderString = "";
+            for(int i = 0; i < 12; i++)
+            {
+                orderString += array[i].ToString();
+                if (i < 11)
+                {
+                    orderString += "-";
+                }
+            }
+            
             for (int i = 0; i < 8; i++)
             {
                 setImageOff(i + 1);
@@ -703,7 +736,12 @@ namespace SmartBadmintonTrainingSystem
             insertDatabase2();
             listBox1.Items.Add("테스트 시작");
             setOrderList();
-
+            center.Image = Properties.Resources._5_image;
+            sound.Play();
+            Thread.Sleep(1000);
+            center.Image = Properties.Resources._4_image;
+            sound.Play();
+            Thread.Sleep(1000);
             center.Image = Properties.Resources._3_image;
             sound.Play();
             Thread.Sleep(1000);
@@ -713,7 +751,7 @@ namespace SmartBadmintonTrainingSystem
             center.Image = Properties.Resources._1_image;
             sound.Play();
             Thread.Sleep(1000);
-            sound.Play();
+            sound2.Play();
             for (int i = 0; i < 8; i++)
             {
                 setImageOff(i + 1);
@@ -877,6 +915,17 @@ namespace SmartBadmintonTrainingSystem
         {
             listBox1.Items.Insert(0,data);
         }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void p3_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void radioButton1_CheckedChanged_1(object sender, EventArgs e)
         {
             status = "random";

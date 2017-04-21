@@ -91,6 +91,26 @@ namespace SmartBadmintonTrainingSystem.Properties {
         }
         
         /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap _4_image {
+            get {
+                object obj = ResourceManager.GetObject("_4_image", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap _5_image {
+            get {
+                object obj = ResourceManager.GetObject("_5_image", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   System.IO.MemoryStream과(와) 유사한 System.IO.UnmanagedMemoryStream 형식의 지역화된 리소스를 찾습니다.
         /// </summary>
         internal static System.IO.UnmanagedMemoryStream beep_01a {
@@ -162,6 +182,16 @@ namespace SmartBadmintonTrainingSystem.Properties {
         internal static System.Drawing.Bitmap close_tomato {
             get {
                 object obj = ResourceManager.GetObject("close_tomato", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap court1 {
+            get {
+                object obj = ResourceManager.GetObject("court1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

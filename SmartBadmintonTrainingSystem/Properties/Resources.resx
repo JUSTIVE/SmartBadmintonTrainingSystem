@@ -1256,4 +1256,13 @@
   <data name="Beep2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Beep2.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="court1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\court.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_4_image" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\4_image.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_5_image" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\5_image.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>
