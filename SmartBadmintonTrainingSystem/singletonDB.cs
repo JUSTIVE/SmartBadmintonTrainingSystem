@@ -15,8 +15,8 @@ namespace SmartBadmintonTrainingSystem
         string strconn = "Server=220.69.209.170;Database=badminton;Uid=cglab;Pwd=clws";
         private singletonDB()
         {
-            conn = new MySqlConnection(strconn);
-            conn.Open();
+            instance.conn = new MySqlConnection(strconn);
+            instance.conn.Open();
         }
 
         public static void IsOpen()
@@ -41,6 +41,10 @@ namespace SmartBadmintonTrainingSystem
             instance.conn.Close();
             instance.conn.Open();
             return instance;
+        }
+        public MySqlConnection getConnection()
+        {
+            return this.conn;
         }
     }
 }

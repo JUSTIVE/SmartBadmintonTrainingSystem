@@ -263,7 +263,6 @@ namespace SmartBadmintonTrainingSystem
         }
         void reshuffle(int[] texts)
         {
-            // Knuth shuffle algorithm :: courtesy of Wikipedia :)
             for (int t = 0; t < texts.Length; t++)
             {
                 Random rd = new Random();
