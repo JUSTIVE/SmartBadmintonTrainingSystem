@@ -212,6 +212,7 @@ namespace SmartBadmintonTrainingSystem
             pm.Axes.Add(InrAxsX);
             pm.Axes.Add(InrAxsY);
 
+            selectCommand.Connection = singletonDB.getInstance().getConnection();
             txt_name.Text = u_instance.uID;
             selectCommand.Parameters[0].Value = u_instance.uID;
             selectCommand.Parameters[1].Value = u_instance.uPW;

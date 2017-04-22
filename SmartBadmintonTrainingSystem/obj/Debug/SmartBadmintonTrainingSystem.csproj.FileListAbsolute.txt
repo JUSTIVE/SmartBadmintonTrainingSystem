@@ -460,6 +460,7 @@ C:\Users\BenKim\Desktop\research\SmartBadmintonTrainingSystem\SmartBadmintonTrai
 C:\Users\BenKim\Desktop\research\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\bin\Debug\OxyPlot.WindowsForms.xml
 C:\Users\BenKim\Desktop\research\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\bin\Debug\OxyPlot.Wpf.pdb
 C:\Users\BenKim\Desktop\research\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\bin\Debug\OxyPlot.Wpf.xml
+C:\Users\BenKim\Desktop\research\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\obj\Debug\SmartBadmintonTrainingSystem.csprojResolveAssemblyReference.cache
 C:\Users\BenKim\Desktop\research\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\obj\Debug\SmartBadmintonTrainingSystem.Configuration.resources
 C:\Users\BenKim\Desktop\research\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\obj\Debug\SmartBadmintonTrainingSystem.CustomProgramForm.resources
 C:\Users\BenKim\Desktop\research\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\obj\Debug\SmartBadmintonTrainingSystem.Form1.resources
@@ -479,4 +480,3 @@ C:\Users\BenKim\Desktop\research\SmartBadmintonTrainingSystem\SmartBadmintonTrai
 C:\Users\BenKim\Desktop\research\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\obj\Debug\SmartBadmintonTrainingSystem.application
 C:\Users\BenKim\Desktop\research\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\obj\Debug\SmartBadmintonTrainingSystem.exe
 C:\Users\BenKim\Desktop\research\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\obj\Debug\SmartBadmintonTrainingSystem.pdb
-C:\Users\BenKim\Desktop\research\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\obj\Debug\SmartBadmintonTrainingSystem.csprojResolveAssemblyReference.cache
