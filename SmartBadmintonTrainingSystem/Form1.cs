@@ -34,6 +34,8 @@ namespace SmartBadmintonTrainingSystem
             selectCommand.Parameters.Add("?id", MySqlDbType.VarChar, 20);
             selectCommand.Parameters.Add("?pw", MySqlDbType.VarChar, 20);
             ActiveControl = txt_id;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
         }
         public void checkLogin(){
 
