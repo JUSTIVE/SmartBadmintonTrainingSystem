@@ -646,7 +646,6 @@ namespace SmartBadmintonTrainingSystem
                 if (number == swing_pole)
                     swing_flag = true;
             }
-            nowswing.Text = swing_pole + "";
             return swing_pole;
         }
         public void isCenter()
