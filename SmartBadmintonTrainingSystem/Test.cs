@@ -1,4 +1,5 @@
-﻿using System;
+﻿#define DEBUG
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,11 +16,14 @@ using MySql.Data.MySqlClient;
 using System.IO;
 using System.Media;
 
+
 namespace SmartBadmintonTrainingSystem
 {
     public partial class Test : Form
     {
-
+        int targetTestAmount;
+        int[] poleCoder = { 7, 6, 5, 1, 0, 4, 3, 2 };
+        int[] numberExteneder = {0, 1, 2, 3, 4, 5, 6, 7, 0, 2, 5, 7 };
         const int SAFE_SLEEP_TIME =75;
         //Received V3
         byte[] oldByte;
@@ -28,8 +32,8 @@ namespace SmartBadmintonTrainingSystem
         //Serial
         int bufflen=0;
         byte[] buff_temp;
-        bool validate=true;
-        int lastpos=0;
+        
+        
         bool buff_full = false;
         List<byte> d_buffer = new List<byte>();
         //fileio
@@ -46,16 +50,18 @@ namespace SmartBadmintonTrainingSystem
         //Sensor HX Code
         byte[] index = { 0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07, 0x08 };//M1,M2,B3,B2,B1,F3,F2,F1
         byte[] color = { 0x00, 0x01, 0x02, 0x04, 0x03, 0x05,0x06,0x07};//Red,Green,Blue,Yellow,magenta,cyan;
+        enum Color{OFF=0,RED,GREEN,YELLOW,BLUE,MAGENTA,CYAN,WHITE};
         byte start = 0x02;
         byte start_check = 0x01;
         byte end = 0x03;
         byte[] byteSendData = new byte[6];
         byte tmp2;
 
-        int[] new_number = new int[8];
+        //int[] new_number = new int[8];
 
         bool threadFlag = false; // Thread Flag
 
+        int[] array;
         //float []T1 = new float[8];
         //float []T2 = new float[8];
         //float []T3 = new [8];
@@ -67,13 +73,12 @@ namespace SmartBadmintonTrainingSystem
         string[] recv_buff = new string[3];//센서에서 들어오는 데이터 저장
         List<string> buffer = new List<string>();
         List<string> s_buffer = new List<string>();
-        int buff_index = 0;
         bool port_set = false;
-        bool overflowed=false;
+        
         //시리얼 포트 관련 변수 선언 종료
 
         //반복문
-        Thread th1, th2, th3;
+        Thread th1;
         ThreadStart ths;
         string status = "";
 
@@ -89,18 +94,18 @@ namespace SmartBadmintonTrainingSystem
         Stopwatch sw2 = new Stopwatch();
         Stopwatch sw3 = new Stopwatch();
         float Time,Time2;
-        float[] T1 = new float[8];
-        float[] T2 = new float[8];
+        float[] T1 = new float[24];
+        float[] T2 = new float[24];
 
         //중앙여부판단
-        bool center_flag1 = true;
-        bool center_flag2 = false;
+        bool center_flag = true;
+        
         bool lrFlag = false; //좌우
         bool FbFlag = false; //상하
         //스윙여부판단
         bool swing_flag = true;
         int swing_pole=-1;
-        bool is6byte = false;
+        
         //현재 테스트 결과 저장 변수
         float[] Result = new float[16];
 
@@ -131,6 +136,8 @@ namespace SmartBadmintonTrainingSystem
             setpList();
             setupStream();
             this.DoubleBuffered = true;
+            test_24.Checked = true;
+            targetTestAmount = 1;
         }
         void setupStream()
         {
@@ -219,7 +226,7 @@ namespace SmartBadmintonTrainingSystem
         public void initInsertQuery()
         {
             insertCommand.Connection = instatnce.conn;
-            insertCommand.CommandText = "INSERT INTO information(id, pw, date, time, number,type,count) VALUES(@id,@pw,@date,@time,@number,@type,@count)";
+            insertCommand.CommandText = "INSERT INTO information(id, pw, date, time, number,type,count,innning) VALUES(@id,@pw,@date,@time,@number,@type,@count,@inning)";
             insertCommand.Parameters.Add("@id", MySqlDbType.VarChar, 20);
             insertCommand.Parameters.Add("@pw", MySqlDbType.VarChar, 20);
             insertCommand.Parameters.Add("@date", MySqlDbType.VarChar, 25);
@@ -227,7 +234,8 @@ namespace SmartBadmintonTrainingSystem
             insertCommand.Parameters.Add("@number", MySqlDbType.Int16);
             insertCommand.Parameters.Add("@type", MySqlDbType.Int16);
             insertCommand.Parameters.Add("@count", MySqlDbType.Int16);
-            
+            insertCommand.Parameters.Add("@inning", MySqlDbType.Int16);
+
             insertCommand2.CommandText = "INSERT INTO testcount(id,pw,date,count) VALUES(@id,@pw,@date,@count)";
             insertCommand2.Parameters.Add("@id", MySqlDbType.VarChar, 20);
             insertCommand2.Parameters.Add("@pw", MySqlDbType.VarChar, 20);
@@ -240,7 +248,7 @@ namespace SmartBadmintonTrainingSystem
             selectCommand.Parameters.Add("@pw", MySqlDbType.VarChar, 20);
             selectCommand.Parameters.Add("@date", MySqlDbType.VarChar, 20);
         }
-        public void insertDatabase(string ID, string PW, float Time, int number, string DATE, int type, int count)
+        public void insertDatabase(string ID, string PW, float Time, int number, string DATE, int type, int count,int inning)
         {
             try {
                 insertCommand.Parameters[0].Value = ID;
@@ -250,6 +258,7 @@ namespace SmartBadmintonTrainingSystem
                 insertCommand.Parameters[4].Value = number;
                 insertCommand.Parameters[5].Value = type;
                 insertCommand.Parameters[6].Value = count;
+                insertCommand.Parameters[7].Value = inning;
                 insertCommand.ExecuteNonQuery();
             }
             catch (Exception e)
@@ -261,51 +270,57 @@ namespace SmartBadmintonTrainingSystem
         {
             this.TM = t;
         }
-        void reshuffle(int[] texts)
+        private int[] reshuffle(int[] texts)
         {
+            int[] re_texts= texts;
             for (int t = 0; t < texts.Length; t++)
             {
                 Random rd = new Random();
-                int tmp = texts[t];
+                int tmp = re_texts[t];
                 int r = rd.Next(0,11);
-                texts[t] = texts[r];
-                texts[r] = tmp;
+                re_texts[t] = re_texts[r];
+                re_texts[r] = tmp;
             }
+            return re_texts;
         }
         private void Test_Load(object sender, EventArgs e)
         {
             SetSerialPort();
-            radioButton1.Checked = true;
+            random_order.Checked = true;
             orderString = "1-2-3-4-5-6-7-8";
-            int[] array = new int[12];
+            array = new int[12];
 
-            for (int i = 0; i < 8; i++)
+            for (int i = 0; i < 12; i++)
             {
                 array[i] = i+1;
             }
-            for(int i = 0; i < 4; i++)
-            {
-                array[i + 8] = (2 * i + 1) + (i > 1 ?1:0);
-            }
-            reshuffle(array);
-            orderString = "";
-            for(int i = 0; i < 12; i++)
-            {
-                orderString += array[i].ToString();
-                if (i < 11)
-                {
-                    orderString += "-";
-                }
-            }
+            //for(int i = 0; i < 4; i++)
+            //{
+            //    array[i + 8] = (2 * i + 1) + (i > 1 ?1:0)+8;//(1,3,6,8)+8
+            //}
+            orderString = poleArrayToString(reshuffle(array));
+            
             
             for (int i = 0; i < 8; i++)
             {
-                setImageOff(i + 1);
+                setImageOff(i);
             }
             sound = new SoundPlayer(SmartBadmintonTrainingSystem.Properties.Resources.Beep1);
             sound2 = new SoundPlayer(SmartBadmintonTrainingSystem.Properties.Resources.Beep2);
         }
-
+        private String poleArrayToString(int[] array)
+        {
+            String temp="";
+            for (int i = 0; i < 12; i++)
+            {
+                temp += array[i].ToString();
+                if (i < 11)
+                {
+                    temp += "-";
+                }
+            }
+            return temp;
+        }
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             SP_name = comboBox1.SelectedItem.ToString();
@@ -338,17 +353,7 @@ namespace SmartBadmintonTrainingSystem
                 AutoClosingMessageBox.Show("컨트롤러가 연결되어있지 않습니다!","Error",300);
             }
         }
-        public void setNewNumber()
-        {   
-            new_number[0] = 7;
-            new_number[1] = 6;
-            new_number[2] = 5;
-            new_number[3] = 1;
-            new_number[4] = 0;
-            new_number[5] = 4;
-            new_number[6] = 3;
-            new_number[7] = 2;
-        }
+        
         public void setOnPort()
         {
             try
@@ -357,8 +362,10 @@ namespace SmartBadmintonTrainingSystem
                 port_set = true;
                 Picture_Status.Image = SmartBadmintonTrainingSystem.Properties.Resources.green_circle;
                 SP.DataReceived += new SerialDataReceivedEventHandler(EventDataReceivedV3);
+#if (DEBUG)
                 AutoClosingMessageBox.Show("컨트롤러 연결 성공","포트",500);
                 inputListbox("컨트롤러 연결 성공");
+#endif
                 label2.Text = openO;
                 setByteSendData();
                 //초기 이미지 확인
@@ -377,9 +384,9 @@ namespace SmartBadmintonTrainingSystem
                 //        AutoClosingMessageBox.Show("aa", "aa", 500);
                 //    }
                 //}
-                setImageGreen(1); setImageGreen(2); setImageGreen(3);
-                setImageRed(4); setImageRed(5);
-                setImageBlue(6); setImageBlue(7); setImageBlue(8);
+                setImageGreen(0); setImageGreen(1); setImageGreen(2);
+                setImageRed(3); setImageRed(4);
+                setImageBlue(5); setImageBlue(6); setImageBlue(7);
 
                 //초기 그림 설정
                 button1.Text = "연결종료";
@@ -397,7 +404,9 @@ namespace SmartBadmintonTrainingSystem
                 if (SP.IsOpen)
                 {
                     SP.Close();
+#if(DEBUG)
                     inputListbox("컨트롤러 연결 종료");
+#endif
                 }
             }
             catch
@@ -409,7 +418,7 @@ namespace SmartBadmintonTrainingSystem
             Picture_Status.Image = SmartBadmintonTrainingSystem.Properties.Resources.red_circle;
             for (int i = 0; i < 8; i++)
             {
-                setImageOff(i + 1);
+                setImageOff(i);
             }
             SetSerialPort();
         }
@@ -421,7 +430,7 @@ namespace SmartBadmintonTrainingSystem
                 try
                 {
                     for (int i = 0; i < 8; i++) { 
-                        send_packet(i, color[0]);
+                        send_packet((byte)poleCoder[i], (byte)Color.OFF);
                         Thread.Sleep(SAFE_SLEEP_TIME);
                     }
                 }
@@ -431,15 +440,17 @@ namespace SmartBadmintonTrainingSystem
                 }
                 
                 SP.Close();
+#if(DEBUG)
                 AutoClosingMessageBox.Show("컨트롤러 연결 종료", "포트", 500);
                 inputListbox("컨트롤러 연결 종료");
+#endif
                 port_set = false;
                 button1.Text = "연결시도";
                 label2.Text = openX;
                 Picture_Status.Image = SmartBadmintonTrainingSystem.Properties.Resources.red_circle;
                 for (int i = 0; i < 8; i++)
                 {
-                    setImageOff(i + 1);
+                    setImageOff(i);
                 }
             }
             catch (System.Exception ex)
@@ -457,7 +468,7 @@ namespace SmartBadmintonTrainingSystem
             {
                 buffing += buff[i].ToString("X2") + " ";
             }
-            streamWriterIn.WriteLine("rawinput - " + buffing);
+            //streamWriterIn.WriteLine("rawinput - " + buffing);
             
             while (true) {
                 bool breaker = false;
@@ -469,14 +480,18 @@ namespace SmartBadmintonTrainingSystem
                     buff = new byte[Sizer];
                     oldByte.CopyTo(buff, 0);
                     temp.CopyTo(buff, oldByte.Length);
+#if(DEBUG)
                     streamWriterIn.WriteLine(" Fixed");
                     inputListbox("fixed");
+#endif
                     for (iTemp = 0; iTemp < Sizer; iTemp++)
                     {
                         strRecData += buff[iTemp].ToString("X2") + " ";
                     }
+#if(DEBUG)
                     streamWriterIn.WriteLine(strRecData + " = pasted");
                     inputListbox(strRecData);
+#endif
                     oldByte = null;
                 }
                 if (Sizer < 6)
@@ -491,9 +506,11 @@ namespace SmartBadmintonTrainingSystem
                     {
                         strRecData += buff[iTemp].ToString("X2") + " ";
                     }
+#if(DEBUG)
                     streamWriterIn.WriteLine(strRecData + loggerTime.Elapsed.ToString(@"mm\:ss\:FFFFFF")+" = right");
                     inputListbox(strRecData);
-                    if (!center_flag1)
+#endif
+                    if (!center_flag)
                     {
                         if (!buffer.Contains(strRecData))
                         {
@@ -519,9 +536,11 @@ namespace SmartBadmintonTrainingSystem
                     {
                         strRecData += buff[iTemp].ToString("X2") + " ";
                     }
+#if(DEBUG)
                     streamWriterIn.WriteLine(strRecData + loggerTime.Elapsed.ToString(@"mm\:ss\:FFFFFF")+" Overed");
                     inputListbox(strRecData+ "overed");
-                    if (!center_flag1)
+#endif
+                    if (!center_flag)
                     {
                         if (!buffer.Contains(strRecData))
                         {
@@ -564,22 +583,27 @@ namespace SmartBadmintonTrainingSystem
             }
             cnt_of_test = OrderList.Count;
         }
+        byte poleMapper(int number)
+        {
+            return (byte)poleCoder[numberExteneder[number-1]];
+        }
 
+        //input : 0~7 number 
         public void setImageRed(int number)
         {
-            pList.ElementAt(number - 1).Image = SmartBadmintonTrainingSystem.Properties.Resources.red_circle;
+            pList.ElementAt(numberExteneder[number]).Image = SmartBadmintonTrainingSystem.Properties.Resources.red_circle;
         }
         public void setImageGreen(int number)
         {
-            pList.ElementAt(number - 1).Image = SmartBadmintonTrainingSystem.Properties.Resources.green_circle;
+            pList.ElementAt(numberExteneder[number]).Image = SmartBadmintonTrainingSystem.Properties.Resources.green_circle;
         }
         public void setImageBlue(int number)
         {
-            pList.ElementAt(number - 1).Image = SmartBadmintonTrainingSystem.Properties.Resources.blue_circle;
+            pList.ElementAt(numberExteneder[number]).Image = SmartBadmintonTrainingSystem.Properties.Resources.blue_circle;
         }
         public void setImageOff(int number)
         {
-            pList.ElementAt(number - 1).Image = SmartBadmintonTrainingSystem.Properties.Resources.off_circle;
+            pList.ElementAt(numberExteneder[number]).Image = SmartBadmintonTrainingSystem.Properties.Resources.off_circle;
         }
         public void clearBuff()
         {
@@ -588,8 +612,6 @@ namespace SmartBadmintonTrainingSystem
         }
         public int isSwing(int number)
         {
-            //if(s_buffer.Count>0)
-                //inputListbox("current Buff " + s_buffer[0]);
             //case 1
             if (s_buffer.Contains("02 01 08 01 0A 03 ")|| s_buffer.Contains("02 01 08 03 0C 03 "))
             {
@@ -646,6 +668,9 @@ namespace SmartBadmintonTrainingSystem
                 if (number == swing_pole)
                     swing_flag = true;
             }
+#if (DEBUG)
+            //inputListbox("SWINGGG"+swing_pole + " "+number);
+#endif
             return swing_pole;
         }
         public void isCenter()
@@ -667,8 +692,7 @@ namespace SmartBadmintonTrainingSystem
             {
                 FbFlag = false;
             }
-            
-            if (lrFlag && FbFlag) center_flag1 = true;
+            if (lrFlag && FbFlag) center_flag = true;
         }
         public void setByteSendData()
         {
@@ -676,12 +700,12 @@ namespace SmartBadmintonTrainingSystem
             byteSendData[1] = start_check;
             byteSendData[5] = end;
         }     
-        public void send_packet(int number, int number2)
+        public void send_packet(int number, byte color)
         {
             try
             {
                 byteSendData[2] = index[number];
-                byteSendData[3] = color[number2];
+                byteSendData[3] = color;
                 tmp2 = (byte)(byteSendData[1] + byteSendData[2] + byteSendData[3]);
                 byteSendData[4] = tmp2;
                 SP.Write(byteSendData, 0, 6);
@@ -724,11 +748,12 @@ namespace SmartBadmintonTrainingSystem
 
         public void thread_test()
         {
-            if (streamWriterIn != null) {
-                streamWriterIn.Close();
-                streamWriterIn = null;   
-            }
-            streamWriterIn = new StreamWriter("in.txt");
+            //if (streamWriterIn != null) {
+            //    streamWriterIn.Close();
+            //    streamWriterIn = null;   
+            //}
+            int RealPole_index_24 = 0;
+            //streamWriterIn = new StreamWriter("in.txt");
             singletonDB.IsOpen();
             selectDatabase();
             insertDatabase2();
@@ -752,68 +777,71 @@ namespace SmartBadmintonTrainingSystem
             sound2.Play();
             for (int i = 0; i < 8; i++)
             {
-                setImageOff(i + 1);
+                setImageOff(i);
             }
             Time = 0.0f;
             Time2 = 0.0f;
-            for (current_test_index = 0; current_test_index < cnt_of_test;)
-            {
-                number = OrderList.ElementAt(current_test_index);
-                sw.Start();                sw2.Start();
-                clearBuff();
-                send_packet(new_number[number - 1], color[1]);
-                setImageRed(number);
-                streamWriterIn.WriteLine(number + " = number");
-                inputListbox(number + " = number");
-                swing_flag = false;
-                swing_pole = -1;
-                for (;;)
+            for (int n=0;n<targetTestAmount+1;n++) { 
+                for (current_test_index = 0; current_test_index < cnt_of_test;)
                 {
-                    if (swing_pole == number)
+                    number = OrderList.ElementAt(current_test_index);
+                    sw.Start();                sw2.Start();
+                    clearBuff();
+                    send_packet(poleMapper(number), (byte)Color.RED);
+                    setImageRed(number-1);
+#if(DEBUG)
+                    streamWriterIn.WriteLine(number + " = number");
+                    inputListbox(number + " = number");
+#endif
+                    swing_flag = false;
+                    swing_pole = -1;
+                    for (;;)
                     {
-                        inputListbox("swinged!" + number);
-                        break; 
+                        //input  == 1~8
+                        if (isSwing((numberExteneder[number-1]) + 1) == numberExteneder[number-1] + 1)
+                        {
+                            current_test_index++;break;
+                        }
                     }
-                    else if (isSwing(number) == number)
+                    sw.Stop();
+                    setImageOff(number-1);
+                    center.Image = SmartBadmintonTrainingSystem.Properties.Resources.red_circle;
+                    send_packet(poleMapper(number), (byte)Color.OFF);
+
+                    clearBuff();
+                    lrFlag = false; FbFlag = false;
+                    if (number == 2 || number == 7) FbFlag = true;
+                    else if (number == 4 || number == 5) lrFlag = true;
+                    center_flag = false;
+                    while(true)
                     {
-                        current_test_index++; break;
+                        if (center_flag)
+                        {                 
+                            break;
+                        }
+                        else isCenter();
                     }
+                    sw2.Stop();
+                    center.Image = SmartBadmintonTrainingSystem.Properties.Resources.green_circle;
+
+                    T1[(number - 1) + 12 * n] = float.Parse(sw.ElapsedMilliseconds.ToString()) * 0.001f;
+                    T2[(number - 1) + 12 * n] = float.Parse(sw2.ElapsedMilliseconds.ToString()) * 0.001f;
+                    T2[(number - 1) + 12 * n] = T2[(number - 1) + 12 * n] - T1[(number - 1) + 12 * n];
+
+                    sw.Reset();
+                    sw2.Reset();
+                    RealPole_index_24++;
                 }
-                sw.Stop();
-                setImageOff(number);
-                center.Image = SmartBadmintonTrainingSystem.Properties.Resources.red_circle;
-                send_packet(new_number[number - 1], 0);
-
-                clearBuff();
-                lrFlag = false; FbFlag = false;
-                if (number == 2 || number == 7) FbFlag = true;
-                else if (number == 4 || number == 5) lrFlag = true;
-                center_flag1 = false;
-                for (;;)
-                {
-                    if (center_flag1)
-                    {                 
-                        break;
-                    }
-                    else isCenter();
-                }
-                sw2.Stop();
-                center.Image = SmartBadmintonTrainingSystem.Properties.Resources.green_circle;
-
-                T1[number - 1] = float.Parse(sw.ElapsedMilliseconds.ToString()) * 0.001f;
-                T2[number - 1] = float.Parse(sw2.ElapsedMilliseconds.ToString()) * 0.001f;
-                T2[number - 1] = T2[number - 1] - T1[number - 1];
-
-                sw.Reset();
-                sw2.Reset();
+                orderString = poleArrayToString(reshuffle(array));
             }
+
             AutoClosingMessageBox.Show("테스트 종료", "종료 알림", 250);
             AutoClosingMessageBox.Show("데이터 전송", "상태 알림", 250);
             threadFlag = false;
-            for (int i = 0; i < 8; i++)
+            for (int i = 0; i < 12*(targetTestAmount+1); i++)
             {
-                insertDatabase(u_instance.uID, u_instance.uPW, T1[i], i + 1, u_instance.LoginDate, 0, TestCount);
-                insertDatabase(u_instance.uID, u_instance.uPW, T2[i], i + 1, u_instance.LoginDate, 1, TestCount);
+                insertDatabase(u_instance.uID, u_instance.uPW, T1[i], i + 1, u_instance.LoginDate, 0, TestCount,RealPole_index_24<11?0:1);
+                insertDatabase(u_instance.uID, u_instance.uPW, T2[i], i + 1, u_instance.LoginDate, 1, TestCount, RealPole_index_24 < 11 ? 0 : 1);
             }
         }
 
@@ -829,10 +857,10 @@ namespace SmartBadmintonTrainingSystem
             }
             else
             {
-                setNewNumber();
+                //setNewNumber();
                 for(int i = 0; i < 8; i++)
                 {
-                    send_packet(i, color[0]);
+                    send_packet((byte)poleCoder[i], (byte)Color.OFF);
                     Thread.Sleep(SAFE_SLEEP_TIME);
                 }
                 setByteSendData();
@@ -924,17 +952,33 @@ namespace SmartBadmintonTrainingSystem
 
         }
 
-        private void radioButton1_CheckedChanged_1(object sender, EventArgs e)
+        private void test_12_CheckedChanged(object sender, EventArgs e)
+        {
+            targetTestAmount = 0;
+        }
+
+        private void test_24_CheckedChanged(object sender, EventArgs e)
+        {
+            targetTestAmount = 1;
+        }
+
+        private void random_order_CheckedChanged(object sender, EventArgs e)
         {
             status = "random";
         }
-        private void radioButton2_CheckedChanged_2(object sender, EventArgs e)
+
+        private void choose_order_CheckedChanged(object sender, EventArgs e)
         {
             status = "select";
         }
+
+        
+
         private void button4_Click(object sender, EventArgs e)
         {
+#if(DEBUG)
             inputListbox("컨트롤러 새로고침");
+#endif
             setRefreshPort();
             port_set = false;
         }

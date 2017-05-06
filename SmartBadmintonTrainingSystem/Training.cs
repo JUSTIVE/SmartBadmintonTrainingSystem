@@ -548,7 +548,7 @@ namespace SmartBadmintonTrainingSystem
         //    {
         //        strRecData += buff[iTemp].ToString("X2") + " ";
         //    }
-        //    if (!center_flag1)
+        //    if (!center_flag)
         //    {
         //        if (!buffer.Contains(strRecData))
         //        {
