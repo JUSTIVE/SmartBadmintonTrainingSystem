@@ -1,4 +1,4 @@
-﻿#define DEBUG
+﻿//#define DEBUG
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -227,7 +227,7 @@ namespace SmartBadmintonTrainingSystem
         public void initInsertQuery()
         {
             insertCommand.Connection = instatnce.conn;
-            insertCommand.CommandText = "INSERT INTO information(id, pw, date, time, number,type,count,innning) VALUES(@id,@pw,@date,@time,@number,@type,@count,@inning)";
+            insertCommand.CommandText = "INSERT INTO information(id, pw, date, time, number,type,count,inning) VALUES(@id,@pw,@date,@time,@number,@type,@count,@inning)";
             insertCommand.Parameters.Add("@id", MySqlDbType.VarChar, 20);
             insertCommand.Parameters.Add("@pw", MySqlDbType.VarChar, 20);
             insertCommand.Parameters.Add("@date", MySqlDbType.VarChar, 25);
@@ -250,8 +250,10 @@ namespace SmartBadmintonTrainingSystem
             selectCommand.Parameters.Add("@date", MySqlDbType.VarChar, 20);
         }
         public void insertDatabase(string ID, string PW, float Time, int number, string DATE, int type, int count,int inning)
-        {
+        {           
             try {
+                singletonDB.IsOpen();
+                insertCommand.Connection = instatnce.conn;
                 insertCommand.Parameters[0].Value = ID;
                 insertCommand.Parameters[1].Value = PW;
                 insertCommand.Parameters[2].Value = DATE;
@@ -264,7 +266,7 @@ namespace SmartBadmintonTrainingSystem
             }
             catch (Exception e)
             {
-
+                AutoClosingMessageBox.Show(e.ToString(),"ERROR!!",5000);
             }
         }
         public void set_FormTestMode(TestMode t)
@@ -526,6 +528,7 @@ namespace SmartBadmintonTrainingSystem
                             s_buffer.Clear();
                             s_buffer.Add(strRecData);
                             isSwing(number);
+                            isCenter();
                         }
                     }
                     breaker = true;
@@ -792,8 +795,9 @@ namespace SmartBadmintonTrainingSystem
                     number = OrderList.ElementAt(current_test_index);
                     sw.Start();                sw2.Start();
                     clearBuff();
+                    setImageRed(number - 1);
                     send_packet(poleMapper(number), (byte)Color.RED);
-                    setImageRed(number-1);
+                    
 #if(DEBUG)
                     streamWriterIn.WriteLine(number + " = number");
                     inputListbox(number + " = number");
@@ -846,8 +850,8 @@ namespace SmartBadmintonTrainingSystem
             threadFlag = false;
             for (int i = 0; i < 12*(targetTestAmount+1); i++)
             {
-                insertDatabase(u_instance.uID, u_instance.uPW, T1[i], i + 1, u_instance.LoginDate, 0, TestCount,RealPole_index_24<11?0:1);
-                insertDatabase(u_instance.uID, u_instance.uPW, T2[i], i + 1, u_instance.LoginDate, 1, TestCount, RealPole_index_24 < 11 ? 0 : 1);
+                insertDatabase(u_instance.uID, u_instance.uPW, T1[i], i + 1, u_instance.LoginDate, 0, TestCount,i<12?0:1);
+                insertDatabase(u_instance.uID, u_instance.uPW, T2[i], i + 1, u_instance.LoginDate, 1, TestCount, i< 12 ? 0 : 1);
             }
         }
 
