@@ -138,6 +138,7 @@ namespace SmartBadmintonTrainingSystem
             this.DoubleBuffered = true;
             test_24.Checked = true;
             targetTestAmount = 1;
+            goalSwingAmount.Text = 24 + "";
         }
         void setupStream()
         {
@@ -273,11 +274,12 @@ namespace SmartBadmintonTrainingSystem
         private int[] reshuffle(int[] texts)
         {
             int[] re_texts= texts;
-            for (int t = 0; t < texts.Length; t++)
+            Random rd = new Random();
+            for (int t = 0; t < 12; t++)
             {
-                Random rd = new Random();
+
+                int r = rd.Next(0, 11);
                 int tmp = re_texts[t];
-                int r = rd.Next(0,11);
                 re_texts[t] = re_texts[r];
                 re_texts[r] = tmp;
             }
@@ -781,9 +783,12 @@ namespace SmartBadmintonTrainingSystem
             }
             Time = 0.0f;
             Time2 = 0.0f;
-            for (int n=0;n<targetTestAmount+1;n++) { 
+            for (int n=0;n<targetTestAmount+1;n++) {
+                orderString = poleArrayToString(reshuffle(array));
+                inputListbox(orderString);
                 for (current_test_index = 0; current_test_index < cnt_of_test;)
                 {
+                    
                     number = OrderList.ElementAt(current_test_index);
                     sw.Start();                sw2.Start();
                     clearBuff();
@@ -809,6 +814,7 @@ namespace SmartBadmintonTrainingSystem
                     send_packet(poleMapper(number), (byte)Color.OFF);
 
                     clearBuff();
+                    currentSwingAmount.Text = (current_test_index + n * 12) + "";
                     lrFlag = false; FbFlag = false;
                     if (number == 2 || number == 7) FbFlag = true;
                     else if (number == 4 || number == 5) lrFlag = true;
@@ -832,7 +838,7 @@ namespace SmartBadmintonTrainingSystem
                     sw2.Reset();
                     RealPole_index_24++;
                 }
-                orderString = poleArrayToString(reshuffle(array));
+                
             }
 
             AutoClosingMessageBox.Show("테스트 종료", "종료 알림", 250);
@@ -955,11 +961,13 @@ namespace SmartBadmintonTrainingSystem
         private void test_12_CheckedChanged(object sender, EventArgs e)
         {
             targetTestAmount = 0;
+            goalSwingAmount.Text = 12 + "";
         }
 
         private void test_24_CheckedChanged(object sender, EventArgs e)
         {
             targetTestAmount = 1;
+            goalSwingAmount.Text = 24+ "";
         }
 
         private void random_order_CheckedChanged(object sender, EventArgs e)

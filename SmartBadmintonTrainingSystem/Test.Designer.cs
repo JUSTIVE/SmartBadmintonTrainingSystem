@@ -63,6 +63,8 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.test_12 = new System.Windows.Forms.RadioButton();
             this.test_24 = new System.Windows.Forms.RadioButton();
+            this.currentSwingAmount = new System.Windows.Forms.Label();
+            this.goalSwingAmount = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.center)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.p8)).BeginInit();
@@ -243,6 +245,8 @@
             this.panel1.BackgroundImage = global::SmartBadmintonTrainingSystem.Properties.Resources.제목_없음_1_사본;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.goalSwingAmount);
+            this.panel1.Controls.Add(this.currentSwingAmount);
             this.panel1.Controls.Add(this.label10);
             this.panel1.Controls.Add(this.center);
             this.panel1.Controls.Add(this.label7);
@@ -537,6 +541,30 @@
             this.test_24.UseVisualStyleBackColor = true;
             this.test_24.CheckedChanged += new System.EventHandler(this.test_24_CheckedChanged);
             // 
+            // currentSwingAmount
+            // 
+            this.currentSwingAmount.AutoSize = true;
+            this.currentSwingAmount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.currentSwingAmount.Font = new System.Drawing.Font("Segoe UI", 45F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.currentSwingAmount.ForeColor = System.Drawing.Color.White;
+            this.currentSwingAmount.Location = new System.Drawing.Point(560, 833);
+            this.currentSwingAmount.Name = "currentSwingAmount";
+            this.currentSwingAmount.Size = new System.Drawing.Size(148, 120);
+            this.currentSwingAmount.TabIndex = 73;
+            this.currentSwingAmount.Text = "00";
+            // 
+            // goalSwingAmount
+            // 
+            this.goalSwingAmount.AutoSize = true;
+            this.goalSwingAmount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.goalSwingAmount.Font = new System.Drawing.Font("Segoe UI", 45F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.goalSwingAmount.ForeColor = System.Drawing.Color.White;
+            this.goalSwingAmount.Location = new System.Drawing.Point(742, 833);
+            this.goalSwingAmount.Name = "goalSwingAmount";
+            this.goalSwingAmount.Size = new System.Drawing.Size(148, 120);
+            this.goalSwingAmount.TabIndex = 74;
+            this.goalSwingAmount.Text = "00";
+            // 
             // Test
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
@@ -620,5 +648,7 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.RadioButton test_12;
         private System.Windows.Forms.RadioButton test_24;
+        private System.Windows.Forms.Label goalSwingAmount;
+        private System.Windows.Forms.Label currentSwingAmount;
     }
 }
