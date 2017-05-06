@@ -11,7 +11,14 @@ namespace SmartBadmintonTrainingSystem
         public float time;
         public int number;
         public int type;
-
+        public int inning;
+        public userData(float time, int number,int type, int inning)
+        {
+            this.time = time;
+            this.number = number;
+            this.type = type;
+            this.inning = inning;
+        }
         public void setTime(float t)
         {
             this.time = t;
@@ -23,6 +30,10 @@ namespace SmartBadmintonTrainingSystem
         public void setType(int t)
         {
             this.type = t;
+        }
+        public void setInning(int i)
+        {
+            this.inning = i;
         }
     }
 }

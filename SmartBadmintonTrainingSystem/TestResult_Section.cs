@@ -67,11 +67,12 @@ namespace SmartBadmintonTrainingSystem
         public void init_SelectQuery()
         {
             selectCommand.Connection = d_instance.conn;
-            selectCommand.CommandText = "SELECT * from information where id=@id and pw=@pw and date=@date and count=@count";
+            selectCommand.CommandText = "SELECT * from information where id=@id and pw=@pw and date=@date and count=@count and inning=@inning";
             selectCommand.Parameters.Add("@id", MySqlDbType.VarChar, 20);
             selectCommand.Parameters.Add("@pw", MySqlDbType.VarChar, 20);
             selectCommand.Parameters.Add("@date", MySqlDbType.VarChar, 25);
             selectCommand.Parameters.Add("@count", MySqlDbType.Int16);
+            selectCommand.Parameters.Add("@inning", MySqlDbType.Int16);
 
             selectCommand3.Connection = d_instance.conn;
             selectCommand3.CommandText = "SELECT COUNT(count) from testcount where id=@id and pw=@pw and date=@date";
@@ -85,6 +86,7 @@ namespace SmartBadmintonTrainingSystem
             selectCommand.Parameters[1].Value = u_instance.uPW;
             selectCommand.Parameters[2].Value = combo_resultDatePick.SelectedItem;
             selectCommand.Parameters[3].Value = int.Parse(combo_TimePick.SelectedItem.ToString());
+            selectCommand.Parameters[4].Value = 0;
             MySqlDataReader rdr = selectCommand.ExecuteReader();
 
             uDataList.Clear();
@@ -92,11 +94,17 @@ namespace SmartBadmintonTrainingSystem
             while (rdr.Read())
             {
                 //MessageBox.Show("입력");
-                uData = new userData();
-                uData.setTime(float.Parse(rdr["time"].ToString()));
-                uData.setNumber(int.Parse(rdr["number"].ToString()));
-                uData.setType(int.Parse(rdr["type"].ToString()));
-                uDataList.Add(uData);
+                uDataList.Add(new userData(
+                    (float)rdr["time"],
+                    (int)rdr["number"],
+                    (int)rdr["type"],
+                    (int)rdr["inning"]
+                    ));
+                //uData = new userData();
+                //uData.setTime(float.Parse(rdr["time"].ToString()));
+                //uData.setNumber(int.Parse(rdr["number"].ToString()));
+                //uData.setType(int.Parse(rdr["type"].ToString()));
+                //uDataList.Add(uData);
             }
             //MessageBox.Show(uDataList.Count + "");
             rdr.Close();
