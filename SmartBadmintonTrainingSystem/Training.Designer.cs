@@ -312,7 +312,7 @@
             this.pictureBox1.Image = global::SmartBadmintonTrainingSystem.Properties.Resources.refresh;
             this.pictureBox1.Location = new System.Drawing.Point(264, 76);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Padding = new System.Windows.Forms.Padding(16, 16, 16, 16);
+            this.pictureBox1.Padding = new System.Windows.Forms.Padding(16);
             this.pictureBox1.Size = new System.Drawing.Size(64, 64);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 75;
@@ -369,7 +369,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.ClientSize = new System.Drawing.Size(1690, 970);
+            this.ClientSize = new System.Drawing.Size(1920, 970);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.CustomProgramPanel);
             this.Controls.Add(this.panel1);

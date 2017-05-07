@@ -57,6 +57,9 @@
             this.p3 = new System.Windows.Forms.PictureBox();
             this.p2 = new System.Windows.Forms.PictureBox();
             this.p1 = new System.Windows.Forms.PictureBox();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -72,6 +75,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.p3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.p2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.p1)).BeginInit();
+            this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // label2
@@ -81,7 +86,7 @@
             this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 14F);
             this.label2.ForeColor = System.Drawing.Color.Red;
-            this.label2.Location = new System.Drawing.Point(9, 150);
+            this.label2.Location = new System.Drawing.Point(174, 131);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(146, 25);
             this.label2.TabIndex = 51;
@@ -89,9 +94,9 @@
             // 
             // comboBox1
             // 
-            this.comboBox1.BackColor = System.Drawing.Color.White;
+            this.comboBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(66)))));
             this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboBox1.Font = new System.Drawing.Font("굴림", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.comboBox1.Font = new System.Drawing.Font("Gulim", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.ItemHeight = 32;
             this.comboBox1.Location = new System.Drawing.Point(10, 11);
@@ -109,10 +114,10 @@
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Segoe UI", 20F);
             this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(10, 594);
+            this.button2.Location = new System.Drawing.Point(14, 896);
             this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(235, 120);
+            this.button2.Size = new System.Drawing.Size(307, 120);
             this.button2.TabIndex = 58;
             this.button2.Text = "테스트 시작";
             this.button2.UseVisualStyleBackColor = false;
@@ -143,10 +148,10 @@
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Segoe UI", 20F);
             this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(10, 458);
+            this.button3.Location = new System.Drawing.Point(14, 813);
             this.button3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(234, 120);
+            this.button3.Size = new System.Drawing.Size(307, 78);
             this.button3.TabIndex = 59;
             this.button3.Text = "테스트 중지";
             this.button3.UseVisualStyleBackColor = false;
@@ -160,10 +165,10 @@
             this.btn_test.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_test.Font = new System.Drawing.Font("Segoe UI", 20F);
             this.btn_test.ForeColor = System.Drawing.Color.White;
-            this.btn_test.Location = new System.Drawing.Point(10, 330);
+            this.btn_test.Location = new System.Drawing.Point(14, 689);
             this.btn_test.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_test.Name = "btn_test";
-            this.btn_test.Size = new System.Drawing.Size(89, 120);
+            this.btn_test.Size = new System.Drawing.Size(164, 120);
             this.btn_test.TabIndex = 70;
             this.btn_test.Text = "순서 설정";
             this.btn_test.UseVisualStyleBackColor = false;
@@ -206,17 +211,17 @@
             this.listBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.listBox1.FormattingEnabled = true;
             this.listBox1.ItemHeight = 15;
-            this.listBox1.Location = new System.Drawing.Point(1335, 12);
+            this.listBox1.Location = new System.Drawing.Point(1336, 49);
             this.listBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(557, 934);
+            this.listBox1.Size = new System.Drawing.Size(557, 994);
             this.listBox1.TabIndex = 74;
             // 
             // panel2
             // 
             this.panel2.Controls.Add(this.random_order);
             this.panel2.Controls.Add(this.choose_order);
-            this.panel2.Location = new System.Drawing.Point(104, 330);
+            this.panel2.Location = new System.Drawing.Point(180, 689);
             this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(140, 120);
@@ -226,10 +231,10 @@
             // 
             this.panel4.Controls.Add(this.test_12);
             this.panel4.Controls.Add(this.test_24);
-            this.panel4.Location = new System.Drawing.Point(10, 197);
+            this.panel4.Location = new System.Drawing.Point(14, 565);
             this.panel4.Margin = new System.Windows.Forms.Padding(2);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(234, 120);
+            this.panel4.Size = new System.Drawing.Size(306, 120);
             this.panel4.TabIndex = 76;
             // 
             // test_12
@@ -279,9 +284,9 @@
             this.panel5.Controls.Add(this.button1);
             this.panel5.Controls.Add(this.Picture_Status);
             this.panel5.Controls.Add(this.label2);
-            this.panel5.Location = new System.Drawing.Point(-1, -2);
+            this.panel5.Location = new System.Drawing.Point(0, 46);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(339, 806);
+            this.panel5.Size = new System.Drawing.Size(339, 1034);
             this.panel5.TabIndex = 77;
             // 
             // pictureBox1
@@ -328,7 +333,7 @@
             this.panel1.Controls.Add(this.p3);
             this.panel1.Controls.Add(this.p2);
             this.panel1.Controls.Add(this.p1);
-            this.panel1.Location = new System.Drawing.Point(335, 12);
+            this.panel1.Location = new System.Drawing.Point(339, 46);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(994, 994);
@@ -477,13 +482,47 @@
             this.p1.TabIndex = 54;
             this.p1.TabStop = false;
             // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.Tomato;
+            this.panel3.Controls.Add(this.pictureBox2);
+            this.panel3.Controls.Add(this.label1);
+            this.panel3.Location = new System.Drawing.Point(0, -2);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(1920, 48);
+            this.panel3.TabIndex = 78;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(12, 17);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(31, 17);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Test";
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox2.Image = global::SmartBadmintonTrainingSystem.Properties.Resources.close_button;
+            this.pictureBox2.Location = new System.Drawing.Point(1876, 10);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(32, 32);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 1;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
+            // 
             // Test
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1340, 777);
+            this.ClientSize = new System.Drawing.Size(1920, 1080);
+            this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.panel1);
@@ -512,6 +551,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.p3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.p2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.p1)).EndInit();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -547,5 +589,8 @@
         private System.Windows.Forms.Label currentSwingAmount;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

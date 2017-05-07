@@ -364,7 +364,7 @@ namespace SmartBadmintonTrainingSystem
             {
                 buffer.Clear();
                 port_set = true;
-                Picture_Status.Image = SmartBadmintonTrainingSystem.Properties.Resources.green_circle;
+                Picture_Status.Image = SmartBadmintonTrainingSystem.Properties.Resources.signal_green;
                 SP.DataReceived += new SerialDataReceivedEventHandler(EventDataReceivedV3);
 #if (DEBUG)
                 AutoClosingMessageBox.Show("컨트롤러 연결 성공","포트",500);
@@ -419,7 +419,7 @@ namespace SmartBadmintonTrainingSystem
             }
             button1.Text = "연결시도";
             label2.Text = openX;
-            Picture_Status.Image = SmartBadmintonTrainingSystem.Properties.Resources.red_circle;
+            Picture_Status.Image = SmartBadmintonTrainingSystem.Properties.Resources.signal_red;
             for (int i = 0; i < 8; i++)
             {
                 setImageOff(i);
@@ -451,7 +451,7 @@ namespace SmartBadmintonTrainingSystem
                 port_set = false;
                 button1.Text = "연결시도";
                 label2.Text = openX;
-                Picture_Status.Image = SmartBadmintonTrainingSystem.Properties.Resources.red_circle;
+                Picture_Status.Image = SmartBadmintonTrainingSystem.Properties.Resources.signal_red;
                 for (int i = 0; i < 8; i++)
                 {
                     setImageOff(i);
@@ -990,7 +990,10 @@ namespace SmartBadmintonTrainingSystem
             status = "select";
         }
 
-        
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
 
         private void button4_Click(object sender, EventArgs e)
         {
