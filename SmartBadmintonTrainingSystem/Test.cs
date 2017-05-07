@@ -599,19 +599,19 @@ namespace SmartBadmintonTrainingSystem
         //input : 0~7 number 
         public void setImageRed(int number)
         {
-            pList.ElementAt(numberExteneder[number]).Image = SmartBadmintonTrainingSystem.Properties.Resources.red_circle;
+            pList.ElementAt(numberExteneder[number]).Image = SmartBadmintonTrainingSystem.Properties.Resources.red_hex;
         }
         public void setImageGreen(int number)
         {
-            pList.ElementAt(numberExteneder[number]).Image = SmartBadmintonTrainingSystem.Properties.Resources.green_circle;
+            pList.ElementAt(numberExteneder[number]).Image = SmartBadmintonTrainingSystem.Properties.Resources.green_hex;
         }
         public void setImageBlue(int number)
         {
-            pList.ElementAt(numberExteneder[number]).Image = SmartBadmintonTrainingSystem.Properties.Resources.blue_circle;
+            pList.ElementAt(numberExteneder[number]).Image = SmartBadmintonTrainingSystem.Properties.Resources.blue_hex;
         }
         public void setImageOff(int number)
         {
-            pList.ElementAt(numberExteneder[number]).Image = SmartBadmintonTrainingSystem.Properties.Resources.off_circle;
+            pList.ElementAt(numberExteneder[number]).Image = SmartBadmintonTrainingSystem.Properties.Resources.off_hex;
         }
         public void clearBuff()
         {

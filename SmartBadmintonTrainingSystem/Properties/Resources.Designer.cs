@@ -159,6 +159,16 @@ namespace SmartBadmintonTrainingSystem.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
         /// </summary>
+        internal static System.Drawing.Bitmap blue_hex {
+            get {
+                object obj = ResourceManager.GetObject("blue_hex", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
         internal static System.Drawing.Bitmap buttonImage {
             get {
                 object obj = ResourceManager.GetObject("buttonImage", resourceCulture);
@@ -212,6 +222,16 @@ namespace SmartBadmintonTrainingSystem.Properties {
         internal static System.Drawing.Bitmap green_circle {
             get {
                 object obj = ResourceManager.GetObject("green_circle", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap green_hex {
+            get {
+                object obj = ResourceManager.GetObject("green_hex", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -282,6 +302,16 @@ namespace SmartBadmintonTrainingSystem.Properties {
         internal static System.Drawing.Bitmap off_circle {
             get {
                 object obj = ResourceManager.GetObject("off_circle", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap off_hex {
+            get {
+                object obj = ResourceManager.GetObject("off_hex", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
