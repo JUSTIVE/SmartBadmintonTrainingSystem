@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Test));
             this.label2 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.button2 = new System.Windows.Forms.Button();
@@ -36,21 +37,18 @@
             this.btn_test = new System.Windows.Forms.Button();
             this.choose_order = new System.Windows.Forms.RadioButton();
             this.random_order = new System.Windows.Forms.RadioButton();
-            this.button4 = new System.Windows.Forms.Button();
             this.listBox1 = new System.Windows.Forms.ListBox();
-            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.test_12 = new System.Windows.Forms.RadioButton();
+            this.test_24 = new System.Windows.Forms.RadioButton();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.Picture_Status = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.goalSwingAmount = new System.Windows.Forms.Label();
             this.currentSwingAmount = new System.Windows.Forms.Label();
             this.center = new System.Windows.Forms.PictureBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.p8 = new System.Windows.Forms.PictureBox();
             this.p7 = new System.Windows.Forms.PictureBox();
             this.p6 = new System.Windows.Forms.PictureBox();
@@ -59,11 +57,11 @@
             this.p3 = new System.Windows.Forms.PictureBox();
             this.p2 = new System.Windows.Forms.PictureBox();
             this.p1 = new System.Windows.Forms.PictureBox();
-            this.Picture_Status = new System.Windows.Forms.PictureBox();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.test_12 = new System.Windows.Forms.RadioButton();
-            this.test_24 = new System.Windows.Forms.RadioButton();
+            this.panel2.SuspendLayout();
+            this.panel4.SuspendLayout();
+            this.panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Picture_Status)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.center)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.p8)).BeginInit();
@@ -74,19 +72,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.p3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.p2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.p1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Picture_Status)).BeginInit();
-            this.panel2.SuspendLayout();
-            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.White;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 14F);
             this.label2.ForeColor = System.Drawing.Color.Red;
-            this.label2.Location = new System.Drawing.Point(90, 318);
+            this.label2.Location = new System.Drawing.Point(9, 150);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(146, 25);
             this.label2.TabIndex = 51;
@@ -99,7 +94,7 @@
             this.comboBox1.Font = new System.Drawing.Font("굴림", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.ItemHeight = 32;
-            this.comboBox1.Location = new System.Drawing.Point(8, 34);
+            this.comboBox1.Location = new System.Drawing.Point(10, 11);
             this.comboBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(320, 40);
@@ -109,11 +104,12 @@
             // button2
             // 
             this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(87)))), ((int)(((byte)(34)))));
+            this.button2.FlatAppearance.BorderSize = 0;
             this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(171)))), ((int)(((byte)(145)))));
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Segoe UI", 20F);
             this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(94, 762);
+            this.button2.Location = new System.Drawing.Point(10, 594);
             this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(235, 120);
@@ -124,15 +120,16 @@
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.Color.White;
+            this.button1.BackColor = System.Drawing.Color.Transparent;
+            this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(171)))), ((int)(((byte)(145)))));
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Segoe UI", 24F);
-            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(87)))), ((int)(((byte)(34)))));
-            this.button1.Location = new System.Drawing.Point(94, 86);
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(76, 68);
             this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(234, 80);
+            this.button1.Size = new System.Drawing.Size(180, 60);
             this.button1.TabIndex = 52;
             this.button1.Text = "연결시도";
             this.button1.UseVisualStyleBackColor = false;
@@ -140,12 +137,13 @@
             // 
             // button3
             // 
-            this.button3.BackColor = System.Drawing.Color.White;
+            this.button3.BackColor = System.Drawing.Color.Transparent;
+            this.button3.FlatAppearance.BorderSize = 0;
             this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(171)))), ((int)(((byte)(145)))));
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Segoe UI", 20F);
-            this.button3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(87)))), ((int)(((byte)(34)))));
-            this.button3.Location = new System.Drawing.Point(94, 626);
+            this.button3.ForeColor = System.Drawing.Color.White;
+            this.button3.Location = new System.Drawing.Point(10, 458);
             this.button3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(234, 120);
@@ -156,12 +154,13 @@
             // 
             // btn_test
             // 
-            this.btn_test.BackColor = System.Drawing.Color.White;
+            this.btn_test.BackColor = System.Drawing.Color.Transparent;
+            this.btn_test.FlatAppearance.BorderSize = 0;
             this.btn_test.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(171)))), ((int)(((byte)(145)))));
             this.btn_test.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_test.Font = new System.Drawing.Font("Segoe UI", 20F);
-            this.btn_test.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(87)))), ((int)(((byte)(34)))));
-            this.btn_test.Location = new System.Drawing.Point(94, 498);
+            this.btn_test.ForeColor = System.Drawing.Color.White;
+            this.btn_test.Location = new System.Drawing.Point(10, 330);
             this.btn_test.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_test.Name = "btn_test";
             this.btn_test.Size = new System.Drawing.Size(89, 120);
@@ -175,6 +174,7 @@
             this.choose_order.AutoSize = true;
             this.choose_order.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.choose_order.Font = new System.Drawing.Font("Segoe UI", 14F);
+            this.choose_order.ForeColor = System.Drawing.Color.White;
             this.choose_order.Location = new System.Drawing.Point(4, 72);
             this.choose_order.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.choose_order.Name = "choose_order";
@@ -190,6 +190,7 @@
             this.random_order.AutoSize = true;
             this.random_order.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.random_order.Font = new System.Drawing.Font("Segoe UI", 14F);
+            this.random_order.ForeColor = System.Drawing.Color.White;
             this.random_order.Location = new System.Drawing.Point(4, 26);
             this.random_order.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.random_order.Name = "random_order";
@@ -199,22 +200,6 @@
             this.random_order.Text = "랜덤 순서";
             this.random_order.UseVisualStyleBackColor = true;
             this.random_order.CheckedChanged += new System.EventHandler(this.random_order_CheckedChanged);
-            // 
-            // button4
-            // 
-            this.button4.BackColor = System.Drawing.Color.White;
-            this.button4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(171)))), ((int)(((byte)(145)))));
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Segoe UI", 24F);
-            this.button4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(87)))), ((int)(((byte)(34)))));
-            this.button4.Location = new System.Drawing.Point(94, 174);
-            this.button4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(234, 120);
-            this.button4.TabIndex = 73;
-            this.button4.Text = "새로고침";
-            this.button4.UseVisualStyleBackColor = false;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // listBox1
             // 
@@ -227,14 +212,103 @@
             this.listBox1.Size = new System.Drawing.Size(557, 934);
             this.listBox1.TabIndex = 74;
             // 
-            // panel3
+            // panel2
             // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(87)))), ((int)(((byte)(34)))));
-            this.panel3.Location = new System.Drawing.Point(8, 72);
-            this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(320, 2);
-            this.panel3.TabIndex = 63;
+            this.panel2.Controls.Add(this.random_order);
+            this.panel2.Controls.Add(this.choose_order);
+            this.panel2.Location = new System.Drawing.Point(104, 330);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(140, 120);
+            this.panel2.TabIndex = 75;
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.test_12);
+            this.panel4.Controls.Add(this.test_24);
+            this.panel4.Location = new System.Drawing.Point(10, 197);
+            this.panel4.Margin = new System.Windows.Forms.Padding(2);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(234, 120);
+            this.panel4.TabIndex = 76;
+            // 
+            // test_12
+            // 
+            this.test_12.AutoSize = true;
+            this.test_12.BackColor = System.Drawing.Color.Transparent;
+            this.test_12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.test_12.Font = new System.Drawing.Font("Segoe UI", 14F);
+            this.test_12.ForeColor = System.Drawing.Color.White;
+            this.test_12.Location = new System.Drawing.Point(4, 26);
+            this.test_12.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.test_12.Name = "test_12";
+            this.test_12.Size = new System.Drawing.Size(130, 29);
+            this.test_12.TabIndex = 71;
+            this.test_12.TabStop = true;
+            this.test_12.Text = "12회 테스트";
+            this.test_12.UseVisualStyleBackColor = false;
+            this.test_12.CheckedChanged += new System.EventHandler(this.test_12_CheckedChanged);
+            // 
+            // test_24
+            // 
+            this.test_24.AutoSize = true;
+            this.test_24.BackColor = System.Drawing.Color.Transparent;
+            this.test_24.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.test_24.Font = new System.Drawing.Font("Segoe UI", 14F);
+            this.test_24.ForeColor = System.Drawing.Color.White;
+            this.test_24.Location = new System.Drawing.Point(4, 72);
+            this.test_24.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.test_24.Name = "test_24";
+            this.test_24.Size = new System.Drawing.Size(130, 29);
+            this.test_24.TabIndex = 72;
+            this.test_24.TabStop = true;
+            this.test_24.Text = "24회 테스트";
+            this.test_24.UseVisualStyleBackColor = false;
+            this.test_24.CheckedChanged += new System.EventHandler(this.test_24_CheckedChanged);
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(66)))));
+            this.panel5.Controls.Add(this.panel2);
+            this.panel5.Controls.Add(this.panel4);
+            this.panel5.Controls.Add(this.btn_test);
+            this.panel5.Controls.Add(this.pictureBox1);
+            this.panel5.Controls.Add(this.button3);
+            this.panel5.Controls.Add(this.comboBox1);
+            this.panel5.Controls.Add(this.button2);
+            this.panel5.Controls.Add(this.button1);
+            this.panel5.Controls.Add(this.Picture_Status);
+            this.panel5.Controls.Add(this.label2);
+            this.panel5.Location = new System.Drawing.Point(-1, -2);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(339, 806);
+            this.panel5.TabIndex = 77;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.Image = global::SmartBadmintonTrainingSystem.Properties.Resources.refresh;
+            this.pictureBox1.Location = new System.Drawing.Point(256, 64);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Padding = new System.Windows.Forms.Padding(16);
+            this.pictureBox1.Size = new System.Drawing.Size(64, 64);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 74;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // Picture_Status
+            // 
+            this.Picture_Status.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Picture_Status.Image = global::SmartBadmintonTrainingSystem.Properties.Resources.signal_red;
+            this.Picture_Status.Location = new System.Drawing.Point(0, 68);
+            this.Picture_Status.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Picture_Status.Name = "Picture_Status";
+            this.Picture_Status.Padding = new System.Windows.Forms.Padding(16, 14, 16, 14);
+            this.Picture_Status.Size = new System.Drawing.Size(70, 64);
+            this.Picture_Status.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Picture_Status.TabIndex = 53;
+            this.Picture_Status.TabStop = false;
             // 
             // panel1
             // 
@@ -246,14 +320,6 @@
             this.panel1.Controls.Add(this.goalSwingAmount);
             this.panel1.Controls.Add(this.currentSwingAmount);
             this.panel1.Controls.Add(this.center);
-            this.panel1.Controls.Add(this.label7);
-            this.panel1.Controls.Add(this.label8);
-            this.panel1.Controls.Add(this.label9);
-            this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.p8);
             this.panel1.Controls.Add(this.p7);
             this.panel1.Controls.Add(this.p6);
@@ -274,7 +340,7 @@
             this.goalSwingAmount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.goalSwingAmount.Font = new System.Drawing.Font("Segoe UI", 45F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.goalSwingAmount.ForeColor = System.Drawing.Color.White;
-            this.goalSwingAmount.Location = new System.Drawing.Point(520, 555);
+            this.goalSwingAmount.Location = new System.Drawing.Point(506, 579);
             this.goalSwingAmount.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.goalSwingAmount.Name = "goalSwingAmount";
             this.goalSwingAmount.Size = new System.Drawing.Size(99, 81);
@@ -287,7 +353,7 @@
             this.currentSwingAmount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.currentSwingAmount.Font = new System.Drawing.Font("Segoe UI", 45F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.currentSwingAmount.ForeColor = System.Drawing.Color.White;
-            this.currentSwingAmount.Location = new System.Drawing.Point(392, 555);
+            this.currentSwingAmount.Location = new System.Drawing.Point(403, 579);
             this.currentSwingAmount.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.currentSwingAmount.Name = "currentSwingAmount";
             this.currentSwingAmount.Size = new System.Drawing.Size(99, 81);
@@ -297,180 +363,89 @@
             // center
             // 
             this.center.BackColor = System.Drawing.Color.Transparent;
-            this.center.Image = global::SmartBadmintonTrainingSystem.Properties.Resources.red_circle;
-            this.center.Location = new System.Drawing.Point(421, 422);
+            this.center.Image = global::SmartBadmintonTrainingSystem.Properties.Resources.red_hex;
+            this.center.Location = new System.Drawing.Point(443, 393);
             this.center.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.center.Name = "center";
-            this.center.Size = new System.Drawing.Size(147, 130);
+            this.center.Size = new System.Drawing.Size(120, 120);
             this.center.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.center.TabIndex = 71;
             this.center.TabStop = false;
             // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.Color.Transparent;
-            this.label7.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold);
-            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(21)))), ((int)(((byte)(21)))));
-            this.label7.Location = new System.Drawing.Point(85, 14);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(70, 45);
-            this.label7.TabIndex = 70;
-            this.label7.Text = "1번";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.BackColor = System.Drawing.Color.Transparent;
-            this.label8.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold);
-            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(21)))), ((int)(((byte)(21)))));
-            this.label8.Location = new System.Drawing.Point(359, 24);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(70, 45);
-            this.label8.TabIndex = 69;
-            this.label8.Text = "2번";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.BackColor = System.Drawing.Color.Transparent;
-            this.label9.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold);
-            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(21)))), ((int)(((byte)(21)))));
-            this.label9.Location = new System.Drawing.Point(629, 24);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(70, 45);
-            this.label9.TabIndex = 68;
-            this.label9.Text = "3번";
-            this.label9.Click += new System.EventHandler(this.label9_Click);
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold);
-            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(21)))), ((int)(((byte)(21)))));
-            this.label5.Location = new System.Drawing.Point(359, 714);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(70, 45);
-            this.label5.TabIndex = 66;
-            this.label5.Text = "7번";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold);
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(21)))), ((int)(((byte)(21)))));
-            this.label4.Location = new System.Drawing.Point(706, 714);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(70, 45);
-            this.label4.TabIndex = 65;
-            this.label4.Text = "8번";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold);
-            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(21)))), ((int)(((byte)(21)))));
-            this.label6.Location = new System.Drawing.Point(15, 714);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(70, 45);
-            this.label6.TabIndex = 67;
-            this.label6.Text = "6번";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold);
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(21)))), ((int)(((byte)(21)))));
-            this.label3.Location = new System.Drawing.Point(670, 358);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(70, 45);
-            this.label3.TabIndex = 64;
-            this.label3.Text = "5번";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold);
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(21)))), ((int)(((byte)(21)))));
-            this.label1.Location = new System.Drawing.Point(48, 358);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(70, 45);
-            this.label1.TabIndex = 63;
-            this.label1.Text = "4번";
-            // 
             // p8
             // 
+            this.p8.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.p8.BackColor = System.Drawing.Color.Transparent;
-            this.p8.Image = global::SmartBadmintonTrainingSystem.Properties.Resources.red_circle;
-            this.p8.Location = new System.Drawing.Point(714, 714);
+            this.p8.Image = ((System.Drawing.Image)(resources.GetObject("p8.Image")));
+            this.p8.Location = new System.Drawing.Point(786, 714);
             this.p8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.p8.Name = "p8";
-            this.p8.Size = new System.Drawing.Size(256, 256);
+            this.p8.Size = new System.Drawing.Size(200, 200);
             this.p8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.p8.TabIndex = 62;
             this.p8.TabStop = false;
             // 
             // p7
             // 
+            this.p7.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.p7.BackColor = System.Drawing.Color.Transparent;
-            this.p7.Image = global::SmartBadmintonTrainingSystem.Properties.Resources.red_circle;
-            this.p7.Location = new System.Drawing.Point(367, 714);
+            this.p7.Image = ((System.Drawing.Image)(resources.GetObject("p7.Image")));
+            this.p7.Location = new System.Drawing.Point(405, 714);
             this.p7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.p7.Name = "p7";
-            this.p7.Size = new System.Drawing.Size(256, 256);
+            this.p7.Size = new System.Drawing.Size(200, 200);
             this.p7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.p7.TabIndex = 61;
             this.p7.TabStop = false;
             // 
             // p6
             // 
+            this.p6.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.p6.BackColor = System.Drawing.Color.Transparent;
-            this.p6.Image = global::SmartBadmintonTrainingSystem.Properties.Resources.red_circle;
+            this.p6.Image = ((System.Drawing.Image)(resources.GetObject("p6.Image")));
             this.p6.Location = new System.Drawing.Point(24, 714);
             this.p6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.p6.Name = "p6";
-            this.p6.Size = new System.Drawing.Size(256, 256);
+            this.p6.Size = new System.Drawing.Size(200, 200);
             this.p6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.p6.TabIndex = 60;
             this.p6.TabStop = false;
             // 
             // p5
             // 
+            this.p5.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.p5.BackColor = System.Drawing.Color.Transparent;
-            this.p5.Image = global::SmartBadmintonTrainingSystem.Properties.Resources.red_circle;
-            this.p5.Location = new System.Drawing.Point(678, 358);
+            this.p5.Image = ((System.Drawing.Image)(resources.GetObject("p5.Image")));
+            this.p5.Location = new System.Drawing.Point(754, 352);
             this.p5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.p5.Name = "p5";
-            this.p5.Size = new System.Drawing.Size(256, 256);
+            this.p5.Size = new System.Drawing.Size(200, 200);
             this.p5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.p5.TabIndex = 59;
             this.p5.TabStop = false;
             // 
             // p4
             // 
+            this.p4.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.p4.BackColor = System.Drawing.Color.Transparent;
-            this.p4.Image = global::SmartBadmintonTrainingSystem.Properties.Resources.red_circle;
+            this.p4.Image = ((System.Drawing.Image)(resources.GetObject("p4.Image")));
             this.p4.Location = new System.Drawing.Point(55, 358);
             this.p4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.p4.Name = "p4";
-            this.p4.Size = new System.Drawing.Size(256, 256);
+            this.p4.Size = new System.Drawing.Size(200, 200);
             this.p4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.p4.TabIndex = 57;
             this.p4.TabStop = false;
             // 
             // p3
             // 
+            this.p3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.p3.BackColor = System.Drawing.Color.Transparent;
-            this.p3.Image = global::SmartBadmintonTrainingSystem.Properties.Resources.red_circle;
-            this.p3.Location = new System.Drawing.Point(650, 24);
+            this.p3.Image = ((System.Drawing.Image)(resources.GetObject("p3.Image")));
+            this.p3.Location = new System.Drawing.Point(703, 22);
             this.p3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.p3.Name = "p3";
-            this.p3.Size = new System.Drawing.Size(256, 256);
+            this.p3.Size = new System.Drawing.Size(200, 200);
             this.p3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.p3.TabIndex = 56;
             this.p3.TabStop = false;
@@ -478,90 +453,29 @@
             // 
             // p2
             // 
+            this.p2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.p2.BackColor = System.Drawing.Color.Transparent;
-            this.p2.Image = global::SmartBadmintonTrainingSystem.Properties.Resources.red_circle;
-            this.p2.Location = new System.Drawing.Point(372, 24);
+            this.p2.Image = ((System.Drawing.Image)(resources.GetObject("p2.Image")));
+            this.p2.Location = new System.Drawing.Point(405, 22);
             this.p2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.p2.Name = "p2";
-            this.p2.Size = new System.Drawing.Size(256, 256);
+            this.p2.Size = new System.Drawing.Size(200, 200);
             this.p2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.p2.TabIndex = 55;
             this.p2.TabStop = false;
             // 
             // p1
             // 
+            this.p1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.p1.BackColor = System.Drawing.Color.Transparent;
-            this.p1.Image = global::SmartBadmintonTrainingSystem.Properties.Resources.red_circle;
-            this.p1.Location = new System.Drawing.Point(94, 22);
+            this.p1.Image = ((System.Drawing.Image)(resources.GetObject("p1.Image")));
+            this.p1.Location = new System.Drawing.Point(106, 22);
             this.p1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.p1.Name = "p1";
-            this.p1.Size = new System.Drawing.Size(256, 256);
+            this.p1.Size = new System.Drawing.Size(200, 200);
             this.p1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.p1.TabIndex = 54;
             this.p1.TabStop = false;
-            // 
-            // Picture_Status
-            // 
-            this.Picture_Status.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Picture_Status.Image = global::SmartBadmintonTrainingSystem.Properties.Resources.signal_red;
-            this.Picture_Status.Location = new System.Drawing.Point(-2, 86);
-            this.Picture_Status.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Picture_Status.Name = "Picture_Status";
-            this.Picture_Status.Padding = new System.Windows.Forms.Padding(16, 14, 16, 14);
-            this.Picture_Status.Size = new System.Drawing.Size(70, 64);
-            this.Picture_Status.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.Picture_Status.TabIndex = 53;
-            this.Picture_Status.TabStop = false;
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.random_order);
-            this.panel2.Controls.Add(this.choose_order);
-            this.panel2.Location = new System.Drawing.Point(188, 498);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(140, 120);
-            this.panel2.TabIndex = 75;
-            // 
-            // panel4
-            // 
-            this.panel4.Controls.Add(this.test_12);
-            this.panel4.Controls.Add(this.test_24);
-            this.panel4.Location = new System.Drawing.Point(94, 363);
-            this.panel4.Margin = new System.Windows.Forms.Padding(2);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(234, 120);
-            this.panel4.TabIndex = 76;
-            // 
-            // test_12
-            // 
-            this.test_12.AutoSize = true;
-            this.test_12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.test_12.Font = new System.Drawing.Font("Segoe UI", 14F);
-            this.test_12.Location = new System.Drawing.Point(4, 26);
-            this.test_12.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.test_12.Name = "test_12";
-            this.test_12.Size = new System.Drawing.Size(130, 29);
-            this.test_12.TabIndex = 71;
-            this.test_12.TabStop = true;
-            this.test_12.Text = "12회 테스트";
-            this.test_12.UseVisualStyleBackColor = true;
-            this.test_12.CheckedChanged += new System.EventHandler(this.test_12_CheckedChanged);
-            // 
-            // test_24
-            // 
-            this.test_24.AutoSize = true;
-            this.test_24.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.test_24.Font = new System.Drawing.Font("Segoe UI", 14F);
-            this.test_24.Location = new System.Drawing.Point(4, 72);
-            this.test_24.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.test_24.Name = "test_24";
-            this.test_24.Size = new System.Drawing.Size(130, 29);
-            this.test_24.TabIndex = 72;
-            this.test_24.TabStop = true;
-            this.test_24.Text = "24회 테스트";
-            this.test_24.UseVisualStyleBackColor = true;
-            this.test_24.CheckedChanged += new System.EventHandler(this.test_24_CheckedChanged);
             // 
             // Test
             // 
@@ -570,25 +484,23 @@
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1340, 777);
-            this.Controls.Add(this.panel4);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.panel5);
             this.Controls.Add(this.listBox1);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.btn_test);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.Picture_Status);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.label2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Test";
             this.Text = "Test";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Test_FormClosed);
             this.Load += new System.EventHandler(this.Test_Load);
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Picture_Status)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.center)).EndInit();
@@ -600,11 +512,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.p3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.p2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.p1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Picture_Status)).EndInit();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -627,20 +534,10 @@
         private System.Windows.Forms.PictureBox p2;
         private System.Windows.Forms.PictureBox p1;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btn_test;
         private System.Windows.Forms.RadioButton choose_order;
         private System.Windows.Forms.RadioButton random_order;
-        private System.Windows.Forms.Button button4;
         private System.Windows.Forms.ListBox listBox1;
-        private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.PictureBox center;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel4;
@@ -648,5 +545,7 @@
         private System.Windows.Forms.RadioButton test_24;
         private System.Windows.Forms.Label goalSwingAmount;
         private System.Windows.Forms.Label currentSwingAmount;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
