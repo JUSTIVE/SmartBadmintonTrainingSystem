@@ -1,4 +1,4 @@
-﻿//#define DEBUG
+﻿#undef DEBUG
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -527,10 +527,11 @@ namespace SmartBadmintonTrainingSystem
                         {
                             s_buffer.Clear();
                             s_buffer.Add(strRecData);
-                            isSwing(number);
-                            isCenter();
+                            
                         }
                     }
+                    //isSwing(number);
+                    //isCenter();
                     breaker = true;
                     break;
                 }
@@ -574,6 +575,8 @@ namespace SmartBadmintonTrainingSystem
                 if (breaker)
                     break;
             }
+            if (s_buffer.Count > 10)
+                s_buffer.Clear();
         }
 
         public void setOrderList()
@@ -808,6 +811,7 @@ namespace SmartBadmintonTrainingSystem
                     {
                         //input  == 1~8
                         if (isSwing((numberExteneder[number-1]) + 1) == numberExteneder[number-1] + 1)
+                        //if(swing_pole== numberExteneder[number - 1] + 1)
                         {
                             current_test_index++;break;
                         }
@@ -815,7 +819,7 @@ namespace SmartBadmintonTrainingSystem
                     sw.Stop();
                     setImageOff(number-1);
                     center.Image = SmartBadmintonTrainingSystem.Properties.Resources.red_circle;
-                    send_packet(poleMapper(number), (byte)Color.OFF);
+                    //send_packet(poleMapper(number), (byte)Color.OFF);
 
                     clearBuff();
                     currentSwingAmount.Text = (current_test_index + n * 12) + "";
@@ -825,11 +829,13 @@ namespace SmartBadmintonTrainingSystem
                     center_flag = false;
                     while(true)
                     {
-                        if (center_flag)
-                        {                 
-                            break;
-                        }
-                        else isCenter();
+                        //if (center_flag)
+                        //{                 
+                        //    break;
+                        //}
+                        //else isCenter();
+                        isCenter();
+                        if (FbFlag && lrFlag) break;
                     }
                     sw2.Stop();
                     center.Image = SmartBadmintonTrainingSystem.Properties.Resources.green_circle;

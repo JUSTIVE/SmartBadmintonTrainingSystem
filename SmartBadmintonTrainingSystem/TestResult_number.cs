@@ -270,18 +270,19 @@ namespace SmartBadmintonTrainingSystem
             pm.PlotType = PlotType.XY;
             var AxsX = new CategoryAxis();
             AxsX.Position = AxisPosition.Left;
+            AxsX.Labels.Add("F1_2");
             AxsX.Labels.Add("F1");
-            AxsX.Labels.Add("F1 2");
+            
             AxsX.Labels.Add("F2");
+            AxsX.Labels.Add("F3_2");
             AxsX.Labels.Add("F3");
-            AxsX.Labels.Add("F3 2");
             AxsX.Labels.Add("M1");
             AxsX.Labels.Add("M2");
+            AxsX.Labels.Add("B1_2");
             AxsX.Labels.Add("B1");
-            AxsX.Labels.Add("B1 2");
             AxsX.Labels.Add("B2");
+            AxsX.Labels.Add("B3_2");
             AxsX.Labels.Add("B3");
-            AxsX.Labels.Add("B3 2");
             AxsX.IsZoomEnabled = false;
 
             var AxsY = new LinearAxis();
@@ -339,85 +340,87 @@ namespace SmartBadmintonTrainingSystem
             };
             switch(status){
                 case "forward":
-                    bs0.Items.Add(new BarItem(double.Parse(f1_t1.Text), 0));
-                    bs0.Items.Add(new BarItem(double.Parse(f1_t4.Text), 1));
+                    bs0.Items.Add(new BarItem(double.Parse(f1_t4.Text), 0));
+                    bs0.Items.Add(new BarItem(double.Parse(f1_t1.Text), 1));
                     bs0.Items.Add(new BarItem(double.Parse(f2_t1.Text), 2));
-                    bs0.Items.Add(new BarItem(double.Parse(f3_t1.Text), 3));
-                    bs0.Items.Add(new BarItem(double.Parse(f3_t4.Text), 4));
+                    bs0.Items.Add(new BarItem(double.Parse(f3_t4.Text), 3));
+                    bs0.Items.Add(new BarItem(double.Parse(f3_t1.Text), 4));
                     bs0.Items.Add(new BarItem(double.Parse(s1_t1.Text), 5));
                     bs0.Items.Add(new BarItem(double.Parse(s2_t1.Text), 6));
-                    bs0.Items.Add(new BarItem(double.Parse(b1_t1.Text), 7));
-                    bs0.Items.Add(new BarItem(double.Parse(b1_t4.Text), 8));
+                    bs0.Items.Add(new BarItem(double.Parse(b1_t4.Text), 7));
+                    bs0.Items.Add(new BarItem(double.Parse(b1_t1.Text), 8));
                     bs0.Items.Add(new BarItem(double.Parse(b2_t1.Text), 9));
-                    bs0.Items.Add(new BarItem(double.Parse(b3_t1.Text), 10));
-                    bs0.Items.Add(new BarItem(double.Parse(b3_t4.Text), 11));
+                    bs0.Items.Add(new BarItem(double.Parse(b3_t4.Text), 10));
+                    bs0.Items.Add(new BarItem(double.Parse(b3_t1.Text), 11));
 
-                    bs1.Items.Add(new BarItem(double.Parse(f1_t7.Text), 0));
-                    bs1.Items.Add(new BarItem(double.Parse(f1_t10.Text), 1));
+                    bs1.Items.Add(new BarItem(double.Parse(f1_t10.Text), 0));
+                    bs1.Items.Add(new BarItem(double.Parse(f1_t7.Text), 1));
                     bs1.Items.Add(new BarItem(double.Parse(f2_t4.Text), 2));
-                    bs1.Items.Add(new BarItem(double.Parse(f3_t7.Text), 3));
-                    bs1.Items.Add(new BarItem(double.Parse(f3_t10.Text), 4));
+                    bs1.Items.Add(new BarItem(double.Parse(f3_t10.Text), 3));
+                    bs1.Items.Add(new BarItem(double.Parse(f3_t7.Text), 4));
                     bs1.Items.Add(new BarItem(double.Parse(s1_t4.Text), 5));
                     bs1.Items.Add(new BarItem(double.Parse(s2_t4.Text), 6));
-                    bs1.Items.Add(new BarItem(double.Parse(b1_t7.Text), 7));
-                    bs1.Items.Add(new BarItem(double.Parse(b1_t10.Text), 8));
+                    bs1.Items.Add(new BarItem(double.Parse(b1_t10.Text), 7));
+                    bs1.Items.Add(new BarItem(double.Parse(b1_t7.Text), 8));
                     bs1.Items.Add(new BarItem(double.Parse(b2_t4.Text), 9));
-                    bs1.Items.Add(new BarItem(double.Parse(b3_t7.Text), 10));
-                    bs1.Items.Add(new BarItem(double.Parse(b3_t10.Text), 11));
+                    bs1.Items.Add(new BarItem(double.Parse(b3_t10.Text), 10));
+                    bs1.Items.Add(new BarItem(double.Parse(b3_t7.Text), 11));
                     break;
                 case "backward":
-                    bs0.Items.Add(new BarItem(double.Parse(f1_t2.Text), 0));
-                    bs0.Items.Add(new BarItem(double.Parse(f1_t5.Text), 1));
+                    bs0.Items.Add(new BarItem(double.Parse(f1_t5.Text), 0));
+                    bs0.Items.Add(new BarItem(double.Parse(f1_t2.Text), 1));
                     bs0.Items.Add(new BarItem(double.Parse(f2_t2.Text), 2));
-                    bs0.Items.Add(new BarItem(double.Parse(f3_t2.Text), 3));
-                    bs0.Items.Add(new BarItem(double.Parse(f3_t5.Text), 4));
+                    bs0.Items.Add(new BarItem(double.Parse(f3_t5.Text), 3));
+                    bs0.Items.Add(new BarItem(double.Parse(f3_t2.Text), 4));
                     bs0.Items.Add(new BarItem(double.Parse(s1_t2.Text), 5));
                     bs0.Items.Add(new BarItem(double.Parse(s2_t2.Text), 6));
                     bs0.Items.Add(new BarItem(double.Parse(b1_t2.Text), 7));
                     bs0.Items.Add(new BarItem(double.Parse(b1_t5.Text), 8));
                     bs0.Items.Add(new BarItem(double.Parse(b2_t2.Text), 9));
-                    bs0.Items.Add(new BarItem(double.Parse(b3_t2.Text), 10));
-                    bs0.Items.Add(new BarItem(double.Parse(b3_t5.Text), 11));
+                    bs0.Items.Add(new BarItem(double.Parse(b3_t5.Text), 10));
+                    bs0.Items.Add(new BarItem(double.Parse(b3_t2.Text), 11));
 
-                    bs1.Items.Add(new BarItem(double.Parse(f1_t8.Text), 0));
-                    bs1.Items.Add(new BarItem(double.Parse(f1_t11.Text), 1));
+                    bs1.Items.Add(new BarItem(double.Parse(f1_t11.Text), 0));
+                    bs1.Items.Add(new BarItem(double.Parse(f1_t8.Text), 1));
                     bs1.Items.Add(new BarItem(double.Parse(f2_t5.Text), 2));
-                    bs1.Items.Add(new BarItem(double.Parse(f3_t8.Text), 3));
-                    bs1.Items.Add(new BarItem(double.Parse(f3_t11.Text), 4));
+                    bs1.Items.Add(new BarItem(double.Parse(f3_t11.Text), 3));
+                    bs1.Items.Add(new BarItem(double.Parse(f3_t8.Text), 4));
                     bs1.Items.Add(new BarItem(double.Parse(s1_t5.Text), 5));
                     bs1.Items.Add(new BarItem(double.Parse(s2_t5.Text), 6));
-                    bs1.Items.Add(new BarItem(double.Parse(b1_t8.Text), 7));
-                    bs1.Items.Add(new BarItem(double.Parse(b1_t11.Text), 8));
+                    bs1.Items.Add(new BarItem(double.Parse(b1_t11.Text), 7));
+                    bs1.Items.Add(new BarItem(double.Parse(b1_t8.Text), 8));
                     bs1.Items.Add(new BarItem(double.Parse(b2_t5.Text), 9));
-                    bs1.Items.Add(new BarItem(double.Parse(b3_t8.Text), 10));
-                    bs1.Items.Add(new BarItem(double.Parse(b3_t11.Text), 11));
+                    bs1.Items.Add(new BarItem(double.Parse(b3_t11.Text), 10));
+                    bs1.Items.Add(new BarItem(double.Parse(b3_t8.Text), 11));
+                    
                     break;
                 case "total":
-                    bs0.Items.Add(new BarItem(double.Parse(f1_t3.Text), 0));
-                    bs0.Items.Add(new BarItem(double.Parse(f1_t6.Text), 1));
+                    bs0.Items.Add(new BarItem(double.Parse(f1_t6.Text), 0));
+                    bs0.Items.Add(new BarItem(double.Parse(f1_t3.Text), 1));
                     bs0.Items.Add(new BarItem(double.Parse(f2_t3.Text), 2));
-                    bs0.Items.Add(new BarItem(double.Parse(f3_t3.Text), 3));
-                    bs0.Items.Add(new BarItem(double.Parse(f3_t6.Text), 4));
+                    bs0.Items.Add(new BarItem(double.Parse(f3_t6.Text), 3));
+                    bs0.Items.Add(new BarItem(double.Parse(f3_t3.Text), 4));
                     bs0.Items.Add(new BarItem(double.Parse(s1_t3.Text), 5));
                     bs0.Items.Add(new BarItem(double.Parse(s2_t3.Text), 6));
-                    bs0.Items.Add(new BarItem(double.Parse(b1_t3.Text), 7));
-                    bs0.Items.Add(new BarItem(double.Parse(b1_t6.Text), 8));
+                    bs0.Items.Add(new BarItem(double.Parse(b1_t6.Text), 7));
+                    bs0.Items.Add(new BarItem(double.Parse(b1_t3.Text), 8));
                     bs0.Items.Add(new BarItem(double.Parse(b2_t3.Text), 9));
-                    bs0.Items.Add(new BarItem(double.Parse(b3_t3.Text), 10));
-                    bs0.Items.Add(new BarItem(double.Parse(b3_t6.Text), 11));
+                    bs0.Items.Add(new BarItem(double.Parse(b3_t6.Text), 10));
+                    bs0.Items.Add(new BarItem(double.Parse(b3_t3.Text), 11));
 
-                    bs1.Items.Add(new BarItem(double.Parse(f1_t9.Text), 0));
-                    bs1.Items.Add(new BarItem(double.Parse(f1_t12.Text), 1));
+                    bs1.Items.Add(new BarItem(double.Parse(f1_t12.Text), 0));
+                    bs1.Items.Add(new BarItem(double.Parse(f1_t9.Text), 1));
                     bs1.Items.Add(new BarItem(double.Parse(f2_t6.Text), 2));
-                    bs1.Items.Add(new BarItem(double.Parse(f3_t9.Text), 3));
-                    bs1.Items.Add(new BarItem(double.Parse(f3_t12.Text), 4));
+                    bs1.Items.Add(new BarItem(double.Parse(f3_t12.Text), 3));
+                    bs1.Items.Add(new BarItem(double.Parse(f3_t9.Text), 4));
                     bs1.Items.Add(new BarItem(double.Parse(s1_t6.Text), 5));
                     bs1.Items.Add(new BarItem(double.Parse(s2_t6.Text), 6));
-                    bs1.Items.Add(new BarItem(double.Parse(b1_t9.Text), 7));
-                    bs1.Items.Add(new BarItem(double.Parse(b1_t12.Text), 8));
+                    bs1.Items.Add(new BarItem(double.Parse(b1_t12.Text), 7));
+                    bs1.Items.Add(new BarItem(double.Parse(b1_t9.Text), 8));
                     bs1.Items.Add(new BarItem(double.Parse(b2_t6.Text), 9));
-                    bs1.Items.Add(new BarItem(double.Parse(b3_t9.Text), 10));
-                    bs1.Items.Add(new BarItem(double.Parse(b3_t12.Text), 11));
+                    bs1.Items.Add(new BarItem(double.Parse(b3_t12.Text), 10));
+                    bs1.Items.Add(new BarItem(double.Parse(b3_t9.Text), 11));
+                    
                     break;
             }
 
