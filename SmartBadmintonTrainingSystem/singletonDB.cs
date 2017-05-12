@@ -38,8 +38,7 @@ namespace SmartBadmintonTrainingSystem
             instance.conn.Open();
         }
         public static singletonDB getInstance()
-        {
-            singletonDB.IsOpen();
+        {   
             instance.conn.Close();
             instance.conn.Open();
             return instance;
