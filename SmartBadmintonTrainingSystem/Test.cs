@@ -21,6 +21,13 @@ namespace SmartBadmintonTrainingSystem
 {
     public partial class Test : Form
     {
+
+
+        //V4 values
+        private int length_v4=-1;
+        private byte[] v4_data;
+        private enum Step {START,STARTCHECK,POLE,LIGHT,CHECKSUM,END };
+        //
         int targetTestAmount;
         int[] poleCoder = { 7, 6, 5, 1, 0, 4, 3, 2 };
         int[] numberExteneder = {0, 1, 2, 3, 4, 5, 6, 7, 0, 2, 5, 7 };
@@ -126,9 +133,12 @@ namespace SmartBadmintonTrainingSystem
         string openX = "컨트롤러 연결:X";
         string openO = "컨트롤러 연결:O";
         int TestCount = 1;
+        //constructor
         public Test()
         {
             InitializeComponent();
+            v4_data = null;
+            length_v4 = -1;
             this.StartPosition = FormStartPosition.Manual;
             this.Location = new Point(Screen.PrimaryScreen.Bounds.Width / 2 - this.Size.Width / 2, Screen.PrimaryScreen.Bounds.Height / 2 - this.Size.Height / 2);
             initInsertQuery();
@@ -139,6 +149,7 @@ namespace SmartBadmintonTrainingSystem
             test_24.Checked = true;
             targetTestAmount = 1;
             goalSwingAmount.Text = 24 + "";
+            
         }
         void setupStream()
         {
@@ -365,7 +376,7 @@ namespace SmartBadmintonTrainingSystem
                 buffer.Clear();
                 port_set = true;
                 Picture_Status.Image = SmartBadmintonTrainingSystem.Properties.Resources.signal_green;
-                SP.DataReceived += new SerialDataReceivedEventHandler(EventDataReceivedV3);
+                SP.DataReceived += new SerialDataReceivedEventHandler(EventDataReceivedV4);
 #if (DEBUG)
                 AutoClosingMessageBox.Show("컨트롤러 연결 성공","포트",500);
                 inputListbox("컨트롤러 연결 성공");
@@ -579,6 +590,57 @@ namespace SmartBadmintonTrainingSystem
                 s_buffer.Clear();
         }
 
+        //ongoing
+        void EventDataReceivedV4(object sender, SerialDataReceivedEventArgs e)
+        {
+            //남아있는게 있는지 확인
+            if (length_v4 <=0) {
+                length_v4 = SP.BytesToRead;
+                v4_data = new byte[length_v4];
+                SP.Read(v4_data, 0, length_v4);
+            }
+            else//남아있는경우
+            {
+                length_v4 = SP.BytesToRead;
+                int remain_lentgh = v4_data.Length;
+                length_v4 += v4_data.Length;
+                byte[] tempBuff = new byte[length_v4];
+                v4_data.CopyTo(tempBuff, 0);
+                v4_data = tempBuff;
+                SP.Read(v4_data, remain_lentgh, length_v4 - remain_lentgh);
+            }
+#if (DEBUG)
+            string tempstring = "";
+            for(int i = 0; i < length_v4; i++)
+            {
+                tempstring += v4_data[i].ToString("X2");
+            }
+            inputListbox(tempstring);
+#endif            
+            while (length_v4 >= 6)
+            {
+                if (length_v4 >= 6)//사용
+                {
+                    if (!swing_flag)
+                        IsSwing_v2();
+                    if (!center_flag)
+                        IsCenter_v2();
+                    length_v4 -= 6;
+                    if (length_v4 > 0) {//쓰고남은경우 
+                        byte[] temp = new byte[length_v4];
+                        for (int i = 6; i < length_v4 + 6; i++)
+                            temp[i - 6] = v4_data[i];
+                        v4_data = temp;
+                    }
+                }
+                if (length_v4 == 0)//나머지가 없는 경우
+                {
+                    v4_data = null;
+                    return;
+                }
+            }
+        }
+
         public void setOrderList()
         {
             OrderList.Clear();
@@ -681,6 +743,20 @@ namespace SmartBadmintonTrainingSystem
 #endif
             return swing_pole;
         }
+        public int IsSwing_v2()//compatible with DataReceived_v4
+        {
+            if ((v4_data[1] + v4_data[2] + v4_data[3] == v4_data[4])&&v4_data[5]==3)//checksum
+            {
+                if (v4_data[1] == 1)
+                {
+                    if((v4_data[3] == 3) || (v4_data[3] == 1)) { 
+                        byte[] polemapping = { 5, 4, 8, 7, 6, 3, 2, 1 };
+                        swing_pole = polemapping[v4_data[2] - 1];
+                    }
+                }
+            }
+            return swing_pole;
+        }
         public void isCenter()
         {
             if (buffer.Contains("02 01 02 02 05 03 ") && !lrFlag)// 01 02 02 05
@@ -701,6 +777,27 @@ namespace SmartBadmintonTrainingSystem
                 FbFlag = false;
             }
             if (lrFlag && FbFlag) center_flag = true;
+        }
+        //
+        public void IsCenter_v2()
+        {
+            //if (v4_data[1] + v4_data[2] + v4_data[3] == v4_data[4]) { 
+                if (v4_data[2] == (byte)2)
+                {
+                    if (v4_data[3] == (byte)2)
+                        lrFlag = true;
+                    else if (v4_data[3] == (byte)0)
+                        lrFlag = false;
+                }
+                if(v4_data[2]== (byte)7)
+                {
+                    if (v4_data[3] == (byte)2 )
+                        FbFlag = true;
+                    else if (v4_data[3] == (byte)0 )
+                        FbFlag = false;
+                }
+                if (lrFlag && FbFlag) center_flag = true;
+          //  }
         }
         public void setByteSendData()
         {
@@ -723,7 +820,7 @@ namespace SmartBadmintonTrainingSystem
             }
             catch (System.Exception e)
             {
-                
+                Debug.WriteLine("exception at send_packet");
             }
         }
 
@@ -792,6 +889,7 @@ namespace SmartBadmintonTrainingSystem
             for (int n=0;n<targetTestAmount+1;n++) {
                 orderString = poleArrayToString(reshuffle(array));
                 inputListbox(orderString);
+                //setOrderList();
                 for (current_test_index = 0; current_test_index < cnt_of_test;)
                 {
                     
@@ -801,21 +899,25 @@ namespace SmartBadmintonTrainingSystem
                     setImageRed(number - 1);
                     send_packet(poleMapper(number), (byte)Color.RED);
                     
-#if(DEBUG)
+#if (DEBUG)
                     streamWriterIn.WriteLine(number + " = number");
                     inputListbox(number + " = number");
 #endif
                     swing_flag = false;
                     swing_pole = -1;
-                    for (;;)
+                    while(!swing_flag)
                     {
                         //input  == 1~8
-                        if (isSwing((numberExteneder[number-1]) + 1) == numberExteneder[number-1] + 1)
+                        //if (IsSwing_v2((numberExteneder[number-1]) + 1) == numberExteneder[number-1] + 1)
                         //if(swing_pole== numberExteneder[number - 1] + 1)
+                        //Thread.Sleep(1);
+                        if (swing_pole == numberExteneder[number - 1] + 1)
                         {
-                            current_test_index++;break;
+                            swing_flag = true;
+                            current_test_index++;
                         }
                     }
+                    
                     sw.Stop();
                     setImageOff(number-1);
                     center.Image = SmartBadmintonTrainingSystem.Properties.Resources.red_circle;
@@ -827,15 +929,22 @@ namespace SmartBadmintonTrainingSystem
                     if (number == 2 || number == 7) FbFlag = true;
                     else if (number == 4 || number == 5) lrFlag = true;
                     center_flag = false;
-                    while(true)
+                    //v4_data = null;
+                    //length_v4 = -1;
+                    while(!center_flag)
                     {
                         //if (center_flag)
                         //{                 
                         //    break;
                         //}
                         //else isCenter();
-                        isCenter();
-                        if (FbFlag && lrFlag) break;
+                        //isCenter();
+                        //if (FbFlag && lrFlag) break;
+                        //IsCenter_v2();
+                        //inputListbox("LR = " +lrFlag +" fb = "+FbFlag);
+                        Thread.Sleep(75);
+                        if (center_flag)
+                            break;
                     }
                     sw2.Stop();
                     center.Image = SmartBadmintonTrainingSystem.Properties.Resources.green_circle;
@@ -997,7 +1106,7 @@ namespace SmartBadmintonTrainingSystem
 
         private void button4_Click(object sender, EventArgs e)
         {
-#if(DEBUG)
+#if (DEBUG)
             inputListbox("컨트롤러 새로고침");
 #endif
             setRefreshPort();
