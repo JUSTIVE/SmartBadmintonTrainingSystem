@@ -782,6 +782,7 @@ namespace SmartBadmintonTrainingSystem
         public void IsCenter_v2()
         {
             //if (v4_data[1] + v4_data[2] + v4_data[3] == v4_data[4]) { 
+            //Thread.Sleep(50);
                 if (v4_data[2] == (byte)2)
                 {
                     if (v4_data[3] == (byte)2)
@@ -931,7 +932,8 @@ namespace SmartBadmintonTrainingSystem
                     center_flag = false;
                     //v4_data = null;
                     //length_v4 = -1;
-                    while(!center_flag)
+                    //Thread.Sleep(75);
+                    while (true)
                     {
                         //if (center_flag)
                         //{                 
@@ -942,8 +944,9 @@ namespace SmartBadmintonTrainingSystem
                         //if (FbFlag && lrFlag) break;
                         //IsCenter_v2();
                         //inputListbox("LR = " +lrFlag +" fb = "+FbFlag);
-                        Thread.Sleep(75);
-                        if (center_flag)
+                        //inputListbox(center_flag.ToString());
+                        Thread.Sleep(5);
+                        if (center_flag==true)
                             break;
                     }
                     sw2.Stop();

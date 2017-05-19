@@ -449,6 +449,7 @@ C:\Users\BenKim\Desktop\research\SmartBadmintonTrainingSystem\SmartBadmintonTrai
 C:\Users\BenKim\Desktop\research\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\bin\Debug\SmartBadmintonTrainingSystem.application
 C:\Users\BenKim\Desktop\research\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\bin\Debug\SmartBadmintonTrainingSystem.exe
 C:\Users\BenKim\Desktop\research\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\bin\Debug\SmartBadmintonTrainingSystem.pdb
+C:\Users\BenKim\Desktop\research\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\bin\Debug\MySql.Data.dll
 C:\Users\BenKim\Desktop\research\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\bin\Debug\OxyPlot.dll
 C:\Users\BenKim\Desktop\research\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\bin\Debug\OxyPlot.WindowsForms.dll
 C:\Users\BenKim\Desktop\research\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\bin\Debug\OxyPlot.Wpf.dll
@@ -478,4 +479,3 @@ C:\Users\BenKim\Desktop\research\SmartBadmintonTrainingSystem\SmartBadmintonTrai
 C:\Users\BenKim\Desktop\research\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\obj\Debug\SmartBadmintonTrainingSystem.application
 C:\Users\BenKim\Desktop\research\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\obj\Debug\SmartBadmintonTrainingSystem.exe
 C:\Users\BenKim\Desktop\research\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\obj\Debug\SmartBadmintonTrainingSystem.pdb
-C:\Users\BenKim\Desktop\research\SmartBadmintonTrainingSystem\SmartBadmintonTrainingSystem\bin\Debug\MySql.Data.dll
