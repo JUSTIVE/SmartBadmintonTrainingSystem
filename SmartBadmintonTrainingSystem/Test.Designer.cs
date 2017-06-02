@@ -58,8 +58,8 @@
             this.p2 = new System.Windows.Forms.PictureBox();
             this.p1 = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -319,7 +319,6 @@
             // 
             this.panel1.AutoSize = true;
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(253)))), ((int)(((byte)(253)))));
-            this.panel1.BackgroundImage = global::SmartBadmintonTrainingSystem.Properties.Resources.제목_없음_1_사본;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.goalSwingAmount);
@@ -368,7 +367,7 @@
             // center
             // 
             this.center.BackColor = System.Drawing.Color.Transparent;
-            this.center.Image = global::SmartBadmintonTrainingSystem.Properties.Resources.red_hex;
+            this.center.Image = ((System.Drawing.Image)(resources.GetObject("center.Image")));
             this.center.Location = new System.Drawing.Point(443, 393);
             this.center.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.center.Name = "center";
@@ -382,7 +381,7 @@
             this.p8.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.p8.BackColor = System.Drawing.Color.Transparent;
             this.p8.Image = ((System.Drawing.Image)(resources.GetObject("p8.Image")));
-            this.p8.Location = new System.Drawing.Point(786, 714);
+            this.p8.Location = new System.Drawing.Point(754, 714);
             this.p8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.p8.Name = "p8";
             this.p8.Size = new System.Drawing.Size(200, 200);
@@ -408,7 +407,7 @@
             this.p6.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.p6.BackColor = System.Drawing.Color.Transparent;
             this.p6.Image = ((System.Drawing.Image)(resources.GetObject("p6.Image")));
-            this.p6.Location = new System.Drawing.Point(24, 714);
+            this.p6.Location = new System.Drawing.Point(55, 714);
             this.p6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.p6.Name = "p6";
             this.p6.Size = new System.Drawing.Size(200, 200);
@@ -447,7 +446,7 @@
             this.p3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.p3.BackColor = System.Drawing.Color.Transparent;
             this.p3.Image = ((System.Drawing.Image)(resources.GetObject("p3.Image")));
-            this.p3.Location = new System.Drawing.Point(703, 22);
+            this.p3.Location = new System.Drawing.Point(754, 22);
             this.p3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.p3.Name = "p3";
             this.p3.Size = new System.Drawing.Size(200, 200);
@@ -474,7 +473,7 @@
             this.p1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.p1.BackColor = System.Drawing.Color.Transparent;
             this.p1.Image = ((System.Drawing.Image)(resources.GetObject("p1.Image")));
-            this.p1.Location = new System.Drawing.Point(106, 22);
+            this.p1.Location = new System.Drawing.Point(55, 22);
             this.p1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.p1.Name = "p1";
             this.p1.Size = new System.Drawing.Size(200, 200);
@@ -492,17 +491,6 @@
             this.panel3.Size = new System.Drawing.Size(1920, 48);
             this.panel3.TabIndex = 78;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(12, 17);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(31, 17);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Test";
-            // 
             // pictureBox2
             // 
             this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
@@ -514,6 +502,17 @@
             this.pictureBox2.TabIndex = 1;
             this.pictureBox2.TabStop = false;
             this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(12, 17);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(31, 17);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Test";
             // 
             // Test
             // 

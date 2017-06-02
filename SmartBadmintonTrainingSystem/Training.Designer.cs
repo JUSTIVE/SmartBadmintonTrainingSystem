@@ -85,7 +85,6 @@
             // 
             // panel1
             // 
-            this.panel1.BackgroundImage = global::SmartBadmintonTrainingSystem.Properties.Resources.제목_없음_1_사본;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.centerPic);
@@ -106,7 +105,7 @@
             // 
             this.centerPic.BackColor = System.Drawing.Color.Transparent;
             this.centerPic.Image = ((System.Drawing.Image)(resources.GetObject("centerPic.Image")));
-            this.centerPic.Location = new System.Drawing.Point(433, 433);
+            this.centerPic.Location = new System.Drawing.Point(443, 393);
             this.centerPic.Name = "centerPic";
             this.centerPic.Size = new System.Drawing.Size(128, 128);
             this.centerPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -117,9 +116,9 @@
             // 
             this.p7.BackColor = System.Drawing.Color.Transparent;
             this.p7.Image = ((System.Drawing.Image)(resources.GetObject("p7.Image")));
-            this.p7.Location = new System.Drawing.Point(372, 714);
+            this.p7.Location = new System.Drawing.Point(405, 714);
             this.p7.Name = "p7";
-            this.p7.Size = new System.Drawing.Size(256, 256);
+            this.p7.Size = new System.Drawing.Size(200, 200);
             this.p7.TabIndex = 77;
             this.p7.TabStop = false;
             this.p7.Click += new System.EventHandler(this.p7_Click);
@@ -130,7 +129,7 @@
             this.p6.Image = ((System.Drawing.Image)(resources.GetObject("p6.Image")));
             this.p6.Location = new System.Drawing.Point(30, 714);
             this.p6.Name = "p6";
-            this.p6.Size = new System.Drawing.Size(256, 256);
+            this.p6.Size = new System.Drawing.Size(200, 200);
             this.p6.TabIndex = 76;
             this.p6.TabStop = false;
             this.p6.Click += new System.EventHandler(this.p6_Click);
@@ -139,9 +138,9 @@
             // 
             this.p5.BackColor = System.Drawing.Color.Transparent;
             this.p5.Image = ((System.Drawing.Image)(resources.GetObject("p5.Image")));
-            this.p5.Location = new System.Drawing.Point(682, 369);
+            this.p5.Location = new System.Drawing.Point(754, 352);
             this.p5.Name = "p5";
-            this.p5.Size = new System.Drawing.Size(256, 256);
+            this.p5.Size = new System.Drawing.Size(200, 200);
             this.p5.TabIndex = 75;
             this.p5.TabStop = false;
             this.p5.Click += new System.EventHandler(this.p5_Click);
@@ -150,9 +149,9 @@
             // 
             this.p4.BackColor = System.Drawing.Color.Transparent;
             this.p4.Image = ((System.Drawing.Image)(resources.GetObject("p4.Image")));
-            this.p4.Location = new System.Drawing.Point(64, 369);
+            this.p4.Location = new System.Drawing.Point(30, 352);
             this.p4.Name = "p4";
-            this.p4.Size = new System.Drawing.Size(256, 256);
+            this.p4.Size = new System.Drawing.Size(200, 200);
             this.p4.TabIndex = 74;
             this.p4.TabStop = false;
             this.p4.Click += new System.EventHandler(this.p4_Click);
@@ -161,9 +160,9 @@
             // 
             this.p3.BackColor = System.Drawing.Color.Transparent;
             this.p3.Image = ((System.Drawing.Image)(resources.GetObject("p3.Image")));
-            this.p3.Location = new System.Drawing.Point(650, 24);
+            this.p3.Location = new System.Drawing.Point(754, 28);
             this.p3.Name = "p3";
-            this.p3.Size = new System.Drawing.Size(256, 256);
+            this.p3.Size = new System.Drawing.Size(200, 200);
             this.p3.TabIndex = 73;
             this.p3.TabStop = false;
             this.p3.Click += new System.EventHandler(this.p3_Click);
@@ -172,9 +171,9 @@
             // 
             this.p2.BackColor = System.Drawing.Color.Transparent;
             this.p2.Image = ((System.Drawing.Image)(resources.GetObject("p2.Image")));
-            this.p2.Location = new System.Drawing.Point(372, 24);
+            this.p2.Location = new System.Drawing.Point(405, 28);
             this.p2.Name = "p2";
-            this.p2.Size = new System.Drawing.Size(256, 256);
+            this.p2.Size = new System.Drawing.Size(200, 200);
             this.p2.TabIndex = 72;
             this.p2.TabStop = false;
             this.p2.Click += new System.EventHandler(this.p2_Click);
@@ -183,9 +182,9 @@
             // 
             this.p1.BackColor = System.Drawing.Color.Transparent;
             this.p1.Image = ((System.Drawing.Image)(resources.GetObject("p1.Image")));
-            this.p1.Location = new System.Drawing.Point(94, 24);
+            this.p1.Location = new System.Drawing.Point(30, 28);
             this.p1.Name = "p1";
-            this.p1.Size = new System.Drawing.Size(256, 256);
+            this.p1.Size = new System.Drawing.Size(200, 200);
             this.p1.TabIndex = 71;
             this.p1.TabStop = false;
             this.p1.Click += new System.EventHandler(this.p1_Click);
@@ -194,9 +193,9 @@
             // 
             this.p8.BackColor = System.Drawing.Color.Transparent;
             this.p8.Image = ((System.Drawing.Image)(resources.GetObject("p8.Image")));
-            this.p8.Location = new System.Drawing.Point(714, 714);
+            this.p8.Location = new System.Drawing.Point(754, 714);
             this.p8.Name = "p8";
-            this.p8.Size = new System.Drawing.Size(256, 256);
+            this.p8.Size = new System.Drawing.Size(200, 200);
             this.p8.TabIndex = 78;
             this.p8.TabStop = false;
             this.p8.Click += new System.EventHandler(this.p8_Click);

@@ -661,19 +661,19 @@ namespace SmartBadmintonTrainingSystem
         //input : 0~7 number 
         public void setImageRed(int number)
         {
-            pList.ElementAt(numberExteneder[number]).Image = SmartBadmintonTrainingSystem.Properties.Resources.red_hex;
+            pList.ElementAt(numberExteneder[number]).Image = SmartBadmintonTrainingSystem.Properties.Resources.red_circle;
         }
         public void setImageGreen(int number)
         {
-            pList.ElementAt(numberExteneder[number]).Image = SmartBadmintonTrainingSystem.Properties.Resources.green_hex;
+            pList.ElementAt(numberExteneder[number]).Image = SmartBadmintonTrainingSystem.Properties.Resources.green_circle;
         }
         public void setImageBlue(int number)
         {
-            pList.ElementAt(numberExteneder[number]).Image = SmartBadmintonTrainingSystem.Properties.Resources.blue_hex;
+            pList.ElementAt(numberExteneder[number]).Image = SmartBadmintonTrainingSystem.Properties.Resources.blue_circle;
         }
         public void setImageOff(int number)
         {
-            pList.ElementAt(numberExteneder[number]).Image = SmartBadmintonTrainingSystem.Properties.Resources.off_hex;
+            pList.ElementAt(numberExteneder[number]).Image = SmartBadmintonTrainingSystem.Properties.Resources.off_circle;
         }
         public void clearBuff()
         {
@@ -815,9 +815,9 @@ namespace SmartBadmintonTrainingSystem
                 tmp2 = (byte)(byteSendData[1] + byteSendData[2] + byteSendData[3]);
                 byteSendData[4] = tmp2;
                 SP.Write(byteSendData, 0, 6);
-                string hex = BitConverter.ToString(byteSendData);
-                hex.Replace("-", "");
-                //streamWriterOut.WriteLine(hex+ loggerTime.Elapsed.ToString(@"mm\:ss\:FFFFFF"));
+                string circle = BitConverter.ToString(byteSendData);
+                circle.Replace("-", "");
+                //streamWriterOut.WriteLine(circle+ loggerTime.Elapsed.ToString(@"mm\:ss\:FFFFFF"));
             }
             catch (System.Exception e)
             {
