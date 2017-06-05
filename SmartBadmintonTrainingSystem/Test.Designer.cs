@@ -96,7 +96,7 @@
             // 
             this.comboBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(66)))));
             this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboBox1.Font = new System.Drawing.Font("Gulim", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.comboBox1.Font = new System.Drawing.Font("굴림", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.ItemHeight = 32;
             this.comboBox1.Location = new System.Drawing.Point(10, 11);
@@ -319,6 +319,7 @@
             // 
             this.panel1.AutoSize = true;
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(253)))), ((int)(((byte)(253)))));
+            this.panel1.BackgroundImage = global::SmartBadmintonTrainingSystem.Properties.Resources.제목_없음_1_사본;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.goalSwingAmount);
