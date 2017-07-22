@@ -11,6 +11,8 @@ using MySql.Data.MySqlClient;
 using OxyPlot;
 using OxyPlot.Axes;
 using OxyPlot.Series;
+using System.IO;
+
 namespace SmartBadmintonTrainingSystem
 {
     public partial class TestResult_number : Form
@@ -507,6 +509,111 @@ namespace SmartBadmintonTrainingSystem
                 status = "total";
             }
             button2_Click(sender, e);
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            SaveFileDialog sfd = new SaveFileDialog();
+            sfd.Filter = "csv files (*.csv)|*.csv";
+            sfd.FilterIndex = 0;
+            sfd.RestoreDirectory = true;
+
+            StreamWriter sw = null;
+            try {
+                if (sfd.ShowDialog() == DialogResult.OK)
+                {
+                    string filename = sfd.FileName;
+                    sw = new StreamWriter(filename);
+                    sw.WriteLine("1 Set");
+                    sw.WriteLine(",F1,F2,F3,M1,M2,B1,B2,B3");
+                    sw.Write("forward,");
+                    for (int i = 0; i < 36; i++)
+                    {
+                        if (i == 8 || i == 16 || i == 24) { 
+                            sw.Write("\n");
+                            switch (i)
+                            {
+                                case 8:
+                                    sw.Write("backward,");
+                                    break;
+                                case 16:
+                                    sw.Write("area sum,");
+                                    break;
+                                case 24:
+                                    sw.Write("forward,");
+                                    break;
+                            }
+                        }
+                        if (i == 33 || i == 34 || i == 35 || i == 25 || i == 26||i==27||i==29||i==30||i==31)
+                            sw.Write(",");
+                        if (i == 34||i==26||i==30)
+                            sw.Write(",");
+                        sw.Write(t1[i].Text + ",");
+                        if (i==27||i==31)
+                        {
+                            sw.WriteLine();
+                            switch (i)
+                            {
+                                case 27:
+                                    sw.Write("backward,");
+                                    break;
+                                case 31:
+                                    sw.Write("area sum,");
+                                    break;
+                            }
+                        }
+                    }
+                    sw.WriteLine();
+                    sw.WriteLine();
+                    sw.WriteLine("2 Set");
+                    sw.WriteLine(",F1,F2,F3,M1,M2,B1,B2,B3");
+                    sw.Write("forward,");
+                    for (int i = 0; i < 36; i++)
+                    {
+                        if (i == 8 || i == 16 || i == 24)
+                        {
+                            sw.Write("\n");
+                            switch (i)
+                            {
+                                case 8:
+                                    sw.Write("backward,");
+                                    break;
+                                case 16:
+                                    sw.Write("area sum,");
+                                    break;
+                                case 24:
+                                    sw.Write("forward,");
+                                    break;
+                            }
+                        }
+                        if (i == 33 || i == 34 || i == 35 || i == 25 || i == 26 || i == 27 || i == 29 || i == 30 || i == 31)
+                            sw.Write(",");
+                        if (i == 34 || i == 26 || i == 30)
+                            sw.Write(",");
+                        sw.Write(t2[i].Text + ",");
+                        if (i == 27 || i == 31)
+                        {
+                            sw.WriteLine();
+                            switch (i)
+                            {
+                                case 27:
+                                    sw.Write("backward,");
+                                    break;
+                                case 31:
+                                    sw.Write("area sum,");
+                                    break;
+                            }
+                        }
+                    }
+                    sw.Close();
+                }
+            }
+            catch (IOException)
+            {
+                AutoClosingMessageBox.Show("파일이 현재 열려있습니다", "파일 에러", 1500);
+            }
+
+            //
         }
     }
 }

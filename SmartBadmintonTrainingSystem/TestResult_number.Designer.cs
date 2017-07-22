@@ -170,6 +170,7 @@
             this.label20 = new System.Windows.Forms.Label();
             this.panel25 = new System.Windows.Forms.Panel();
             this.label21 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -207,7 +208,7 @@
             // combo_resultDatePick
             // 
             this.combo_resultDatePick.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.combo_resultDatePick.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.combo_resultDatePick.Font = new System.Drawing.Font("Gulim", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.combo_resultDatePick.FormattingEnabled = true;
             this.combo_resultDatePick.Location = new System.Drawing.Point(266, 10);
             this.combo_resultDatePick.Name = "combo_resultDatePick";
@@ -635,7 +636,7 @@
             this.tBox_uName.BackColor = System.Drawing.Color.White;
             this.tBox_uName.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tBox_uName.Enabled = false;
-            this.tBox_uName.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tBox_uName.Font = new System.Drawing.Font("Gulim", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tBox_uName.Location = new System.Drawing.Point(66, 11);
             this.tBox_uName.Name = "tBox_uName";
             this.tBox_uName.Size = new System.Drawing.Size(133, 14);
@@ -788,7 +789,7 @@
             // combo_TimePick
             // 
             this.combo_TimePick.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.combo_TimePick.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.combo_TimePick.Font = new System.Drawing.Font("Gulim", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.combo_TimePick.FormattingEnabled = true;
             this.combo_TimePick.Location = new System.Drawing.Point(453, 10);
             this.combo_TimePick.Name = "combo_TimePick";
@@ -1679,12 +1680,26 @@
             this.label21.TabIndex = 1;
             this.label21.Text = "2회차";
             // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(87)))), ((int)(((byte)(34)))));
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.ForeColor = System.Drawing.Color.White;
+            this.button2.Location = new System.Drawing.Point(681, 5);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(89, 26);
+            this.button2.TabIndex = 111;
+            this.button2.Text = ".csv로 출력";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click_1);
+            // 
             // TestResult_number
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1597, 758);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.panel25);
             this.Controls.Add(this.panel24);
             this.Controls.Add(this.panel14);
@@ -1901,5 +1916,6 @@
         private System.Windows.Forms.TextBox textBox61;
         private System.Windows.Forms.TextBox TotalTimeTextBox2;
         private System.Windows.Forms.TextBox textBox63;
+        private System.Windows.Forms.Button button2;
     }
 }
