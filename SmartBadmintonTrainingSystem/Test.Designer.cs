@@ -114,7 +114,7 @@
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Segoe UI", 20F);
             this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(14, 896);
+            this.button2.Location = new System.Drawing.Point(14, 510);
             this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(307, 120);
@@ -148,7 +148,7 @@
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Segoe UI", 20F);
             this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(14, 813);
+            this.button3.Location = new System.Drawing.Point(14, 427);
             this.button3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(307, 78);
@@ -165,7 +165,7 @@
             this.btn_test.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_test.Font = new System.Drawing.Font("Segoe UI", 20F);
             this.btn_test.ForeColor = System.Drawing.Color.White;
-            this.btn_test.Location = new System.Drawing.Point(14, 689);
+            this.btn_test.Location = new System.Drawing.Point(14, 303);
             this.btn_test.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_test.Name = "btn_test";
             this.btn_test.Size = new System.Drawing.Size(164, 120);
@@ -221,7 +221,7 @@
             // 
             this.panel2.Controls.Add(this.random_order);
             this.panel2.Controls.Add(this.choose_order);
-            this.panel2.Location = new System.Drawing.Point(180, 689);
+            this.panel2.Location = new System.Drawing.Point(180, 303);
             this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(140, 120);
@@ -231,7 +231,7 @@
             // 
             this.panel4.Controls.Add(this.test_12);
             this.panel4.Controls.Add(this.test_24);
-            this.panel4.Location = new System.Drawing.Point(14, 565);
+            this.panel4.Location = new System.Drawing.Point(14, 179);
             this.panel4.Margin = new System.Windows.Forms.Padding(2);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(306, 120);
