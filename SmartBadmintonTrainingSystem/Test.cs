@@ -952,9 +952,9 @@ namespace SmartBadmintonTrainingSystem
                     sw2.Stop();
                     center.Image = SmartBadmintonTrainingSystem.Properties.Resources.green_circle;
 
-                    T1[(number - 1) + 12 * n] = float.Parse(sw.ElapsedMilliseconds.ToString()) * 0.001f;
-                    T2[(number - 1) + 12 * n] = float.Parse(sw2.ElapsedMilliseconds.ToString()) * 0.001f;
-                    T2[(number - 1) + 12 * n] = T2[(number - 1) + 12 * n] - T1[(number - 1) + 12 * n];
+                    T1[(number - 1) + 12 * n] = (float.Parse(sw.ElapsedMilliseconds.ToString()) * 0.001f) - 0.15f;
+                    T2[(number - 1) + 12 * n] = (float.Parse(sw2.ElapsedMilliseconds.ToString()) * 0.001f) ;
+                    T2[(number - 1) + 12 * n] = (T2[(number - 1) + 12 * n] - T1[(number - 1) + 12 * n]) - 0.15f;
 
                     sw.Reset();
                     sw2.Reset();
