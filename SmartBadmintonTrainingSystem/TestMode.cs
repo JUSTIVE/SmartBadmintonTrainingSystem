@@ -484,7 +484,6 @@ namespace SmartBadmintonTrainingSystem
                 }
 
                 tr_frm.set_today(combo_datePick.SelectedItem.ToString());
-
                 tr_frm.Show();
             }
 

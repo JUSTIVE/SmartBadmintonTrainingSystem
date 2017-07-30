@@ -861,8 +861,7 @@ namespace SmartBadmintonTrainingSystem
             int RealPole_index_24 = 0;
             //streamWriterIn = new StreamWriter("in.txt");
             singletonDB.IsOpen();
-            selectDatabase();
-            insertDatabase2();
+            
             listBox1.Items.Add("테스트 시작");
             setOrderList();
             center.Image = Properties.Resources._5_image;
@@ -962,7 +961,9 @@ namespace SmartBadmintonTrainingSystem
                 }
                 
             }
-
+            singletonDB.IsOpen();
+            selectDatabase();
+            insertDatabase2();
             AutoClosingMessageBox.Show("테스트 종료", "종료 알림", 250);
             AutoClosingMessageBox.Show("데이터 전송", "상태 알림", 250);
             threadFlag = false;
@@ -1019,10 +1020,12 @@ namespace SmartBadmintonTrainingSystem
                 AutoClosingMessageBox.Show("테스트를 중지합니다!", "안내", 500);
                 threadFlag = false;
                 sound.Play();
+                sound.Play();
+                center.Image = Properties.Resources.off_circle;
             }
-            catch (System.Exception ex)
+            catch (System.Security.SecurityException ex)
             {
-
+                AutoClosingMessageBox.Show(ex.ToString(), ex.ToString(), 2000);
             }
         }
 

@@ -49,6 +49,7 @@ namespace SmartBadmintonTrainingSystem
             flag = false;
             setTextBox();
             init_SelectQuery();
+            
         }
         public void setTextBox()
         {
@@ -68,7 +69,7 @@ namespace SmartBadmintonTrainingSystem
         }
         public void set_today(string today)
         {
-            combo_resultDatePick.SelectedIndex = 0;
+            combo_resultDatePick.SelectedIndex =combo_resultDatePick.Items.Count-1;
         }
         public void add_combo_List(string date)
         {
@@ -107,7 +108,6 @@ namespace SmartBadmintonTrainingSystem
             selectCommand.Parameters[3].Value = Int16.Parse(combo_TimePick.SelectedItem.ToString());
             selectCommand.Parameters[4].Value = Int16.Parse(0+"");
             MySqlDataReader rdr = selectCommand.ExecuteReader();
-
             uDataList0.Clear();
 
             while (rdr.Read())
@@ -256,7 +256,7 @@ namespace SmartBadmintonTrainingSystem
                     {
                         combo_TimePick.Items.Add(i + 1);
                     }
-                    combo_TimePick.SelectedIndex = 0;
+                    combo_TimePick.SelectedIndex = combo_TimePick.Items.Count-1;
                 }
             }
             catch (System.Exception Exception)
