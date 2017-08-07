@@ -20,7 +20,7 @@ namespace SmartBadmintonTrainingSystem
 {
     public partial class Test : Form
     {
-
+        const bool SERVER_OUT = true;
         const bool MASTER_DEBUG = false;
         //V4 values
         private int length_v4=-1;
@@ -924,10 +924,104 @@ namespace SmartBadmintonTrainingSystem
                 AutoClosingMessageBox.Show("테스트 종료", "종료 알림", 250);
                 AutoClosingMessageBox.Show("데이터 전송", "상태 알림", 250);
                 threadFlag = false;
-                for (int i = 0; i < 12*(targetTestAmount+1); i++)
-                {
-                    insertDatabase(u_instance.uID, u_instance.uPW, T1[i], i + 1, u_instance.LoginDate, 0, TestCount, i < 12 ? 0 : 1);
-                    insertDatabase(u_instance.uID, u_instance.uPW, T2[i], i + 1, u_instance.LoginDate, 1, TestCount, i < 12 ? 0 : 1);
+                
+                if (SERVER_OUT) {
+                    SaveFileDialog sfd = new SaveFileDialog();
+                    sfd.Filter = "csv files (*.csv)|*.csv";
+                    sfd.FilterIndex = 0;
+                    sfd.RestoreDirectory = true;
+                    try {
+                        StreamWriter sw = new StreamWriter(sfd.FileName,false,Encoding.Default);
+                        sw.WriteLine(u_instance.uName);
+                        sw.WriteLine(",F1,F2,F3,M1,M2,B1,B2,B3");
+                        sw.Write("forward,");
+                        for(int i = 0; i < 8; i++)
+                        {
+                            sw.Write(T1[i]);
+                            if (i != 7)
+                            {
+                                sw.Write(",");
+                            }
+                        }
+                        sw.Write("\n");
+                        sw.Write("backward,");
+                        for (int i = 0; i < 8; i++)
+                        {
+                            sw.Write(T2[i]);
+                            if (i != 7)
+                            {
+                                sw.Write(",");
+                            }
+                        }
+                        sw.Write("\n");
+
+                        sw.Write("area sum,");
+                        for (int i = 0; i < 8; i++)
+                        {
+                            sw.Write(T2[i]+T1[i]);
+                            if (i != 7)
+                            {
+                                sw.Write(",");
+                            }
+                        }
+                        sw.Write("\n");
+
+                        sw.Write("forward,");
+                        for (int i = 0; i < 4; i++)
+                        {
+                            sw.Write(T1[i+8]);
+                            if (i != 7)
+                            {
+                                sw.Write(",,");
+                            }
+                            if (i==1)
+                            {
+                                sw.Write(",");
+                            }
+                        }
+                        sw.Write("\n");
+                        sw.Write("backward,");
+                        for (int i = 0; i < 4; i++)
+                        {
+                            sw.Write(T2[i + 8]);
+                            if (i != 7)
+                            {
+                                sw.Write(",,");
+                            }
+                            if (i == 1)
+                            {
+                                sw.Write(",");
+                            }
+                        }
+                        sw.Write("\n");
+                        sw.Write("area sum,");
+                        for (int i = 0; i < 4; i++)
+                        {
+                            sw.Write(T1[i + 8]+T2[i+8]);
+                            if (i != 7)
+                            {
+                                sw.Write(",,");
+                            }
+                            if (i == 1)
+                            {
+                                sw.Write(",");
+                            }
+                        }
+                        sw.Write("\n");
+                        sw.Close();
+                    }
+                    catch(IOException)
+                    {
+                        AutoClosingMessageBox.Show("파일이 현재 열려있습니다", "파일 에러", 1500);
+                    }
+
+                }
+                else {
+                    for (int i = 0; i < 12 * (targetTestAmount + 1); i++)
+                    {
+                        insertDatabase(u_instance.uID, u_instance.uPW, T1[i], i + 1, u_instance.LoginDate, 0, TestCount, i < 12 ? 0 : 1);
+                        insertDatabase(u_instance.uID, u_instance.uPW, T2[i], i + 1, u_instance.LoginDate, 1, TestCount, i < 12 ? 0 : 1);
+                    }
                 }
             }
         }

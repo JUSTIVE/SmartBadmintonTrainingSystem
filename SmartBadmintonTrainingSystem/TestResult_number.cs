@@ -522,9 +522,13 @@ namespace SmartBadmintonTrainingSystem
             try {
                 if (sfd.ShowDialog() == DialogResult.OK)
                 {
+                    //UTF8Encoding utf8 = new UTF8Encoding();
+                    //byte[] buff = utf8.GetBytes(u_instance.uID);
+                    //string name = Encoding.Default.GetString(buff);
                     string filename = sfd.FileName;
-                    sw = new StreamWriter(filename);
-                    sw.WriteLine("1 Set");
+                    sw = new StreamWriter(filename,false,Encoding.Default);
+                    sw.Write("1 Set,");
+                    sw.WriteLine(u_instance.uID);
                     sw.WriteLine(",F1,F2,F3,M1,M2,B1,B2,B3");
                     sw.Write("forward,");
                     for (int i = 0; i < 36; i++)
